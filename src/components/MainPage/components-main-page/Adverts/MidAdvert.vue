@@ -7,11 +7,11 @@
       class="image-card"
     >
       <b-card-text class="text-card d-flex">
-        <ul class="text-container">
-          <li class="text-top">
+        <div class="text-col">
+          <div class="text-row">
             <h1><strong>O Design é para ser tocado</strong></h1>
-          </li>
-          <li class="text-top">
+          </div>
+          <div class="text-row">
             <h2>
               Para a IKEA, o design vai muito além da estética. Vai até onde a
               nossa imaginação quiser. Para o provarmos, desafiámos o Noiserv,
@@ -21,7 +21,7 @@
               sons da vida em casa.
               <strong>Porque o design é para ser vivido.</strong>
             </h2>
-          </li>
+          </div>
           <li class="text-bottom">
             <h3>
               LINNEBÄCK
@@ -30,10 +30,10 @@
               Poltrona 39€/ud
             </h3>
           </li>
-          <b-button class="button-midAdvert"
-            >Ver homemade Jingle by Noiserv
-          </b-button>
-        </ul>
+          <b-button class="button-midAdvert" variant="light"
+            >Ver homemade Jingle by Noiserv</b-button
+          >
+        </div>
       </b-card-text>
     </b-card>
   </div>
@@ -53,7 +53,7 @@ export default {
 <style lang="scss">
 .midAdvert {
   width: 100%;
-  margin: 4rem auto;
+  margin: 0 !important;
 
   & .image-card {
     & img {
@@ -80,14 +80,18 @@ export default {
       & .text-card {
         text-align: left;
 
-        & .text-container {
+        & .text-col {
           display: flex;
           flex-direction: column;
           margin: 2rem auto 2rem auto;
           list-style: none;
           padding: 1rem !important;
 
-          & .text-top {
+          @media (max-width: 380px) {
+            padding: 0.5rem !important;
+          }
+
+          & .text-row {
             margin-bottom: 0.7rem;
             & h1 {
               font-size: 1.125rem;
@@ -120,12 +124,17 @@ export default {
             height: 2.5rem;
             width: 18rem;
             padding: 0 1.5rem;
-            background-color: white;
-            color: black;
+            background-color: #f5f5f5;
+            border: 1px solid #f5f5f5;
             border-radius: 64px;
             border: none;
-            font-size: 0.875rem;
+            font-size: 0.7rem;
             font-weight: bold;
+
+            &:hover {
+              background-color: #e0e0e0;
+              border: 1px solid #e0e0e0;
+            }
           }
         }
       }

@@ -143,6 +143,13 @@ export default {};
 </script>
 
 <style lang="scss">
+.b-sidebar {
+  width: 450px !important;
+
+  @media (max-width: 380px) {
+    width: 100% !important;
+  }
+}
 .sidebar-button {
   border: none;
   margin-right: 1.5rem;

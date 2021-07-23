@@ -46,7 +46,7 @@ export default {};
       margin-top: 1rem;
 
       & .tag-col {
-        padding: 0.5rem !important;
+        padding: 0.5 rem !important;
 
         & .tag-row-top {
           display: flex;

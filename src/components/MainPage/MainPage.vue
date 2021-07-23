@@ -1,15 +1,17 @@
 <template>
   <div class="mainPage">
-    <Advert />
-    <ProductShowcase />
-    <MidAdvert />
-    <Carousel />
-    <Info />
-    <TopGrid />
-    <InfoEntregas />
-    <BottomCarousel />
-    <BottomGrid />
-    <InfoImportanteCarousel />
+    <div class="mainPage-col">
+      <div class="mainPage-row"><Advert /></div>
+      <div class="mainPage-row"><ProductShowcase /></div>
+      <div class="mainPage-row"><MidAdvert /></div>
+      <div class="mainPage-row"><Carousel /></div>
+      <div class="mainPage-row"><Info /></div>
+      <div class="mainPage-row"><TopGrid /></div>
+      <div class="mainPage-row"><InfoEntregas /></div>
+      <div class="mainPage-row"><BottomCarousel /></div>
+      <div class="mainPage-row"><BottomGrid /></div>
+      <div class="mainPage-row"><InfoImportanteCarousel /></div>
+    </div>
   </div>
 </template>
 
@@ -42,4 +44,21 @@ export default {
 };
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+.mainPage {
+  width: 100%;
+  margin-top: 3rem !important;
+
+  & .mainPage-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    & .mainPage-row {
+      width: 100%;
+      margin-bottom: 3rem !important;
+    }
+  }
+}
+</style>

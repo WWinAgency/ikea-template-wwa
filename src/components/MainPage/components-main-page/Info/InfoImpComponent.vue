@@ -48,7 +48,14 @@ export default {
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 40rem;
+    height: 45rem;
+
+    @media (max-width: 768px) {
+      height: 40rem;
+    }
+    @media (max-width: 380px) {
+      height: 35rem;
+    }
     & .image-row {
       height: 60%;
 

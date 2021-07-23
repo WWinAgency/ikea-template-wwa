@@ -43,27 +43,35 @@ export default {
 
 <style lang="scss">
 .topGrid {
-  display: flex;
   flex-direction: column;
   width: 100%;
-  margin: 4rem auto 4rem auto;
+  margin: 0 !important;
   & .row-1 {
+    @media (max-with: 380px) {
+      margin-left: 1rem !important;
+    }
     & .row-3 {
       justify-content: flex-start;
       margin-bottom: 1rem;
+
       & h1 {
         font-size: 1.125rem;
+        text-align: left;
       }
     }
 
     & .row-4 {
       display: flex;
       flex-direction: row;
-      align-items: center;
       width: 100%;
+
       & .col-1 {
         width: 80%;
         padding: 1rem 1rem 1rem auto;
+
+        @media (max-width: 380px) {
+          margin-bottom: 1.5rem;
+        }
         & h2 {
           font-size: 0.875rem;
           margin: 0;
@@ -76,15 +84,26 @@ export default {
         width: 20%;
         padding: 1rem 1rem 1rem auto;
 
+        @media (max-width: 380px) {
+          width: 100%;
+          justify-content: flex-start;
+        }
+
         & .btn {
           display: flex;
           justify-content: center;
           align-items: center;
           padding: 1rem;
           height: 2.5rem;
-          border: 1px solid #929292;
+          background-color: #f5f5f5;
+          border: 1px solid #f5f5f5;
           border-radius: 64px;
           font-size: 0.75rem;
+
+          &:hover {
+            background-color: #e0e0e0;
+            border: 1px solid #e0e0e0;
+          }
         }
       }
     }
@@ -101,7 +120,7 @@ export default {
       width: 100% !important;
       padding: 0 !important;
 
-      @media (max-width: 968px) {
+      @media (max-width: 768px) {
         flex-direction: column !important;
         width: 100% !important;
       }
@@ -110,18 +129,18 @@ export default {
         display: flex;
         flex-direction: column;
         width: 50% !important;
+        height: 50rem !important;
 
-        @media (min-width: 1200px) {
-          height: 700px;
-        }
-
-        @media (max-width: 968px) {
+        @media (max-width: 768px) {
+          height: 40rem !important;
+          margin-bottom: 1rem !important;
           width: 100% !important;
-          margin-bottom: 0.5rem !important;
         }
 
-        @media (max-width: 968px) {
-          width: 730px !important;
+        @media (max-width: 380px) {
+          width: 100% !important;
+          height: 20rem !important;
+          margin-bottom: 1rem !important;
         }
 
         & .row-5 {
@@ -131,50 +150,62 @@ export default {
         }
       }
       & .col-4 {
-        margin: 0 0.5rem 0 0.5rem;
+        margin: 0 1rem 0 1rem;
         display: flex;
         flex-direction: column;
         width: 25% !important;
+        height: 50rem !important;
 
-        @media (max-width: 968px) {
+        @media (max-width: 768px) {
           width: 100% !important;
-          margin: 0 0 0.5rem 0 !important;
+          height: 80rem !important;
+          margin: 0 0 1rem 0 !important;
         }
 
-        @media (max-width: 968px) {
-          width: 730px !important;
+        @media (max-width: 380px) {
+          width: 100% !important;
+          height: 40rem !important;
+          margin: 0 0 1rem 0 !important;
         }
+
         & .row-6 {
           height: 60%;
-          margin-bottom: 0.5rem !important;
-
-          @media (max-width: 968px) {
-            margin: 0 0 0.5rem 0 !important;
-          }
-
+          margin-bottom: 1rem !important;
           display: flex;
           justify-content: center;
+
+          @media (max-width: 768px) {
+            height: 50% !important;
+            margin-bottom: 1rem !important;
+          }
         }
         & .row-7 {
           height: 40%;
-
           display: flex;
           justify-content: center;
+
+          @media (max-width: 768px) {
+            height: 50% !important;
+          }
         }
       }
       & .col-5 {
         display: flex;
         flex-direction: column;
         width: 25% !important;
+        height: 50rem !important;
 
-        @media (max-width: 968px) {
+        @media (max-width: 768px) {
           width: 100% !important;
-          margin: 0 0 0.5rem 0 !important;
+          height: 40rem !important;
+          margin-bottom: 0.5rem !important;
+        }
+        @media (max-width: 380px) {
+          width: 100% !important;
+          height: 20rem !important;
+          margin-bottom: 0.5rem !important;
         }
 
-        @media (max-width: 968px) {
-          width: 730px !important;
-        }
         & .row-8 {
           height: 100%;
           display: flex;

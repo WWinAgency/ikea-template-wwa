@@ -116,8 +116,8 @@ export default {
               slidesToShow: 2,
               slidesToScroll: 2,
               initialSlide: 2,
-              dots: false,
-              arrows: false,
+              dots: true,
+              arrows: true,
             },
           },
           {
@@ -125,6 +125,8 @@ export default {
             settings: {
               slidesToShow: 1,
               slidesToScroll: 1,
+              dots: false,
+              arrows: false,
             },
           },
         ],
@@ -136,7 +138,7 @@ export default {
 <style lang="scss">
 .bottomCarousel {
   width: 100% !important;
-  margin: 4rem 0 4rem 0 !important;
+  margin: 0 !important;
   display: flex;
   flex-direction: column;
 
@@ -163,9 +165,17 @@ export default {
         width: 200px;
         height: 250px;
 
+        @media (max-width: 768px) {
+          height: 350px !important;
+        }
+
         & .imagem {
           padding: 0.5rem;
           height: 250px;
+
+          @media (max-width: 768px) {
+            height: 350px !important;
+          }
 
           & img {
             width: 100%;
@@ -175,6 +185,10 @@ export default {
         & .carousel-info {
           padding: 0.5rem;
           height: 250px;
+
+          @media (max-width: 768px) {
+            height: 350px !important;
+          }
 
           & .carouselInfo {
             width: 100%;

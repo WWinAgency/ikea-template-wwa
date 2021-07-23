@@ -1,32 +1,32 @@
 <template>
   <div class="product">
-    <ul class="product-container">
-      <li class="product-showcase-item">
+    <div class="product-col">
+      <div class="product-row">
         <img src="@/assets/images/vase.jpg" class="product-image" />
-      </li>
-      <li class="product-showcase-item">{{ discount }}</li>
-      <li class="product-showcase-item">
+      </div>
+      <div class="product-row">{{ discount }}</div>
+      <div class="product-row">
         <a class="product-name" href=""
           ><strong>{{ name }}</strong></a
         >
-      </li>
-      <li class="product-showcase-item">
+      </div>
+      <div class="product-row">
         <h1>{{ type }}</h1>
-      </li>
-      <li class="product-showcase-item">
+      </div>
+      <div class="product-row">
         <h2>Preço habitual {{ normalPrice }} € /ud</h2>
-      </li>
-      <li class="product-price">
+      </div>
+      <div class="product-price">
         <h1>
           <strong>{{ currentPrice }}</strong>
         </h1>
         <h2><strong>€</strong></h2>
         <h3><strong>/ud</strong></h3>
-      </li>
-      <li class="product-showcase-item">
+      </div>
+      <div class="product-row">
         <div class="rating-stars">
-          <ul class="rating-list">
-            <li class="rating-item">
+          <div class="rating-col">
+            <div class="rating-row">
               <star-rating
                 v-bind:increment="0.5"
                 v-bind:max-rating="5"
@@ -38,14 +38,14 @@
                 read-only="true"
               >
               </star-rating>
-            </li>
-            <li class="rating-item">
+            </div>
+            <div class="rating-row">
               <h4>( {{ avaliacoes }} )</h4>
-            </li>
-          </ul>
+            </div>
+          </div>
         </div>
-      </li>
-    </ul>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -70,7 +70,7 @@ export default {
 
 <style lang="scss">
 .product {
-  & .product-container {
+  & .product-col {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -95,7 +95,7 @@ export default {
       }
     }
 
-    & .product-showcase-item {
+    & .product-row {
       width: 100% !important;
       display: flex;
       flex-direction: column;
@@ -135,11 +135,11 @@ export default {
       }
 
       & .rating-stars {
-        & .rating-list {
+        & .rating-col {
           display: ruby;
           list-style: none;
           padding-left: 0;
-          & .rating-item {
+          & .rating-row {
             & h4 {
               font-size: 0.875rem;
             }

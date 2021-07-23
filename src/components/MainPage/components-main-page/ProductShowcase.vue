@@ -70,7 +70,7 @@ export default {
 .product-showcase {
   width: 100%;
   padding: 0 !important;
-  margin: 4rem 0 4rem 0;
+  margin: 0 !important;
 
   & .product-list {
     width: 100%;

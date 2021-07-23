@@ -111,7 +111,7 @@ export default {
               initialSlide: 2,
               infinite: false,
               dots: true,
-              arrows: false,
+              arrows: true,
             },
           },
           {
@@ -133,12 +133,13 @@ export default {
 <style lang="scss">
 .carousel {
   width: 100% !important;
-  margin: 4rem 0 4rem 0 !important;
+  margin: 0 !important;
   display: flex;
   flex-direction: column;
 
   & .titulo {
     margin-bottom: 2rem;
+
     & h1 {
       font-size: 1.325rem;
       font-weight: bold;
@@ -160,9 +161,25 @@ export default {
         width: 200px;
         height: 250px;
 
+        @media (max-width: 768px) {
+          height: 400px !important;
+        }
+        @media (max-width: 380px) {
+          height: 350px !important;
+        }
+
         & .imagem {
           padding: 0.5rem;
-          height: 250px;
+          height: 300px;
+
+          @media (max-width: 768px) {
+            height: 400px;
+            padding: 0.5rem;
+          }
+          @media (max-width: 380px) {
+            height: 350px;
+            padding: 0;
+          }
 
           & img {
             width: 100%;

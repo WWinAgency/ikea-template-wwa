@@ -134,10 +134,13 @@ export default {
       align-items: center;
       margin: auto;
       & .carousel-item-1 {
-        padding: 0 0.5rem 0 0;
+        padding: 0 1rem 0 0;
+        @media (max-width: 768px) {
+          padding: 0 0.5rem 0 0;
+        }
       }
       & .carousel-item-2 {
-        padding: 0 0.5rem 0 0;
+        padding: 0 1rem 0 0;
 
         @media (max-width: 768px) {
           padding: 0 0.5rem 0 0;
