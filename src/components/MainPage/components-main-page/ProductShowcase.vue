@@ -87,7 +87,7 @@ export default {
 
     & .list-item-1 {
       @media (max-width: 768px) {
-        margin: 0 1rem 0 0;
+        margin: 0 0.5rem 0 0;
       }
 
       @media (max-width: 400px) {
@@ -99,7 +99,7 @@ export default {
       margin: 0 1rem 0 1rem;
 
       @media (max-width: 768px) {
-        margin: 0 0 0 1rem;
+        margin: 0 0 0 0.5rem;
       }
       @media (max-width: 400px) {
         margin: 0 0 1rem 0 !important;
@@ -110,7 +110,7 @@ export default {
       margin: 0 1rem 0 0;
 
       @media (max-width: 768px) {
-        margin: 0 1rem 0 0;
+        margin: 0 0.5rem 0 0;
       }
 
       @media (max-width: 400px) {
@@ -120,7 +120,7 @@ export default {
 
     & .list-item-4 {
       @media (max-width: 768px) {
-        margin: 0 0 0 1rem;
+        margin: 0 0 0 0.5rem;
       }
 
       @media (max-width: 400px) {

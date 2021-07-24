@@ -1,10 +1,10 @@
 <template>
   <div class="topGrid">
     <div class="row-1">
-      <div class="row-3">
+      <div class="text-row-1">
         <h1><strong>Há uma vida lá fora</strong></h1>
       </div>
-      <div class="row-4">
+      <div class="text-row-2">
         <div class="col-1">
           <h2>
             Faça chuva ou faça sol, neste verão desligue do dia a dia e faça uma
@@ -18,24 +18,30 @@
       </div>
     </div>
     <div class="row-2">
-      <b-container class="bv-product-row-top-grid">
-        <b-col class="col-3">
-          <b-row class="row-5"><Produto /></b-row>
-        </b-col>
-        <b-col class="col-4">
-          <b-row class="row-6"><Produto /></b-row>
-          <b-row class="row-7"><Produto /></b-row>
-        </b-col>
-        <b-col class="col-5">
-          <b-row class="row-8"><Produto /></b-row>
-        </b-col>
-      </b-container>
+      <div class="grid-container">
+        <div class="grid-container-left">
+          <div class="grid-col-1">
+            <div class="grid-row-1"><Produto /></div>
+          </div>
+        </div>
+        <div class="grid-container-right">
+          <div class="grid-col-2">
+            <div class="grid-row-2"><Produto /></div>
+            <div class="grid-row-3"><Produto /></div>
+          </div>
+          <div class="grid-col-3">
+            <div class="grid-row-4"><Produto /></div>
+            <div class="grid-row-5"><Produto /></div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 import Produto from "./Produto.vue";
+
 export default {
   components: { Produto },
 };
@@ -47,23 +53,28 @@ export default {
   width: 100%;
   margin: 0 !important;
   & .row-1 {
+    margin-bottom: 2rem !important;
     @media (max-with: 380px) {
       margin-left: 1rem !important;
     }
-    & .row-3 {
+    & .text-row-1 {
       justify-content: flex-start;
-      margin-bottom: 1rem;
+      margin-bottom: 0.5rem;
 
       & h1 {
-        font-size: 1.125rem;
+        font-size: 1.5625rem;
         text-align: left;
       }
     }
 
-    & .row-4 {
+    & .text-row-2 {
       display: flex;
       flex-direction: row;
       width: 100%;
+
+      @media (max-width: 768px) {
+        flex-direction: column;
+      }
 
       & .col-1 {
         width: 80%;
@@ -111,105 +122,114 @@ export default {
 
   & .row-2 {
     width: 100% !important;
+    margin: 0 !important;
 
-    & .bv-product-row-top-grid {
-      margin: 2rem 0 !important;
+    & .grid-container {
       display: flex;
       flex-direction: row;
-      justify-content: center;
-      width: 100% !important;
-      padding: 0 !important;
 
       @media (max-width: 768px) {
-        flex-direction: column !important;
-        width: 100% !important;
+        flex-direction: column;
       }
 
-      & .col-3 {
-        display: flex;
-        flex-direction: column;
-        width: 50% !important;
-        height: 50rem !important;
-
-        @media (max-width: 768px) {
-          height: 40rem !important;
-          margin-bottom: 1rem !important;
-          width: 100% !important;
-        }
-
-        @media (max-width: 380px) {
-          width: 100% !important;
-          height: 20rem !important;
-          margin-bottom: 1rem !important;
-        }
-
-        & .row-5 {
-          height: 100% !important;
+      & .grid-container-left {
+        & .grid-col-1 {
           display: flex;
-          justify-content: center;
-        }
-      }
-      & .col-4 {
-        margin: 0 1rem 0 1rem;
-        display: flex;
-        flex-direction: column;
-        width: 25% !important;
-        height: 50rem !important;
-
-        @media (max-width: 768px) {
-          width: 100% !important;
-          height: 80rem !important;
-          margin: 0 0 1rem 0 !important;
-        }
-
-        @media (max-width: 380px) {
-          width: 100% !important;
-          height: 40rem !important;
-          margin: 0 0 1rem 0 !important;
-        }
-
-        & .row-6 {
-          height: 60%;
-          margin-bottom: 1rem !important;
-          display: flex;
-          justify-content: center;
+          flex-direction: column;
 
           @media (max-width: 768px) {
-            height: 50% !important;
-            margin-bottom: 1rem !important;
+            flex-direction: row;
           }
-        }
-        & .row-7 {
-          height: 40%;
-          display: flex;
-          justify-content: center;
+          & .grid-row-1 {
+            height: 60rem;
+            padding: 0 0.5rem 0 0;
 
-          @media (max-width: 768px) {
-            height: 50% !important;
+            @media (max-width: 768px) {
+              height: 50rem;
+              padding: 0;
+            }
+            @media (max-width: 380px) {
+              height: 30rem;
+            }
           }
         }
       }
-      & .col-5 {
+
+      & .grid-container-right {
         display: flex;
-        flex-direction: column;
-        width: 25% !important;
-        height: 50rem !important;
+        flex-direction: row;
+        width: 100%;
 
         @media (max-width: 768px) {
-          width: 100% !important;
-          height: 40rem !important;
-          margin-bottom: 0.5rem !important;
+          flex-direction: row;
         }
-        @media (max-width: 380px) {
-          width: 100% !important;
-          height: 20rem !important;
-          margin-bottom: 0.5rem !important;
-        }
-
-        & .row-8 {
-          height: 100%;
+        & .grid-col-2 {
           display: flex;
-          justify-content: center;
+          flex-direction: column;
+
+          @media (max-width: 768px) {
+            flex-direction: column;
+            width: 50%;
+          }
+
+          & .grid-row-2 {
+            padding: 0 0.5rem 0.5rem 0.5rem;
+            height: 24rem;
+
+            @media (max-width: 768px) {
+              height: 20rem;
+              padding: 1rem 0.5rem 0 0;
+            }
+            @media (max-width: 380px) {
+              height: 12rem;
+            }
+          }
+          & .grid-row-3 {
+            padding: 0.5rem 0.5rem 0 0.5rem;
+            height: 36rem;
+
+            @media (max-width: 768px) {
+              height: 30rem;
+              padding: 1rem 0.5rem 0 0;
+            }
+            @media (max-width: 380px) {
+              height: 18rem;
+            }
+          }
+        }
+        & .grid-col-3 {
+          display: flex;
+          flex-direction: column;
+
+          @media (max-width: 768px) {
+            flex-direction: column;
+            width: 50%;
+          }
+
+          & .grid-row-4 {
+            height: 36rem;
+            padding: 0 0 0.5rem 0.5rem;
+
+            @media (max-width: 768px) {
+              height: 30rem;
+              padding: 1rem 0 0 0.5rem;
+            }
+            @media (max-width: 380px) {
+              height: 18rem;
+            }
+          }
+          & .grid-row-5 {
+            height: 24rem;
+            padding: 0.5rem 0 0 0.5rem;
+
+            @media (max-width: 768px) {
+              height: 20rem;
+              padding: 1rem 0 0 0.5rem;
+            }
+            @media (max-width: 380px) {
+              height: 12rem;
+            }
+          }
         }
       }
     }

@@ -3,10 +3,10 @@
     <VueSlickCarousel
       class="bottom-grid-carousel-component"
       v-bind="settings"
-      :arrows="true"
+      :arrows="false"
       :dots="false"
     >
-      <div><b-button class="btn" variant="light">Quarto</b-button></div>
+      <div><b-button class="btn-1" variant="light">Quarto</b-button></div>
       <div><b-button class="btn" variant="light">Sala</b-button></div>
       <div><b-button class="btn" variant="light">Cozinha</b-button></div>
       <div><b-button class="btn" variant="light">Escritório</b-button></div>
@@ -39,17 +39,16 @@ export default {
     return {
       settings: {
         infinite: false,
-        speed: 500,
-        slidesToShow: 8,
-        slidesToScroll: 2,
-        initialSlide: 0,
-        dots: true,
+        centerMode: false,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        variableWidth: true,
         responsive: [
           {
             breakpoint: 770,
             settings: {
-              slidesToShow: 4,
-              slidesToScroll: 4,
+              slidesToShow: 5,
+              slidesToScroll: 3,
               initialSlide: 0,
               infinite: false,
               dots: false,
@@ -75,13 +74,17 @@ export default {
 
 <style lang="scss">
 .bottomGridButtonCarousel {
+  margin: 0 !important;
+  padding: 0 !important;
   & .bottom-grid-carousel-component {
     & .btn {
       border-radius: 64px;
-      font-size: 0.55rem;
+      font-size: 100%;
       font-weight: bold;
       height: 2.5rem;
-      width: 9rem;
+      line-height: 1.5;
+      min-width: 5rem;
+      margin-left: 0.75rem !important;
       background-color: #f5f5f5;
       border: 1px solid #f5f5f5;
       &:hover {
@@ -89,6 +92,28 @@ export default {
         border: 1px solid #e0e0e0;
       }
     }
+
+    & .btn-1 {
+      border-radius: 64px;
+      font-size: 100%;
+      font-weight: bold;
+      height: 2.5rem;
+      line-height: 1.5;
+      min-width: 5rem;
+      margin-left: 0.75rem !important;
+      background-color: #f5f5f5;
+      border: 1px solid #f5f5f5;
+      &:hover {
+        background-color: #e0e0e0;
+        border: 1px solid #e0e0e0;
+      }
+      margin-left: 0 !important;
+
+      @media (max-width: 768px) {
+        margin-left: 1rem !important;
+      }
+    }
+
     & .slick-prev {
       left: 0;
       z-index: 1;

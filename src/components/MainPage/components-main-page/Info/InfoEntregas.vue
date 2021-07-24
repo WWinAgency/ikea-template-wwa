@@ -90,12 +90,17 @@ export default {};
         background-color: #f5f5f5;
         grid-row: 1 / 2;
         grid-column: 1 / 2;
+        margin-right: 0.125rem !important;
         padding: 2rem;
 
-        @media (min-width: 968px) {
-          display: flex;
-          flex-direction: column;
-          width: 25%;
+        @media (min-width: 768px) {
+          width: 100%;
+          margin: 0 0.25rem 0.25rem 0 !important;
+        }
+
+        @media (min-width: 380px) {
+          width: 100%;
+          margin: 0 !important;
         }
 
         & .inner-row {
@@ -125,12 +130,16 @@ export default {};
         background-color: #f5f5f5;
         grid-row: 1 / 2;
         grid-column: 2 / 2;
+        margin-left: 0.125rem !important;
+        margin-right: 0.125rem !important;
         padding: 2rem;
-
-        @media (min-width: 968px) {
-          display: flex;
-          flex-direction: column;
-          width: 25%;
+        @media (min-width: 768px) {
+          width: 100%;
+          margin: 0 0rem 0.25rem 0.25rem !important;
+        }
+        @media (min-width: 380px) {
+          width: 100%;
+          margin: 0 !important;
         }
 
         & .inner-row {
@@ -160,12 +169,17 @@ export default {};
         background-color: #f5f5f5;
         grid-row: 2 / 2;
         grid-column: 1 / 2;
+        margin-left: 0.125rem;
+        margin-right: 0.125rem;
         padding: 2rem;
 
-        @media (min-width: 968px) {
-          display: flex;
-          flex-direction: column;
-          width: 25%;
+        @media (min-width: 768px) {
+          width: 100%;
+          margin: 0 0.25rem 0.25rem 0 !important;
+        }
+        @media (min-width: 380px) {
+          width: 100%;
+          margin: 0 !important;
         }
 
         & .inner-row {
@@ -195,12 +209,16 @@ export default {};
         background-color: #f5f5f5;
         grid-row: 2 / 2;
         grid-column: 2 / 2;
+        margin-left: 0.125rem;
         padding: 2rem;
 
-        @media (min-width: 968px) {
-          display: flex;
-          flex-direction: column;
-          width: 25%;
+        @media (min-width: 768px) {
+          width: 100%;
+          margin: 0 0 0.25rem 0.25rem !important;
+        }
+        @media (min-width: 380px) {
+          width: 100%;
+          margin: 0 !important;
         }
 
         & .inner-row {

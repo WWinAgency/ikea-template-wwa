@@ -35,7 +35,7 @@ export default {
   transition: 0.3s ease-in-out;
 
   & .content {
-    width: 70%;
+    width: 80%;
     margin: auto;
     transition: 0.3s ease-in-out;
 
@@ -43,7 +43,7 @@ export default {
       width: 90%;
     }
     @media (max-width: 768px) {
-      width: 95%;
+      width: 90%;
       overflow: hidden;
     }
     & .row {

@@ -102,8 +102,13 @@ export default {
       margin-bottom: 0.5rem;
 
       & img {
-        width: 320px !important;
-        height: 320px !important;
+        width: 365px !important;
+        height: 365px !important;
+
+        @media (max-width: 768px) {
+          width: 337px !important;
+          height: 337px !important;
+        }
       }
 
       & .product-name {
@@ -125,8 +130,8 @@ export default {
         height: 250px;
 
         @media (max-width: 768px) {
-          width: 348px !important;
-          height: 348px !important;
+          width: 337px !important;
+          height: 337px !important;
         }
 
         @media (max-width: 400px) {

@@ -1,6 +1,9 @@
 <template>
   <div class="carousel-important">
-    <h1>Os mais vistos</h1>
+    <div class="titulo">
+      <h1>Os mais vistos</h1>
+    </div>
+
     <div class="carousel-container">
       <VueSlickCarousel
         class="carousel-component"
@@ -106,7 +109,7 @@ export default {
 <style lang="scss">
 .carousel-important {
   width: 100%;
-  margin: 4rem 0 4rem 0 !important;
+  margin: 0 !important;
 
   @media (max-width: 768px) {
     width: 100%;
@@ -114,12 +117,16 @@ export default {
   @media (max-width: 400px) {
     width: 100%;
   }
-  margin: 4rem auto;
-  & h1 {
-    font-size: 1.325rem;
-    font-weight: bold;
-    line-height: 1.44444rem;
+
+  & .titulo {
+    margin-bottom: 2rem;
+    & h1 {
+      font-size: 1.5625rem;
+      font-weight: bold;
+      line-height: 1.44444rem;
+    }
   }
+
   & .carousel-container {
     width: 100%;
 

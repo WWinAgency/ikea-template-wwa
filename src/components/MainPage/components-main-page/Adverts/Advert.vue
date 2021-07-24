@@ -67,8 +67,8 @@ export default {
       }
 
       & h2 {
-        font-size: 0.875rem;
-        margin-top: 2rem;
+        font-size: 0.875rem !important;
+        margin-top: 0.5rem !important;
       }
 
       & h3 {

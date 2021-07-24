@@ -57,7 +57,7 @@ export default {
 
     & .mainPage-row {
       width: 100%;
-      margin-bottom: 3rem !important;
+      margin-bottom: 4rem !important;
     }
   }
 }

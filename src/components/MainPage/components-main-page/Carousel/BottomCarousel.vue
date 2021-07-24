@@ -94,37 +94,38 @@ export default {
       imageCarousel4: imageCarousel4,
 
       settings: {
-        dots: true,
-        infinite: false,
-        speed: 500,
+        infinite: true,
+        centerMode: true,
+        centerPadding: 5,
         slidesToShow: 6,
-        slidesToScroll: 6,
-        initialSlide: 0,
+        slidesToScroll: 9,
+        speed: 500,
+        initialSlide: 3,
+        dots: true,
+        dotsClass: "slick-dots costum-dot-class",
         responsive: [
-          {
-            breakpoint: 1024,
-            settings: {
-              slidesToShow: 3,
-              slidesToScroll: 3,
-              infinite: true,
-              dots: true,
-            },
-          },
           {
             breakpoint: 770,
             settings: {
+              infinite: true,
+              centerMode: true,
+              centerPadding: 5,
               slidesToShow: 2,
               slidesToScroll: 2,
-              initialSlide: 2,
-              dots: true,
+              initialSlide: 1,
+              dots: false,
               arrows: true,
             },
           },
           {
             breakpoint: 480,
             settings: {
+              infinite: true,
+              centerMode: true,
+              centerPadding: 5,
               slidesToShow: 1,
               slidesToScroll: 1,
+              initialSlide: 0,
               dots: false,
               arrows: false,
             },
@@ -145,7 +146,7 @@ export default {
   & .titulo {
     margin-bottom: 2rem;
     & h1 {
-      font-size: 1.325rem;
+      font-size: 1.5625rem;
       font-weight: bold;
       line-height: 1.44444rem;
     }
@@ -162,35 +163,53 @@ export default {
 
     & .carousel-component {
       & .carousel-item {
-        width: 200px;
-        height: 250px;
+        width: 235px !important;
+        height: 300px !important;
 
         @media (max-width: 768px) {
+          width: 235px !important;
+          height: 400px !important;
+        }
+        @media (max-width: 380px) {
+          width: 235px !important;
           height: 350px !important;
         }
 
-        & .imagem {
-          padding: 0.5rem;
-          height: 250px;
+        & .carousel-info {
+          width: 235px;
+          height: 310px;
 
           @media (max-width: 768px) {
+            width: 340px;
+            height: 400px;
+            padding: 0.5rem 1rem 0.5rem 0;
+          }
+          @media (max-width: 380px) {
             height: 350px !important;
+            width: 300px;
+            padding: 0;
           }
 
-          & img {
+          & .carouselInfo {
             width: 100%;
             height: 100%;
           }
         }
-        & .carousel-info {
-          padding: 0.5rem;
-          height: 250px;
+
+        & .imagem {
+          height: 300px;
 
           @media (max-width: 768px) {
-            height: 350px !important;
+            height: 400px;
+            width: 340px;
+            padding: 0.5rem 1rem 0.5rem 0;
+          }
+          @media (max-width: 380px) {
+            height: 350px;
+            padding: 0 0 0 0;
           }
 
-          & .carouselInfo {
+          & img {
             width: 100%;
             height: 100%;
           }
@@ -200,6 +219,7 @@ export default {
       & .slick-prev {
         left: 0;
         z-index: 1;
+
         &::before {
           font-size: 30px;
           color: black !important;

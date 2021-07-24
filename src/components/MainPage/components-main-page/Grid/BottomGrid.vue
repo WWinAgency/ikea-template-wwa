@@ -1,31 +1,31 @@
 <template>
   <div class="bottomGrid">
     <div class="row-1">
-      <div class="row-3">
+      <div class="text-row-1">
         <h1><strong>Mais ideias e inspiração</strong></h1>
       </div>
-      <div class="row-4">
+      <div class="text-row-2">
         <BottomGridButtonCarousel />
       </div>
     </div>
     <div class="row-2">
-      <b-container class="bv-product-row">
-        <b-col class="col-6">
-          <b-row class="row-5"><Produto /></b-row>
-          <b-row class="row-6"><Produto /></b-row>
-        </b-col>
-        <b-col class="col-7">
-          <b-row class="row-7"><Produto /></b-row>
-          <b-row class="row-8"><Produto /></b-row>
-        </b-col>
-        <b-col class="col-8">
-          <b-row class="row-9"><Produto /></b-row>
-          <b-row class="row-12"><Produto /></b-row>
-        </b-col>
-      </b-container>
-    </div>
-    <div class="row-11">
-      <b-button class="expand-grid" variant="dark">Aderir agora</b-button>
+      <div class="grid-container">
+        <div class="grid-container-left">
+          <div class="grid-col-1">
+            <div class="grid-row-1"><Produto /></div>
+          </div>
+        </div>
+        <div class="grid-container-right">
+          <div class="grid-col-2">
+            <div class="grid-row-2"><Produto /></div>
+            <div class="grid-row-3"><Produto /></div>
+          </div>
+          <div class="grid-col-3">
+            <div class="grid-row-4"><Produto /></div>
+            <div class="grid-row-5"><Produto /></div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -33,6 +33,7 @@
 <script>
 import Produto from "./Produto.vue";
 import BottomGridButtonCarousel from "./BottomGridButtonCarousel.vue";
+
 export default {
   components: { Produto, BottomGridButtonCarousel },
 };
@@ -40,208 +41,142 @@ export default {
 
 <style lang="scss">
 .bottomGrid {
-  width: 100%;
-  display: flex;
   flex-direction: column;
+  width: 100%;
   margin: 0 !important;
   & .row-1 {
-    & .row-3 {
+    margin-bottom: 2rem !important;
+    @media (max-with: 380px) {
+      margin-left: 1rem !important;
+    }
+    & .text-row-1 {
       justify-content: flex-start;
       margin-bottom: 1rem;
 
       & h1 {
-        font-size: 1.125rem;
+        font-size: 1.5625rem;
         text-align: left;
       }
     }
 
-    & .row-4 {
+    & .text-row-2 {
       width: 100%;
+      padding: 0 !important;
+      margin: 0 !important;
     }
   }
 
   & .row-2 {
-    padding: 0;
+    width: 100% !important;
+    margin: 0 !important;
 
-    & .bv-product-row {
+    & .grid-container {
       display: flex;
       flex-direction: row;
-      justify-content: center;
-      width: 100% !important;
-      min-height: 60rem;
-      padding: 0 !important;
 
       @media (max-width: 768px) {
-        flex-direction: column !important;
-        width: 100% !important;
+        flex-direction: column;
       }
 
-      & .col-6 {
+      & .grid-container-left {
+        & .grid-col-1 {
+          display: flex;
+          flex-direction: column;
+
+          @media (max-width: 768px) {
+            flex-direction: row;
+          }
+          & .grid-row-1 {
+            height: 60rem;
+            padding: 0 0.5rem 0 0;
+
+            @media (max-width: 768px) {
+              height: 50rem;
+              padding: 0;
+            }
+            @media (max-width: 380px) {
+              height: 30rem;
+            }
+          }
+        }
+      }
+
+      & .grid-container-right {
         display: flex;
-        flex-direction: column;
-        width: 33% !important;
-        height: 70rem !important;
+        flex-direction: row;
+        width: 100%;
 
         @media (max-width: 768px) {
-          height: 80rem !important;
-          margin-bottom: 1rem !important;
-          width: 100% !important;
+          flex-direction: row;
         }
-        @media (max-width: 380px) {
-          width: 100% !important;
-          height: 40rem !important;
-          margin-bottom: 1rem !important;
-        }
-
-        & .row-5 {
-          height: 40%;
-          margin-bottom: 1rem !important;
+        & .grid-col-2 {
           display: flex;
-          justify-content: center;
+          flex-direction: column;
 
           @media (max-width: 768px) {
-            height: 50%;
-            margin-bottom: 1rem !important;
+            flex-direction: column;
+            width: 50%;
           }
 
-          & .produto {
-            background-color: red;
-            width: 100%;
-            height: 100%;
+          & .grid-row-2 {
+            padding: 0 0.5rem 0.5rem 0.5rem;
+            height: 24rem;
+
+            @media (max-width: 768px) {
+              height: 20rem;
+              padding: 1rem 0.5rem 0 0;
+            }
+            @media (max-width: 380px) {
+              height: 12rem;
+            }
+          }
+          & .grid-row-3 {
+            padding: 0.5rem 0.5rem 0 0.5rem;
+            height: 36rem;
+
+            @media (max-width: 768px) {
+              height: 30rem;
+              padding: 1rem 0.5rem 0 0;
+            }
+            @media (max-width: 380px) {
+              height: 18rem;
+            }
           }
         }
-        & .row-6 {
-          height: 60%;
+        & .grid-col-3 {
           display: flex;
-          justify-content: center;
+          flex-direction: column;
 
           @media (max-width: 768px) {
-            height: 50%;
+            flex-direction: column;
+            width: 50%;
           }
 
-          & .produto {
-            background-color: blue;
-            width: 100%;
-            height: 100%;
+          & .grid-row-4 {
+            height: 36rem;
+            padding: 0 0 0.5rem 0.5rem;
+
+            @media (max-width: 768px) {
+              height: 30rem;
+              padding: 1rem 0 0 0.5rem;
+            }
+            @media (max-width: 380px) {
+              height: 18rem;
+            }
           }
-        }
-      }
-      & .col-7 {
-        margin: 0 1rem 0 1rem;
-        display: flex;
-        flex-direction: column;
-        width: 33% !important;
-        height: 70rem !important;
+          & .grid-row-5 {
+            height: 24rem;
+            padding: 0.5rem 0 0 0.5rem;
 
-        @media (max-width: 768px) {
-          width: 100% !important;
-          height: 80rem !important;
-          margin: 0 0 1rem 0 !important;
-        }
-        @media (max-width: 380px) {
-          width: 100% !important;
-          height: 40rem !important;
-          margin-bottom: 1rem !important;
-        }
-
-        & .row-7 {
-          height: 60%;
-          margin-bottom: 1rem !important;
-          display: flex;
-          justify-content: center;
-
-          @media (max-width: 768px) {
-            height: 50%;
-            margin-bottom: 1rem !important;
-          }
-
-          & .produto {
-            background-color: green;
-            width: 100%;
-            height: 100%;
+            @media (max-width: 768px) {
+              height: 20rem;
+              padding: 1rem 0 0 0.5rem;
+            }
+            @media (max-width: 380px) {
+              height: 12rem;
+            }
           }
         }
-        & .row-8 {
-          height: 40%;
-          display: flex;
-          justify-content: center;
-
-          @media (max-width: 768px) {
-            height: 50%;
-          }
-
-          & .produto {
-            background-color: yellow;
-            width: 100%;
-            height: 100%;
-          }
-        }
-      }
-      & .col-8 {
-        display: flex;
-        flex-direction: column;
-        width: 33% !important;
-        height: 70rem !important;
-
-        @media (max-width: 768px) {
-          width: 100% !important;
-          height: 80rem !important;
-          margin-bottom: 0.5rem !important;
-        }
-        @media (max-width: 380px) {
-          width: 100% !important;
-          height: 40rem !important;
-          margin-bottom: 1rem !important;
-        }
-
-        & .row-9 {
-          height: 50%;
-          display: flex;
-          justify-content: center;
-          margin-bottom: 1rem !important;
-
-          @media (max-width: 768px) {
-            height: 50%;
-            margin-bottom: 1rem !important;
-          }
-
-          & .produto {
-            background-color: magenta;
-            width: 100%;
-            height: 100%;
-          }
-        }
-        & .row-12 {
-          height: 50%;
-          display: flex;
-          justify-content: center;
-
-          @media (max-width: 768px) {
-            height: 50%;
-          }
-
-          & .produto {
-            background-color: aqua;
-            width: 100%;
-            height: 100%;
-          }
-        }
-      }
-    }
-  }
-
-  & .row-11 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    & .expand-grid {
-      border-radius: 20px !important;
-      font-size: 0.75rem !important;
-      font-weight: 700 !important;
-      margin: 1rem auto 1rem auto;
-
-      &:hover {
-        background-color: #303030;
       }
     }
   }

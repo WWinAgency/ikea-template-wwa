@@ -87,39 +87,38 @@ export default {
       imageCarousel3: imageCarousel3,
 
       settings: {
-        infinite: false,
-        speed: 500,
+        infinite: true,
+        centerMode: true,
+        centerPadding: 5,
         slidesToShow: 6,
-        slidesToScroll: 6,
-        initialSlide: 0,
+        slidesToScroll: 9,
+        speed: 500,
+        initialSlide: 3,
         dots: true,
+        dotsClass: "slick-dots costum-dot-class",
         responsive: [
-          {
-            breakpoint: 1024,
-            settings: {
-              slidesToShow: 3,
-              slidesToScroll: 3,
-              infinite: false,
-              dots: true,
-            },
-          },
           {
             breakpoint: 770,
             settings: {
+              infinite: true,
+              centerMode: true,
+              centerPadding: 5,
               slidesToShow: 2,
               slidesToScroll: 2,
-              initialSlide: 2,
-              infinite: false,
-              dots: true,
+              initialSlide: 1,
+              dots: false,
               arrows: true,
             },
           },
           {
             breakpoint: 480,
             settings: {
+              infinite: true,
+              centerMode: true,
+              centerPadding: 5,
               slidesToShow: 1,
-              infinite: false,
               slidesToScroll: 1,
+              initialSlide: 0,
               dots: false,
               arrows: false,
             },
@@ -134,14 +133,16 @@ export default {
 .carousel {
   width: 100% !important;
   margin: 0 !important;
+  padding: 0 !important;
   display: flex;
   flex-direction: column;
+  justify-content: center;
 
   & .titulo {
     margin-bottom: 2rem;
 
     & h1 {
-      font-size: 1.325rem;
+      font-size: 1.5625rem;
       font-weight: bold;
       line-height: 1.44444rem;
     }
@@ -158,8 +159,8 @@ export default {
 
     & .carousel-component {
       & .carousel-item {
-        width: 200px;
-        height: 250px;
+        width: 230px !important;
+        height: 310px !important;
 
         @media (max-width: 768px) {
           height: 400px !important;
@@ -169,12 +170,13 @@ export default {
         }
 
         & .imagem {
-          padding: 0.5rem;
-          height: 300px;
+          width: 230px;
+          height: 310px;
 
           @media (max-width: 768px) {
             height: 400px;
-            padding: 0.5rem;
+            width: 340px;
+            padding: 0 0.5rem 0 0.5rem;
           }
           @media (max-width: 380px) {
             height: 350px;
