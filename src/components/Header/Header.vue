@@ -3,9 +3,14 @@
     <b-navbar>
       <div class="d-flex align-items-center">
         <div class="logo align-items-center mb-1">
-          <b-navbar-vrand href="/shop"
-            ><b-icon icon="shop" scale="1.5" variant="dark"></b-icon
-          ></b-navbar-vrand>
+          <a class="brand" href="/">
+            <b-icon
+              class="icon"
+              icon="shop"
+              scale="1.5"
+              variant="dark"
+            ></b-icon>
+          </a>
         </div>
       </div>
       <div class="d-flex float-none">
@@ -49,6 +54,13 @@ export default {
 }
 .navbar {
   justify-content: space-between !important;
+
+  & .brand {
+    background-color: white;
+    border: none;
+    width: 3rem;
+    height: 3rem;
+  }
 }
 
 .nav-link {

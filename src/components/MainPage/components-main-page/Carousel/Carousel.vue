@@ -98,7 +98,59 @@ export default {
         dotsClass: "slick-dots costum-dot-class",
         responsive: [
           {
-            breakpoint: 770,
+            breakpoint: 1800,
+            settings: {
+              infinite: true,
+              centerMode: true,
+              centerPadding: 5,
+              slidesToShow: 5,
+              slidesToScroll: 2,
+              initialSlide: 1,
+              dots: false,
+              arrows: true,
+            },
+          },
+          {
+            breakpoint: 1500,
+            settings: {
+              infinite: true,
+              centerMode: true,
+              centerPadding: 5,
+              slidesToShow: 4,
+              slidesToScroll: 2,
+              initialSlide: 1,
+              dots: false,
+              arrows: true,
+            },
+          },
+          {
+            breakpoint: 1200,
+            settings: {
+              infinite: true,
+              centerMode: true,
+              centerPadding: 5,
+              slidesToShow: 4,
+              slidesToScroll: 2,
+              initialSlide: 1,
+              dots: false,
+              arrows: true,
+            },
+          },
+          {
+            breakpoint: 1050,
+            settings: {
+              infinite: true,
+              centerMode: true,
+              centerPadding: 5,
+              slidesToShow: 3,
+              slidesToScroll: 2,
+              initialSlide: 1,
+              dots: false,
+              arrows: true,
+            },
+          },
+          {
+            breakpoint: 800,
             settings: {
               infinite: true,
               centerMode: true,
@@ -110,6 +162,20 @@ export default {
               arrows: true,
             },
           },
+          {
+            breakpoint: 670,
+            settings: {
+              infinite: true,
+              centerMode: true,
+              centerPadding: 5,
+              slidesToShow: 1,
+              slidesToScroll: 2,
+              initialSlide: 1,
+              dots: false,
+              arrows: true,
+            },
+          },
+
           {
             breakpoint: 480,
             settings: {
@@ -162,25 +228,39 @@ export default {
         width: 230px !important;
         height: 310px !important;
 
-        @media (max-width: 768px) {
+        @media (max-width: 800px) {
           height: 400px !important;
+          width: 320px !important;
         }
-        @media (max-width: 380px) {
+        @media (max-width: 670px) {
+          height: 500px !important;
+          width: 500px !important;
+        }
+        @media (max-width: 560px) {
+          height: 400px !important;
+          width: 400px !important;
+        }
+        @media (max-width: 500px) {
           height: 350px !important;
+          width: 310px !important;
         }
 
         & .imagem {
           width: 230px;
           height: 310px;
 
-          @media (max-width: 768px) {
+          @media (max-width: 800px) {
             height: 400px;
-            width: 340px;
-            padding: 0 0.5rem 0 0.5rem;
+            width: 320px;
+            padding: 0;
+          }
+          @media (max-width: 670px) {
+            height: 100%;
+            width: 100%;
           }
           @media (max-width: 380px) {
-            height: 350px;
-            padding: 0;
+            height: 350px !important;
+            width: 310px !important;
           }
 
           & img {

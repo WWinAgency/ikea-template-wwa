@@ -2,14 +2,14 @@
   <div class="topGrid">
     <div class="row-1">
       <div class="text-row-1">
-        <h1><strong>Há uma vida lá fora</strong></h1>
+        <h1><strong>As novidades esperam por si</strong></h1>
       </div>
       <div class="text-row-2">
         <div class="col-1">
           <h2>
-            Faça chuva ou faça sol, neste verão desligue do dia a dia e faça uma
-            pausa. Os nossos novos produtos vão inspirá-lo a espairecer a mente
-            e ligar-se à natureza.
+            Depois dos piqueniques no jardim, dos passeios na natureza e dos
+            mergulhos na praia, é tempo de voltar a casa e descobrir a nova
+            coleção de outono da IKEA.
           </h2>
         </div>
         <div class="col-2">
@@ -54,7 +54,7 @@ export default {
   margin: 0 !important;
   & .row-1 {
     margin-bottom: 2rem !important;
-    @media (max-with: 380px) {
+    @media (max-with: 400px) {
       margin-left: 1rem !important;
     }
     & .text-row-1 {
@@ -72,7 +72,7 @@ export default {
       flex-direction: row;
       width: 100%;
 
-      @media (max-width: 768px) {
+      @media (max-width: 800px) {
         flex-direction: column;
       }
 
@@ -80,7 +80,7 @@ export default {
         width: 80%;
         padding: 1rem 1rem 1rem auto;
 
-        @media (max-width: 380px) {
+        @media (max-width: 400px) {
           margin-bottom: 1.5rem;
         }
         & h2 {
@@ -95,7 +95,12 @@ export default {
         width: 20%;
         padding: 1rem 1rem 1rem auto;
 
-        @media (max-width: 380px) {
+        @media (max-width: 800px) {
+          margin-top: 1rem;
+          padding: 0 !important;
+        }
+
+        @media (max-width: 400px) {
           width: 100%;
           justify-content: flex-start;
         }
@@ -128,7 +133,7 @@ export default {
       display: flex;
       flex-direction: row;
 
-      @media (max-width: 768px) {
+      @media (max-width: 1050px) {
         flex-direction: column;
       }
 
@@ -137,18 +142,22 @@ export default {
           display: flex;
           flex-direction: column;
 
-          @media (max-width: 768px) {
+          @media (max-width: 1050px) {
             flex-direction: row;
           }
           & .grid-row-1 {
             height: 60rem;
             padding: 0 0.5rem 0 0;
 
-            @media (max-width: 768px) {
+            @media (max-width: 1500px) {
+              height: 40rem;
+              padding: 0 0.5rem 0 0;
+            }
+            @media (max-width: 1050px) {
               height: 50rem;
               padding: 0;
             }
-            @media (max-width: 380px) {
+            @media (max-width: 400px) {
               height: 30rem;
             }
           }
@@ -160,14 +169,14 @@ export default {
         flex-direction: row;
         width: 100%;
 
-        @media (max-width: 768px) {
+        @media (max-width: 1050px) {
           flex-direction: row;
         }
         & .grid-col-2 {
           display: flex;
           flex-direction: column;
 
-          @media (max-width: 768px) {
+          @media (max-width: 1050px) {
             flex-direction: column;
             width: 50%;
           }
@@ -176,11 +185,15 @@ export default {
             padding: 0 0.5rem 0.5rem 0.5rem;
             height: 24rem;
 
-            @media (max-width: 768px) {
+            @media (max-width: 1500px) {
+              height: 12rem;
+              padding: 0 0.5rem 0.5rem 0.5rem;
+            }
+            @media (max-width: 1050px) {
               height: 20rem;
               padding: 1rem 0.5rem 0 0;
             }
-            @media (max-width: 380px) {
+            @media (max-width: 400px) {
               height: 12rem;
             }
           }
@@ -188,11 +201,15 @@ export default {
             padding: 0.5rem 0.5rem 0 0.5rem;
             height: 36rem;
 
-            @media (max-width: 768px) {
+            @media (max-width: 1500px) {
+              height: 28rem;
+              padding: 0.5 0.5rem 0 0.5rem;
+            }
+            @media (max-width: 1050px) {
               height: 30rem;
               padding: 1rem 0.5rem 0 0;
             }
-            @media (max-width: 380px) {
+            @media (max-width: 400px) {
               height: 18rem;
             }
           }
@@ -201,7 +218,7 @@ export default {
           display: flex;
           flex-direction: column;
 
-          @media (max-width: 768px) {
+          @media (max-width: 1050px) {
             flex-direction: column;
             width: 50%;
           }
@@ -210,11 +227,15 @@ export default {
             height: 36rem;
             padding: 0 0 0.5rem 0.5rem;
 
-            @media (max-width: 768px) {
+            @media (max-width: 1500px) {
+              height: 19rem;
+              padding: 0 0 0.5rem 0.5rem;
+            }
+            @media (max-width: 1050px) {
               height: 30rem;
               padding: 1rem 0 0 0.5rem;
             }
-            @media (max-width: 380px) {
+            @media (max-width: 400px) {
               height: 18rem;
             }
           }
@@ -222,11 +243,16 @@ export default {
             height: 24rem;
             padding: 0.5rem 0 0 0.5rem;
 
-            @media (max-width: 768px) {
+            @media (max-width: 1500px) {
+              height: 21rem;
+              padding: 0.5rem 0 0 0.5rem;
+            }
+
+            @media (max-width: 1050px) {
               height: 20rem;
               padding: 1rem 0 0 0.5rem;
             }
-            @media (max-width: 380px) {
+            @media (max-width: 400px) {
               height: 12rem;
             }
           }

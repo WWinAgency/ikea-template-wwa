@@ -1,7 +1,7 @@
 <template>
   <div class="product-showcase">
-    <ul class="product-list">
-      <li class="list-item-1">
+    <div class="product-grid-row-1">
+      <div class="product-grid-col-1">
         <Product
           productImage="src\assets\images\vase.jpg"
           name="FEJKA"
@@ -11,8 +11,8 @@
           rating="4.5"
           avaliacoes="8"
         />
-      </li>
-      <li class="list-item-2">
+      </div>
+      <div class="product-grid-col-2">
         <Product
           productImage="src\assets\images\window-blinds.jpg"
           name="SKOGSKLÖVER"
@@ -22,8 +22,8 @@
           rating="4"
           avaliacoes="148"
         />
-      </li>
-      <li class="list-item-3">
+      </div>
+      <div class="product-grid-col-3">
         <Product
           productImage="src\assets\images\chair.jpg"
           name="HUSARÖ"
@@ -33,8 +33,8 @@
           rating="4.5"
           avaliacoes="10"
         />
-      </li>
-      <li class="list-item-4">
+      </div>
+      <div class="product-grid-col-4">
         <Product
           productImage="src\assets\images\storage.jpg"
           name="HAUGA"
@@ -44,13 +44,14 @@
           rating="4"
           avaliacoes="5"
         />
-      </li>
-    </ul>
-
-    <div class="promocoes-ikea-family">
-      <b-button class="ikea-family-btn" variant="dark"
-        >Ver promoções IKEA Family</b-button
-      >
+      </div>
+    </div>
+    <div class="product-grid-row-2">
+      <div class="promocoes-ikea-family">
+        <b-button class="ikea-family-btn" variant="dark"
+          >Ver promoções IKEA Family</b-button
+        >
+      </div>
     </div>
   </div>
 </template>
@@ -68,75 +69,155 @@ export default {
 
 <style lang="scss">
 .product-showcase {
-  width: 100%;
-  padding: 0 !important;
-  margin: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  display: flex;
+  flex-direction: column;
 
-  & .product-list {
-    width: 100%;
-    list-style: none;
+  & .product-grid-row-1 {
     display: flex;
-    flex-wrap: wrap;
     flex-direction: row;
-    justify-content: space-evenly;
-    padding-left: 0 !important;
+    width: 100% !important;
 
-    @media (max-width: 400px) {
+    @media (max-width: 1500px) {
+      display: grid;
+      grid-template-columns: repeat(2, 50%);
+      grid-template-rows: repeat(2, 50%);
+      height: 100%;
       width: 100%;
     }
-
-    & .list-item-1 {
-      @media (max-width: 768px) {
-        margin: 0 0.5rem 0 0;
-      }
-
-      @media (max-width: 400px) {
-        margin: 0 0 1rem 0 !important;
-      }
+    @media (max-width: 700px) {
+      height: 180rem;
+      display: grid;
+      grid-template-columns: repeat(1, 100%);
+      grid-template-rows: repeat(4, 25%);
     }
 
-    & .list-item-2 {
-      margin: 0 1rem 0 1rem;
+    & .product-grid-col-1 {
+      width: 25% !important;
+      padding-right: 0.5rem;
 
-      @media (max-width: 768px) {
-        margin: 0 0 0 0.5rem;
+      @media (max-width: 1500px) {
+        grid-row: 1 / 2;
+        grid-column: 1 / 2;
+        width: 100% !important;
       }
-      @media (max-width: 400px) {
-        margin: 0 0 1rem 0 !important;
+      @media (max-width: 800px) {
+        grid-row: 1 / 2;
+        grid-column: 1 / 2;
+        width: 100% !important;
+        padding-right: 0.5rem;
+      }
+      @media (max-width: 700px) {
+        grid-row: 1 / 4;
+        grid-column: 1 / 1;
+        width: 100% !important;
+        height: 25% !important;
+        padding: 0 !important;
+        margin: 0 !important;
       }
     }
+    & .product-grid-col-2 {
+      width: 25% !important;
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
 
-    & .list-item-3 {
-      margin: 0 1rem 0 0;
-
-      @media (max-width: 768px) {
-        margin: 0 0.5rem 0 0;
+      @media (max-width: 1500px) {
+        grid-row: 1 / 2;
+        grid-column: 2 / 2;
+        width: 100% !important;
       }
 
-      @media (max-width: 400px) {
-        margin: 0 0 1rem 0 !important;
+      @media (max-width: 800px) {
+        grid-row: 1 / 2;
+        grid-column: 2 / 2;
+        width: 100% !important;
+        padding-left: 0.5rem;
+        padding-right: 0;
+      }
+
+      @media (max-width: 700px) {
+        grid-row: 2 / 4;
+        grid-column: 1 / 1;
+        width: 100% !important;
+        height: 25% !important;
+        padding: 0 !important;
+        margin: 0 !important;
       }
     }
+    & .product-grid-col-3 {
+      width: 25% !important;
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
 
-    & .list-item-4 {
-      @media (max-width: 768px) {
-        margin: 0 0 0 0.5rem;
+      @media (max-width: 1500px) {
+        grid-row: 2 / 2;
+        grid-column: 1 / 2;
+        width: 100% !important;
       }
+      @media (max-width: 800px) {
+        grid-row: 2 / 2;
+        grid-column: 1 / 2;
+        width: 100% !important;
+        padding-right: 0.5rem;
+        padding-left: 0;
+      }
+      @media (max-width: 700px) {
+        grid-row: 3 / 4;
+        grid-column: 1 / 1;
+        width: 100% !important;
+        height: 25% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+      }
+    }
+    & .product-grid-col-4 {
+      width: 25% !important;
+      padding-left: 0.5rem;
 
-      @media (max-width: 400px) {
+      @media (max-width: 1500px) {
+        grid-row: 2 / 2;
+        grid-column: 2 / 2;
+        width: 100% !important;
+      }
+      @media (max-width: 800px) {
+        grid-row: 2 / 2;
+        grid-column: 2 / 2;
+        width: 100% !important;
+        padding-left: 0.5rem;
+        padding-right: 0;
+      }
+      @media (max-width: 700px) {
+        grid-row: 4 / 4;
+        grid-column: 1 / 1;
+        width: 100% !important;
+        height: 25% !important;
+        padding: 0 !important;
         margin: 0 !important;
       }
     }
   }
 
-  & .promocoes-ikea-family {
-    & .ikea-family-btn {
-      border-radius: 20px !important;
-      font-size: 0.75rem !important;
-      font-weight: 700 !important;
+  & .product-grid-row-2 {
+    margin-top: 4rem;
 
-      &:hover {
-        background-color: #303030;
+    @media (max-width: 800px) {
+      margin-top: 2rem;
+    }
+    @media (max-width: 400px) {
+      margin-top: 0;
+    }
+    & .promocoes-ikea-family {
+      & .ikea-family-btn {
+        border-radius: 64px !important;
+        font-size: 0.75rem !important;
+        font-weight: 700 !important;
+        height: 2.5rem;
+        width: 13rem;
+
+        &:hover {
+          background-color: #303030;
+        }
       }
     }
   }

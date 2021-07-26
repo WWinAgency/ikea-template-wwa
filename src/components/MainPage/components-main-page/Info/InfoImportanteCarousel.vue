@@ -1,9 +1,8 @@
 <template>
-  <div class="carousel-important">
+  <div class="carousel">
     <div class="titulo">
-      <h1>Os mais vistos</h1>
+      <h1>Informação importante</h1>
     </div>
-
     <div class="carousel-container">
       <VueSlickCarousel
         class="carousel-component"
@@ -12,31 +11,32 @@
         :dots="false"
       >
         <div class="carousel-item-1">
-          <div class="componente-carousel">
-            <InfoImpComponent
-              imgSrc="imageCarousel3"
-              title="Medidas de segurança"
-              body="Saiba mais sobre as nossas precauções e como pode fazer a sua parte"
-            />
-          </div>
+          <InfoImpComponent
+            title="Medidas de segurança"
+            body="Saiba mais sobre as nossas precauções e como pode fazer a sua parte"
+            infoUrl="/medidas-de-segurança"
+          />
         </div>
         <div class="carousel-item-2">
-          <div class="componente-carousel">
-            <InfoImpComponent
-              imgSrc="imageCarousel3"
-              title="Comprou algum prato, taça ou caneca HEROISK ou TALRIKA? "
-              body="A IKEA pede a todos os clientes que tenham comprado pratos, taças ou canecas HEROISK e/ou TALKIRA para pararem de os utilizar e os devolverem numa loja IKEA, onde serão reembolsados na totalidade"
-            />
-          </div>
+          <InfoImpComponent
+            title="Comprou algum prato, taça ou caneca HEROISK ou TALKIRA?"
+            body="A IKEA pede a todos os clientes que tenham comprado pratos, taças ou canecas HEROISK e/ou TALKIRA para pararem de os utilizar e os devolveverem numa loja IKEA, onde serão reembolsados na totalidade"
+            infoUrl="/heroisk-talkira-devolucao"
+          />
         </div>
         <div class="carousel-item-3">
-          <div class="componente-carousel">
-            <InfoImpComponent
-              imgSrc="imageCarousel3"
-              title="Bem seguro! Juntos, criamos casas mais seguras"
-              body=""
-            />
-          </div>
+          <InfoImpComponent
+            title="Bem seguro! Juntos, criamos casas mais seguras"
+            body=""
+            infoUrl="/casas-mais-seguras"
+          />
+        </div>
+        <div class="carousel-item-4">
+          <InfoImpComponent
+            title="Bem seguro! Juntos, criamos casas mais seguras"
+            body=""
+            infoUrl="/casas-mais-seguras"
+          />
         </div>
       </VueSlickCarousel>
     </div>
@@ -47,55 +47,61 @@
 import VueSlickCarousel from "vue-slick-carousel";
 import "vue-slick-carousel/dist/vue-slick-carousel.css";
 import "vue-slick-carousel/dist/vue-slick-carousel-theme.css";
-import InfoImpComponent from "./InfoImpComponent.vue";
 
-import imageCarousel1 from "../../../../assets/images/outside-lounge.jpg";
-import imageCarousel2 from "../../../../assets/images/storage.jpg";
-import imageCarousel3 from "../../../../assets/images/vase.jpg";
+import InfoImpComponent from "./InfoImpComponent.vue";
 
 export default {
   name: "MyComponent",
   components: { VueSlickCarousel, InfoImpComponent },
   data: function() {
     return {
-      imageCarousel1: imageCarousel1,
-      imageCarousel2: imageCarousel2,
-      imageCarousel3: imageCarousel3,
-
       settings: {
-        dots: true,
-        infinite: false,
-        speed: 500,
+        infinite: true,
+        centerMode: true,
+        centerPadding: 5,
         slidesToShow: 3,
         slidesToScroll: 3,
-        initialSlide: 0,
+        speed: 500,
+        initialSlide: 1,
+        dots: true,
+        arrows: true,
+        dotsClass: "slick-dots costum-dot-class",
         responsive: [
           {
-            breakpoint: 1200,
+            breakpoint: 1450,
             settings: {
-              slidesToShow: 3,
-              slidesToScroll: 3,
-              infinite: false,
-              dots: true,
-              arrows: true,
-            },
-          },
-          {
-            breakpoint: 770,
-            settings: {
+              infinite: true,
+              centerMode: true,
+              centerPadding: 5,
               slidesToShow: 2,
-              slidesToScroll: 2,
-              infinite: false,
+              slidesToScroll: 3,
+              initialSlide: 0,
               dots: true,
               arrows: false,
             },
           },
           {
-            breakpoint: 400,
+            breakpoint: 800,
             settings: {
+              infinite: true,
+              centerMode: true,
+              centerPadding: 5,
+              slidesToShow: 1,
+              slidesToScroll: 3,
+              initialSlide: 0,
+              dots: true,
+              arrows: false,
+            },
+          },
+          {
+            breakpoint: 650,
+            settings: {
+              infinite: true,
+              centerMode: true,
+              centerPadding: 5,
               slidesToShow: 1,
               slidesToScroll: 1,
-              infinite: false,
+              initialSlide: 0,
               dots: true,
               arrows: false,
             },
@@ -107,19 +113,17 @@ export default {
 };
 </script>
 <style lang="scss">
-.carousel-important {
-  width: 100%;
+.carousel {
+  width: 100% !important;
   margin: 0 !important;
-
-  @media (max-width: 768px) {
-    width: 100%;
-  }
-  @media (max-width: 400px) {
-    width: 100%;
-  }
+  padding: 0 !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
   & .titulo {
     margin-bottom: 2rem;
+
     & h1 {
       font-size: 1.5625rem;
       font-weight: bold;
@@ -129,33 +133,57 @@ export default {
 
   & .carousel-container {
     width: 100%;
+    margin: 0 !important;
 
-    & .slick-prev::before,
-    .slick-next::before {
-      color: black !important;
-    }
-    & .carousel-component {
+    @media (max-width: 768px) {
+      margin: 0 !important;
       width: 100%;
-      display: flex;
-      justify-content: space-evenly;
-      align-items: center;
-      margin: auto;
-      & .carousel-item-1 {
-        padding: 0 1rem 0 0;
-        @media (max-width: 768px) {
-          padding: 0 0.5rem 0 0;
-        }
-      }
-      & .carousel-item-2 {
-        padding: 0 1rem 0 0;
+    }
 
-        @media (max-width: 768px) {
-          padding: 0 0.5rem 0 0;
+    & .carousel-component {
+      padding: 0 !important;
+
+      & .slick-track.slick-center[data-v-e4caeaf8] {
+        margin: 0 !important;
+      }
+      & .carousel-item {
+        height: 100% !important;
+        width: 100% !important;
+
+        &-1 {
+          padding-right: 1rem !important;
+        }
+        &-2 {
+          padding-right: 1rem !important;
+        }
+        &-3 {
+          padding-right: 1rem !important;
+        }
+        &-4 {
+          padding-right: 1rem !important;
         }
       }
-      & .carousel-item-3 {
-        @media (max-width: 768px) {
-          padding: 0 0.5rem 0 0;
+
+      & .slick-prev {
+        left: 0;
+        z-index: 1;
+        &::before {
+          font-size: 30px;
+          color: black !important;
+          position: absolute;
+          left: 0;
+          top: 0;
+        }
+      }
+      & .slick-next {
+        right: 0;
+        z-index: 1;
+        &::before {
+          font-size: 30px;
+          color: black !important;
+          position: absolute;
+          right: 0;
+          top: 0;
         }
       }
     }

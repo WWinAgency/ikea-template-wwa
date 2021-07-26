@@ -1,46 +1,48 @@
 <template>
   <div class="product">
     <div class="product-col">
-      <div class="product-row">
+      <div class="product-image-row">
         <img src="@/assets/images/vase.jpg" class="product-image" />
       </div>
-      <div class="product-row">{{ discount }}</div>
-      <div class="product-row">
-        <a class="product-name" href=""
-          ><strong>{{ name }}</strong></a
-        >
-      </div>
-      <div class="product-row">
-        <h1>{{ type }}</h1>
-      </div>
-      <div class="product-row">
-        <h2>Preço habitual {{ normalPrice }} € /ud</h2>
-      </div>
-      <div class="product-price">
-        <h1>
-          <strong>{{ currentPrice }}</strong>
-        </h1>
-        <h2><strong>€</strong></h2>
-        <h3><strong>/ud</strong></h3>
-      </div>
-      <div class="product-row">
-        <div class="rating-stars">
-          <div class="rating-col">
-            <div class="rating-row">
-              <star-rating
-                v-bind:increment="0.5"
-                v-bind:max-rating="5"
-                inactive-color="white"
-                active-color="black"
-                v-bind:star-size="12"
-                :rating="rating"
-                :show-rating="false"
-                read-only="true"
-              >
-              </star-rating>
+      <div class="text-row">
+        <div class="text-col">
+          <div class="ikea-family"><strong>Promoção IKEA Family</strong></div>
+
+          <a class="product-name" href=""
+            ><strong>{{ name }}</strong></a
+          >
+
+          <div class="product-type">{{ type }}</div>
+          <div class="product-preco-habitual">
+            Preço habitual {{ normalPrice }} € /ud
+          </div>
+          <div class="product-price">
+            <div class="price-col-1">
+              <strong>{{ currentPrice }}</strong>
             </div>
-            <div class="rating-row">
-              <h4>( {{ avaliacoes }} )</h4>
+            <div class="price-col-2"><strong> € </strong></div>
+            <div class="price-col-3">
+              <strong> / ud </strong>
+            </div>
+          </div>
+          <div class="rating-stars">
+            <div class="rating-col">
+              <div class="rating-row">
+                <star-rating
+                  v-bind:increment="0.5"
+                  v-bind:max-rating="5"
+                  inactive-color="white"
+                  active-color="black"
+                  v-bind:star-size="15"
+                  :rating="rating"
+                  :show-rating="false"
+                  read-only="true"
+                >
+                </star-rating>
+              </div>
+              <div class="rating-row">
+                <h4>( {{ avaliacoes }} )</h4>
+              </div>
             </div>
           </div>
         </div>
@@ -73,80 +75,87 @@ export default {
   & .product-col {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
-    padding-left: 0 !important;
-    list-style: none;
+    width: 100%;
+    height: 40rem !important;
 
-    & .product-price {
+    & .product-image-row {
       display: flex;
       flex-direction: row;
-      justify-content: start;
-
-      & h1 {
-        font-size: 1.2rem;
-      }
-      & h2 {
-        margin-left: 3px;
-        font-size: 0.575rem;
-      }
-      & h3 {
-        margin-left: 1px;
-        font-size: 0.675rem;
+      height: 60%;
+      & img {
+        width: 100%;
+        height: 100%;
       }
     }
 
-    & .product-row {
-      width: 100% !important;
+    & .text-row {
       display: flex;
-      flex-direction: column;
-      margin-bottom: 0.5rem;
+      flex-direction: row;
+      height: 40%;
+      margin-top: 1rem;
+      & .text-col {
+        display: flex;
+        flex-direction: column;
 
-      & img {
-        width: 365px !important;
-        height: 365px !important;
-
-        @media (max-width: 768px) {
-          width: 337px !important;
-          height: 337px !important;
-        }
-      }
-
-      & .product-name {
-        text-decoration: none;
-        color: black;
-
-        &:hover {
-          text-decoration: underline;
-        }
-      }
-      & h1 {
-        font-size: 0.875rem;
-      }
-      & h2 {
-        font-size: 0.775rem;
-      }
-      & .product-image {
-        width: 250px;
-        height: 250px;
-
-        @media (max-width: 768px) {
-          width: 337px !important;
-          height: 337px !important;
+        & .ikea-family {
+          font-size: 1rem;
+          line-height: 1.42857;
+          color: #0077c1;
+          margin-bottom: 0.25rem;
         }
 
-        @media (max-width: 400px) {
-          width: 340px !important;
-        }
-      }
+        & .product-name {
+          color: black;
+          font-size: 1.1rem;
+          line-height: 1.42857;
+          text-decoration: none;
+          text-transform: uppercase;
 
-      & .rating-stars {
-        & .rating-col {
-          display: ruby;
-          list-style: none;
-          padding-left: 0;
-          & .rating-row {
-            & h4 {
-              font-size: 0.875rem;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+
+        & .product-type {
+          font-size: 1rem;
+          line-height: 1.42857;
+          margin-bottom: 0.5rem;
+        }
+
+        & .product-preco-habitual {
+          font-size: 0.85rem !important;
+          margin-bottom: 0.25rem;
+        }
+
+        & .product-price {
+          display: flex !important;
+          flex-direction: row !important;
+          align-items: center;
+          margin-bottom: 0.5rem;
+
+          & .price-col-1 {
+            font-size: 1.5rem;
+            margin-right: 0.25rem;
+          }
+          & .price-col-2 {
+            font-size: 0.6875rem;
+            margin-right: 0.2rem !important;
+          }
+          & .price-col-3 {
+            font-size: 0.6875rem;
+          }
+        }
+
+        & .rating-stars {
+          margin-bottom: 0.5rem;
+          & .rating-col {
+            display: ruby;
+            list-style: none;
+            padding-left: 0;
+            & .rating-row {
+              & h4 {
+                font-size: 0.8rem !important;
+              }
             }
           }
         }

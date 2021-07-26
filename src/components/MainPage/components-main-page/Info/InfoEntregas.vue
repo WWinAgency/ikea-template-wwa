@@ -63,7 +63,7 @@ export default {};
     justify-content: space-evenly;
     width: 100%;
 
-    @media (max-width: 768px) {
+    @media (max-width: 900px) {
       margin: 4rem 0 4rem 0 !important;
       display: inline-grid;
       justify-content: center;
@@ -73,7 +73,7 @@ export default {};
       grid-auto-columns: 365px;
       grid-gap: 5px;
     }
-    @media (max-width: 380px) {
+    @media (max-width: 786px) {
       display: flex;
       flex-direction: column !important;
     }

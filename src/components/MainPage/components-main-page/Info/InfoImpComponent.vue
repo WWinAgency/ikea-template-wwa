@@ -1,6 +1,6 @@
 <template>
   <div class="infoImpComponent">
-    <div class="col">
+    <div class="infoImpComponent-col">
       <div class="image-row"><img src="@/assets/images/vase.jpg" /></div>
       <div class="body-row">
         <div class="text-row">
@@ -44,24 +44,30 @@ export default {
 .infoImpComponent {
   width: 100%;
 
-  & .col {
+  & .infoImpComponent-col {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    height: 45rem;
+    height: 50rem;
 
-    @media (max-width: 768px) {
-      height: 40rem;
+    @media (max-width: 1500px) {
+      height: 50rem;
     }
-    @media (max-width: 380px) {
+    @media (max-width: 800px) {
+      height: 50rem;
+    }
+    @media (max-width: 400px) {
       height: 35rem;
     }
     & .image-row {
       height: 60%;
 
+      @media (max-width: 800px) {
+        height: 30rem !important;
+      }
+
       & img {
-        width: 100%;
-        height: 100%;
+        width: 100% !important;
+        height: 100% !important;
         border: none;
       }
     }
@@ -69,9 +75,18 @@ export default {
     & .body-row {
       position: relative;
       height: 40%;
+      width: 100%;
       background-color: #f5f5f5;
       padding: 2rem;
       padding-bottom: 4rem;
+
+      @media (max-width: 1500px) {
+        height: 30rem !important;
+      }
+      @media (max-width: 800px) {
+        height: 20rem !important;
+      }
+
       & .text-row {
         & h1 {
           font-weight: bold;

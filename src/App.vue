@@ -9,7 +9,7 @@
           <div class="header"><Header /></div>
         </div>
       </div>
-      <div class="mainPage"><MainPage /></div>
+      <div class="mainPage"><router-view></router-view></div>
     </div>
     <div class="footer"><Footer /></div>
   </div>
@@ -19,11 +19,10 @@
 import Header from "./components/Header/Header.vue";
 import Sidebar from "./components/Header/Sidebar.vue";
 import Footer from "./components/Footer/Footer.vue";
-import MainPage from "./components/MainPage/MainPage.vue";
 
 export default {
   name: "App",
-  components: { Header, Footer, MainPage, Sidebar },
+  components: { Header, Footer, Sidebar },
 };
 </script>
 

@@ -14,7 +14,7 @@
         </ul>
         <ul class="row-1">
           <li class="menu-item">
-            <a class="item" href="/#planeamento-compra"
+            <a class="item" href="/pagina-produto"
               ><strong> Planeie a sua compra </strong></a
             >
           </li>
