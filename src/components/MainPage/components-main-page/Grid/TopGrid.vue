@@ -63,6 +63,7 @@ export default {
 
       & h1 {
         font-size: 1.5625rem;
+        line-height: 1.36rem;
         text-align: left;
       }
     }
@@ -85,6 +86,7 @@ export default {
         }
         & h2 {
           font-size: 0.875rem;
+          line-height: 1.36rem;
           margin: 0;
         }
       }
@@ -98,6 +100,8 @@ export default {
         @media (max-width: 800px) {
           margin-top: 1rem;
           padding: 0 !important;
+          justify-content: flex-start;
+          width: 20rem;
         }
 
         @media (max-width: 400px) {

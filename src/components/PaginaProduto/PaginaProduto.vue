@@ -1,5 +1,6 @@
 <template>
   <div class="paginaProduto">
+    <!-- PATH -->
     <div class="path">
       <div class="path-row">
         <div class="path-col">
@@ -82,11 +83,13 @@
         </div>
       </div>
     </div>
+    <!-- PATH -->
 
     <hr class="costum-hr" />
 
     <div class="paginaProduto-col">
       <div class="product-outter-row">
+        <!-- IMAGENS EM DISPLAY -->
         <div class="product-outter-col-1">
           <div class="product-inner-row">
             <div class="product-grid-col-1">
@@ -121,6 +124,9 @@
           <div class="product-inner-row"></div>
           <div class="product-inner-row"></div>
         </div>
+        <!-- IMAGENS EM DISPLAY -->
+
+        <!-- COLUNA DESCRITIVA -->
         <div class="product-outter-col-2">
           <ProductDescription
             nomeProduto="MJÖLKKLOCKA"
@@ -138,6 +144,8 @@
             promocaoFimDia="31"
           />
         </div>
+
+        <!-- COLUNA DESCRITIVA -->
       </div>
     </div>
   </div>
@@ -225,6 +233,12 @@ export default {
       display: inline-block;
       width: 100%;
 
+      @media (max-width: 1750px) {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+      }
+
       & .product-outter-col-1 {
         float: left;
         width: 70%;
@@ -284,6 +298,10 @@ export default {
       & .product-outter-col-2 {
         float: right;
         width: 30%;
+
+        @media (max-width: 1750px) {
+          width: 100%;
+        }
       }
     }
   }

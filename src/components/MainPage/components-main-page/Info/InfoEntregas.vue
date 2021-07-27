@@ -55,7 +55,6 @@ export default {};
 <style lang="scss">
 .infoEntregas {
   width: 100%;
-  margin: 0 !important;
 
   & .infoContainer {
     display: flex;
@@ -81,7 +80,6 @@ export default {};
     & .info {
       width: 100%;
       padding: 0 !important;
-      margin: 0 !important;
 
       &-a {
         justify-content: center;
@@ -90,26 +88,29 @@ export default {};
         background-color: #f5f5f5;
         grid-row: 1 / 2;
         grid-column: 1 / 2;
+        width: 25%;
         margin-right: 0.125rem !important;
         padding: 2rem;
 
-        @media (min-width: 768px) {
+        @media (max-width: 900px) {
           width: 100%;
-          margin: 0 0.25rem 0.25rem 0 !important;
+          margin: 0 0.125rem 0 0;
         }
 
-        @media (min-width: 380px) {
-          width: 100%;
+        @media (max-width: 400px) {
+          width: 100% !important;
           margin: 0 !important;
         }
 
         & .inner-row {
           & h1 {
             font-size: 1rem;
+            line-height: 1.36rem;
             font-weight: bold;
           }
           & h2 {
             font-size: 0.875rem;
+            line-height: 1.36rem;
             line-height: 1.571;
           }
 
@@ -130,25 +131,30 @@ export default {};
         background-color: #f5f5f5;
         grid-row: 1 / 2;
         grid-column: 2 / 2;
+        width: 25%;
         margin-left: 0.125rem !important;
         margin-right: 0.125rem !important;
         padding: 2rem;
-        @media (min-width: 768px) {
+
+        @media (max-width: 900px) {
           width: 100%;
-          margin: 0 0rem 0.25rem 0.25rem !important;
+          margin: 0 0 0 0.125rem;
         }
-        @media (min-width: 380px) {
-          width: 100%;
+
+        @media (max-width: 400px) {
+          width: 100% !important;
           margin: 0 !important;
         }
 
         & .inner-row {
           & h1 {
             font-size: 1rem;
+            line-height: 1.36rem;
             font-weight: bold;
           }
           & h2 {
             font-size: 0.875rem;
+            line-height: 1.36rem;
             line-height: 1.571;
           }
 
@@ -169,26 +175,30 @@ export default {};
         background-color: #f5f5f5;
         grid-row: 2 / 2;
         grid-column: 1 / 2;
-        margin-left: 0.125rem;
-        margin-right: 0.125rem;
+        width: 25%;
+        margin-left: 0.125rem !important;
+        margin-right: 0.125rem !important;
         padding: 2rem;
 
-        @media (min-width: 768px) {
+        @media (max-width: 900px) {
           width: 100%;
-          margin: 0 0.25rem 0.25rem 0 !important;
+          margin: 0 0.125rem 0 0;
         }
-        @media (min-width: 380px) {
-          width: 100%;
+
+        @media (max-width: 400px) {
+          width: 100% !important;
           margin: 0 !important;
         }
 
         & .inner-row {
           & h1 {
             font-size: 1rem;
+            line-height: 1.36rem;
             font-weight: bold;
           }
           & h2 {
             font-size: 0.875rem;
+            line-height: 1.36rem;
             line-height: 1.571;
           }
 
@@ -209,25 +219,29 @@ export default {};
         background-color: #f5f5f5;
         grid-row: 2 / 2;
         grid-column: 2 / 2;
-        margin-left: 0.125rem;
+        width: 25%;
+        margin-left: 0.125rem !important;
         padding: 2rem;
 
-        @media (min-width: 768px) {
+        @media (max-width: 900px) {
           width: 100%;
-          margin: 0 0 0.25rem 0.25rem !important;
+          margin: 0 0 0 0.125rem;
         }
-        @media (min-width: 380px) {
-          width: 100%;
+
+        @media (max-width: 400px) {
+          width: 100% !important;
           margin: 0 !important;
         }
 
         & .inner-row {
           & h1 {
             font-size: 1rem;
+            line-height: 1.36rem;
             font-weight: bold;
           }
           & h2 {
             font-size: 0.875rem;
+            line-height: 1.36rem;
             line-height: 1.571;
           }
 

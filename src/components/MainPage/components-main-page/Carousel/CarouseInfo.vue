@@ -48,14 +48,15 @@ export default {};
     color: white;
 
     & h1 {
-      font-size: 1rem;
+      font-size: 1.4rem;
       line-height: 1.5rem;
       font-weight: bold;
     }
   }
 
   & .button-row {
-    padding: 2rem;
+    margin-left: 2rem;
+    margin-bottom: 3rem;
     position: absolute;
     bottom: 0;
     left: 0;

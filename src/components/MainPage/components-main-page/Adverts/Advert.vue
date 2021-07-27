@@ -62,17 +62,20 @@ export default {
       margin-bottom: 2rem;
       & h1 {
         font-size: 1.5625rem;
+        line-height: 1.36rem;
         font-weight: bold;
         text-align: left;
       }
 
       & h2 {
         font-size: 0.875rem !important;
+        line-height: 1.36rem;
         margin-top: 0.5rem !important;
       }
 
       & h3 {
         font-size: 0.875rem;
+        line-height: 1.36rem;
         text-align: left;
 
         & a {

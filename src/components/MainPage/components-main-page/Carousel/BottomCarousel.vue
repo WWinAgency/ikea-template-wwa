@@ -14,58 +14,39 @@
           <div class="carousel-info"><CarouselInfo /></div>
         </div>
         <div class="carousel-item">
-          <div class="imagem"><img :src="imageCarousel3" /></div>
+          <div class="imagem">
+            <CarouselProduto textoBotao="Escola da casa" />
+          </div>
         </div>
         <div class="carousel-item">
-          <div class="imagem"><img :src="imageCarousel3" /></div>
+          <div class="imagem">
+            <CarouselProduto textoBotao="Painéis Solares SOLTRALE" />
+          </div>
         </div>
         <div class="carousel-item">
-          <div class="imagem"><img :src="imageCarousel3" /></div>
+          <div class="imagem">
+            <CarouselProduto textoBotao="Ver casas sustentáveis" />
+          </div>
         </div>
         <div class="carousel-item">
-          <div class="imagem"><img :src="imageCarousel3" /></div>
+          <div class="imagem">
+            <CarouselProduto textoBotao="Ver alimentos sustentáveis" />
+          </div>
         </div>
         <div class="carousel-item">
-          <div class="imagem"><img :src="imageCarousel3" /></div>
+          <div class="imagem">
+            <CarouselProduto textoBotao="Ver materiais sustentáveis" />
+          </div>
         </div>
         <div class="carousel-item">
-          <div class="imagem"><img :src="imageCarousel3" /></div>
+          <div class="imagem">
+            <CarouselProduto textoBotao="Ver como poupar água e energia" />
+          </div>
         </div>
         <div class="carousel-item">
-          <div class="imagem"><img :src="imageCarousel3" /></div>
-        </div>
-        <div class="carousel-item">
-          <div class="imagem"><img :src="imageCarousel3" /></div>
-        </div>
-        <div class="carousel-item">
-          <div class="imagem"><img :src="imageCarousel3" /></div>
-        </div>
-        <div class="carousel-item">
-          <div class="imagem"><img :src="imageCarousel3" /></div>
-        </div>
-        <div class="carousel-item">
-          <div class="imagem"><img :src="imageCarousel3" /></div>
-        </div>
-        <div class="carousel-item">
-          <div class="imagem"><img :src="imageCarousel3" /></div>
-        </div>
-        <div class="carousel-item">
-          <div class="imagem"><img :src="imageCarousel3" /></div>
-        </div>
-        <div class="carousel-item">
-          <div class="imagem"><img :src="imageCarousel3" /></div>
-        </div>
-        <div class="carousel-item">
-          <div class="imagem"><img :src="imageCarousel3" /></div>
-        </div>
-        <div class="carousel-item">
-          <div class="imagem"><img :src="imageCarousel3" /></div>
-        </div>
-        <div class="carousel-item">
-          <div class="imagem"><img :src="imageCarousel3" /></div>
-        </div>
-        <div class="carousel-item">
-          <div class="imagem"><img :src="imageCarousel3" /></div>
+          <div class="imagem">
+            <CarouselProduto textoBotao="A nossa casa sustentável" />
+          </div>
         </div>
       </VueSlickCarousel>
     </div>
@@ -77,6 +58,7 @@ import VueSlickCarousel from "vue-slick-carousel";
 import "vue-slick-carousel/dist/vue-slick-carousel.css";
 import "vue-slick-carousel/dist/vue-slick-carousel-theme.css";
 import CarouselInfo from "./CarouseInfo.vue";
+import CarouselProduto from "./CarouselProduto.vue";
 
 import imageCarousel1 from "../../../../assets/images/outside-lounge.jpg";
 import imageCarousel2 from "../../../../assets/images/storage.jpg";
@@ -85,7 +67,7 @@ import imageCarousel4 from "../../../../assets/images/window-blinds.jpg";
 
 export default {
   name: "MyComponent",
-  components: { VueSlickCarousel, CarouselInfo },
+  components: { VueSlickCarousel, CarouselInfo, CarouselProduto },
   data: function() {
     return {
       imageCarousel1: imageCarousel1,
@@ -236,17 +218,64 @@ export default {
           height: 400px !important;
           width: 320px !important;
         }
-        @media (max-width: 670px) {
-          height: 500px !important;
-          width: 500px !important;
+
+        @media (max-width: 750px) {
+          height: 400px !important;
+          width: 300px !important;
         }
-        @media (max-width: 560px) {
+        @media (max-width: 670px) {
           height: 400px !important;
           width: 400px !important;
         }
-        @media (max-width: 380px) {
+
+        @media (max-width: 440px) {
+          height: 400px !important;
+          width: 370px !important;
+        }
+        @media (max-width: 430px) {
+          height: 400px !important;
+          width: 360px !important;
+        }
+        @media (max-width: 420px) {
+          height: 400px !important;
+          width: 350px !important;
+        }
+        @media (max-width: 410px) {
+          height: 400px !important;
+          width: 340px !important;
+        }
+        @media (max-width: 400px) {
           height: 350px !important;
           width: 310px !important;
+          padding: 0;
+        }
+        @media (max-width: 360px) {
+          height: 350px !important;
+          width: 300px !important;
+        }
+        @media (max-width: 350px) {
+          height: 350px !important;
+          width: 290px !important;
+        }
+        @media (max-width: 340px) {
+          height: 350px !important;
+          width: 280px !important;
+        }
+        @media (max-width: 330px) {
+          height: 350px !important;
+          width: 270px !important;
+        }
+        @media (max-width: 320px) {
+          height: 350px !important;
+          width: 260px !important;
+        }
+        @media (max-width: 310px) {
+          height: 350px !important;
+          width: 250px !important;
+        }
+        @media (max-width: 300px) {
+          height: 350px !important;
+          width: 240px !important;
         }
 
         & .carousel-info {
@@ -258,19 +287,73 @@ export default {
             width: 320px;
             padding: 0 0.25rem 0 0;
           }
-          @media (max-width: 670px) {
-            height: 500px !important;
-            width: 500px !important;
-            padding: 0;
+          @media (max-width: 750px) {
+            height: 400px !important;
+            width: 300px !important;
           }
-          @media (max-width: 560px) {
+          @media (max-width: 670px) {
             height: 400px !important;
             width: 400px !important;
+          }
+          @media (max-width: 500px) {
+            height: 400px !important;
+            width: 380px !important;
             padding: 0;
+          }
+          @media (max-width: 440px) {
+            height: 400px !important;
+            width: 370px !important;
+          }
+          @media (max-width: 430px) {
+            height: 400px !important;
+            width: 360px !important;
+          }
+          @media (max-width: 420px) {
+            height: 400px !important;
+            width: 350px !important;
+          }
+          @media (max-width: 410px) {
+            height: 400px !important;
+            width: 340px !important;
           }
           @media (max-width: 400px) {
             height: 350px !important;
             width: 310px !important;
+            padding: 0;
+          }
+          @media (max-width: 360px) {
+            height: 350px !important;
+            width: 300px !important;
+            padding: 0;
+          }
+          @media (max-width: 350px) {
+            height: 350px !important;
+            width: 290px !important;
+            padding: 0;
+          }
+          @media (max-width: 340px) {
+            height: 350px !important;
+            width: 280px !important;
+            padding: 0;
+          }
+          @media (max-width: 330px) {
+            height: 350px !important;
+            width: 270px !important;
+            padding: 0;
+          }
+          @media (max-width: 320px) {
+            height: 350px !important;
+            width: 260px !important;
+            padding: 0;
+          }
+          @media (max-width: 310px) {
+            height: 350px !important;
+            width: 250px !important;
+            padding: 0;
+          }
+          @media (max-width: 300px) {
+            height: 350px !important;
+            width: 240px !important;
             padding: 0;
           }
 

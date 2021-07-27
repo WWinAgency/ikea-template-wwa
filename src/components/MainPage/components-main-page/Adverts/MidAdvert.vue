@@ -95,11 +95,12 @@ export default {
             margin-bottom: 0.7rem;
             & h1 {
               font-size: 1.125rem;
+              line-height: 1.36rem;
               color: white;
             }
             & h2 {
               font-size: 0.825rem;
-              line-height: 1.2rem;
+              line-height: 1.36rem;
               color: white;
             }
           }
@@ -109,7 +110,7 @@ export default {
             margin-bottom: 1rem;
             & h3 {
               font-size: 0.875rem;
-              line-height: 1.571rem;
+              line-height: 1.36rem;
               color: white;
               font-weight: bold;
 

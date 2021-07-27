@@ -136,6 +136,11 @@ export default {
     }
     & .product-row-2 {
       display: inline-block;
+
+      @media (max-width: 1750px) {
+        display: flex;
+        flex-direction: column;
+      }
       & .inner-col-1 {
         float: left;
         & h4 {
@@ -147,6 +152,12 @@ export default {
       & .inner-col-2 {
         float: right;
         display: inline-block;
+
+        @media (max-width: 1750px) {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+        }
         & h1 {
           float: left;
           font-size: 1.375rem;
@@ -158,6 +169,12 @@ export default {
           font-size: 0.6875rem;
           line-height: 0.9;
           margin-left: 0.0625rem;
+
+          @media (max-width: 1750px) {
+            float: none;
+            margin: 0 0 0 0.5rem;
+            text-align: center;
+          }
         }
       }
     }

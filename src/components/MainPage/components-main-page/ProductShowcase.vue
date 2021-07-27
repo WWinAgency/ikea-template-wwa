@@ -87,7 +87,7 @@ export default {
       width: 100%;
     }
     @media (max-width: 700px) {
-      height: 180rem;
+      height: 150rem;
       display: grid;
       grid-template-columns: repeat(1, 100%);
       grid-template-rows: repeat(4, 25%);

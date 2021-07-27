@@ -11,61 +11,32 @@
         :dots="false"
       >
         <div class="carousel-item">
-          <div class="imagem"><img :src="imageCarousel3" /></div>
+          <div class="imagem"><CarouselProduto textoBotao="Móveis" /></div>
         </div>
         <div class="carousel-item">
-          <div class="imagem"><img :src="imageCarousel3" /></div>
+          <div class="imagem">
+            <CarouselProduto textoBotao="Arrumação e organização" />
+          </div>
         </div>
         <div class="carousel-item">
-          <div class="imagem"><img :src="imageCarousel3" /></div>
+          <div class="imagem"><CarouselProduto textoBotao="Exterior" /></div>
         </div>
         <div class="carousel-item">
-          <div class="imagem"><img :src="imageCarousel3" /></div>
+          <div class="imagem"><CarouselProduto textoBotao="Verão" /></div>
         </div>
         <div class="carousel-item">
-          <div class="imagem"><img :src="imageCarousel3" /></div>
+          <div class="imagem"><CarouselProduto textoBotao="Colchões" /></div>
         </div>
         <div class="carousel-item">
-          <div class="imagem"><img :src="imageCarousel3" /></div>
+          <div class="imagem"><CarouselProduto textoBotao="Camas" /></div>
         </div>
         <div class="carousel-item">
-          <div class="imagem"><img :src="imageCarousel3" /></div>
+          <div class="imagem"><CarouselProduto textoBotao="Sofás" /></div>
         </div>
         <div class="carousel-item">
-          <div class="imagem"><img :src="imageCarousel3" /></div>
-        </div>
-        <div class="carousel-item">
-          <div class="imagem"><img :src="imageCarousel3" /></div>
-        </div>
-        <div class="carousel-item">
-          <div class="imagem"><img :src="imageCarousel3" /></div>
-        </div>
-        <div class="carousel-item">
-          <div class="imagem"><img :src="imageCarousel3" /></div>
-        </div>
-        <div class="carousel-item">
-          <div class="imagem"><img :src="imageCarousel3" /></div>
-        </div>
-        <div class="carousel-item">
-          <div class="imagem"><img :src="imageCarousel3" /></div>
-        </div>
-        <div class="carousel-item">
-          <div class="imagem"><img :src="imageCarousel3" /></div>
-        </div>
-        <div class="carousel-item">
-          <div class="imagem"><img :src="imageCarousel3" /></div>
-        </div>
-        <div class="carousel-item">
-          <div class="imagem"><img :src="imageCarousel3" /></div>
-        </div>
-        <div class="carousel-item">
-          <div class="imagem"><img :src="imageCarousel3" /></div>
-        </div>
-        <div class="carousel-item">
-          <div class="imagem"><img :src="imageCarousel3" /></div>
-        </div>
-        <div class="carousel-item">
-          <div class="imagem"><img :src="imageCarousel3" /></div>
+          <div class="imagem">
+            <CarouselProduto textoBotao="Cozinhas e eletrodomésticos" />
+          </div>
         </div>
       </VueSlickCarousel>
     </div>
@@ -76,12 +47,13 @@
 import VueSlickCarousel from "vue-slick-carousel";
 import "vue-slick-carousel/dist/vue-slick-carousel.css";
 import "vue-slick-carousel/dist/vue-slick-carousel-theme.css";
+import CarouselProduto from "./CarouselProduto.vue";
 
 import imageCarousel3 from "../../../../assets/images/vase.jpg";
 
 export default {
   name: "MyComponent",
-  components: { VueSlickCarousel },
+  components: { VueSlickCarousel, CarouselProduto },
   data: function() {
     return {
       imageCarousel3: imageCarousel3,
@@ -232,17 +204,67 @@ export default {
           height: 400px !important;
           width: 320px !important;
         }
-        @media (max-width: 670px) {
-          height: 500px !important;
-          width: 500px !important;
+        @media (max-width: 750px) {
+          height: 400px !important;
+          width: 300px !important;
         }
-        @media (max-width: 560px) {
+        @media (max-width: 670px) {
           height: 400px !important;
           width: 400px !important;
         }
         @media (max-width: 500px) {
           height: 350px !important;
           width: 310px !important;
+        }
+
+        @media (max-width: 440px) {
+          height: 400px !important;
+          width: 370px !important;
+        }
+        @media (max-width: 430px) {
+          height: 400px !important;
+          width: 360px !important;
+        }
+        @media (max-width: 420px) {
+          height: 400px !important;
+          width: 350px !important;
+        }
+        @media (max-width: 410px) {
+          height: 400px !important;
+          width: 340px !important;
+        }
+        @media (max-width: 400px) {
+          height: 350px !important;
+          width: 310px !important;
+          padding: 0;
+        }
+        @media (max-width: 360px) {
+          height: 350px !important;
+          width: 300px !important;
+        }
+        @media (max-width: 350px) {
+          height: 350px !important;
+          width: 290px !important;
+        }
+        @media (max-width: 340px) {
+          height: 350px !important;
+          width: 280px !important;
+        }
+        @media (max-width: 330px) {
+          height: 350px !important;
+          width: 270px !important;
+        }
+        @media (max-width: 320px) {
+          height: 350px !important;
+          width: 260px !important;
+        }
+        @media (max-width: 310px) {
+          height: 350px !important;
+          width: 250px !important;
+        }
+        @media (max-width: 300px) {
+          height: 350px !important;
+          width: 240px !important;
         }
 
         & .imagem {
@@ -254,16 +276,70 @@ export default {
             width: 320px;
             padding: 0;
           }
+
+          @media (max-width: 750px) {
+            height: 400px !important;
+            width: 300px !important;
+          }
           @media (max-width: 670px) {
-            height: 100%;
-            width: 100%;
+            height: 400px !important;
+            width: 400px !important;
+          }
+          @media (max-width: 440px) {
+            height: 400px !important;
+            width: 370px !important;
+          }
+          @media (max-width: 430px) {
+            height: 400px !important;
+            width: 360px !important;
+          }
+          @media (max-width: 420px) {
+            height: 400px !important;
+            width: 350px !important;
+          }
+          @media (max-width: 410px) {
+            height: 400px !important;
+            width: 340px !important;
+          }
+          @media (max-width: 400px) {
+            height: 350px !important;
+            width: 310px !important;
+            padding: 0;
           }
           @media (max-width: 380px) {
             height: 350px !important;
             width: 310px !important;
           }
+          @media (max-width: 360px) {
+            height: 350px !important;
+            width: 300px !important;
+          }
+          @media (max-width: 350px) {
+            height: 350px !important;
+            width: 290px !important;
+          }
+          @media (max-width: 340px) {
+            height: 350px !important;
+            width: 280px !important;
+          }
+          @media (max-width: 330px) {
+            height: 350px !important;
+            width: 270px !important;
+          }
+          @media (max-width: 320px) {
+            height: 350px !important;
+            width: 260px !important;
+          }
+          @media (max-width: 310px) {
+            height: 350px !important;
+            width: 250px !important;
+          }
+          @media (max-width: 300px) {
+            height: 350px !important;
+            width: 240px !important;
+          }
 
-          & img {
+          & .carouselProduto {
             width: 100%;
             height: 100%;
           }

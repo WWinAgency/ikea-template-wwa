@@ -284,6 +284,42 @@ export default {};
           flex-direction: column !important;
           width: 100%;
         }
+
+        & .column-title {
+          font-weight: bold;
+          margin-bottom: 0.75rem !important;
+          font-size: 0.8rem !important;
+
+          &-family {
+            font-weight: bold;
+            font-size: 1.25rem !important;
+          }
+        }
+
+        & p {
+          margin-bottom: 0.9375rem;
+          line-height: 1.57;
+        }
+
+        &-info {
+          color: black;
+        }
+
+        & .btn {
+          border-radius: 20px !important;
+          font-size: 0.75rem !important;
+          font-weight: 700 !important;
+          margin: 24px auto 24px auto;
+
+          &:hover {
+            background-color: #303030;
+          }
+
+          @media (max-width: 1000px) {
+            width: 25%;
+            margin: 0;
+          }
+        }
       }
 
       & .cols-container {
@@ -397,34 +433,6 @@ export default {};
 
   &-column-title {
     font-size: 1rem;
-  }
-}
-.column-title {
-  font-weight: bold;
-  margin-bottom: 2rem;
-  font-size: 0.8rem !important;
-
-  &-family {
-    font-weight: bold;
-    margin-bottom: 2rem;
-    font-size: 1.25rem !important;
-  }
-}
-
-.ikea-family {
-  & .btn {
-    border-radius: 20px !important;
-    font-size: 0.75rem !important;
-    font-weight: 700 !important;
-    margin: 24px auto 24px auto;
-
-    &:hover {
-      background-color: #303030;
-    }
-  }
-
-  &-info {
-    color: black;
   }
 }
 

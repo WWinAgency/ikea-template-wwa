@@ -1,7 +1,7 @@
 <template>
   <div class="sidebar">
     <button class="sidebar-button" v-b-toggle.sidebar-1>
-      <b-icon icon="list" scale="1.5" variant="dark"></b-icon>
+      <b-icon icon="list" scale="1.6" variant="dark"></b-icon>
     </button>
     <b-sidebar id="sidebar-1">
       <div class="px-3 py-2">
@@ -150,14 +150,22 @@ export default {};
     width: 100% !important;
   }
 }
-.sidebar-button {
-  border: none;
-  margin-right: 1.5rem;
-  transition: width 2s, height 2s, transform 2s;
-  background-color: white !important;
 
-  &:hover {
-    transform: rotate(180deg);
+.sidebar {
+  & .sidebar-button {
+    border: none;
+    margin-right: 1.5rem;
+    transition: width 2s, height 2s, transform 2s;
+    background-color: white !important;
+
+    &:hover {
+      transform: rotate(180deg);
+    }
+
+    @media (max-width: 950px) {
+      margin-top: 0.2rem;
+      margin-right: 0;
+    }
   }
 }
 

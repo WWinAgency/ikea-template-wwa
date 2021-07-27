@@ -90,10 +90,12 @@ export default {
       & .text-row {
         & h1 {
           font-weight: bold;
+          line-height: 1.36rem;
           font-size: 1.125rem;
         }
         & h2 {
           font-size: 0.85rem;
+          line-height: 1.36rem;
         }
       }
 

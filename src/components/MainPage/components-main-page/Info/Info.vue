@@ -42,12 +42,13 @@ export default {};
       }
       & h1 {
         font-size: 1.5625rem;
-        line-height: 1.36rem;
+        line-height: 1.9rem;
         letter-spacing: -0.02625rem;
       }
 
       & h2 {
         font-size: 0.875rem;
+        line-height: 1.36rem;
         line-height: 1.571rem;
       }
     }

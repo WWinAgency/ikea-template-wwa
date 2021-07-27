@@ -1,14 +1,7 @@
 <template>
   <div id="app">
     <div class="content">
-      <div class="row">
-        <div class="col-1">
-          <div class="sidebar"><Sidebar /></div>
-        </div>
-        <div class="col-2">
-          <div class="header"><Header /></div>
-        </div>
-      </div>
+      <div class="header"><Header /></div>
       <div class="mainPage"><router-view></router-view></div>
     </div>
     <div class="footer"><Footer /></div>
@@ -17,12 +10,12 @@
 
 <script>
 import Header from "./components/Header/Header.vue";
-import Sidebar from "./components/Header/Sidebar.vue";
+
 import Footer from "./components/Footer/Footer.vue";
 
 export default {
   name: "App",
-  components: { Header, Footer, Sidebar },
+  components: { Header, Footer },
 };
 </script>
 
@@ -41,24 +34,21 @@ export default {
     @media (max-width: 1200px) {
       width: 90%;
     }
+    @media (max-width: 980px) {
+      width: 90%;
+      overflow: hidden;
+    }
     @media (max-width: 768px) {
       width: 90%;
       overflow: hidden;
     }
-    & .row {
-      width: 100%;
-      margin: auto;
-      align-items: center;
-      & .col-1 {
-        padding: 0;
-        width: 5%;
 
-        & .sidebar {
-        }
-      }
-      & .col-2 {
-        padding-right: 0;
-        width: 95%;
+    & .header {
+      margin-top: 2rem;
+      margin-bottom: 4rem;
+
+      @media (max-width: 950px) {
+        margin-bottom: 6rem;
       }
     }
 
