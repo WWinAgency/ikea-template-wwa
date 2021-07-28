@@ -1,7 +1,7 @@
 <template>
   <div class="midAdvert">
     <b-card
-      :img-src="imageLoungeMid"
+      img-src="https://picsum.photos/1600/960?random=6"
       img-alt="Card image"
       img-left
       class="image-card"
@@ -40,12 +40,9 @@
 </template>
 
 <script>
-import imageLoungeMid from "@/assets/images/outside-lounge.jpg";
 export default {
   data: function() {
-    return {
-      imageLoungeMid: imageLoungeMid,
-    };
+    return {};
   },
 };
 </script>

@@ -46,15 +46,17 @@ export default {
     & .header {
       margin-top: 2rem;
       margin-bottom: 4rem;
+      height: 100%;
 
       @media (max-width: 950px) {
-        margin-bottom: 6rem;
+        margin-bottom: 8rem;
       }
     }
 
     & .mainPage {
       width: 100%;
       margin: auto;
+      overflow: none;
     }
   }
 }

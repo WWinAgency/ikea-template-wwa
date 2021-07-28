@@ -1,7 +1,7 @@
 <template>
   <div class="infoImpComponent">
     <div class="infoImpComponent-col">
-      <div class="image-row"><img src="@/assets/images/vase.jpg" /></div>
+      <div class="image-row"><img :src="imgCarouselImpSrc" /></div>
       <div class="body-row">
         <div class="text-row">
           <h1>{{ title }}</h1>
@@ -34,7 +34,7 @@ export default {
   props: {
     title: String,
     body: String,
-    imgSrc: String,
+    imgCarouselImpSrc: String,
     infoUrl: String,
   },
 };

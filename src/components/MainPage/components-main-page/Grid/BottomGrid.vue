@@ -12,17 +12,33 @@
       <div class="grid-container">
         <div class="grid-container-left">
           <div class="grid-col-1">
-            <div class="grid-row-1"><Produto /></div>
+            <div class="grid-row-1">
+              <Produto
+                gridImageSrc="https://picsum.photos/1000/1200?random=8"
+              />
+            </div>
           </div>
         </div>
         <div class="grid-container-right">
           <div class="grid-col-2">
-            <div class="grid-row-2"><Produto /></div>
-            <div class="grid-row-3"><Produto /></div>
+            <div class="grid-row-2">
+              <Produto gridImageSrc="https://picsum.photos/1000/900?random=1" />
+            </div>
+            <div class="grid-row-3">
+              <Produto
+                gridImageSrc="https://picsum.photos/1000/1000?random=1"
+              />
+            </div>
           </div>
           <div class="grid-col-3">
-            <div class="grid-row-4"><Produto /></div>
-            <div class="grid-row-5"><Produto /></div>
+            <div class="grid-row-4">
+              <Produto
+                gridImageSrc="https://picsum.photos/1000/1000?random=2"
+              />
+            </div>
+            <div class="grid-row-5">
+              <Produto gridImageSrc="https://picsum.photos/1000/800?random=1" />
+            </div>
           </div>
         </div>
       </div>
@@ -95,6 +111,7 @@ export default {
               padding: 0 0.5rem 0 0;
             }
             @media (max-width: 1050px) {
+              width: 100%;
               height: 50rem;
               padding: 0;
             }

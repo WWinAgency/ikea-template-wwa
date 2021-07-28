@@ -1,7 +1,7 @@
 <template>
-  <div class="carousel">
+  <div class="carousel-pp">
     <div class="titulo">
-      <h1>Os mais vistos</h1>
+      <h1>Outros também viram</h1>
     </div>
     <div class="carousel-container">
       <VueSlickCarousel
@@ -12,65 +12,113 @@
       >
         <div class="carousel-item">
           <div class="imagem">
-            <CarouselProduto
-              textoBotao="Móveis"
-              productImageSrc="https://picsum.photos/300/400?random=1"
+            <Product
+              productImage="src\assets\images\storage.jpg"
+              name="HAUGA"
+              type="Roupeiro aberto c/3 gavetas 70x199 cm"
+              imageSrc="https://picsum.photos/300?random=4"
+              normalPrice="149"
+              currentPrice="119"
+              rating="4"
+              avaliacoes="5"
             />
           </div>
         </div>
         <div class="carousel-item">
           <div class="imagem">
-            <CarouselProduto
-              textoBotao="Arrumação e organização"
-              productImageSrc="https://picsum.photos/300/400?random=2"
+            <Product
+              productImage="src\assets\images\storage.jpg"
+              name="HAUGA"
+              type="Roupeiro aberto c/3 gavetas 70x199 cm"
+              imageSrc="https://picsum.photos/300?random=4"
+              normalPrice="149"
+              currentPrice="119"
+              rating="4"
+              avaliacoes="5"
             />
           </div>
         </div>
         <div class="carousel-item">
           <div class="imagem">
-            <CarouselProduto
-              textoBotao="Exterior"
-              productImageSrc="https://picsum.photos/300/400?random=3"
+            <Product
+              productImage="src\assets\images\storage.jpg"
+              name="HAUGA"
+              type="Roupeiro aberto c/3 gavetas 70x199 cm"
+              imageSrc="https://picsum.photos/300?random=4"
+              normalPrice="149"
+              currentPrice="119"
+              rating="4"
+              avaliacoes="5"
             />
           </div>
         </div>
         <div class="carousel-item">
           <div class="imagem">
-            <CarouselProduto
-              textoBotao="Verão"
-              productImageSrc="https://picsum.photos/300/400?random=4"
+            <Product
+              productImage="src\assets\images\storage.jpg"
+              name="HAUGA"
+              type="Roupeiro aberto c/3 gavetas 70x199 cm"
+              imageSrc="https://picsum.photos/300?random=4"
+              normalPrice="149"
+              currentPrice="119"
+              rating="4"
+              avaliacoes="5"
             />
           </div>
         </div>
         <div class="carousel-item">
           <div class="imagem">
-            <CarouselProduto
-              textoBotao="Colchões"
-              productImageSrc="https://picsum.photos/300/400?random=5"
+            <Product
+              productImage="src\assets\images\storage.jpg"
+              name="HAUGA"
+              type="Roupeiro aberto c/3 gavetas 70x199 cm"
+              imageSrc="https://picsum.photos/300?random=4"
+              normalPrice="149"
+              currentPrice="119"
+              rating="4"
+              avaliacoes="5"
             />
           </div>
         </div>
         <div class="carousel-item">
           <div class="imagem">
-            <CarouselProduto
-              textoBotao="Camas"
-              productImageSrc="https://picsum.photos/300/400?random=6"
+            <Product
+              productImage="src\assets\images\storage.jpg"
+              name="HAUGA"
+              type="Roupeiro aberto c/3 gavetas 70x199 cm"
+              imageSrc="https://picsum.photos/300?random=4"
+              normalPrice="149"
+              currentPrice="119"
+              rating="4"
+              avaliacoes="5"
             />
           </div>
         </div>
         <div class="carousel-item">
           <div class="imagem">
-            <CarouselProduto
-              textoBotao="Sofás"
-              productImageSrc="https://picsum.photos/300/400?random=7"
+            <Product
+              productImage="src\assets\images\storage.jpg"
+              name="HAUGA"
+              type="Roupeiro aberto c/3 gavetas 70x199 cm"
+              imageSrc="https://picsum.photos/300?random=4"
+              normalPrice="149"
+              currentPrice="119"
+              rating="4"
+              avaliacoes="5"
             />
           </div>
         </div>
         <div class="carousel-item">
           <div class="imagem">
-            <CarouselProduto
-              textoBotao="Cozinhas e eletrodomésticos"
-              productImageSrc="https://picsum.photos/300/400?random=8"
+            <Product
+              productImage="src\assets\images\storage.jpg"
+              name="HAUGA"
+              type="Roupeiro aberto c/3 gavetas 70x199 cm"
+              imageSrc="https://picsum.photos/300?random=4"
+              normalPrice="149"
+              currentPrice="119"
+              rating="4"
+              avaliacoes="5"
             />
           </div>
         </div>
@@ -83,22 +131,18 @@
 import VueSlickCarousel from "vue-slick-carousel";
 import "vue-slick-carousel/dist/vue-slick-carousel.css";
 import "vue-slick-carousel/dist/vue-slick-carousel-theme.css";
-import CarouselProduto from "./CarouselProduto.vue";
-
-import imageCarousel3 from "../../../../assets/images/vase.jpg";
+import Product from "../../MainPage/components-main-page/Product/Product.vue";
 
 export default {
   name: "MyComponent",
-  components: { VueSlickCarousel, CarouselProduto },
+  components: { VueSlickCarousel, Product },
   data: function() {
     return {
-      imageCarousel3: imageCarousel3,
-
       settings: {
         infinite: true,
         centerMode: true,
         centerPadding: 5,
-        slidesToShow: 6,
+        slidesToShow: 4,
         slidesToScroll: 9,
         speed: 500,
         initialSlide: 3,
@@ -111,45 +155,6 @@ export default {
               infinite: true,
               centerMode: true,
               centerPadding: 5,
-              slidesToShow: 5,
-              slidesToScroll: 2,
-              initialSlide: 1,
-              dots: false,
-              arrows: true,
-            },
-          },
-          {
-            breakpoint: 1500,
-            settings: {
-              infinite: true,
-              centerMode: true,
-              centerPadding: 5,
-              slidesToShow: 4,
-              slidesToScroll: 2,
-              initialSlide: 1,
-              dots: false,
-              arrows: true,
-            },
-          },
-          {
-            breakpoint: 1200,
-            settings: {
-              infinite: true,
-              centerMode: true,
-              centerPadding: 5,
-              slidesToShow: 4,
-              slidesToScroll: 2,
-              initialSlide: 1,
-              dots: false,
-              arrows: true,
-            },
-          },
-          {
-            breakpoint: 1050,
-            settings: {
-              infinite: true,
-              centerMode: true,
-              centerPadding: 5,
               slidesToShow: 3,
               slidesToScroll: 2,
               initialSlide: 1,
@@ -157,8 +162,9 @@ export default {
               arrows: true,
             },
           },
+
           {
-            breakpoint: 800,
+            breakpoint: 1300,
             settings: {
               infinite: true,
               centerMode: true,
@@ -170,8 +176,9 @@ export default {
               arrows: true,
             },
           },
+
           {
-            breakpoint: 670,
+            breakpoint: 800,
             settings: {
               infinite: true,
               centerMode: true,
@@ -183,20 +190,6 @@ export default {
               arrows: true,
             },
           },
-
-          {
-            breakpoint: 480,
-            settings: {
-              infinite: true,
-              centerMode: true,
-              centerPadding: 5,
-              slidesToShow: 1,
-              slidesToScroll: 1,
-              initialSlide: 0,
-              dots: false,
-              arrows: false,
-            },
-          },
         ],
       },
     };
@@ -204,7 +197,7 @@ export default {
 };
 </script>
 <style lang="scss">
-.carousel {
+.carousel-pp {
   width: 100% !important;
   margin: 0 !important;
   padding: 0 !important;
@@ -233,8 +226,8 @@ export default {
 
     & .carousel-component {
       & .carousel-item {
-        width: 230px !important;
-        height: 310px !important;
+        width: 350px;
+        height: 550px;
 
         @media (max-width: 800px) {
           height: 400px !important;
@@ -304,8 +297,8 @@ export default {
         }
 
         & .imagem {
-          width: 230px;
-          height: 310px;
+          width: 350px;
+          height: 600px;
 
           @media (max-width: 800px) {
             height: 400px;

@@ -21,17 +21,29 @@
       <div class="grid-container">
         <div class="grid-container-left">
           <div class="grid-col-1">
-            <div class="grid-row-1"><Produto /></div>
+            <div class="grid-row-1">
+              <Produto gridImageSrc="https://picsum.photos/1000/960?random=1" />
+            </div>
           </div>
         </div>
         <div class="grid-container-right">
           <div class="grid-col-2">
-            <div class="grid-row-2"><Produto /></div>
-            <div class="grid-row-3"><Produto /></div>
+            <div class="grid-row-2">
+              <Produto gridImageSrc="https://picsum.photos/1500/960?random=1" />
+            </div>
+            <div class="grid-row-3">
+              <Produto
+                gridImageSrc="https://picsum.photos/1100/1100?random=2"
+              />
+            </div>
           </div>
           <div class="grid-col-3">
-            <div class="grid-row-4"><Produto /></div>
-            <div class="grid-row-5"><Produto /></div>
+            <div class="grid-row-4">
+              <Produto gridImageSrc="https://picsum.photos/1100/960?random=3" />
+            </div>
+            <div class="grid-row-5">
+              <Produto gridImageSrc="https://picsum.photos/1100/960?random=4" />
+            </div>
           </div>
         </div>
       </div>

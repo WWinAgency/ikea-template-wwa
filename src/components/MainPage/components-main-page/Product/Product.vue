@@ -2,7 +2,7 @@
   <div class="product">
     <div class="product-col">
       <div class="product-image-row">
-        <img src="@/assets/images/vase.jpg" class="product-image" />
+        <img :src="imageSrc" class="product-image" />
       </div>
       <div class="text-row">
         <div class="text-col">
@@ -60,6 +60,7 @@ export default {
   props: {
     productImage: String,
     discount: Number,
+    imageSrc: String,
     name: String,
     type: String,
     normalPrice: Number,

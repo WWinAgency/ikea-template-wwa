@@ -15,37 +15,58 @@
         </div>
         <div class="carousel-item">
           <div class="imagem">
-            <CarouselProduto textoBotao="Escola da casa" />
+            <CarouselProduto
+              textoBotao="Escola da casa"
+              productImageSrc="https://picsum.photos/300/400?random=9"
+            />
           </div>
         </div>
         <div class="carousel-item">
           <div class="imagem">
-            <CarouselProduto textoBotao="Painéis Solares SOLTRALE" />
+            <CarouselProduto
+              textoBotao="Painéis Solares SOLTRALE"
+              productImageSrc="https://picsum.photos/300/400?random=10"
+            />
           </div>
         </div>
         <div class="carousel-item">
           <div class="imagem">
-            <CarouselProduto textoBotao="Ver casas sustentáveis" />
+            <CarouselProduto
+              textoBotao="Ver casas sustentáveis"
+              productImageSrc="https://picsum.photos/300/400?random=11"
+            />
           </div>
         </div>
         <div class="carousel-item">
           <div class="imagem">
-            <CarouselProduto textoBotao="Ver alimentos sustentáveis" />
+            <CarouselProduto
+              textoBotao="Ver alimentos sustentáveis"
+              productImageSrc="https://picsum.photos/300/400?random=12"
+            />
           </div>
         </div>
         <div class="carousel-item">
           <div class="imagem">
-            <CarouselProduto textoBotao="Ver materiais sustentáveis" />
+            <CarouselProduto
+              textoBotao="Ver materiais sustentáveis"
+              productImageSrc="https://picsum.photos/300/400?random=13"
+            />
           </div>
         </div>
         <div class="carousel-item">
           <div class="imagem">
-            <CarouselProduto textoBotao="Ver como poupar água e energia" />
+            <CarouselProduto
+              textoBotao="Ver como poupar água e energia"
+              productImageSrc="https://picsum.photos/300/400?random=14"
+            />
           </div>
         </div>
         <div class="carousel-item">
           <div class="imagem">
-            <CarouselProduto textoBotao="A nossa casa sustentável" />
+            <CarouselProduto
+              textoBotao="A nossa casa sustentável"
+              productImageSrc="https://picsum.photos/300/400?random=15"
+            />
           </div>
         </div>
       </VueSlickCarousel>

@@ -1,5 +1,5 @@
 <template>
-  <div class="product-showcase">
+  <div class="product-showcase-pp">
     <div class="product-grid-row-1">
       <div class="product-grid-col-1">
         <Product
@@ -50,18 +50,11 @@
         />
       </div>
     </div>
-    <div class="product-grid-row-2">
-      <div class="promocoes-ikea-family">
-        <b-button class="ikea-family-btn" variant="dark"
-          >Ver promoções IKEA Family</b-button
-        >
-      </div>
-    </div>
   </div>
 </template>
 
 <script>
-import Product from "./Product/Product";
+import Product from "../../MainPage/components-main-page/Product/Product.vue";
 
 export default {
   components: { Product },
@@ -69,11 +62,12 @@ export default {
 </script>
 
 <style lang="scss">
-.product-showcase {
+.product-showcase-pp {
   width: 100% !important;
   height: 100% !important;
   display: flex;
   flex-direction: column;
+  margin-top: 2rem;
 
   & .product-grid-row-1 {
     display: flex;

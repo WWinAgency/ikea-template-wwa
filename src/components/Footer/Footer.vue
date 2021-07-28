@@ -15,7 +15,9 @@
             Junte-se a nós. Pelas ofertas, pelas ideias e pela casa.
             <a class="ikea-family-info" href="#">Veja mais</a>
           </p>
-          <b-button class="ikea-family" variant="dark">Aderir agora</b-button>
+          <b-button class="ikea-family-btn" variant="dark"
+            >Aderir agora</b-button
+          >
         </div>
 
         <!-- Grid column -->
@@ -305,18 +307,19 @@ export default {};
           color: black;
         }
 
-        & .btn {
-          border-radius: 20px !important;
+        & .ikea-family-btn {
+          border-radius: 64px !important;
           font-size: 0.75rem !important;
           font-weight: 700 !important;
           margin: 24px auto 24px auto;
+          width: 10rem;
+          text-align: center !important;
 
           &:hover {
             background-color: #303030;
           }
 
-          @media (max-width: 1000px) {
-            width: 25%;
+          @media (max-width: 1500px) {
             margin: 0;
           }
         }

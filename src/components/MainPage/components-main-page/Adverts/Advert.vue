@@ -11,7 +11,7 @@
       </div>
 
       <div class="advert-row">
-        <img :src="imageLounge" />
+        <img src="https://picsum.photos/1600/960?random=1" />
       </div>
       <div class="advert-row">
         <h3>
@@ -29,13 +29,9 @@
 </template>
 
 <script>
-import imageLounge from "@/assets/images/outside-lounge.jpg";
-
 export default {
   data: function() {
-    return {
-      imageLounge: imageLounge,
-    };
+    return {};
   },
 };
 </script>
@@ -91,9 +87,14 @@ export default {
         }
       }
 
-      & .image-advert img {
+      & img {
         margin: 2rem auto;
         width: 100%;
+        height: 880px;
+
+        @media (max-width: 1800px) {
+          height: 100%;
+        }
       }
     }
   }

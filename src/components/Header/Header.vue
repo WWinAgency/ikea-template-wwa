@@ -59,6 +59,7 @@ export default {
 
   & .navbar {
     width: 100%;
+    height: 100%;
     display: inline-block;
     padding: 0;
     position: relative;
@@ -140,6 +141,7 @@ export default {
 
       @media (max-width: 950px) {
         width: 100% !important;
+
         text-align: left;
         position: absolute;
         bottom: 1;

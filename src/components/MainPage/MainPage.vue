@@ -38,7 +38,6 @@ export default {
     InfoEntregas,
     TopGrid,
     BottomGrid,
-
     InfoImportanteCarousel,
   },
 };

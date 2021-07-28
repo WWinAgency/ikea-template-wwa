@@ -1,6 +1,7 @@
 import Vue from "vue";
 import App from "./App.vue";
 import { BootstrapVue, IconsPlugin } from "bootstrap-vue";
+import { BCarousel } from "bootstrap-vue";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-vue/dist/bootstrap-vue.css";
 import Vuex from "vuex";
@@ -11,6 +12,7 @@ Vue.use(Vuex);
 Vue.use(BootstrapVue);
 Vue.use(IconsPlugin);
 Vue.component("star-rating", Raters.StarRating);
+Vue.component("b-carousel", BCarousel);
 
 Vue.config.productionTip = false;
 

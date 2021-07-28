@@ -30,12 +30,16 @@
         </div>
       </a>
     </div>
-    <img src="@/assets/images/vase.jpg" />
+    <img :src="gridImageSrc" />
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  props: {
+    gridImageSrc: String,
+  },
+};
 </script>
 
 <style lang="scss">
