@@ -19,7 +19,7 @@
             >
           </li>
           <li class="menu-item">
-            <a class="item" href="/#precos-especiais"
+            <a class="item" href="/pagina-loja"
               ><strong> Preços especiais </strong></a
             >
           </li>

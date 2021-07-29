@@ -1,11 +1,20 @@
 <template>
-  <div class="bottomGrid">
+  <div class="mainPageTopGrid">
     <div class="row-1">
       <div class="text-row-1">
-        <h1><strong>Mais ideias e inspiração</strong></h1>
+        <h1><strong>As novidades esperam por si</strong></h1>
       </div>
       <div class="text-row-2">
-        <BottomGridButtonCarousel />
+        <div class="col-1">
+          <h2>
+            Depois dos piqueniques no jardim, dos passeios na natureza e dos
+            mergulhos na praia, é tempo de voltar a casa e descobrir a nova
+            coleção de outono da IKEA.
+          </h2>
+        </div>
+        <div class="col-2">
+          <b-button class="btn" variant="light">Ver artigos de verão</b-button>
+        </div>
       </div>
     </div>
     <div class="row-2">
@@ -13,31 +22,27 @@
         <div class="grid-container-left">
           <div class="grid-col-1">
             <div class="grid-row-1">
-              <Produto
-                gridImageSrc="https://picsum.photos/1000/1200?random=8"
-              />
+              <Produto gridImageSrc="https://picsum.photos/1000/960?random=1" />
             </div>
           </div>
         </div>
         <div class="grid-container-right">
           <div class="grid-col-2">
             <div class="grid-row-2">
-              <Produto gridImageSrc="https://picsum.photos/1000/900?random=1" />
+              <Produto gridImageSrc="https://picsum.photos/1500/960?random=1" />
             </div>
             <div class="grid-row-3">
               <Produto
-                gridImageSrc="https://picsum.photos/1000/1000?random=1"
+                gridImageSrc="https://picsum.photos/1100/1100?random=2"
               />
             </div>
           </div>
           <div class="grid-col-3">
             <div class="grid-row-4">
-              <Produto
-                gridImageSrc="https://picsum.photos/1000/1000?random=2"
-              />
+              <Produto gridImageSrc="https://picsum.photos/1100/960?random=3" />
             </div>
             <div class="grid-row-5">
-              <Produto gridImageSrc="https://picsum.photos/1000/800?random=1" />
+              <Produto gridImageSrc="https://picsum.photos/1100/960?random=4" />
             </div>
           </div>
         </div>
@@ -48,15 +53,14 @@
 
 <script>
 import Produto from "./Produto.vue";
-import BottomGridButtonCarousel from "./BottomGridButtonCarousel.vue";
 
 export default {
-  components: { Produto, BottomGridButtonCarousel },
+  components: { Produto },
 };
 </script>
 
 <style lang="scss">
-.bottomGrid {
+.mainPageTopGrid {
   flex-direction: column;
   width: 100%;
   margin: 0 !important;
@@ -67,18 +71,73 @@ export default {
     }
     & .text-row-1 {
       justify-content: flex-start;
-      margin-bottom: 1rem;
+      margin-bottom: 0.5rem;
 
       & h1 {
         font-size: 1.5625rem;
+        line-height: 1.36rem;
         text-align: left;
       }
     }
 
     & .text-row-2 {
+      display: flex;
+      flex-direction: row;
       width: 100%;
-      padding: 0 !important;
-      margin: 0 !important;
+
+      @media (max-width: 800px) {
+        flex-direction: column;
+      }
+
+      & .col-1 {
+        width: 80%;
+        padding: 1rem 1rem 1rem auto;
+
+        @media (max-width: 400px) {
+          margin-bottom: 1.5rem;
+        }
+        & h2 {
+          font-size: 0.875rem;
+          line-height: 1.36rem;
+          margin: 0;
+        }
+      }
+
+      & .col-2 {
+        display: flex;
+        justify-content: flex-end;
+        width: 20%;
+        padding: 1rem 1rem 1rem auto;
+
+        @media (max-width: 800px) {
+          margin-top: 1rem;
+          padding: 0 !important;
+          justify-content: flex-start;
+          width: 20rem;
+        }
+
+        @media (max-width: 400px) {
+          width: 100%;
+          justify-content: flex-start;
+        }
+
+        & .btn {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 1rem;
+          height: 2.5rem;
+          background-color: #f5f5f5;
+          border: 1px solid #f5f5f5;
+          border-radius: 64px;
+          font-size: 0.75rem;
+
+          &:hover {
+            background-color: #e0e0e0;
+            border: 1px solid #e0e0e0;
+          }
+        }
+      }
     }
   }
 
@@ -111,7 +170,6 @@ export default {
               padding: 0 0.5rem 0 0;
             }
             @media (max-width: 1050px) {
-              width: 100%;
               height: 50rem;
               padding: 0;
             }

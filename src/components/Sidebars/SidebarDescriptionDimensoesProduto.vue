@@ -1,15 +1,27 @@
 <template>
   <div class="descriptionSidebar">
     <div class="sidebar-text-row">
-      <div class="sidebar-text-col-1">{{ tituloSidebar }}</div>
+      <div class="sidebar-text-col-1">
+        <a class="tituloSidebar" v-b-toggle.sidebar-dimensoes-produto-right>{{
+          tituloSidebar
+        }}</a>
+      </div>
       <div class="sidebar-text-col-2">
-        <button class="sidebar-button" v-b-toggle.sidebar-right>
+        <button
+          class="sidebar-button"
+          v-b-toggle.sidebar-dimensoes-produto-right
+        >
           <b-icon icon="arrow-right" scale="1.6" variant="dark"></b-icon>
         </button>
       </div>
     </div>
 
-    <b-sidebar id="sidebar-right" title="Sidebar" right shadow>
+    <b-sidebar
+      id="sidebar-dimensoes-produto-right"
+      title="Sidebar Dimensões Produto"
+      right
+      shadow
+    >
       <div class="px-3 py-2">
         <p>
           Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
@@ -40,7 +52,19 @@ export default {
   & .sidebar-text-row {
     display: inline-block;
     & .sidebar-text-col-1 {
-      float: left;
+      & .tituloSidebar {
+        font-size: 1.5625rem;
+        line-height: 1.36;
+        letter-spacing: -0.02625rem;
+        color: black;
+        font-weight: 700;
+        float: left;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
     }
     & .sidebar-text-col-2 {
       position: absolute;

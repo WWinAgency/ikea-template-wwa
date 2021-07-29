@@ -1,7 +1,7 @@
 <template>
   <div class="bottomCarousel">
     <div class="titulo">
-      <h1>Um Mundo melhor começa em casa</h1>
+      <h1>{{ tituloBottomCarousel }}</h1>
     </div>
     <div class="carousel-container">
       <VueSlickCarousel
@@ -17,7 +17,7 @@
           <div class="imagem">
             <CarouselProduto
               textoBotao="Escola da casa"
-              productImageSrc="https://picsum.photos/300/400?random=9"
+              productImageSrc="https://picsum.photos/400/480?random=9"
             />
           </div>
         </div>
@@ -25,7 +25,7 @@
           <div class="imagem">
             <CarouselProduto
               textoBotao="Painéis Solares SOLTRALE"
-              productImageSrc="https://picsum.photos/300/400?random=10"
+              productImageSrc="https://picsum.photos/400/480?random=10"
             />
           </div>
         </div>
@@ -33,7 +33,7 @@
           <div class="imagem">
             <CarouselProduto
               textoBotao="Ver casas sustentáveis"
-              productImageSrc="https://picsum.photos/300/400?random=11"
+              productImageSrc="https://picsum.photos/400/480?random=11"
             />
           </div>
         </div>
@@ -41,7 +41,7 @@
           <div class="imagem">
             <CarouselProduto
               textoBotao="Ver alimentos sustentáveis"
-              productImageSrc="https://picsum.photos/300/400?random=12"
+              productImageSrc="https://picsum.photos/400/480?random=12"
             />
           </div>
         </div>
@@ -49,7 +49,7 @@
           <div class="imagem">
             <CarouselProduto
               textoBotao="Ver materiais sustentáveis"
-              productImageSrc="https://picsum.photos/300/400?random=13"
+              productImageSrc="https://picsum.photos/400/480?random=13"
             />
           </div>
         </div>
@@ -57,7 +57,7 @@
           <div class="imagem">
             <CarouselProduto
               textoBotao="Ver como poupar água e energia"
-              productImageSrc="https://picsum.photos/300/400?random=14"
+              productImageSrc="https://picsum.photos/400/480?random=14"
             />
           </div>
         </div>
@@ -65,7 +65,7 @@
           <div class="imagem">
             <CarouselProduto
               textoBotao="A nossa casa sustentável"
-              productImageSrc="https://picsum.photos/300/400?random=15"
+              productImageSrc="https://picsum.photos/400/480?random=15"
             />
           </div>
         </div>
@@ -81,21 +81,12 @@ import "vue-slick-carousel/dist/vue-slick-carousel-theme.css";
 import CarouselInfo from "./CarouseInfo.vue";
 import CarouselProduto from "./CarouselProduto.vue";
 
-import imageCarousel1 from "../../../../assets/images/outside-lounge.jpg";
-import imageCarousel2 from "../../../../assets/images/storage.jpg";
-import imageCarousel3 from "../../../../assets/images/vase.jpg";
-import imageCarousel4 from "../../../../assets/images/window-blinds.jpg";
-
 export default {
   name: "MyComponent",
   components: { VueSlickCarousel, CarouselInfo, CarouselProduto },
+  props: { tituloBottomCarousel: String },
   data: function() {
     return {
-      imageCarousel1: imageCarousel1,
-      imageCarousel2: imageCarousel2,
-      imageCarousel3: imageCarousel3,
-      imageCarousel4: imageCarousel4,
-
       settings: {
         infinite: true,
         centerMode: true,
@@ -172,22 +163,9 @@ export default {
               arrows: true,
             },
           },
-          {
-            breakpoint: 670,
-            settings: {
-              infinite: true,
-              centerMode: true,
-              centerPadding: 5,
-              slidesToShow: 1,
-              slidesToScroll: 2,
-              initialSlide: 1,
-              dots: false,
-              arrows: true,
-            },
-          },
 
           {
-            breakpoint: 480,
+            breakpoint: 550,
             settings: {
               infinite: true,
               centerMode: true,
@@ -233,149 +211,62 @@ export default {
     & .carousel-component {
       & .carousel-item {
         width: 230px !important;
-        height: 300px !important;
+        height: 310px !important;
 
-        @media (max-width: 800px) {
-          height: 400px !important;
-          width: 320px !important;
-        }
-
-        @media (max-width: 750px) {
-          height: 400px !important;
-          width: 300px !important;
-        }
-        @media (max-width: 670px) {
-          height: 400px !important;
+        @media (max-width: 550px) {
           width: 400px !important;
+          height: 480px !important;
         }
-
-        @media (max-width: 440px) {
-          height: 400px !important;
-          width: 370px !important;
-        }
-        @media (max-width: 430px) {
-          height: 400px !important;
-          width: 360px !important;
+        @media (max-width: 480px) {
+          width: 350px !important;
+          height: 480px !important;
         }
         @media (max-width: 420px) {
-          height: 400px !important;
-          width: 350px !important;
+          width: 320px !important;
+          height: 420px !important;
         }
-        @media (max-width: 410px) {
-          height: 400px !important;
-          width: 340px !important;
-        }
-        @media (max-width: 400px) {
-          height: 350px !important;
-          width: 310px !important;
-          padding: 0;
-        }
-        @media (max-width: 360px) {
-          height: 350px !important;
+
+        @media (max-width: 380px) {
           width: 300px !important;
+          height: 420px !important;
         }
         @media (max-width: 350px) {
-          height: 350px !important;
-          width: 290px !important;
-        }
-        @media (max-width: 340px) {
-          height: 350px !important;
           width: 280px !important;
+          height: 400px !important;
         }
         @media (max-width: 330px) {
-          height: 350px !important;
-          width: 270px !important;
-        }
-        @media (max-width: 320px) {
-          height: 350px !important;
           width: 260px !important;
-        }
-        @media (max-width: 310px) {
-          height: 350px !important;
-          width: 250px !important;
-        }
-        @media (max-width: 300px) {
-          height: 350px !important;
-          width: 240px !important;
+          height: 380px !important;
         }
 
         & .carousel-info {
-          width: 230px;
-          height: 310px;
+          width: 230px !important;
+          height: 310px !important;
 
-          @media (max-width: 800px) {
-            height: 400px;
-            width: 320px;
-            padding: 0 0.25rem 0 0;
-          }
-          @media (max-width: 750px) {
-            height: 400px !important;
-            width: 300px !important;
-          }
-          @media (max-width: 670px) {
-            height: 400px !important;
+          @media (max-width: 550px) {
             width: 400px !important;
+            height: 480px !important;
           }
-          @media (max-width: 500px) {
-            height: 400px !important;
-            width: 380px !important;
-            padding: 0;
-          }
-          @media (max-width: 440px) {
-            height: 400px !important;
-            width: 370px !important;
-          }
-          @media (max-width: 430px) {
-            height: 400px !important;
-            width: 360px !important;
+          @media (max-width: 480px) {
+            width: 350px !important;
+            height: 480px !important;
           }
           @media (max-width: 420px) {
-            height: 400px !important;
-            width: 350px !important;
+            width: 320px !important;
+            height: 420px !important;
           }
-          @media (max-width: 410px) {
-            height: 400px !important;
-            width: 340px !important;
-          }
-          @media (max-width: 400px) {
-            height: 350px !important;
-            width: 310px !important;
-            padding: 0;
-          }
-          @media (max-width: 360px) {
-            height: 350px !important;
+
+          @media (max-width: 380px) {
             width: 300px !important;
-            padding: 0;
+            height: 420px !important;
           }
           @media (max-width: 350px) {
-            height: 350px !important;
-            width: 290px !important;
-            padding: 0;
-          }
-          @media (max-width: 340px) {
-            height: 350px !important;
             width: 280px !important;
-            padding: 0;
+            height: 400px !important;
           }
           @media (max-width: 330px) {
-            height: 350px !important;
-            width: 270px !important;
-            padding: 0;
-          }
-          @media (max-width: 320px) {
-            height: 350px !important;
             width: 260px !important;
-            padding: 0;
-          }
-          @media (max-width: 310px) {
-            height: 350px !important;
-            width: 250px !important;
-            padding: 0;
-          }
-          @media (max-width: 300px) {
-            height: 350px !important;
-            width: 240px !important;
-            padding: 0;
+            height: 380px !important;
           }
 
           & .carouselInfo {
@@ -388,22 +279,32 @@ export default {
           width: 230px;
           height: 310px;
 
-          @media (max-width: 800px) {
-            height: 400px;
-            width: 300px;
-            padding: 0;
+          @media (max-width: 550px) {
+            width: 400px !important;
+            height: 480px !important;
           }
-          @media (max-width: 670px) {
-            height: 100%;
-            width: 100%;
-            padding: 0;
+          @media (max-width: 480px) {
+            width: 350px !important;
+            height: 480px !important;
+          }
+          @media (max-width: 420px) {
+            width: 320px !important;
+            height: 420px !important;
           }
           @media (max-width: 380px) {
-            height: 100%;
-            padding: 0;
+            width: 300px !important;
+            height: 420px !important;
+          }
+          @media (max-width: 350px) {
+            width: 280px !important;
+            height: 400px !important;
+          }
+          @media (max-width: 330px) {
+            width: 260px !important;
+            height: 380px !important;
           }
 
-          & img {
+          & .carouselProduto {
             width: 100%;
             height: 100%;
           }

@@ -3,68 +3,97 @@
     <div class="product-grid-row-1">
       <div class="product-grid-col-1">
         <Product
-          productImage="src\assets\images\vase.jpg"
-          name="FEJKA"
-          type="Planta Artificial em vaso, 9cm"
-          imageSrc="https://picsum.photos/300?random=1"
-          normalPrice="4,50"
-          currentPrice="4"
-          rating="4.5"
-          avaliacoes="8"
+          :name="produto1.nome"
+          :type="produto1.tipo"
+          :imageSrc="produto1.imagem"
+          :normalPrice="produto1.precoNormal"
+          :currentPrice="produto1.precoAtual"
+          :rating="produto1.rating"
+          :avaliacoes="produto1.avaliacoes"
         />
       </div>
       <div class="product-grid-col-2">
         <Product
-          productImage="src\assets\images\window-blinds.jpg"
-          name="SKOGSKLÖVER"
-          type="Estore de correr 120x195 cm"
-          imageSrc="https://picsum.photos/300?random=2"
-          normalPrice="35"
-          currentPrice="29"
-          rating="4"
-          avaliacoes="148"
+          :name="produto2.nome"
+          :type="produto2.tipo"
+          :imageSrc="produto2.imagem"
+          :normalPrice="produto2.precoNormal"
+          :currentPrice="produto2.precoAtual"
+          :rating="produto2.rating"
+          :avaliacoes="produto2.avaliacoes"
         />
       </div>
       <div class="product-grid-col-3">
         <Product
-          productImage="src\assets\images\chair.jpg"
-          name="HUSARÖ"
-          type="Poltrona, exterior"
-          imageSrc="https://picsum.photos/300?random=3"
-          normalPrice="99"
-          currentPrice="85"
-          rating="4.5"
-          avaliacoes="10"
+          :name="produto3.nome"
+          :type="produto3.tipo"
+          :imageSrc="produto3.imagem"
+          :normalPrice="produto3.precoNormal"
+          :currentPrice="produto3.precoAtual"
+          :rating="produto3.rating"
+          :avaliacoes="produto3.avaliacoes"
         />
       </div>
       <div class="product-grid-col-4">
         <Product
-          productImage="src\assets\images\storage.jpg"
-          name="HAUGA"
-          type="Roupeiro aberto c/3 gavetas 70x199 cm"
-          imageSrc="https://picsum.photos/300?random=4"
-          normalPrice="149"
-          currentPrice="119"
-          rating="4"
-          avaliacoes="5"
+          :name="produto4.nome"
+          :type="produto4.tipo"
+          :imageSrc="produto4.imagem"
+          :normalPrice="produto4.precoNormal"
+          :currentPrice="produto4.precoAtual"
+          :rating="produto4.rating"
+          :avaliacoes="produto4.avaliacoes"
         />
-      </div>
-    </div>
-    <div class="product-grid-row-2">
-      <div class="promocoes-ikea-family">
-        <b-button class="ikea-family-btn" variant="dark"
-          >Ver promoções IKEA Family</b-button
-        >
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import Product from "./Product/Product";
+import Product from "./Product.vue";
 
 export default {
   components: { Product },
+  data() {
+    return {
+      produto1: {
+        nome: "FEJKA",
+        tipo: "Planta Artificial em vaso, 9cm",
+        imagem: "https://picsum.photos/300?random=1",
+        precoNormal: "4,50",
+        precoAtual: "4",
+        rating: "4.5",
+        avaliacoes: "8",
+      },
+      produto2: {
+        nome: "SKOGSKLÖVER",
+        tipo: "Estore de correr 120x195 cm",
+        imagem: "https://picsum.photos/300?random=2",
+        precoNormal: "35",
+        precoAtual: "29",
+        rating: "4",
+        avaliacoes: "148",
+      },
+      produto3: {
+        nome: "HUSARÖ",
+        tipo: "Poltrona, exterior",
+        imagem: "https://picsum.photos/300?random=3",
+        precoNormal: "149",
+        precoAtual: "119",
+        rating: "4.5",
+        avaliacoes: "10",
+      },
+      produto4: {
+        nome: "HAUGA",
+        tipo: "Roupeiro aberto c/3 gavetas 70 x 199 cm",
+        imagem: "https://picsum.photos/300?random=4",
+        precoNormal: "135",
+        precoAtual: "112",
+        rating: "3",
+        avaliacoes: "24",
+      },
+    };
+  },
 };
 </script>
 
@@ -207,19 +236,6 @@ export default {
     }
     @media (max-width: 400px) {
       margin-top: 0;
-    }
-    & .promocoes-ikea-family {
-      & .ikea-family-btn {
-        border-radius: 64px !important;
-        font-size: 0.75rem !important;
-        font-weight: 700 !important;
-        height: 2.5rem;
-        width: 13rem;
-
-        &:hover {
-          background-color: #303030;
-        }
-      }
     }
   }
 }

@@ -1,5 +1,5 @@
 <template>
-  <div class="productDescription">
+  <div class="tagProduto">
     <div class="product-col">
       <div class="product-row-1">
         <h3><strong>Promoção IKEA Family</strong></h3>
@@ -90,7 +90,7 @@
 <script>
 import StarRating from "vue-star-rating";
 export default {
-  name: "ProductDescription",
+  name: "TagProduto",
   components: { StarRating },
   props: {
     nomeProduto: String,
@@ -111,7 +111,7 @@ export default {
 </script>
 
 <style lang="scss">
-.productDescription {
+.tagProduto {
   width: 100%;
   position: sticky;
   & .product-col {
@@ -120,6 +120,10 @@ export default {
     justify-content: center;
     align-items: left;
     padding: 2.5rem;
+
+    @media (max-width: 1200px) {
+      padding-left: 0;
+    }
 
     & .costum-hr {
       width: 100%;
@@ -252,6 +256,10 @@ export default {
       align-items: center;
       margin-top: 1.5rem;
 
+      @media (max-width: 980px) {
+        margin-left: 0.3rem;
+      }
+
       & .inner-col-5 {
         float: left;
         width: 10%;
@@ -265,6 +273,10 @@ export default {
       display: flex;
       width: 100%;
       align-items: center;
+
+      @media (max-width: 980px) {
+        margin-left: 0.3rem;
+      }
 
       & .inner-col-7 {
         float: left;

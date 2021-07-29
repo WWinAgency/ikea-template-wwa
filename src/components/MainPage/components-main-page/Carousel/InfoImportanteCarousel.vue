@@ -51,8 +51,7 @@
 import VueSlickCarousel from "vue-slick-carousel";
 import "vue-slick-carousel/dist/vue-slick-carousel.css";
 import "vue-slick-carousel/dist/vue-slick-carousel-theme.css";
-
-import InfoImpComponent from "./InfoImpComponent.vue";
+import InfoImpComponent from "../Info/InfoImpComponent.vue";
 
 export default {
   name: "MyComponent",
