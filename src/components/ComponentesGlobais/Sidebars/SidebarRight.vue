@@ -39,6 +39,16 @@
               <strong> Página de Loja Right </strong></a
             >
           </li>
+          <li class="menu-item">
+            <a class="item" href="/pagina-politica-privacidade">
+              <strong> Política de Privacidade </strong></a
+            >
+          </li>
+          <li class="menu-item">
+            <a class="item" href="/pagina-politica-privacidade-right">
+              <strong> Política de Privacidade Right </strong></a
+            >
+          </li>
         </ul>
         <ul class="row-2">
           <li class="menu-item">
