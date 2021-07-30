@@ -1,5 +1,5 @@
 <template>
-  <div class="homePageRight">
+  <div class="paginaDeLoja">
     <div class="content">
       <div class="header"><Header /></div>
       <div class="mainPage">
@@ -20,4 +20,24 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="scss">
+.paginaDeLoja {
+  & .content {
+    width: 80%;
+    margin: 1rem auto;
+    transition: 0.3s ease-in-out;
+
+    @media (max-width: 1200px) {
+      width: 90%;
+    }
+    @media (max-width: 980px) {
+      width: 90%;
+      overflow: hidden;
+    }
+    @media (max-width: 768px) {
+      width: 90%;
+      overflow: hidden;
+    }
+  }
+}
+</style>
