@@ -3,7 +3,7 @@
     <b-navbar>
       <div class="col-1">
         <div class="sidebar">
-          <Sidebar />
+          <SidebarRight />
         </div>
       </div>
       <div class="col-2">
@@ -44,9 +44,9 @@
 </template>
 
 <script>
-import Sidebar from "../ComponentesGlobais/Sidebars/Sidebar.vue";
+import SidebarRight from "../ComponentesGlobais/Sidebars/SidebarRight.vue";
 export default {
-  components: { Sidebar },
+  components: { SidebarRight },
 };
 </script>
 

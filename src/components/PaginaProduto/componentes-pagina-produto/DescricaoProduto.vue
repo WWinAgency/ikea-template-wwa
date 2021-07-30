@@ -58,9 +58,9 @@
 
 <script>
 import StarRating from "vue-star-rating";
-import SidebarDescriptionDetalhesProduto from "../../Sidebars/SidebarDescriptionDetalhesProduto.vue";
-import SidebarDescriptionDimensoesProduto from "../../Sidebars/SidebarDescriptionDimensoesProduto.vue";
-import SidebarDescriptionAvaliacoesProduto from "../../Sidebars/SidebarDescriptionAvaliacoesProduto.vue";
+import SidebarDescriptionDetalhesProduto from "../../ComponentesGlobais/Sidebars/SidebarDescriptionDetalhesProduto.vue";
+import SidebarDescriptionDimensoesProduto from "../../ComponentesGlobais/Sidebars/SidebarDescriptionDimensoesProduto.vue";
+import SidebarDescriptionAvaliacoesProduto from "../../ComponentesGlobais/Sidebars/SidebarDescriptionAvaliacoesProduto.vue";
 export default {
   components: {
     SidebarDescriptionDetalhesProduto,

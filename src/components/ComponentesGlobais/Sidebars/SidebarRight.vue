@@ -1,9 +1,9 @@
 <template>
-  <div class="sidebar">
-    <button class="sidebar-button" v-b-toggle.sidebar-1>
+  <div class="sidebarRight">
+    <button class="sidebar-button" v-b-toggle.sidebar-1-right>
       <b-icon icon="list" scale="1.6" variant="dark"></b-icon>
     </button>
-    <b-sidebar id="sidebar-1">
+    <b-sidebar right id="sidebar-1-right">
       <div class="px-3 py-2">
         <ul class="menu-logo">
           <li>
@@ -14,23 +14,29 @@
         </ul>
         <ul class="row-1">
           <li class="menu-item">
-            <a class="item" href="/pagina-produto"
-              ><strong> Planeie a sua compra </strong></a
+            <a class="item" href="/"><strong> HomePage</strong></a>
+          </li>
+          <li class="menu-item">
+            <a class="item" href="/right"><strong> HomePage Right</strong></a>
+          </li>
+          <li class="menu-item">
+            <a class="item" href="/pagina-de-produto"
+              ><strong> Página de Produto </strong></a
             >
           </li>
           <li class="menu-item">
-            <a class="item" href="/pagina-loja"
-              ><strong> Preços especiais </strong></a
+            <a class="item" href="/pagina-de-produto-right"
+              ><strong> Página de Produto Right </strong></a
             >
           </li>
           <li class="menu-item">
-            <a class="item" href="/#inspiracao"
-              ><strong> Inspiração </strong></a
+            <a class="item" href="/pagina-de-loja">
+              <strong> Página de Loja </strong></a
             >
           </li>
           <li class="menu-item">
-            <a class="item" href="/#auto-sustentavel">
-              <strong> Produtos sustentáveis </strong></a
+            <a class="item" href="/pagina-de-loja-right">
+              <strong> Página de Loja Right </strong></a
             >
           </li>
         </ul>
@@ -151,7 +157,7 @@ export default {};
   }
 }
 
-.sidebar {
+.sidebarRight {
   & .sidebar-button {
     border: none;
     margin-right: 1.5rem;

@@ -57,6 +57,52 @@ export default {
     MainPageBottomGrid,
     InfoImportanteCarousel,
   },
+  data() {
+    return {
+      // produtos: [
+      //   {
+      //     id: 1,
+      //     nome: "FEJKA",
+      //     tipo: "Planta Artificial em vaso, 9cm",
+      //     imagem: "https://picsum.photos/300?random=1",
+      //     precoNormal: "4,50",
+      //     precoAtual: "4",
+      //     rating: "4.5",
+      //     avaliacoes: "8",
+      //   },
+      //   {
+      //     id: 2,
+      //     nome: "SKOGSKLÖVER",
+      //     tipo: "Estore de correr 120x195 cm",
+      //     imagem: "https://picsum.photos/300?random=2",
+      //     precoNormal: "35",
+      //     precoAtual: "29",
+      //     rating: "4",
+      //     avaliacoes: "148",
+      //   },
+      //   {
+      //     id: 3,
+      //     nome: "HUSARÖ",
+      //     tipo: "Poltrona, exterior",
+      //     imagem: "https://picsum.photos/300?random=3",
+      //     precoNormal: "149",
+      //     precoAtual: "119",
+      //     rating: "4.5",
+      //     avaliacoes: "10",
+      //   },
+      //   {
+      //     id: 4,
+      //     nome: "HAUGA",
+      //     tipo: "Roupeiro aberto c/3 gavetas 70 x 199 cm",
+      //     imagem: "https://picsum.photos/300?random=4",
+      //     precoNormal: "135",
+      //     precoAtual: "112",
+      //     rating: "3",
+      //     avaliacoes: "24",
+      //   },
+      // ],
+    };
+  },
 };
 </script>
 
