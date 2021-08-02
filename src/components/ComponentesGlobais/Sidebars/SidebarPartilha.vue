@@ -1,9 +1,14 @@
 <template>
-  <div class="sidebar">
-    <button class="sidebar-button" v-b-toggle.sidebar-1>
-      <b-icon icon="list" scale="1.6" variant="dark"></b-icon>
+  <div class="sidebarPartilha">
+    <button class="sidebar-button" v-b-toggle.sidebar-share>
+      <span class="button-icon">
+        <b-icon icon="box-arrow-up" scale="1.5" variant="dark"></b-icon
+      ></span>
+      <span class="button-text">
+        <strong>Partilhar</strong>
+      </span>
     </button>
-    <b-sidebar id="sidebar-1">
+    <b-sidebar id="sidebar-share">
       <div class="px-3 py-2">
         <ul class="menu-logo">
           <li>
@@ -165,26 +170,50 @@ export default {};
   @media (max-width: 380px) {
     width: 100% !important;
   }
-
-  &-body {
-    scrollbar-width: none;
-  }
 }
 
-.sidebar {
+.sidebarPartilha {
   & .sidebar-button {
-    border: none;
-    margin-right: 1.5rem;
-    transition: width 2s, height 2s, transform 2s;
-    background-color: white !important;
+    background-color: #f5f5f5;
+    border: 1px solid #f5f5f5;
+    color: black;
+    text-decoration: none;
+    border-radius: 64px;
+    height: 2.5rem;
+    display: inline-flex;
+    align-items: center;
+    overflow: hidden;
+    width: auto;
+    max-width: 2.5rem;
+    -webkit-transition: max-width 0.5s;
+    transition: max-width 0.5s;
 
     &:hover {
-      transform: rotate(180deg);
+      max-width: 20rem;
+      padding: 0 1rem 0 1rem;
+      background-color: #c8c8c8;
+      border: 1px solid #c8c8c8;
     }
 
-    @media (max-width: 950px) {
-      margin-top: 0.2rem;
-      margin-right: 0;
+    @media (max-width: 1200px) {
+      overflow: inherit;
+      max-width: 20rem;
+      padding: 0 1rem 0 1rem;
+      background-color: #f5f5f5;
+      border: 1px solid #f5f5f5;
+    }
+
+    & .button-icon {
+      padding-left: 6px;
+      display: flex;
+      align-items: center;
+    }
+
+    & .button-text {
+      white-space: nowrap;
+      padding-left: 1rem;
+      font-size: 0.8rem;
+      line-height: 1.3333333333;
     }
   }
 }

@@ -224,7 +224,7 @@ export default {
           & .produtos-semelhantes {
             display: flex;
             flex-direction: column;
-            margin-top: 2rem;
+            margin-top: 4rem;
 
             & .inner-col-1 {
               font-size: 1.375rem;

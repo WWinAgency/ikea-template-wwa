@@ -31,25 +31,123 @@
       <div class="politica-privacidade-inner-row-3">
         <PoliticaPrivacidadeAccordion />
       </div>
-      <div class="politica-privacidade-inner-row-4"></div>
-      <div class="politica-privacidade-inner-row-5"></div>
-      <div class="politica-privacidade-inner-row-6"></div>
-      <div class="politica-privacidade-inner-row-7"></div>
+      <div class="politica-privacidade-inner-row-4">
+        <Info1PPoliticaPrivacidade />
+      </div>
+      <div class="politica-privacidade-inner-row-5">
+        <PoliticaPrivacidadeAccordion2 />
+      </div>
+      <div class="politica-privacidade-inner-row-6">
+        <Info2PPoliticaPrivacidade />
+      </div>
+      <div class="politica-privacidade-inner-row-7">
+        <button class="goTop" @click="scrollToTop">
+          <span class="button-icon">
+            <b-icon icon="caret-up" scale="1.9" variant="dark"></b-icon>
+          </span>
+          <span class="button-text">Voltar ao topo</span>
+        </button>
+        <div class="share">
+          <SidebarPartilhaRight />
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import SidebarPartilhaRight from "../ComponentesGlobais/Sidebars/SidebarPartilhaRight.vue";
 import InfoPoliticaPrivacidade from "./componentes-politica-privacidade/InfoPoliticaPrivacidade.vue";
+import Info1PPoliticaPrivacidade from "./componentes-politica-privacidade/Info1PPoliticaPrivacidade.vue";
+import Info2PPoliticaPrivacidade from "./componentes-politica-privacidade/Info2PPoliticaPrivacidade.vue";
 import PathPrivacidade from "./componentes-politica-privacidade/PathPrivacidade.vue";
 import PoliticaPrivacidadeAccordion from "./componentes-politica-privacidade/PoliticaPrivacidadeAccordion.vue";
+import PoliticaPrivacidadeAccordion2 from "./componentes-politica-privacidade/PoliticaPrivacidadeAccordion2.vue";
 export default {
   components: {
     PathPrivacidade,
     InfoPoliticaPrivacidade,
     PoliticaPrivacidadeAccordion,
+    PoliticaPrivacidadeAccordion2,
+    Info1PPoliticaPrivacidade,
+    Info2PPoliticaPrivacidade,
+    SidebarPartilhaRight,
+  },
+  methods: {
+    scrollToTop() {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    },
   },
 };
 </script>
 
-<style></style>
+<style lang="scss">
+.html {
+  scroll-behavior: smooth;
+}
+.politicaPrivacidade {
+  margin-top: 2rem !important;
+
+  & .politica-privacidade-outter-col {
+    & .politica-privacidade-inner-row-7 {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      @media (max-width: 1200px) {
+        display: flex;
+        justify-content: center;
+      }
+
+      & .share {
+      }
+
+      & .goTop {
+        display: inline-flex;
+        align-items: center;
+        overflow: hidden;
+        width: auto;
+        max-width: 2.5rem;
+        height: 2.5rem;
+        padding: 0rem;
+        margin-right: 0.5rem;
+        border-radius: 64px;
+        background-color: #f5f5f5;
+        border: 1px solid #f5f5f5;
+        color: black;
+        -webkit-transition: max-width 0.5s;
+        transition: max-width 0.5s;
+
+        @media (max-width: 1200px) {
+          overflow: inherit;
+          max-width: 320px;
+          padding: 0 1rem 0 1rem;
+          background-color: #f5f5f5;
+          border: 1px solid #f5f5f5;
+        }
+
+        &:hover {
+          max-width: 320px;
+          height: 2.5rem;
+          background-color: #c8c8c8;
+          border: 1px solid #c8c8c8;
+          padding: 0 1rem 0 1rem;
+        }
+
+        & .button-icon {
+          padding-left: 10px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        & .button-text {
+          padding: 0 1rem 0 1rem;
+          font-size: 0.8rem;
+          line-height: 1.3333333333;
+          font-weight: 700;
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+}
+</style>

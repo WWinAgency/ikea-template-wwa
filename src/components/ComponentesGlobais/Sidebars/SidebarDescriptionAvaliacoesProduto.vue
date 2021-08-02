@@ -1,5 +1,5 @@
 <template>
-  <div class="descriptionSidebar">
+  <div class="descriptionSidebarAvaliacoes">
     <div class="sidebar-text-row">
       <div class="sidebar-text-col-1">
         <a class="tituloSidebar" v-b-toggle.sidebar-avaliacoes-produto-right>{{
@@ -47,7 +47,7 @@ export default {
 </script>
 
 <style lang="scss">
-.descriptionSidebar {
+.descriptionSidebarAvaliacoes {
   position: relative;
   & .sidebar-text-row {
     display: inline-block;
@@ -63,6 +63,10 @@ export default {
 
         &:hover {
           text-decoration: underline;
+        }
+
+        @media (max-width: 900px) {
+          font-size: 1.2rem;
         }
       }
     }
@@ -80,6 +84,10 @@ export default {
         }
       }
     }
+  }
+
+  & .b-sidebar-body {
+    scrollbar-width: none;
   }
 }
 </style>

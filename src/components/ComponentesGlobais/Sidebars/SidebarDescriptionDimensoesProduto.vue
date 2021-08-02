@@ -1,5 +1,5 @@
 <template>
-  <div class="descriptionSidebar">
+  <div class="descriptionSidebarDimensoes">
     <div class="sidebar-text-row">
       <div class="sidebar-text-col-1">
         <a class="tituloSidebar" v-b-toggle.sidebar-dimensoes-produto-right>{{
@@ -16,12 +16,7 @@
       </div>
     </div>
 
-    <b-sidebar
-      id="sidebar-dimensoes-produto-right"
-      title="Sidebar Dimensões Produto"
-      right
-      shadow
-    >
+    <b-sidebar id="sidebar-dimensoes-produto-right" right shadow>
       <div class="px-3 py-2">
         <p>
           Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
@@ -47,7 +42,7 @@ export default {
 </script>
 
 <style lang="scss">
-.descriptionSidebar {
+.descriptionSidebarDimensoes {
   position: relative;
   & .sidebar-text-row {
     display: inline-block;
@@ -63,6 +58,10 @@ export default {
 
         &:hover {
           text-decoration: underline;
+        }
+
+        @media (max-width: 900px) {
+          font-size: 1.2rem;
         }
       }
     }
@@ -80,6 +79,9 @@ export default {
         }
       }
     }
+  }
+  & .b-sidebar-body {
+    scrollbar-width: none;
   }
 }
 </style>

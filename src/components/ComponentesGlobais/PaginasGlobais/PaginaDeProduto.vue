@@ -38,6 +38,13 @@ export default {
       width: 90%;
       overflow: hidden;
     }
+    & .header {
+      margin-bottom: 2rem !important;
+
+      @media (max-width: 950px) {
+        margin-bottom: 6rem !important;
+      }
+    }
   }
 }
 </style>

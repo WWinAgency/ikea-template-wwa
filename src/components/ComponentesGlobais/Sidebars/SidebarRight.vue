@@ -165,6 +165,10 @@ export default {};
   @media (max-width: 380px) {
     width: 100% !important;
   }
+
+  &-body {
+    scrollbar-width: none;
+  }
 }
 
 .sidebarRight {

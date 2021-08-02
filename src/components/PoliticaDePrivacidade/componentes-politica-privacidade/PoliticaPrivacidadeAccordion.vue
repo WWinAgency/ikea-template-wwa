@@ -8,14 +8,15 @@
         <div class="accordion" role="tablist">
           <!-- GESTAO DE CLIENTES -->
           <b-card no-body class="accordion-privacidade">
-            <b-card-header header-tag="header" class="p-1" role="tab">
+            <b-card-header
+              @click="rotatedArrow1 = !rotatedArrow1"
+              v-b-toggle.accordion-1
+              header-tag="header"
+              role="tab"
+            >
               <div class="card-header-inner-row">
                 <div class="card-header-inner-col-1">
-                  <a
-                    class="card-name"
-                    block
-                    v-b-toggle.accordion-1
-                    variant="info"
+                  <a class="card-name" block variant="info"
                     >Gestão de clientes</a
                   >
                 </div>
@@ -24,7 +25,6 @@
                     class="card-arrow"
                     @click="rotatedArrow1 = !rotatedArrow1"
                     block
-                    v-b-toggle.accordion-1
                     variant="info"
                   >
                     <b-icon
@@ -66,14 +66,15 @@
 
           <!-- GESTAO DE CHAMADAS DE VOZ, EMAIL E CHAT -->
           <b-card no-body class="accordion-privacidade">
-            <b-card-header header-tag="header" class="p-1" role="tab">
+            <b-card-header
+              @click="rotatedArrow2 = !rotatedArrow2"
+              v-b-toggle.accordion-2
+              header-tag="header"
+              role="tab"
+            >
               <div class="card-header-inner-row">
                 <div class="card-header-inner-col-1">
-                  <a
-                    class="card-name"
-                    block
-                    v-b-toggle.accordion-2
-                    variant="info"
+                  <a class="card-name" block variant="info"
                     >Gestão de chamadas de voz</a
                   >
                 </div>
@@ -82,7 +83,6 @@
                     class="card-arrow"
                     @click="rotatedArrow2 = !rotatedArrow2"
                     block
-                    v-b-toggle.accordion-2
                     variant="info"
                   >
                     <b-icon
@@ -123,23 +123,21 @@
 
           <!-- MARKETING -->
           <b-card no-body class="accordion-privacidade">
-            <b-card-header header-tag="header" class="p-1" role="tab">
+            <b-card-header
+              @click="rotatedArrow3 = !rotatedArrow3"
+              v-b-toggle.accordion-3
+              header-tag="header"
+              role="tab"
+            >
               <div class="card-header-inner-row">
                 <div class="card-header-inner-col-1">
-                  <a
-                    class="card-name"
-                    block
-                    v-b-toggle.accordion-3
-                    variant="info"
-                    >Marketing</a
-                  >
+                  <a class="card-name" block variant="info">Marketing</a>
                 </div>
                 <div class="card-header-inner-col-2">
                   <button
                     class="card-arrow"
                     @click="rotatedArrow3 = !rotatedArrow3"
                     block
-                    v-b-toggle.accordion-3
                     variant="info"
                   >
                     <b-icon
@@ -183,14 +181,15 @@
 
           <!-- INQUÉRITO DE SATISFAÇÃO -->
           <b-card no-body class="accordion-privacidade">
-            <b-card-header header-tag="header" class="p-1" role="tab">
+            <b-card-header
+              @click="rotatedArrow4 = !rotatedArrow4"
+              v-b-toggle.accordion-4
+              header-tag="header"
+              role="tab"
+            >
               <div class="card-header-inner-row">
                 <div class="card-header-inner-col-1">
-                  <a
-                    class="card-name"
-                    block
-                    v-b-toggle.accordion-4
-                    variant="info"
+                  <a class="card-name" block variant="info"
                     >Inquérito de satisfação</a
                   >
                 </div>
@@ -199,7 +198,6 @@
                     class="card-arrow"
                     @click="rotatedArrow4 = !rotatedArrow4"
                     block
-                    v-b-toggle.accordion-4
                     variant="info"
                   >
                     <b-icon
@@ -241,14 +239,15 @@
 
           <!-- DEFINIÇÃO DE PERFIS -->
           <b-card no-body class="accordion-privacidade">
-            <b-card-header header-tag="header" class="p-1" role="tab">
+            <b-card-header
+              @click="rotatedArrow5 = !rotatedArrow5"
+              v-b-toggle.accordion-5
+              header-tag="header"
+              role="tab"
+            >
               <div class="card-header-inner-row">
                 <div class="card-header-inner-col-1">
-                  <a
-                    class="card-name"
-                    block
-                    v-b-toggle.accordion-5
-                    variant="info"
+                  <a class="card-name" block variant="info"
                     >Definição de Perfis</a
                   >
                 </div>
@@ -257,7 +256,6 @@
                     class="card-arrow"
                     @click="rotatedArrow5 = !rotatedArrow5"
                     block
-                    v-b-toggle.accordion-5
                     variant="info"
                   >
                     <b-icon
@@ -298,14 +296,15 @@
 
           <!-- VIDEO VIGILANCIA -->
           <b-card no-body class="accordion-privacidade">
-            <b-card-header header-tag="header" class="p-1" role="tab">
+            <b-card-header
+              @click="rotatedArrow6 = !rotatedArrow6"
+              v-b-toggle.accordion-6
+              header-tag="header"
+              role="tab"
+            >
               <div class="card-header-inner-row">
                 <div class="card-header-inner-col-1">
-                  <a
-                    class="card-name"
-                    block
-                    v-b-toggle.accordion-6
-                    variant="info"
+                  <a class="card-name" block variant="info"
                     >Vídeovigilância nas lojas</a
                   >
                 </div>
@@ -314,7 +313,6 @@
                     class="card-arrow"
                     @click="rotatedArrow6 = !rotatedArrow6"
                     block
-                    v-b-toggle.accordion-6
                     variant="info"
                   >
                     <b-icon
@@ -355,14 +353,15 @@
 
           <!-- GESTAO DE PASSATEMPOS -->
           <b-card no-body class="accordion-privacidade">
-            <b-card-header header-tag="header" class="p-1" role="tab">
+            <b-card-header
+              @click="rotatedArrow7 = !rotatedArrow7"
+              v-b-toggle.accordion-7
+              header-tag="header"
+              role="tab"
+            >
               <div class="card-header-inner-row">
                 <div class="card-header-inner-col-1">
-                  <a
-                    class="card-name"
-                    block
-                    v-b-toggle.accordion-7
-                    variant="info"
+                  <a class="card-name" block variant="info"
                     >Gestão de passatempos</a
                   >
                 </div>
@@ -371,7 +370,6 @@
                     class="card-arrow"
                     @click="rotatedArrow7 = !rotatedArrow7"
                     block
-                    v-b-toggle.accordion-7
                     variant="info"
                   >
                     <b-icon
@@ -412,14 +410,15 @@
 
           <!-- GESTAO DE ESPAÇOS -->
           <b-card no-body class="accordion-privacidade">
-            <b-card-header header-tag="header" class="p-1" role="tab">
+            <b-card-header
+              @click="rotatedArrow8 = !rotatedArrow8"
+              v-b-toggle.accordion-8
+              header-tag="header"
+              role="tab"
+            >
               <div class="card-header-inner-row">
                 <div class="card-header-inner-col-1">
-                  <a
-                    class="card-name"
-                    block
-                    v-b-toggle.accordion-8
-                    variant="info"
+                  <a class="card-name" block variant="info"
                     >Gestão de espaços "Smaland"
                   </a>
                 </div>
@@ -428,7 +427,6 @@
                     class="card-arrow"
                     @click="rotatedArrow8 = !rotatedArrow8"
                     block
-                    v-b-toggle.accordion-8
                     variant="info"
                   >
                     <b-icon
@@ -469,14 +467,15 @@
 
           <!-- GESTAO DO PROGRAMA -->
           <b-card no-body class="accordion-privacidade">
-            <b-card-header header-tag="header" class="p-1" role="tab">
+            <b-card-header
+              @click="rotatedArrow9 = !rotatedArrow9"
+              v-b-toggle.accordion-9
+              header-tag="header"
+              role="tab"
+            >
               <div class="card-header-inner-row">
                 <div class="card-header-inner-col-1">
-                  <a
-                    class="card-name"
-                    block
-                    v-b-toggle.accordion-9
-                    variant="info"
+                  <a class="card-name" block variant="info"
                     >Gestão do programa "IKEA para Negócios"
                   </a>
                 </div>
@@ -485,7 +484,6 @@
                     class="card-arrow"
                     @click="rotatedArrow9 = !rotatedArrow9"
                     block
-                    v-b-toggle.accordion-9
                     variant="info"
                   >
                     <b-icon
@@ -526,14 +524,15 @@
 
           <!-- COSTUMER TRACKING -->
           <b-card no-body class="accordion-privacidade">
-            <b-card-header header-tag="header" class="p-1" role="tab">
+            <b-card-header
+              v-b-toggle.accordion-10
+              @click="rotatedArrow10 = !rotatedArrow10"
+              header-tag="header"
+              role="tab"
+            >
               <div class="card-header-inner-row">
                 <div class="card-header-inner-col-1">
-                  <a
-                    class="card-name"
-                    block
-                    v-b-toggle.accordion-10
-                    variant="info"
+                  <a class="card-name" block variant="info"
                     >Costumer Tracking</a
                   >
                 </div>
@@ -542,7 +541,6 @@
                     class="card-arrow"
                     @click="rotatedArrow10 = !rotatedArrow10"
                     block
-                    v-b-toggle.accordion-10
                     variant="info"
                   >
                     <b-icon
@@ -582,23 +580,21 @@
 
           <!-- RECRUTAMENTO -->
           <b-card no-body class="accordion-privacidade">
-            <b-card-header header-tag="header" class="p-1" role="tab">
+            <b-card-header
+              v-b-toggle.accordion-11
+              @click="rotatedArrow11 = !rotatedArrow11"
+              header-tag="header"
+              role="tab"
+            >
               <div class="card-header-inner-row">
                 <div class="card-header-inner-col-1">
-                  <a
-                    class="card-name"
-                    block
-                    v-b-toggle.accordion-11
-                    variant="info"
-                    >Recrutamento</a
-                  >
+                  <a class="card-name" block variant="info">Recrutamento</a>
                 </div>
                 <div class="card-header-inner-col-2">
                   <button
                     class="card-arrow"
                     @click="rotatedArrow11 = !rotatedArrow11"
                     block
-                    v-b-toggle.accordion-11
                     variant="info"
                   >
                     <b-icon
@@ -636,450 +632,8 @@
           <!-- RECRUTAMENTO -->
         </div>
       </div>
-      <div class="inner-row-4">
-        <div class="row-4-col">
-          <div class="col-4-inner-row-1">
-            <div class="row-inner-col">
-              <div class="row-inner-row-title">
-                A minha informação será partilhada com outros?
-              </div>
-              <div class="row-inner-row">
-                A sua informação pessoal pode ser divulgada:
-              </div>
-              <div class="row-inner-row">
-                - No âmbito do Grupo Empresarial IKEA.
-              </div>
-              <div class="row-inner-row">
-                - Terceiros prestadores de serviços da IKEA
-              </div>
-              <div class="row-inner-row">
-                Os seus dados pessoais poderão ser tratados por empresas
-                subcontratadas pela IKEA, nomeadamente para gestão de perdidos e
-                achados, alojamento de página web, correio eletrónico, envio de
-                informações sobre novos serviços e produtos, ofertas especiais.
-                São fornecidas a estas empresas apenas os dados pessoais
-                necessários para a prestação do serviço em causa.
-              </div>
-              <div class="row-inner-row">
-                Os seus dados serão tratados dentro do espaço da União Europeia.
-              </div>
-            </div>
-          </div>
-          <div class="col-4-inner-row-2">
-            <div class="row-inner-col">
-              <div class="row-inner-row-title">
-                Quais são os meus direitos?
-              </div>
-              <div class="row-inner-row">
-                <div class="list-title">
-                  A qualquer momento, pode solicitar-nos:
-                </div>
-                <ul class="list">
-                  <li>O acesso à informação que temos sobre si;</li>
-                  <li>
-                    A retificação da informação caso esteja incorreta ou
-                    incompleta;
-                  </li>
-                  <li>
-                    Para apagar ou limitar o tratamento dos seus dados pessoais;
-                  </li>
-                  <li>
-                    Se o tratamento depender do seu consentimento ou acordo e
-                    esse for efetuado por meios automatizados, tem direito ao
-                    envio dos dados pessoais anteriormente fornecidos, de forma
-                    estruturada, comummente utilizada e num formato
-                    informaticamente legível.
-                  </li>
-                </ul>
-              </div>
-              <div class="row-inner-row">
-                Os seus pedidos serão tratados com especial cuidado de forma a
-                que possamos assegurar a eficácia dos seus direitos. Poderá
-                ser-lhe pedido que faça prova da sua identidade de modo a
-                assegurar que a partilha dos dados pessoais é apenas feita com o
-                seu titular.
-              </div>
-              <div class="row-inner-row">
-                Deve ter presente que em certos casos (por exemplo, devido a
-                requisitos legais) o seu pedido poderá não ser imediatamente
-                satisfeito.
-              </div>
-              <div class="row-inner-row">
-                De qualquer modo, será informado das medidas tomadas nesse
-                sentido, no prazo máximo de um mês a partir do momento em que o
-                pedido for efetuado.
-              </div>
-              <div class="row-inner-row">
-                Tem ainda o direito de apresentar uma reclamação à
-                <a>Comissão Nacional de Proteção de Dados</a>.
-              </div>
-            </div>
-          </div>
-          <div class="col-4-inner-row-1"></div>
-        </div>
-      </div>
 
       <hr class="costum-hr" />
-
-      <!-- ----------------------------------------------------------------------------------------------------------------------------------- -->
-      <!-- ----------------------------------------------------------------------------------------------------------------------------------- -->
-      <!-- ----------------------------------------------------------------------------------------------------------------------------------- -->
-      <!-- ----------------------------------------------------------------------------------------------------------------------------------- -->
-      <!-- ----------------------------------------------------------------------------------------------------------------------------------- -->
-      <!-- ----------------------------------------------------------------------------------------------------------------------------------- -->
-      <!-- ----------------------------------------------------------------------------------------------------------------------------------- -->
-      <!-- ----------------------------------------------------------------------------------------------------------------------------------- -->
-      <!-- ----------------------------------------------------------------------------------------------------------------------------------- -->
-      <!-- ----------------------------------------------------------------------------------------------------------------------------------- -->
-
-      <div class="inner-row-5">
-        <!-- ACCORDION 2 -->
-        <div class="accordion" role="tablist">
-          <!-- DIREITO DE ACESSO -->
-          <b-card no-body class="accordion-privacidade">
-            <b-card-header header-tag="header" class="p-1" role="tab">
-              <div class="card-header-inner-row">
-                <div class="card-header-inner-col-1">
-                  <a
-                    class="card-name"
-                    block
-                    v-b-toggle.accordion-12
-                    variant="info"
-                    >Direito de acesso</a
-                  >
-                </div>
-                <div class="card-header-inner-col-2">
-                  <button
-                    class="card-arrow"
-                    @click="rotatedArrow12 = !rotatedArrow12"
-                    block
-                    v-b-toggle.accordion-12
-                    variant="info"
-                  >
-                    <b-icon
-                      v-if="rotatedArrow12"
-                      class="icon"
-                      icon="caret-down"
-                      scale="1.2"
-                      variant="dark"
-                    ></b-icon>
-                    <b-icon
-                      v-else
-                      class="icon"
-                      icon="caret-up"
-                      scale="1.2"
-                      variant="dark"
-                    ></b-icon>
-                  </button>
-                </div>
-              </div>
-            </b-card-header>
-            <b-collapse
-              id="accordion-12"
-              accordion="my-accordion"
-              role="tabpanel"
-            >
-              <b-card-body>
-                <b-card-text>
-                  <p>{{ textDireitoDeAcesso.p1 }}</p>
-                  <p>{{ textDireitoDeAcesso.p2 }}</p>
-                </b-card-text>
-              </b-card-body>
-            </b-collapse>
-          </b-card>
-
-          <!-- DIREITO DE ACESSO -->
-
-          <hr class="costum-hr" />
-
-          <!-- DIREITO DE RETIFICAÇÃO -->
-          <b-card no-body class="accordion-privacidade">
-            <b-card-header header-tag="header" class="p-1" role="tab">
-              <div class="card-header-inner-row">
-                <div class="card-header-inner-col-1">
-                  <a
-                    class="card-name"
-                    block
-                    v-b-toggle.accordion-13
-                    variant="info"
-                    >Direito de retificação</a
-                  >
-                </div>
-                <div class="card-header-inner-col-2">
-                  <button
-                    class="card-arrow"
-                    @click="rotatedArrow13 = !rotatedArrow13"
-                    block
-                    v-b-toggle.accordion-13
-                    variant="info"
-                  >
-                    <b-icon
-                      v-if="rotatedArrow13"
-                      class="icon"
-                      icon="caret-down"
-                      scale="1.2"
-                      variant="dark"
-                    ></b-icon>
-                    <b-icon
-                      v-else
-                      class="icon"
-                      icon="caret-up"
-                      scale="1.2"
-                      variant="dark"
-                    ></b-icon>
-                  </button>
-                </div>
-              </div>
-            </b-card-header>
-            <b-collapse
-              id="accordion-13"
-              accordion="my-accordion"
-              role="tabpanel"
-            >
-              <b-card-body>
-                <b-card-text>
-                  <p>{{ textDireitoDeRetificação.p1 }}</p>
-                </b-card-text>
-              </b-card-body>
-            </b-collapse>
-          </b-card>
-
-          <!-- DIREITO DE RETIFICAÇÃO -->
-
-          <hr class="costum-hr" />
-
-          <!-- DIREITO DE APAGAMENTO DOS DADOS -->
-          <b-card no-body class="accordion-privacidade">
-            <b-card-header header-tag="header" class="p-1" role="tab">
-              <div class="card-header-inner-row">
-                <div class="card-header-inner-col-1">
-                  <a
-                    class="card-name"
-                    block
-                    v-b-toggle.accordion-14
-                    variant="info"
-                    >Direito de apagamento dos dados ("direito a ser
-                    esquecido")</a
-                  >
-                </div>
-                <div class="card-header-inner-col-2">
-                  <button
-                    class="card-arrow"
-                    @click="rotatedArrow14 = !rotatedArrow14"
-                    block
-                    v-b-toggle.accordion-14
-                    variant="info"
-                  >
-                    <b-icon
-                      v-if="rotatedArrow14"
-                      class="icon"
-                      icon="caret-down"
-                      scale="1.2"
-                      variant="dark"
-                    ></b-icon>
-                    <b-icon
-                      v-else
-                      class="icon"
-                      icon="caret-up"
-                      scale="1.2"
-                      variant="dark"
-                    ></b-icon>
-                  </button>
-                </div>
-              </div>
-            </b-card-header>
-            <b-collapse
-              id="accordion-14"
-              accordion="my-accordion"
-              role="tabpanel"
-            >
-              <b-card-body>
-                <b-card-text>
-                  <p>{{ textDireitoApagamentoDados.p1 }}</p>
-                  <p>{{ textDireitoApagamentoDados.p2 }}</p>
-                  <p>{{ textDireitoApagamentoDados.p3 }}</p>
-                  <p>{{ textDireitoApagamentoDados.p4 }}</p>
-                </b-card-text>
-              </b-card-body>
-            </b-collapse>
-          </b-card>
-
-          <!-- DIREITO DE APAGAMENTO DOS DADOS -->
-
-          <hr class="costum-hr" />
-
-          <!-- DIRIETO À LIMITAÇÃO DO TRATAMENTO -->
-          <b-card no-body class="accordion-privacidade">
-            <b-card-header header-tag="header" class="p-1" role="tab">
-              <div class="card-header-inner-row">
-                <div class="card-header-inner-col-1">
-                  <a
-                    class="card-name"
-                    block
-                    v-b-toggle.accordion-15
-                    variant="info"
-                    >Direito à limitação do tratamento</a
-                  >
-                </div>
-                <div class="card-header-inner-col-2">
-                  <button
-                    class="card-arrow"
-                    @click="rotatedArrow15 = !rotatedArrow15"
-                    block
-                    v-b-toggle.accordion-15
-                    variant="info"
-                  >
-                    <b-icon
-                      v-if="rotatedArrow15"
-                      class="icon"
-                      icon="caret-down"
-                      scale="1.2"
-                      variant="dark"
-                    ></b-icon>
-                    <b-icon
-                      v-else
-                      class="icon"
-                      icon="caret-up"
-                      scale="1.2"
-                      variant="dark"
-                    ></b-icon>
-                  </button>
-                </div>
-              </div>
-            </b-card-header>
-            <b-collapse
-              id="accordion-15"
-              accordion="my-accordion"
-              role="tabpanel"
-            >
-              <b-card-body>
-                <b-card-text>
-                  <p>{{ textDireitoLimitacaoTratamento.p1 }}</p>
-                  <p>{{ textDireitoLimitacaoTratamento.p2 }}</p>
-                  <p>{{ textDireitoLimitacaoTratamento.p3 }}</p>
-                  <p>{{ textDireitoLimitacaoTratamento.p4 }}</p>
-                  <p>{{ textDireitoLimitacaoTratamento.p5 }}</p>
-                </b-card-text>
-              </b-card-body>
-            </b-collapse>
-          </b-card>
-
-          <!-- DIRIETO À LIMITAÇÃO DO TRATAMENTO -->
-
-          <hr class="costum-hr" />
-
-          <!-- DIREITO DA PORTABILIDADE DOS DADOS -->
-          <b-card no-body class="accordion-privacidade">
-            <b-card-header header-tag="header" class="p-1" role="tab">
-              <div class="card-header-inner-row">
-                <div class="card-header-inner-col-1">
-                  <a
-                    class="card-name"
-                    block
-                    v-b-toggle.accordion-16
-                    variant="info"
-                    >Direito de portabilidade dos dados</a
-                  >
-                </div>
-                <div class="card-header-inner-col-2">
-                  <button
-                    class="card-arrow"
-                    @click="rotatedArrow16 = !rotatedArrow16"
-                    block
-                    v-b-toggle.accordion-16
-                    variant="info"
-                  >
-                    <b-icon
-                      v-if="rotatedArrow16"
-                      class="icon"
-                      icon="caret-down"
-                      scale="1.2"
-                      variant="dark"
-                    ></b-icon>
-                    <b-icon
-                      v-else
-                      class="icon"
-                      icon="caret-up"
-                      scale="1.2"
-                      variant="dark"
-                    ></b-icon>
-                  </button>
-                </div>
-              </div>
-            </b-card-header>
-            <b-collapse
-              id="accordion-16"
-              accordion="my-accordion"
-              role="tabpanel"
-            >
-              <b-card-body>
-                <b-card-text>
-                  <p>{{ textDireitoPortabilidade.p1 }}</p>
-                  <p>{{ textDireitoPortabilidade.p2 }}</p>
-                </b-card-text>
-              </b-card-body>
-            </b-collapse>
-          </b-card>
-
-          <!-- DIREITO DA PORTABILIDADE DOS DADOS -->
-
-          <hr class="costum-hr" />
-
-          <!-- DIREITO DE OPOSIÇÃO -->
-          <b-card no-body class="accordion-privacidade">
-            <b-card-header header-tag="header" class="p-1" role="tab">
-              <div class="card-header-inner-row">
-                <div class="card-header-inner-col-1">
-                  <a
-                    class="card-name"
-                    block
-                    v-b-toggle.accordion-17
-                    variant="info"
-                    >Direito de oposição</a
-                  >
-                </div>
-                <div class="card-header-inner-col-2">
-                  <button
-                    class="card-arrow"
-                    @click="rotatedArrow17 = !rotatedArrow17"
-                    block
-                    v-b-toggle.accordion-17
-                    variant="info"
-                  >
-                    <b-icon
-                      v-if="rotatedArrow17"
-                      class="icon"
-                      icon="caret-down"
-                      scale="1.2"
-                      variant="dark"
-                    ></b-icon>
-                    <b-icon
-                      v-else
-                      class="icon"
-                      icon="caret-up"
-                      scale="1.2"
-                      variant="dark"
-                    ></b-icon>
-                  </button>
-                </div>
-              </div>
-            </b-card-header>
-            <b-collapse
-              id="accordion-17"
-              accordion="my-accordion"
-              role="tabpanel"
-            >
-              <b-card-body>
-                <b-card-text>
-                  <p>{{ textDireitoOposicao.p1 }}</p>
-                  <p>{{ textDireitoOposicao.p2 }}</p>
-                </b-card-text>
-              </b-card-body>
-            </b-collapse>
-          </b-card>
-          <!-- DIREITO DE OPOSIÇÃO -->
-        </div>
-      </div>
     </div>
   </div>
 </template>
@@ -1099,12 +653,6 @@ export default {
       rotatedArrow9: true,
       rotatedArrow10: true,
       rotatedArrow11: true,
-      rotatedArrow12: true,
-      rotatedArrow13: true,
-      rotatedArrow14: true,
-      rotatedArrow15: true,
-      rotatedArrow16: true,
-      rotatedArrow17: true,
 
       tituloAccordion: "Porque precisamos da sua informação?",
       subTituloAccordion:
@@ -1181,46 +729,6 @@ export default {
       textRecrutamento: {
         p1: "Por favor consulte a nossa Política de Recrutamento.",
       },
-      textDireitoDeAcesso: {
-        p1:
-          "O titular dos dados pessoais tem o direito a obter da IKEA a confirmação de que os dados que lhe digam respeito são ou não objeto de tratamento e, se for o caso, de aceder aos seus dados pessoais e aceder às informações previstas na lei.",
-        p2:
-          "Caso pretenda mais do que uma cópia dos seus dados pessoais em fase de tratamento, a IKEA poderá sujeitar esse serviço a um pagamento de uma taxa pelos custos administrativos.",
-      },
-      textDireitoDeRetificação: {
-        p1:
-          "O titular dos dados pessoais tem o direito de obter da IKEA, sem demora injustificada, a retificação dos dados inexatos ou incompletos que lhe digam respeito.",
-      },
-      textDireitoApagamentoDados: {
-        p1:
-          "O titular dos dados pessoais tem o direito pedir à IKEA para apagar os seus dados, sem demora injustificada, e a IKEA tem a obrigação de apagar os dados pessoais quando se aplique, designadamente, um dos seguintes motivos:",
-        p2:
-          "a) Os dados pessoais deixaram de ser necessários para a finalidade que motivou a sua recolha ou tratamento;",
-        p3:
-          "b) O titular retirou o seu consentimento para o tratamento de dados (nos casos em que o tratamento é baseado no consentimento) e não existir outro fundamento para o referido tratamento;",
-        p4:
-          "c) O titular opõe-se ao tratamento e não existem interesses legítimos prevalecentes que justifiquem o tratamento;",
-      },
-      textDireitoLimitacaoTratamento: {
-        p1:
-          "O titular dos dados tem o direito de obter da IKEA a limitação do tratamento, se se aplicar, designadamente, uma das seguintes situações:",
-        p2:
-          "a) Contestar a exatidão dos dados pessoais, durante um período que permita à IKEA verificar a sua exatidão;",
-        p3:
-          "b) O tratamento de dados for lícito e o titular dos dados se opuser a que se apaguem os seus dados pessoais e solicitar, em contrapartida, a limitação da sua utilização;",
-        p4:
-          "c) A IKEA já não precisar dos dados pessoais para fins de tratamento, mas esses dados são requeridos pelo titular para efeitos de declaração, exercício ou defesa de um direito num processo judicial;",
-        p5:
-          "d) Se tiver oposto ao tratamento, até se verificar que os motivos legítimos do responsável pelo tratamento prevalecem sobre os do titular dos dados.",
-      },
-      textDireitoPortabilidade: {
-        p1:
-          "Se o tratamento depender do consentimento do titular dos dados e esse consentimento tiver sido prestado por meios automatizados, o titular dos dados tem o direito a receber os dados pessoais que lhe digam respeito e que tenha fornecido à IKEA num formato estruturado, de uso corrente e de leitura automática.",
-      },
-      textDireitoOposicao: {
-        p1:
-          "Nos casos em que o tratamento de dados for efetuado para efeito dos interesses legítimos prosseguidos pela IKEA; ou 2) o tratamento de dados for efetuado para efeitos de marketing direto; ou 3) definição de perfis, o titular dos dados pode ainda, a qualquer altura, opor-se ao tratamento dos seus dados pessoais.",
-      },
     };
   },
   methods: {},
@@ -1246,7 +754,6 @@ export default {
       color: #484848;
     }
     & .accordion-inner-row-3 {
-      margin-bottom: 2rem;
       & .accordion {
         & .accordion-privacidade {
           border: none;
@@ -1257,124 +764,10 @@ export default {
             position: relative;
             border: none;
             background-color: white;
-            & .card-header-inner-row {
-              display: inline-block;
 
-              & .card-header-inner-col-1 {
-                position: absolute;
-                left: 0;
-                top: 20%;
-
-                & .card-name {
-                  font-size: 1rem;
-                  line-height: 1.5;
-                  font-weight: 700;
-                  color: #484848;
-                  text-decoration: none;
-
-                  &:hover {
-                    color: black;
-                    text-decoration: underline;
-                  }
-                }
-              }
-              & .card-header-inner-col-2 {
-                position: absolute;
-                top: 20%;
-                right: 0;
-
-                & .card-arrow {
-                  border: none;
-                  background-color: white;
-                }
-              }
+            &:focus {
+              outline: none !important;
             }
-          }
-
-          & .card-body {
-            padding-left: 0;
-            padding-top: 0;
-            padding-bottom: 4rem;
-            margin-bottom: 0.75rem;
-            font-size: 16px;
-            line-height: 26px;
-          }
-        }
-      }
-    }
-
-    & .inner-row-4 {
-      display: flex;
-      flex-direction: row;
-      margin-bottom: 2rem;
-      & .row-4-col {
-        display: flex;
-        flex-direction: column;
-
-        & .col-4-inner-row-1 {
-          display: flex;
-          flex-direction: row;
-          & .row-inner-col {
-            display: flex;
-            flex-direction: column;
-            & .row-inner-row-title {
-              font-size: 16px;
-              line-height: 26px;
-              font-weight: 700;
-              margin-bottom: 0.75rem;
-            }
-            & .row-inner-row {
-              font-size: 16px;
-              line-height: 26px;
-              margin-bottom: 0.75rem;
-            }
-          }
-        }
-        & .col-4-inner-row-2 {
-          display: flex;
-          flex-direction: row;
-          & .row-inner-col {
-            display: flex;
-            flex-direction: column;
-
-            & .row-inner-row-title {
-              font-size: 16px;
-              line-height: 26px;
-              font-weight: 700;
-              margin-bottom: 0.75rem;
-            }
-
-            & .row-inner-row {
-              font-size: 16px;
-              line-height: 26px;
-              margin-bottom: 0.75rem;
-
-              & .list-title {
-                font-size: 16px;
-                line-height: 26px;
-                margin-bottom: 0.75rem;
-              }
-
-              & .list {
-                padding-left: 1rem;
-              }
-            }
-          }
-        }
-      }
-    }
-    & .inner-row-5 {
-      margin-bottom: 2rem;
-      & .accordion {
-        & .accordion-privacidade {
-          border: none;
-          background-color: white;
-          & .card-header {
-            display: flex;
-            height: 8rem;
-            position: relative;
-            border: none;
-            background-color: white;
             & .card-header-inner-row {
               display: inline-block;
 

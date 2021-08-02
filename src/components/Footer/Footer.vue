@@ -187,22 +187,22 @@
 
     <!-- Social buttons -->
     <div class="mt-4 mb-4 social-icons-col">
-      <div class="icons-row">
+      <div class="icons-row-1">
         <a href=""
           ><b-icon icon="facebook" scale="1.3" variant="dark"></b-icon
         ></a>
       </div>
-      <div class="icons-row">
+      <div class="icons-row-2">
         <a href=""
           ><b-icon icon="instagram" scale="1.3" variant="dark"></b-icon
         ></a>
       </div>
-      <div class="icons-row">
+      <div class="icons-row-3">
         <a href=""
           ><b-icon icon="twitter" scale="1.3" variant="dark"></b-icon
         ></a>
       </div>
-      <div class="icons-row">
+      <div class="icons-row-4">
         <a href=""
           ><b-icon icon="youtube" scale="1.3" variant="dark"></b-icon
         ></a>
@@ -362,12 +362,57 @@ export default {};
   flex-direction: row;
   justify-content: center;
 
-  & .icons-row {
+  & .icons-row-1 {
     display: flex;
     justify-content: center;
     align-items: center;
     list-style: none;
     margin-right: 2rem;
+    border: 1px solid #bebebe;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+
+    &:hover {
+      border: 1px solid #808080;
+    }
+  }
+  & .icons-row-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    margin-right: 2rem;
+    border: 1px solid #bebebe;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+
+    &:hover {
+      border: 1px solid #808080;
+    }
+  }
+  & .icons-row-3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    margin-right: 2rem;
+    border: 1px solid #bebebe;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+
+    &:hover {
+      border: 1px solid #808080;
+    }
+  }
+  & .icons-row-4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    margin-right: 0rem;
     border: 1px solid #bebebe;
     width: 50px;
     height: 50px;
