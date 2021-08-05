@@ -17,17 +17,20 @@
     </div>
 
     <b-sidebar id="sidebar-dimensoes-produto-right" right shadow>
-      <div class="px-3 py-2">
-        <p>
-          Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-          dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-          consectetur ac, vestibulum at eros.
-        </p>
-        <b-img
-          src="https://picsum.photos/500/500/?image=54"
-          fluid
-          thumbnail
-        ></b-img>
+      <div class="detalhes-produto-outter-col">
+        <div class="detalhes-produto-row-1">
+          <strong>Dimensão do produto</strong>
+        </div>
+        <div class="detalhes-produto-row-2">
+          <div class="row-2-inner-col">
+            <div class="row-2-inner-row-1">
+              <strong>Diâmetro: </strong>27 cm
+            </div>
+          </div>
+        </div>
+        <div class="detalhes-produto-row-3">
+          <img src="https://picsum.photos/384/384?random=15" />
+        </div>
       </div>
     </b-sidebar>
   </div>
@@ -44,6 +47,13 @@ export default {
 <style lang="scss">
 .descriptionSidebarDimensoes {
   position: relative;
+  & .b-sidebar {
+    width: 500px !important;
+
+    @media (max-width: 500px) {
+      width: 100% !important;
+    }
+  }
   & .sidebar-text-row {
     display: inline-block;
     & .sidebar-text-col-1 {
@@ -80,8 +90,29 @@ export default {
       }
     }
   }
+
   & .b-sidebar-body {
     scrollbar-width: none;
+  }
+
+  & .detalhes-produto-outter-col {
+    padding: 4rem 3rem 4rem 3rem;
+
+    & .detalhes-produto-row-1 {
+      font-size: 1.5625rem;
+    }
+    & .detalhes-produto-row-2 {
+      & .row-2-inner-col {
+        display: flex;
+        flex-direction: column;
+        margin: 2rem 0 2rem 0;
+        & .row-2-inner-row-1 {
+          font-size: 0.875rem;
+          line-height: 1.57;
+          margin-bottom: 2rem;
+        }
+      }
+    }
   }
 }
 </style>

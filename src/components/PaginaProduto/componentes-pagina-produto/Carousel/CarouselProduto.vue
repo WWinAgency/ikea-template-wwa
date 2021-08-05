@@ -13,16 +13,23 @@
       @sliding-start="onSlideStart"
       @sliding-end="onSlideEnd"
     >
-      <b-carousel-slide img-src="https://picsum.photos/2000/2000?random=5" />
-      <b-carousel-slide img-src="https://picsum.photos/2000/2000?random=6" />
-      <b-carousel-slide img-src="https://picsum.photos/2000/2000?random=7" />
-      <b-carousel-slide img-src="https://picsum.photos/2000/2000?random=8" />
+      <b-carousel-slide :img-src="image1" />
+      <b-carousel-slide :img-src="image2" />
+      <b-carousel-slide :img-src="image3" />
+      <b-carousel-slide :img-src="image4" />
     </b-carousel>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  props: {
+    image1: String,
+    image2: String,
+    image3: String,
+    image4: String,
+  },
+};
 </script>
 
 <style lang="scss">

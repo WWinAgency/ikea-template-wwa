@@ -12,34 +12,34 @@
       >
         <div class="carousel-item-1">
           <InfoImpComponent
-            title="Medidas de segurança"
-            body="Saiba mais sobre as nossas precauções e como pode fazer a sua parte"
-            infoUrl="/medidas-de-segurança"
-            imgCarouselImpSrc="https://picsum.photos/960/960?random=1"
+            :title="carousel[0].title"
+            :body="carousel[0].body"
+            :infoUrl="carousel[0].infoUrl"
+            :imgCarouselImpSrc="carousel[0].imgCarouselImpSrc"
           />
         </div>
         <div class="carousel-item-2">
           <InfoImpComponent
-            title="Comprou algum prato, taça ou caneca HEROISK ou TALKIRA?"
-            body="A IKEA pede a todos os clientes que tenham comprado pratos, taças ou canecas HEROISK e/ou TALKIRA para pararem de os utilizar e os devolveverem numa loja IKEA, onde serão reembolsados na totalidade"
-            infoUrl="/heroisk-talkira-devolucao"
-            imgCarouselImpSrc="https://picsum.photos/960/960?random=2"
+            :title="carousel[1].title"
+            :body="carousel[1].body"
+            :infoUrl="carousel[1].infoUrl"
+            :imgCarouselImpSrc="carousel[1].imgCarouselImpSrc"
           />
         </div>
         <div class="carousel-item-3">
           <InfoImpComponent
-            title="Bem seguro! Juntos, criamos casas mais seguras"
-            body=""
-            infoUrl="/casas-mais-seguras"
-            imgCarouselImpSrc="https://picsum.photos/960/960?random=3"
+            :title="carousel[2].title"
+            :body="carousel[2].body"
+            :infoUrl="carousel[2].infoUrl"
+            :imgCarouselImpSrc="carousel[2].imgCarouselImpSrc"
           />
         </div>
         <div class="carousel-item-4">
           <InfoImpComponent
-            title="Bem seguro! Juntos, criamos casas mais seguras"
-            body=""
-            infoUrl="/casas-mais-seguras"
-            imgCarouselImpSrc="https://picsum.photos/960/960?random=4"
+            :title="carousel[3].title"
+            :body="carousel[3].body"
+            :infoUrl="carousel[3].infoUrl"
+            :imgCarouselImpSrc="carousel[3].imgCarouselImpSrc"
           />
         </div>
       </VueSlickCarousel>
@@ -55,6 +55,7 @@ import InfoImpComponent from "../Info/InfoImpComponent.vue";
 
 export default {
   name: "MyComponent",
+  props: ["carousel"],
   components: { VueSlickCarousel, InfoImpComponent },
   data: function() {
     return {

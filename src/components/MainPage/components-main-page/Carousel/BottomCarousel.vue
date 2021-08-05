@@ -1,7 +1,7 @@
 <template>
   <div class="bottomCarousel">
     <div class="titulo">
-      <h1>{{ tituloBottomCarousel }}</h1>
+      <h1>{{ titulo }}</h1>
     </div>
     <div class="carousel-container">
       <VueSlickCarousel
@@ -18,6 +18,7 @@
             <CarouselProduto
               textoBotao="Escola da casa"
               productImageSrc="https://picsum.photos/400/480?random=9"
+              link=""
             />
           </div>
         </div>
@@ -26,6 +27,7 @@
             <CarouselProduto
               textoBotao="Painéis Solares SOLTRALE"
               productImageSrc="https://picsum.photos/400/480?random=10"
+              link=""
             />
           </div>
         </div>
@@ -34,6 +36,7 @@
             <CarouselProduto
               textoBotao="Ver casas sustentáveis"
               productImageSrc="https://picsum.photos/400/480?random=11"
+              link=""
             />
           </div>
         </div>
@@ -42,6 +45,7 @@
             <CarouselProduto
               textoBotao="Ver alimentos sustentáveis"
               productImageSrc="https://picsum.photos/400/480?random=12"
+              link=""
             />
           </div>
         </div>
@@ -50,6 +54,7 @@
             <CarouselProduto
               textoBotao="Ver materiais sustentáveis"
               productImageSrc="https://picsum.photos/400/480?random=13"
+              link=""
             />
           </div>
         </div>
@@ -58,6 +63,7 @@
             <CarouselProduto
               textoBotao="Ver como poupar água e energia"
               productImageSrc="https://picsum.photos/400/480?random=14"
+              link=""
             />
           </div>
         </div>
@@ -66,6 +72,7 @@
             <CarouselProduto
               textoBotao="A nossa casa sustentável"
               productImageSrc="https://picsum.photos/400/480?random=15"
+              link=""
             />
           </div>
         </div>
@@ -83,8 +90,18 @@ import CarouselProduto from "./CarouselProduto.vue";
 
 export default {
   name: "MyComponent",
+
   components: { VueSlickCarousel, CarouselInfo, CarouselProduto },
-  props: { tituloBottomCarousel: String },
+  props: {
+    titulo: {
+      type: String,
+      required: true,
+    },
+    carousel: {
+      type: Array,
+      required: true,
+    },
+  },
   data: function() {
     return {
       settings: {

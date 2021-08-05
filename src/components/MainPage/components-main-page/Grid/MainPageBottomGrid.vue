@@ -2,10 +2,12 @@
   <div class="mainPageBottomGrid">
     <div class="row-1">
       <div class="text-row-1">
-        <h1><strong>Mais ideias e inspiração</strong></h1>
+        <h1>
+          <strong>{{ titulo }}</strong>
+        </h1>
       </div>
       <div class="text-row-2">
-        <BottomGridButtonCarousel />
+        <BottomGridButtonCarousel :buttons="buttonsGrid" />
       </div>
     </div>
     <div class="row-2">
@@ -14,7 +16,10 @@
           <div class="grid-col-1">
             <div class="grid-row-1">
               <Produto
-                gridImageSrc="https://picsum.photos/1000/1200?random=8"
+                :nome="produtos[0].nome"
+                :gridImageSrc="produtos[0].gridImageSrc"
+                :tipo="produtos[0].tipo"
+                :preco="produtos[0].preco"
               />
             </div>
           </div>
@@ -22,22 +27,38 @@
         <div class="grid-container-right">
           <div class="grid-col-2">
             <div class="grid-row-2">
-              <Produto gridImageSrc="https://picsum.photos/1000/900?random=1" />
+              <Produto
+                :nome="produtos[1].nome"
+                :gridImageSrc="produtos[1].gridImageSrc"
+                :tipo="produtos[1].tipo"
+                :preco="produtos[1].preco"
+              />
             </div>
             <div class="grid-row-3">
               <Produto
-                gridImageSrc="https://picsum.photos/1000/1000?random=1"
+                :nome="produtos[2].nome"
+                :gridImageSrc="produtos[2].gridImageSrc"
+                :tipo="produtos[2].tipo"
+                :preco="produtos[2].preco"
               />
             </div>
           </div>
           <div class="grid-col-3">
             <div class="grid-row-4">
               <Produto
-                gridImageSrc="https://picsum.photos/1000/1000?random=2"
+                :nome="produtos[3].nome"
+                :gridImageSrc="produtos[3].gridImageSrc"
+                :tipo="produtos[3].tipo"
+                :preco="produtos[3].preco"
               />
             </div>
             <div class="grid-row-5">
-              <Produto gridImageSrc="https://picsum.photos/1000/800?random=1" />
+              <Produto
+                :nome="produtos[4].nome"
+                :gridImageSrc="produtos[4].gridImageSrc"
+                :tipo="produtos[4].tipo"
+                :preco="produtos[4].preco"
+              />
             </div>
           </div>
         </div>
@@ -51,6 +72,21 @@ import Produto from "./Produto.vue";
 import BottomGridButtonCarousel from "../Carousel/BottomGridButtonCarousel.vue";
 
 export default {
+  props: {
+    titulo: {
+      type: String,
+      required: true,
+    },
+    buttonsGrid: {
+      type: Array,
+      required: true,
+    },
+    produtos: {
+      type: Array,
+      required: true,
+    },
+  },
+
   components: { Produto, BottomGridButtonCarousel },
 };
 </script>

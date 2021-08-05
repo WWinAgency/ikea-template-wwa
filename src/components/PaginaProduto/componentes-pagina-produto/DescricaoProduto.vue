@@ -11,9 +11,48 @@
         </div>
       </div>
       <hr class="costum-hr" />
+
       <div class="product-description-row-2">
         <SidebarDescriptionDetalhesProduto
+          :nomeProduto="nomeProduto"
+          :tipoProduto="tipoProduto"
+          :utilidadeProduto="utilidadeProduto"
+          :codigoProduto="codigoProduto"
           tituloSidebar="Detalhes do Produto"
+          generalDescription="Se dormir de lado, coloque o lado maior virado para
+        cima. O espaço proporcionado pela clivagem proporciona um bom apoio à
+        cabeça e ao pescoço e reduz a tensão nos ombros."
+          specificDescription="e
+        dormir de costas, coloque o lado menor virado para cima. A inclinação
+        proporciona apoio ao pescoço e aos músculos do pescoço, para que possa
+        descontrair."
+          :materiais="{
+            productInsideTitle: 'Revestimento:',
+            productInside: '99% poliéster, 1% elastano',
+            productContainsTitle: 'Estofo:',
+            productContains: 'Espuma memory de poliuretano',
+            productProtectionTitle: 'Rebordo/ Forro:',
+            productProtection: '100% poliéster',
+            productBacksideTitle: '',
+            productBackside: '',
+            productCleaningTitle: 'Almofada',
+            productCleaning:
+              'Não lavar.Não usar lixívia.Não é próprio para a máquina de secar.Não engomar.Não limpar a seco.',
+            productCleaningTitle2: 'Capa de almofada',
+            productCleaning2:
+              'Lavar à máquina (máx. 60°C, ciclo normal).Não usar lixívia.Secar na máquina, a baixa temperatura (máx 60°C).Não engomar.Não limpar a seco.',
+          }"
+          :sustentabilidade="{
+            description:
+              'O produto pode ser reciclado ou usado para aproveitamento energético, se disponível na sua zona. ',
+          }"
+          :pesoMedidas="{
+            largura: 42,
+            altura: 14,
+            comprimento: 72,
+            peso: 1.88,
+            embalagens: 1,
+          }"
         />
       </div>
       <hr class="costum-hr" />
@@ -26,7 +65,18 @@
       <div class="product-description-row-4">
         <div class="inner-col">
           <div class="inner-row-1">
-            <SidebarDescriptionAvaliacoesProduto tituloSidebar="Avaliações" />
+            <SidebarDescriptionAvaliacoesProduto
+              :produto="{
+                rating: 4,
+                avaliacoes: 25,
+                valueAssembly: 4,
+                valuePrice: 3,
+                valueQuality: 5,
+                valueLooks: 4,
+                valueExpectations: 4,
+                tituloSidebar: 'Avaliações',
+              }"
+            />
           </div>
           <div class="inner-row-2">
             <div class="rating-stars">
@@ -69,6 +119,9 @@ export default {
     StarRating,
   },
   props: {
+    nomeProduto: String,
+    tipoProduto: String,
+    utilidadeProduto: String,
     textoDescritivo: String,
     codigoProduto: String,
     avaliacoes: Number,

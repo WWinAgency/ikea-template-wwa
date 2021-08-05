@@ -19,11 +19,11 @@
               </div>
             </div>
             <div class="tag-row-2">
-              <a class="tag-product-link" href="/pagina-produto">Mjukplister</a>
+              <a class="tag-product-link" href="/pagina-produto">{{ nome }}</a>
             </div>
-            <div class="tag-row-3">Colcha</div>
+            <div class="tag-row-3">{{ tipo }}</div>
             <div class="tag-row-4">
-              <div class="tag-inner-col-3">39</div>
+              <div class="tag-inner-col-3">{{ preco }}</div>
               <div class="tag-inner-col-4">€/ud</div>
             </div>
           </div>
@@ -37,6 +37,9 @@
 <script>
 export default {
   props: {
+    nome: String,
+    tipo: String,
+    preco: Number,
     gridImageSrc: String,
   },
 };

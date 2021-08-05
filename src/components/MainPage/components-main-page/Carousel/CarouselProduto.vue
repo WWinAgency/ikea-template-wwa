@@ -3,7 +3,7 @@
     <div class="container-produto">
       <img :src="productImageSrc" />
       <div class="botao-produto">
-        <a class="button-produto" href="/pagina-produto">{{ textoBotao }}</a>
+        <a class="button-produto" :href="'/' + { link }">{{ textoBotao }}</a>
       </div>
     </div>
   </div>
@@ -14,6 +14,7 @@ export default {
   props: {
     textoBotao: String,
     productImageSrc: String,
+    link: String,
   },
 };
 </script>

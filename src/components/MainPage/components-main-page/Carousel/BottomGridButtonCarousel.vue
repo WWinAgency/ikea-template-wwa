@@ -6,22 +6,38 @@
       :arrows="false"
       :dots="false"
     >
-      <div><b-button class="btn-1" variant="light">Quarto</b-button></div>
-      <div><b-button class="btn" variant="light">Sala</b-button></div>
-      <div><b-button class="btn" variant="light">Cozinha</b-button></div>
-      <div><b-button class="btn" variant="light">Escritório</b-button></div>
-      <div><b-button class="btn" variant="light">Exterior</b-button></div>
-      <div><b-button class="btn" variant="light">Casa de banho</b-button></div>
       <div>
-        <b-button class="btn" variant="light"
-          >Quarto de Criança e Bebé</b-button
-        >
+        <b-button class="btn-1" variant="light">{{
+          buttons[0].label
+        }}</b-button>
       </div>
       <div>
-        <b-button class="btn" variant="light">Espaço de refeição</b-button>
+        <b-button class="btn" variant="light">{{ buttons[1].label }}</b-button>
       </div>
-      <div><b-button class="btn" variant="light">Entrada</b-button></div>
-      <div><b-button class="btn" variant="light">Acessórios</b-button></div>
+      <div>
+        <b-button class="btn" variant="light">{{ buttons[2].label }}</b-button>
+      </div>
+      <div>
+        <b-button class="btn" variant="light">{{ buttons[3].label }}</b-button>
+      </div>
+      <div>
+        <b-button class="btn" variant="light">{{ buttons[4].label }}</b-button>
+      </div>
+      <div>
+        <b-button class="btn" variant="light">{{ buttons[5].label }}</b-button>
+      </div>
+      <div>
+        <b-button class="btn" variant="light">{{ buttons[6].label }}</b-button>
+      </div>
+      <div>
+        <b-button class="btn" variant="light">{{ buttons[7].label }}</b-button>
+      </div>
+      <div>
+        <b-button class="btn" variant="light">{{ buttons[8].label }}</b-button>
+      </div>
+      <div>
+        <b-button class="btn" variant="light">{{ buttons[9].label }}</b-button>
+      </div>
     </VueSlickCarousel>
   </div>
 </template>
@@ -33,6 +49,7 @@ import "vue-slick-carousel/dist/vue-slick-carousel-theme.css";
 
 export default {
   name: "MyComponent",
+  props: ["buttons"],
   components: { VueSlickCarousel },
   data: function() {
     return {

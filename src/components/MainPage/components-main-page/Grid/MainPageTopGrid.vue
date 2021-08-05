@@ -2,18 +2,18 @@
   <div class="mainPageTopGrid">
     <div class="row-1">
       <div class="text-row-1">
-        <h1><strong>As novidades esperam por si</strong></h1>
+        <h1>
+          <strong>{{ titulo }}</strong>
+        </h1>
       </div>
       <div class="text-row-2">
         <div class="col-1">
           <h2>
-            Depois dos piqueniques no jardim, dos passeios na natureza e dos
-            mergulhos na praia, é tempo de voltar a casa e descobrir a nova
-            coleção de outono da IKEA.
+            {{ body }}
           </h2>
         </div>
         <div class="col-2">
-          <b-button class="btn" variant="light">Ver artigos de verão</b-button>
+          <b-button class="btn" variant="light">{{ gridButton }}</b-button>
         </div>
       </div>
     </div>
@@ -22,27 +22,50 @@
         <div class="grid-container-left">
           <div class="grid-col-1">
             <div class="grid-row-1">
-              <Produto gridImageSrc="https://picsum.photos/1000/960?random=1" />
+              <Produto
+                :nome="produtos[0].nome"
+                :gridImageSrc="produtos[0].gridImageSrc"
+                :tipo="produtos[0].tipo"
+                :preco="produtos[0].preco"
+              />
             </div>
           </div>
         </div>
         <div class="grid-container-right">
           <div class="grid-col-2">
             <div class="grid-row-2">
-              <Produto gridImageSrc="https://picsum.photos/1500/960?random=1" />
+              <Produto
+                :nome="produtos[1].nome"
+                :gridImageSrc="produtos[1].gridImageSrc"
+                :tipo="produtos[1].tipo"
+                :preco="produtos[1].preco"
+              />
             </div>
             <div class="grid-row-3">
               <Produto
-                gridImageSrc="https://picsum.photos/1100/1100?random=2"
+                :nome="produtos[2].nome"
+                :gridImageSrc="produtos[2].gridImageSrc"
+                :tipo="produtos[2].tipo"
+                :preco="produtos[2].preco"
               />
             </div>
           </div>
           <div class="grid-col-3">
             <div class="grid-row-4">
-              <Produto gridImageSrc="https://picsum.photos/1100/960?random=3" />
+              <Produto
+                :nome="produtos[3].nome"
+                :gridImageSrc="produtos[3].gridImageSrc"
+                :tipo="produtos[3].tipo"
+                :preco="produtos[3].preco"
+              />
             </div>
             <div class="grid-row-5">
-              <Produto gridImageSrc="https://picsum.photos/1100/960?random=4" />
+              <Produto
+                :nome="produtos[4].nome"
+                :gridImageSrc="produtos[4].gridImageSrc"
+                :tipo="produtos[4].tipo"
+                :preco="produtos[4].preco"
+              />
             </div>
           </div>
         </div>
@@ -55,6 +78,24 @@
 import Produto from "./Produto.vue";
 
 export default {
+  props: {
+    produtos: {
+      type: Array,
+      required: true,
+    },
+    titulo: {
+      type: String,
+      required: true,
+    },
+    body: {
+      type: String,
+      required: true,
+    },
+    gridButton: {
+      type: String,
+      required: true,
+    },
+  },
   components: { Produto },
 };
 </script>

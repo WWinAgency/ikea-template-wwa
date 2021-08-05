@@ -1,7 +1,7 @@
 <template>
   <div class="carouselDeProdutos">
     <div class="titulo">
-      <h1>{{ tituloCarousel }}</h1>
+      <h1>{{ titulo }}</h1>
     </div>
     <div class="carousel-container">
       <VueSlickCarousel
@@ -13,96 +13,88 @@
         <div class="carousel-item">
           <div class="imagem">
             <Product
-              productImage="src\assets\images\vase.jpg"
-              name="FEJKA"
-              type="Planta Artificial em vaso, 9cm"
-              imageSrc="https://picsum.photos/300?random=1"
-              normalPrice="4,50"
-              currentPrice="4"
+              :name="carousel[0].name"
+              :type="carousel[0].type"
+              :imageSrc="carousel[0].imageSrc"
+              :normalPrice="carousel[0].normalPrice"
+              :currentPrice="carousel[0].currentPrice"
             />
           </div>
         </div>
         <div class="carousel-item">
           <div class="imagem">
             <Product
-              productImage="src\assets\images\window-blinds.jpg"
-              name="SKOGSKLÖVER"
-              type="Estore de correr 120x195 cm"
-              imageSrc="https://picsum.photos/300?random=2"
-              normalPrice="35"
-              currentPrice="29"
+              :name="carousel[1].name"
+              :type="carousel[1].type"
+              :imageSrc="carousel[1].imageSrc"
+              :normalPrice="carousel[1].normalPrice"
+              :currentPrice="carousel[1].currentPrice"
             />
           </div>
         </div>
         <div class="carousel-item">
           <div class="imagem">
             <Product
-              productImage="src\assets\images\chair.jpg"
-              name="HUSARÖ"
-              type="Poltrona, exterior"
-              imageSrc="https://picsum.photos/300?random=3"
-              normalPrice="99"
-              currentPrice="85"
+              :name="carousel[2].name"
+              :type="carousel[2].type"
+              :imageSrc="carousel[2].imageSrc"
+              :normalPrice="carousel[2].normalPrice"
+              :currentPrice="carousel[2].currentPrice"
             />
           </div>
         </div>
         <div class="carousel-item">
           <div class="imagem">
             <Product
-              productImage="src\assets\images\storage.jpg"
-              name="HAUGA"
-              type="Roupeiro aberto c/3 gavetas 70x199 cm"
-              imageSrc="https://picsum.photos/300?random=4"
-              normalPrice="149"
-              currentPrice="119"
+              :name="carousel[3].name"
+              :type="carousel[3].type"
+              :imageSrc="carousel[3].imageSrc"
+              :normalPrice="carousel[3].normalPrice"
+              :currentPrice="carousel[3].currentPrice"
             />
           </div>
         </div>
         <div class="carousel-item">
           <div class="imagem">
             <Product
-              productImage="src\assets\images\storage.jpg"
-              name="BODARP"
-              type="Porta, verde acinzentado 60x80 cm"
-              imageSrc="https://picsum.photos/300?random=5"
-              normalPrice="50"
-              currentPrice="30"
+              :name="carousel[4].name"
+              :type="carousel[4].type"
+              :imageSrc="carousel[4].imageSrc"
+              :normalPrice="carousel[4].normalPrice"
+              :currentPrice="carousel[4].currentPrice"
             />
           </div>
         </div>
         <div class="carousel-item">
           <div class="imagem">
             <Product
-              productImage="src\assets\images\storage.jpg"
-              name="SKYMNINGEN"
-              type="Candeeiro suspenso, branco"
-              imageSrc="https://picsum.photos/300?random=6"
-              normalPrice="79"
-              currentPrice="59"
+              :name="carousel[5].name"
+              :type="carousel[5].type"
+              :imageSrc="carousel[5].imageSrc"
+              :normalPrice="carousel[5].normalPrice"
+              :currentPrice="carousel[5].currentPrice"
             />
           </div>
         </div>
         <div class="carousel-item">
           <div class="imagem">
             <Product
-              productImage="src\assets\images\storage.jpg"
-              name="TRANGET"
-              type="Tapete, tecelagem plana, feito à mão várias tonalidades azul 170x240 cm"
-              imageSrc="https://picsum.photos/300?random=7"
-              normalPrice="249"
-              currentPrice="199"
+              :name="carousel[6].name"
+              :type="carousel[6].type"
+              :imageSrc="carousel[6].imageSrc"
+              :normalPrice="carousel[6].normalPrice"
+              :currentPrice="carousel[6].currentPrice"
             />
           </div>
         </div>
         <div class="carousel-item">
           <div class="imagem">
             <Product
-              productImage="src\assets\images\storage.jpg"
-              name="PELARBOJ"
-              type="Candeeiro LED de mesa, multicor"
-              imageSrc="https://picsum.photos/300?random=4"
-              normalPrice="20"
-              currentPrice="15"
+              :name="carousel[7].name"
+              :type="carousel[7].type"
+              :imageSrc="carousel[7].imageSrc"
+              :normalPrice="carousel[7].normalPrice"
+              :currentPrice="carousel[7].currentPrice"
             />
           </div>
         </div>
@@ -120,7 +112,17 @@ import Product from "../../../ComponentesGlobais/Showcases/Product.vue";
 export default {
   name: "MyComponent",
   components: { VueSlickCarousel, Product },
-  props: { tituloCarousel: String },
+  props: {
+    carousel: {
+      type: Array,
+      required: true,
+    },
+    titulo: {
+      type: String,
+      required: true,
+    },
+  },
+  titulo: String,
   data: function() {
     return {
       settings: {
@@ -173,6 +175,19 @@ export default {
               initialSlide: 1,
               dots: false,
               arrows: true,
+            },
+          },
+          {
+            breakpoint: 750,
+            settings: {
+              infinite: true,
+              centerMode: true,
+              centerPadding: 5,
+              slidesToShow: 1,
+              slidesToScroll: 2,
+              initialSlide: 1,
+              dots: false,
+              arrows: false,
             },
           },
         ],

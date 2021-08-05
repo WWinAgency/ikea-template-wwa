@@ -2,15 +2,13 @@
   <div class="info">
     <div class="info-col">
       <li class="info-row">
-        <h1><strong>Recebeu uma mensagem em nome do IKEA?</strong></h1>
+        <h1>
+          <strong>{{ titulo }}</strong>
+        </h1>
       </li>
       <li class="info-row">
         <h2>
-          Se recebeu comunicação em nome da IKEA Portugal anunciando uma
-          campanha de aniversário e a oferta de Cartão Presente, por favor não
-          clique no link. Trata-se de uma campanha fraudulenta sem qualquer
-          ligação à marca. Relembramos que todas as nossas comunicações são
-          efetuadas nos canais oficiais.
+          {{ body }}
         </h2>
       </li>
     </div>
@@ -18,7 +16,18 @@
 </template>
 
 <script>
-export default {};
+export default {
+  props: {
+    titulo: {
+      type: String,
+      required: true,
+    },
+    body: {
+      type: String,
+      required: true,
+    },
+  },
+};
 </script>
 
 <style lang="scss">

@@ -3,18 +3,18 @@
     <div class="grid">
       <div class="product-grid-col-1">
         <div class="product-grid-row-1">
-          <img src="https://picsum.photos/960/960?random=5" />
+          <img :src="image1" />
         </div>
         <div class="product-grid-row-2">
-          <img src="https://picsum.photos/960/960?random=6" />
+          <img :src="image2" />
         </div>
       </div>
       <div class="product-grid-col-2">
         <div class="product-grid-row-3">
-          <img src="https://picsum.photos/960/960?random=7" />
+          <img :src="image3" />
         </div>
         <div class="product-grid-row-4">
-          <img src="https://picsum.photos/960/960?random=8" />
+          <img :src="image4" />
         </div>
       </div>
     </div>
@@ -22,7 +22,14 @@
 </template>
 
 <script>
-export default {};
+export default {
+  props: {
+    image1: String,
+    image2: String,
+    image3: String,
+    image4: String,
+  },
+};
 </script>
 
 <style lang="scss">

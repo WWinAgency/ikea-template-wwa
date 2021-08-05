@@ -5,51 +5,77 @@
         <div class="inner-row">
           <b-icon icon="shop" scale="0.9" variant="dark"></b-icon>
         </div>
-        <div class="inner-row"><h1>Click and collect</h1></div>
         <div class="inner-row">
-          <h2>Numa loja IKEA, ponto de recolha ou ponto CTT</h2>
+          <h1>{{ infoEntregas[0].titulo }}</h1>
         </div>
-        <div class="inner-row"><a href="#">Saiba mais</a></div>
+        <div class="inner-row">
+          <h2>{{ infoEntregas[0].texto }}</h2>
+        </div>
+        <div class="inner-row">
+          <a :href="'/' + infoEntregas[0].link">{{
+            infoEntregas[0].tituloLink
+          }}</a>
+        </div>
       </div>
 
       <div class="info-b">
         <div class="inner-row">
           <b-icon icon="truck" scale="0.9" variant="dark"></b-icon>
         </div>
-        <div class="inner-row"><h1>Entregas</h1></div>
         <div class="inner-row">
-          <h2>Compre online e receba em casa a partir de 7€</h2>
+          <h1>{{ infoEntregas[1].titulo }}</h1>
         </div>
-        <div class="inner-row"><a href="#">Saiba mais</a></div>
+        <div class="inner-row">
+          <h2>{{ infoEntregas[1].texto }}</h2>
+        </div>
+        <div class="inner-row">
+          <a :href="'/' + infoEntregas[1].link">{{
+            infoEntregas[1].tituloLink
+          }}</a>
+        </div>
       </div>
 
       <div class="info-c">
         <div class="inner-row">
           <b-icon icon="truck" scale="0.9" variant="dark"></b-icon>
         </div>
-        <div class="inner-row"><h1>Siga a sua encomenda</h1></div>
         <div class="inner-row">
-          <h2>Está a pergunta-se onde estará a sua encomenda?</h2>
+          <h1>{{ infoEntregas[2].titulo }}</h1>
         </div>
-        <div class="inner-row"><a href="#">Acompanhe o estado</a></div>
+        <div class="inner-row">
+          <h2>{{ infoEntregas[2].texto }}</h2>
+        </div>
+        <div class="inner-row">
+          <a :href="'/' + infoEntregas[2].link">{{
+            infoEntregas[2].tituloLink
+          }}</a>
+        </div>
       </div>
 
       <div class="info-d">
         <div class="inner-row">
           <b-icon icon="chat-left-text" scale="0.9" variant="dark"></b-icon>
         </div>
-        <div class="inner-row"><h1>Tem dúvidas?</h1></div>
         <div class="inner-row">
-          <h2>Encontre aqui respostas às suas perguntas mais frequentes</h2>
+          <h1>{{ infoEntregas[3].titulo }}</h1>
         </div>
-        <div class="inner-row"><a href="#">Saiba mais</a></div>
+        <div class="inner-row">
+          <h2>{{ infoEntregas[3].texto }}</h2>
+        </div>
+        <div class="inner-row">
+          <a :href="'/' + infoEntregas[3].link">{{
+            infoEntregas[3].tituloLink
+          }}</a>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  props: ["infoEntregas"],
+};
 </script>
 
 <style lang="scss">

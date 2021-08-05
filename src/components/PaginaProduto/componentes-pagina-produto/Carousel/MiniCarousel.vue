@@ -1,7 +1,7 @@
 <template>
   <div class="miniCarousel">
     <div class="titulo">
-      <h1>{{ tituloMiniCarousel }}</h1>
+      <h1>{{ titulo }}</h1>
     </div>
     <div class="carousel-container">
       <VueSlickCarousel
@@ -11,83 +11,83 @@
         :dots="false"
       >
         <div class="carousel-item">
-          <a href="/pagina-produto" class="imagem">
-            <img src="https://picsum.photos/105/105?random=1" />
+          <a href="/pagina-de-produto" class="imagem">
+            <img :src="carousel[0].imagem" />
           </a>
         </div>
         <div class="carousel-item">
-          <a href="/pagina-produto" class="imagem">
-            <img src="https://picsum.photos/105/105?random=2" />
+          <a href="/pagina-de-produto" class="imagem">
+            <img :src="carousel[1].imagem" />
           </a>
         </div>
         <div class="carousel-item">
-          <a href="/pagina-produto" class="imagem">
-            <img src="https://picsum.photos/105/105?random=3" />
+          <a href="/pagina-de-produto" class="imagem">
+            <img :src="carousel[2].imagem" />
           </a>
         </div>
         <div class="carousel-item">
-          <a href="/pagina-produto" class="imagem">
-            <img src="https://picsum.photos/105/105?random=4" />
+          <a href="/pagina-de-produto" class="imagem">
+            <img :src="carousel[3].imagem" />
           </a>
         </div>
         <div class="carousel-item">
-          <a href="/pagina-produto" class="imagem">
-            <img src="https://picsum.photos/105/105?random=5" />
+          <a href="/pagina-de-produto" class="imagem">
+            <img :src="carousel[4].imagem" />
           </a>
         </div>
         <div class="carousel-item">
-          <a href="/pagina-produto" class="imagem">
-            <img src="https://picsum.photos/105/105?random=6" />
+          <a href="/pagina-de-produto" class="imagem">
+            <img :src="carousel[5].imagem" />
           </a>
         </div>
         <div class="carousel-item">
-          <a href="/pagina-produto" class="imagem">
-            <img src="https://picsum.photos/105/105?random=7" />
+          <a href="/pagina-de-produto" class="imagem">
+            <img :src="carousel[6].imagem" />
           </a>
         </div>
         <div class="carousel-item">
-          <a href="/pagina-produto" class="imagem">
-            <img src="https://picsum.photos/105/105?random=8" />
+          <a href="/pagina-de-produto" class="imagem">
+            <img :src="carousel[7].imagem" />
           </a>
         </div>
         <div class="carousel-item">
-          <a href="/pagina-produto" class="imagem">
-            <img src="https://picsum.photos/105/105?random=9" />
+          <a href="/pagina-de-produto" class="imagem">
+            <img :src="carousel[8].imagem" />
           </a>
         </div>
         <div class="carousel-item">
-          <a href="/pagina-produto" class="imagem">
-            <img src="https://picsum.photos/105/105?random=10" />
+          <a href="/pagina-de-produto" class="imagem">
+            <img :src="carousel[9].imagem" />
           </a>
         </div>
         <div class="carousel-item">
-          <a href="/pagina-produto" class="imagem">
-            <img src="https://picsum.photos/105/105?random=11" />
+          <a href="/pagina-de-produto" class="imagem">
+            <img :src="carousel[10].imagem" />
           </a>
         </div>
         <div class="carousel-item">
-          <a href="/pagina-produto" class="imagem">
-            <img src="https://picsum.photos/105/105?random=12" />
+          <a href="/pagina-de-produto" class="imagem">
+            <img :src="carousel[11].imagem" />
           </a>
         </div>
         <div class="carousel-item">
-          <a href="/pagina-produto" class="imagem">
-            <img src="https://picsum.photos/105/105?random=13" />
+          <a href="/pagina-de-produto" class="imagem">
+            <img :src="carousel[12].imagem" />
           </a>
         </div>
         <div class="carousel-item">
-          <a href="/pagina-produto" class="imagem">
-            <img src="https://picsum.photos/105/105?random=14" />
+          <a href="/pagina-de-produto" class="imagem">
+            <img :src="carousel[13].imagem" />
           </a>
         </div>
         <div class="carousel-item">
-          <a href="/pagina-produto" class="imagem">
-            <img src="https://picsum.photos/105/105?random=15" />
+          <a href="/pagina-de-produto" class="imagem">
+            <img :src="carousel[14].imagem" />
           </a>
         </div>
         <div class="carousel-item">
-          <a href="/pagina-produto" class="imagem">
-            <img src="https://picsum.photos/105/105?random=16" />
+          <a href="/pagina-de-produto" class="imagem">
+            <img :src="carousel[15].imagem" />
           </a>
         </div>
       </VueSlickCarousel>
@@ -103,7 +103,16 @@ import "vue-slick-carousel/dist/vue-slick-carousel-theme.css";
 export default {
   name: "MyComponent",
   components: { VueSlickCarousel },
-  props: { tituloMiniCarousel: String },
+  props: {
+    carousel: {
+      type: Array,
+      required: true,
+    },
+    titulo: {
+      type: String,
+      required: true,
+    },
+  },
   data: function() {
     return {
       settings: {
@@ -111,7 +120,7 @@ export default {
         centerMode: true,
         centerPadding: 5,
         slidesToShow: 11,
-        slidesToScroll: 1,
+        slidesToScroll: 5,
         speed: 500,
         initialSlide: 3,
         dots: true,
@@ -124,7 +133,7 @@ export default {
               centerMode: true,
               centerPadding: 5,
               slidesToShow: 10,
-              slidesToScroll: 2,
+              slidesToScroll: 6,
               initialSlide: 1,
               dots: false,
               arrows: true,
@@ -137,7 +146,7 @@ export default {
               centerMode: true,
               centerPadding: 5,
               slidesToShow: 9,
-              slidesToScroll: 2,
+              slidesToScroll: 7,
               initialSlide: 1,
               dots: true,
               arrows: true,
@@ -150,7 +159,7 @@ export default {
               centerMode: true,
               centerPadding: 5,
               slidesToShow: 8,
-              slidesToScroll: 2,
+              slidesToScroll: 8,
               initialSlide: 1,
               dots: true,
               arrows: true,
@@ -163,7 +172,7 @@ export default {
               centerMode: true,
               centerPadding: 5,
               slidesToShow: 7,
-              slidesToScroll: 2,
+              slidesToScroll: 9,
               initialSlide: 1,
               dots: true,
               arrows: true,
@@ -176,7 +185,7 @@ export default {
               centerMode: true,
               centerPadding: 5,
               slidesToShow: 6,
-              slidesToScroll: 2,
+              slidesToScroll: 10,
               initialSlide: 1,
               dots: true,
               arrows: true,
@@ -189,7 +198,7 @@ export default {
               centerMode: true,
               centerPadding: 5,
               slidesToShow: 5,
-              slidesToScroll: 2,
+              slidesToScroll: 11,
               initialSlide: 1,
               dots: true,
               arrows: true,
@@ -202,10 +211,10 @@ export default {
               centerMode: true,
               centerPadding: 5,
               slidesToShow: 4,
-              slidesToScroll: 2,
+              slidesToScroll: 12,
               initialSlide: 1,
               dots: true,
-              arrows: true,
+              arrows: false,
             },
           },
           {
@@ -215,10 +224,10 @@ export default {
               centerMode: true,
               centerPadding: 5,
               slidesToShow: 3,
-              slidesToScroll: 2,
+              slidesToScroll: 13,
               initialSlide: 1,
-              dots: true,
-              arrows: true,
+              dots: false,
+              arrows: false,
             },
           },
 
@@ -229,9 +238,9 @@ export default {
               centerMode: true,
               centerPadding: 5,
               slidesToShow: 2,
-              slidesToScroll: 1,
+              slidesToScroll: 14,
               initialSlide: 0,
-              dots: true,
+              dots: false,
               arrows: false,
             },
           },
@@ -242,9 +251,9 @@ export default {
               centerMode: true,
               centerPadding: 5,
               slidesToShow: 1,
-              slidesToScroll: 1,
+              slidesToScroll: 15,
               initialSlide: 0,
-              dots: true,
+              dots: false,
               arrows: false,
             },
           },

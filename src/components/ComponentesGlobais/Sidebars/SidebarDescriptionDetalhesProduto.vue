@@ -24,13 +24,10 @@
         <div class="detalhes-produto-row-2">
           <div class="row-2-inner-col">
             <div class="row-2-inner-row-1">
-              A beleza está na singularidade. Este tapete é tecido à mão, o que
-              o torna único.
+              {{ generalDescription }}
             </div>
             <div class="row-2-inner-row-2">
-              Este tapete foi feito por artesãos qualificados em centros de
-              tecelagem organizados na Índia e no Bangladexe, com boas condições
-              de trabalho e salários justos.
+              {{ specificDescription }}
             </div>
             <div class="row-2-inner-row-3">
               <a href="#">Saiba mais</a>
@@ -40,16 +37,18 @@
         <div class="detalhes-produto-row-3">
           <div class="row-3-inner-col">
             <div class="row-3-inner-row-1">Número do artigo</div>
-            <div class="row-3-inner-row-2">104.385.38</div>
+            <div class="row-3-inner-row-2">{{ codigoProduto }}</div>
           </div>
         </div>
         <!-- ACCORDION -->
         <div class="detalhes-produto-row-4">
           <div class="accordion-detalhes" role="tablist">
-            <b-card no-body>
+            <b-card
+              @click="rotatedArrow1 = !rotatedArrow1"
+              v-b-toggle.accordion-1
+              no-body
+            >
               <b-card-header
-                @click="rotatedArrow1 = !rotatedArrow1"
-                v-b-toggle.accordion-1
                 header-tag="header"
                 class="card-materiais-header"
                 role="tab"
@@ -96,43 +95,66 @@
                       <div class="materiais-text-row-1">
                         <div class="row-1-inner-col">
                           <div class="row-1-inner-row-1">
-                            <strong>Moldura / Moldura interior:</strong>
+                            <strong>{{ materiais.productInsideTitle }}</strong>
                           </div>
-                          <div class="row-1-inner-row-2">MDF, Folha</div>
+                          <div class="row-1-inner-row-2">
+                            {{ materiais.productInside }}
+                          </div>
                         </div>
                       </div>
                       <div class="materiais-text-row-2">
                         <div class="row-2-inner-col">
                           <div class="row-2-inner-row-1">
-                            <strong>Proteção Frontal:</strong>
+                            <strong>{{
+                              materiais.productContainsTitle
+                            }}</strong>
                           </div>
                           <div class="row-2-inner-row-2">
-                            Plástico de polistereno, Plástico de polietileno
+                            {{ materiais.productContains }}
                           </div>
                         </div>
                       </div>
                       <div class="materiais-text-row-3">
                         <div class="row-3-inner-col">
                           <div class="row-3-inner-row-1">
-                            <strong>Passe-partout:</strong>
+                            <strong>{{
+                              materiais.productProtectionTitle
+                            }}</strong>
                           </div>
-                          <div class="row-3-inner-row-2">Papel</div>
+                          <div class="row-3-inner-row-2">
+                            {{ materiais.productProtection }}
+                          </div>
                         </div>
                       </div>
                       <div class="materiais-text-row-4">
                         <div class="row-4-inner-col">
                           <div class="row-4-inner-row-1">
-                            <strong>Painel traseiro:</strong>
+                            <strong>{{
+                              materiais.productBacksideTitle
+                            }}</strong>
                           </div>
                           <div class="row-4-inner-row-2">
-                            Painel à beira de madeira
+                            {{ materiais.productBackside }}
                           </div>
                         </div>
                       </div>
                       <div class="materiais-text-row-5">
                         <div class="row-5-inner-col">
                           <div class="row-5-inner-row-1">
-                            Limpe com espanador
+                            {{ materiais.productCleaningTitle }}
+                          </div>
+                          <div class="row-5-inner-row-2">
+                            {{ materiais.productCleaning }}
+                          </div>
+                        </div>
+                      </div>
+                      <div class="materiais-text-row-6">
+                        <div class="row-6-inner-col">
+                          <div class="row-6-inner-row-1">
+                            {{ materiais.productCleaningTitle2 }}
+                          </div>
+                          <div class="row-6-inner-row-2">
+                            {{ materiais.productCleaning2 }}
                           </div>
                         </div>
                       </div>
@@ -143,10 +165,12 @@
               <hr class="costum-hr" />
             </b-card>
 
-            <b-card no-body>
+            <b-card
+              @click="rotatedArrow2 = !rotatedArrow2"
+              v-b-toggle.accordion-2
+              no-body
+            >
               <b-card-header
-                @click="rotatedArrow2 = !rotatedArrow2"
-                v-b-toggle.accordion-2
                 header-tag="header"
                 class="card-sust-header"
                 role="tab"
@@ -191,8 +215,7 @@
                   <b-card-text
                     ><div class="sust-text-col">
                       <div class="sust-text-row">
-                        O produto pode ser reciclado ou usado para
-                        aproveitamento energético, se disponível na sua zona.
+                        {{ sustentabilidade.description }}
                       </div>
                     </div></b-card-text
                   >
@@ -201,10 +224,12 @@
               <hr class="costum-hr" />
             </b-card>
 
-            <b-card no-body>
+            <b-card
+              @click="rotatedArrow3 = !rotatedArrow3"
+              v-b-toggle.accordion-3
+              no-body
+            >
               <b-card-header
-                @click="rotatedArrow3 = !rotatedArrow3"
-                v-b-toggle.accordion-3
                 header-tag="header"
                 class="card-peso-header"
                 role="tab"
@@ -251,9 +276,11 @@
                       <div class="peso-text-row-1">
                         <div class="row-1-inner-col">
                           <div class="row-1-inner-row-1">
-                            <strong>HOVSTA</strong>
+                            <strong>{{ nomeProduto }}</strong>
                           </div>
-                          <div class="row-1-inner-row-2">Moldura</div>
+                          <div class="row-1-inner-row-2">
+                            {{ tipoProduto }}, {{ utilidadeProduto }}
+                          </div>
                         </div>
                       </div>
                       <div class="materiais-text-row-2">
@@ -262,26 +289,29 @@
                             Artigo número
                           </div>
                           <div class="row-2-inner-row-2">
-                            104.385.38
+                            {{ codigoProduto }}
                           </div>
                         </div>
                       </div>
                       <div class="materiais-text-row-3">
                         <ul class="spec-list">
                           <li class="spec-item">
-                            <strong>Largura: </strong>42 cm
+                            <strong>Largura: </strong
+                            >{{ pesoMedidas.largura }} cm
                           </li>
                           <li class="spec-item">
-                            <strong>Altura: </strong>3 cm
+                            <strong>Altura: </strong>{{ pesoMedidas.altura }} cm
                           </li>
                           <li class="spec-item">
-                            <strong>Comprimento: </strong>52 cm
+                            <strong>Comprimento: </strong
+                            >{{ pesoMedidas.comprimento }} cm
                           </li>
                           <li class="spec-item">
-                            <strong>Peso: </strong>1.08 kg
+                            <strong>Peso: </strong>{{ pesoMedidas.peso }} kg
                           </li>
                           <li class="spec-item">
-                            <strong>Embalagens: </strong>1
+                            <strong>Embalagens: </strong
+                            >{{ pesoMedidas.embalagens }}
                           </li>
                         </ul>
                       </div>
@@ -292,10 +322,12 @@
               <hr class="costum-hr" />
             </b-card>
 
-            <b-card no-body>
+            <b-card
+              v-b-toggle.accordion-4
+              @click="rotatedArrow4 = !rotatedArrow4"
+              no-body
+            >
               <b-card-header
-                @click="rotatedArrow4 = !rotatedArrow4"
-                v-b-toggle.accordion-4
                 header-tag="header"
                 class="card-montagem-header"
                 role="tab"
@@ -355,10 +387,11 @@
                       <div class="montagem-text-row-2">
                         <div class="row-2-inner-col-1">
                           <div class="row-2-inner-row-1">
-                            PERJOHAN Banco c/arrumação
+                            {{ nomeProduto }} {{ tipoProduto }},
+                            {{ utilidadeProduto }}
                           </div>
                           <div class="row-2-inner-row-2">
-                            104.385.38
+                            {{ codigoProduto }}
                           </div>
                         </div>
                         <div class="row-2-inner-col-2">
@@ -395,6 +428,36 @@ export default {
   },
   props: {
     tituloSidebar: String,
+    nomeProduto: String,
+    tipoProduto: String,
+    utilidadeProduto: String,
+    codigoProduto: String,
+    generalDescription: String,
+    specificDescription: String,
+    materiais: {
+      productInsideTitle: String,
+      productInside: String,
+      productContainsTitle: String,
+      productContains: String,
+      productProtectionTitle: String,
+      productProtection: String,
+      productBacksideTitle: String,
+      productBackside: String,
+      productCleaningTitle: String,
+      productCleaning: String,
+      productCleaningTitle2: String,
+      productCleaning2: String,
+    },
+    sustentabilidade: {
+      description: String,
+    },
+    pesoMedidas: {
+      altura: Number,
+      largura: Number,
+      comprimento: Number,
+      peso: Number,
+      embalagens: Number,
+    },
   },
 };
 </script>
@@ -454,7 +517,7 @@ export default {
     padding: 4rem 3rem 4rem 3rem;
 
     & .detalhes-produto-row-1 {
-      font-size: 1.125rem;
+      font-size: 1.5625rem;
     }
     & .detalhes-produto-row-2 {
       & .row-2-inner-col {
@@ -523,6 +586,10 @@ export default {
             padding: 1rem 0 1rem 0;
             border: none;
             position: relative;
+
+            &:focus {
+              outline: none !important;
+            }
             & .card-header-inner-row {
               display: inline-block;
               border: none;
@@ -615,7 +682,28 @@ export default {
                 }
                 & .materiais-text-row-5 {
                   & .row-5-inner-col {
+                    display: flex;
+                    flex-direction: column;
                     & .row-5-inner-row-1 {
+                      font-size: 0.875rem;
+                      font-weight: 700;
+                    }
+                    & .row-5-inner-row-2 {
+                      font-size: 0.875rem;
+                    }
+                  }
+                }
+                & .materiais-text-row-6 {
+                  margin: 2.5rem 0 2.5rem 0;
+
+                  & .row-6-inner-col {
+                    display: flex;
+                    flex-direction: column;
+                    & .row-6-inner-row-1 {
+                      font-size: 0.875rem;
+                      font-weight: 700;
+                    }
+                    & .row-6-inner-row-2 {
                       font-size: 0.875rem;
                     }
                   }

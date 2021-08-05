@@ -243,9 +243,18 @@ export default {
           border-radius: 64px;
           background-color: white;
           border: 1px solid #dfdfdf;
+          justify-content: center;
+          align-items: center;
+          display: flex;
 
           &:hover {
             border: 1px solid grey;
+          }
+
+          & .b-icon.bi {
+            margin-top: 0.2rem;
+            display: flex;
+            align-items: center;
           }
         }
       }

@@ -22,12 +22,22 @@
               <div class="top-col-1">
                 <!-- Grid de Imagens do Produto -->
                 <div class="product-show-1">
-                  <GridImagensProduto />
+                  <GridImagensProduto
+                    :image1="produto.image1"
+                    :image2="produto.image2"
+                    :image3="produto.image3"
+                    :image4="produto.image4"
+                  />
                 </div>
                 <!-- Grid de Imagens do Produto -->
                 <!-- Carousel de Imagens do Produto -->
                 <div class="product-show-2">
-                  <CarouselProduto />
+                  <CarouselProduto
+                    :image1="produto.image1"
+                    :image2="produto.image2"
+                    :image3="produto.image3"
+                    :image4="produto.image4"
+                  />
                 </div>
                 <!-- Carousel de Imagens do Produto -->
               </div>
@@ -53,6 +63,9 @@
           <!-- Descrição Informativa do Produto -->
           <div class="product-inner-row">
             <DescricaoProduto
+              :nomeProduto="produto.nome"
+              :tipoProduto="produto.tipo"
+              :utilidadeProduto="produto.utilidade"
               :textoDescritivo="produto.textoDescritivo"
               :codigoProduto="produto.codigoProduto"
               :rating="produto.rating"
@@ -66,14 +79,19 @@
             <div class="produtos-semelhantes">
               <div class="inner-col-1">Produtos Semelhantes</div>
               <div class="inner-col-2">
-                <ProductShowcase />
+                <ProductShowcase :showcase="showcase" />
               </div>
             </div>
           </div>
           <!-- Produtos Semelhantes -->
           <!-- Funcao e Design do Produto -->
           <div class="product-inner-row">
-            <FuncaoEDesign />
+            <FuncaoEDesign
+              :solucaoFuncaoTitle="produto.solucaoFuncaoTitle"
+              :solucaoFuncaoText="produto.solucaoFuncaoText"
+              :processoDesignTitle="produto.processoDesignTitle"
+              :processoDesignText="produto.processoDesignText"
+            />
           </div>
           <!-- Funcao e Design do Produto -->
         </div>
@@ -84,17 +102,23 @@
       <hr class="costum-hr" />
       <!-- Carousel 1 Página Produto -->
       <div class="carousel-de-produtos">
-        <CarouselDeProdutos tituloCarousel="Outros também viram" />
+        <CarouselDeProdutos
+          :carousel="carousel1"
+          titulo="Outros também viram"
+        />
       </div>
       <!-- Carousel 1 Página Produto -->
       <!-- Carousel 2 Página Produto -->
       <div class="carousel-de-produtos">
-        <CarouselDeProdutos tituloCarousel="Combina com" />
+        <CarouselDeProdutos :carousel="carousel2" titulo="Combina com" />
       </div>
       <!-- Carousel 2 Página Produto -->
       <!-- Mini Carousel -->
       <div class="carousel-de-produtos">
-        <MiniCarousel tituloMiniCarousel="Últimos produtos visualizados" />
+        <MiniCarousel
+          :carousel="miniCarousel"
+          titulo="Últimos produtos visualizados"
+        />
       </div>
       <!-- Mini Carousel -->
     </div>
@@ -133,6 +157,10 @@ export default {
         precoHabitual: "29",
         moeda: "€",
         rating: "4.5",
+        image1: "https://picsum.photos/960/960?random=5",
+        image2: "https://picsum.photos/960/960?random=6",
+        image3: "https://picsum.photos/960/960?random=7",
+        image4: "https://picsum.photos/960/960?random=8",
         avaliacoes: "10",
         dimensoes: "41 x 71",
         mesInicioPromocao: "Julho",
@@ -146,7 +174,227 @@ export default {
         subCategoriaGeral: "Têxteis para quarto",
         tipoGeral: "Almofadas",
         subTipoGeral: "Almofadas de espuma e espuma memory",
+        solucaoFuncaoTitle:
+          "Um melhor conforto durante o sono com almofadas ergonómicas",
+        solucaoFuncaoText:
+          "Estar confortável durante o sono é fundamental para poder desfrutar ao máximo das horas em que está acordado. Acreditamos no poder do sono. E, quando a sua cabeça e o seu pescoço estão bem apoiados por uma almofada, dorme ainda melhor. Mas as pessoas dormem de maneiras diferentes. Algumas dormem de costas, outras de lado ou mudam de posição muitas vezes durante a noite. É por isso que as nossas almofadas ergonómicas estão disponíveis em muitas formas e tamanhos, para que possamos todos dormir como um bebé e acordar revigorados.",
+        processoDesignTitle: "Uma forma única para diferentes tipos de sono",
+        processoDesignText:
+          "A almofada ergonómica MJÖLKKLOCKA tem um lado maior, ideal para quem dorme de lado, pois tem um espaço que dá à cabeça e ao pescoço um bom apoio, reduzindo a tensão nos ombros. Ao virar para o lado menor, a inclinação permite que os músculos do pescoço descontraiam quando dorme de costas. Embora cada lado esteja pensado especificamente para dormir de lado ou de costas, a espuma memory adapta-se a quem muda entre ambas as posições durante a noite.",
       },
+
+      showcase: [
+        {
+          nome: "FEJKA",
+          tipo: "Planta Artificial em vaso",
+          utilidade: "9cm",
+          imagem: "https://picsum.photos/300?random=1",
+          precoNormal: 4.5,
+          precoAtual: 4,
+          rating: 4.5,
+          avaliacoes: 8,
+        },
+        {
+          nome: "SKOGSKLÖVER",
+          tipo: "Estore de correr",
+          utilidade: "120x195 cm",
+          imagem: "https://picsum.photos/300?random=2",
+          precoNormal: 35,
+          precoAtual: 29,
+          rating: 4,
+          avaliacoes: 148,
+        },
+        {
+          nome: "HUSARÖ",
+          tipo: "Poltrona",
+          utilidade: "exterior",
+          imagem: "https://picsum.photos/300?random=3",
+          precoNormal: 149,
+          precoAtual: 119,
+          rating: 4.5,
+          avaliacoes: 10,
+        },
+        {
+          nome: "HAUGA",
+          tipo: "Roupeiro aberto",
+          utilidade: "c/3 gavetas 70 x 199 cm",
+          imagem: "https://picsum.photos/300?random=4",
+          precoNormal: 135,
+          precoAtual: 112,
+          rating: 3,
+          avaliacoes: 24,
+        },
+      ],
+
+      carousel1: [
+        {
+          name: "FEJKA",
+          type: "Planta Artificial em vaso, 9cm",
+          imageSrc: "https://picsum.photos/300?random=1",
+          normalPrice: 4.5,
+          currentPrice: 4,
+        },
+        {
+          name: "SKOGSKLÖVER",
+          type: "Estore de correr 120x195 cm",
+          imageSrc: "https://picsum.photos/300?random=2",
+          normalPrice: 35,
+          currentPrice: 29,
+        },
+        {
+          name: "HUSARÖ",
+          type: "Poltrona, exterior",
+          imageSrc: "https://picsum.photos/300?random=3",
+          normalPrice: 99,
+          currentPrice: 85,
+        },
+        {
+          name: "HAUGA",
+          type: "Roupeiro aberto c/3 gavetas 70x199 cm",
+          imageSrc: "https://picsum.photos/300?random=4",
+          normalPrice: 149,
+          currentPrice: 119,
+        },
+        {
+          name: "BODARP",
+          type: "Porta, verde acinzentado 60x80 cm",
+          imageSrc: "https://picsum.photos/300?random=5",
+          normalPrice: 50,
+          currentPrice: 30,
+        },
+        {
+          name: "SKYMNINGEN",
+          type: "Candeeiro suspenso, branco",
+          imageSrc: "https://picsum.photos/300?random=6",
+          normalPrice: 79,
+          currentPrice: 59,
+        },
+        {
+          name: "TRANGET",
+          type:
+            "Tapete, tecelagem plana, feito à mão várias tonalidades azul 170x240 cm",
+          imageSrc: "https://picsum.photos/300?random=7",
+          normalPrice: 249,
+          currentPrice: 199,
+        },
+        {
+          name: "PELARBOJ",
+          type: "Candeeiro LED de mesa, multicor",
+          imageSrc: "https://picsum.photos/300?random=8",
+          normalPrice: 20,
+          currentPrice: 15,
+        },
+      ],
+
+      carousel2: [
+        {
+          name: "BJÖRKÅSEN",
+          type: "Suporte p/portátil, bege",
+          imageSrc: "https://picsum.photos/300?random=9",
+          normalPrice: 25,
+          currentPrice: 19.99,
+        },
+        {
+          name: "ÄNGSLILJA",
+          type: "Capa de edredão+fronha, cinz, 150x200/50x60 cm",
+          imageSrc: "https://picsum.photos/300?random=10",
+          normalPrice: 19,
+          currentPrice: 15,
+        },
+        {
+          name: "LISABO",
+          type: "Mesa, chapa de freixo, 140x78 cm",
+          imageSrc: "https://picsum.photos/300?random=11",
+          normalPrice: 129,
+          currentPrice: 99,
+        },
+        {
+          name: "SLATORP",
+          type: "Roupeiro aberto c/3 gavetas 70x199 cm",
+          imageSrc: "https://picsum.photos/300?random=12",
+          normalPrice: 799,
+          currentPrice: 699,
+        },
+        {
+          name: "IKEA 365+",
+          type: "Garrafa de mesa c/tampa, vidro transparente/cortiça 1l",
+          imageSrc: "https://picsum.photos/300?random=13",
+          normalPrice: 4.5,
+          currentPrice: 3.5,
+        },
+        {
+          name: "KURA",
+          type: "Cama reversível, branco/pinho, 90x200 cm",
+          imageSrc: "https://picsum.photos/300?random=14",
+          normalPrice: 149,
+          currentPrice: 129,
+        },
+        {
+          name: "ÄNGSLILJA",
+          type: "Capa de edredão+2 fronhas, verde-bege claro, 240x220/50x60 cm",
+          imageSrc: "https://picsum.photos/300?random=15",
+          normalPrice: 29,
+          currentPrice: 25,
+        },
+        {
+          name: "SILVERLÖNN",
+          type: "Cortinados transparentes, par, bege145x300 cm",
+          imageSrc: "https://picsum.photos/300?random=16",
+          normalPrice: 19.99,
+          currentPrice: 15,
+        },
+      ],
+
+      miniCarousel: [
+        {
+          imagem: "https://picsum.photos/105/105?random=1",
+        },
+        {
+          imagem: "https://picsum.photos/105/105?random=2",
+        },
+        {
+          imagem: "https://picsum.photos/105/105?random=3",
+        },
+        {
+          imagem: "https://picsum.photos/105/105?random=4",
+        },
+        {
+          imagem: "https://picsum.photos/105/105?random=5",
+        },
+        {
+          imagem: "https://picsum.photos/105/105?random=6",
+        },
+        {
+          imagem: "https://picsum.photos/105/105?random=7",
+        },
+        {
+          imagem: "https://picsum.photos/105/105?random=8",
+        },
+        {
+          imagem: "https://picsum.photos/105/105?random=9",
+        },
+        {
+          imagem: "https://picsum.photos/105/105?random=10",
+        },
+        {
+          imagem: "https://picsum.photos/105/105?random=11",
+        },
+        {
+          imagem: "https://picsum.photos/105/105?random=12",
+        },
+        {
+          imagem: "https://picsum.photos/105/105?random=13",
+        },
+        {
+          imagem: "https://picsum.photos/105/105?random=14",
+        },
+        {
+          imagem: "https://picsum.photos/105/105?random=15",
+        },
+        {
+          imagem: "https://picsum.photos/105/105?random=16",
+        },
+      ],
     };
   },
 };

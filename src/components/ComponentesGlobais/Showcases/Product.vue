@@ -12,7 +12,7 @@
             ><strong>{{ name }}</strong></a
           >
 
-          <div class="product-type">{{ type }}</div>
+          <div class="product-type">{{ type }}, {{ utility }}</div>
           <div class="product-preco-habitual">
             Preço habitual {{ normalPrice }} € /ud
           </div>
@@ -63,10 +63,12 @@ export default {
     imageSrc: String,
     name: String,
     type: String,
+    utility: String,
     normalPrice: Number,
     currentPrice: Number,
     rating: Number,
     avaliacoes: Number,
+    link: String,
   },
 };
 </script>

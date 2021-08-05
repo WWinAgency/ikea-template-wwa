@@ -1,7 +1,7 @@
 <template>
   <div class="topCarousel">
     <div class="titulo">
-      <h1>{{ tituloTopCarousel }}</h1>
+      <h1>{{ titulo }}</h1>
     </div>
     <div class="carousel-container">
       <VueSlickCarousel
@@ -13,64 +13,72 @@
         <div class="carousel-item">
           <div class="imagem">
             <CarouselProduto
-              textoBotao="Móveis"
-              productImageSrc="https://picsum.photos/400/480?random=1"
+              :textoBotao="carousel[0].textoBotao"
+              :productImageSrc="carousel[0].productImageSrc"
+              :link="carousel[0].link"
             />
           </div>
         </div>
         <div class="carousel-item">
           <div class="imagem">
             <CarouselProduto
-              textoBotao="Arrumação e organização"
-              productImageSrc="https://picsum.photos/400/480?random=2"
+              :textoBotao="carousel[1].textoBotao"
+              :productImageSrc="carousel[1].productImageSrc"
+              :link="carousel[1].link"
             />
           </div>
         </div>
         <div class="carousel-item">
           <div class="imagem">
             <CarouselProduto
-              textoBotao="Exterior"
-              productImageSrc="https://picsum.photos/400/480?random=3"
+              :textoBotao="carousel[2].textoBotao"
+              :productImageSrc="carousel[2].productImageSrc"
+              :link="carousel[2].link"
             />
           </div>
         </div>
         <div class="carousel-item">
           <div class="imagem">
             <CarouselProduto
-              textoBotao="Verão"
-              productImageSrc="https://picsum.photos/400/480?random=4"
+              :textoBotao="carousel[3].textoBotao"
+              :productImageSrc="carousel[3].productImageSrc"
+              :link="carousel[3].link"
             />
           </div>
         </div>
         <div class="carousel-item">
           <div class="imagem">
             <CarouselProduto
-              textoBotao="Colchões"
-              productImageSrc="https://picsum.photos/400/480?random=5"
+              :textoBotao="carousel[4].textoBotao"
+              :productImageSrc="carousel[4].productImageSrc"
+              :link="carousel[4].link"
             />
           </div>
         </div>
         <div class="carousel-item">
           <div class="imagem">
             <CarouselProduto
-              textoBotao="Camas"
-              productImageSrc="https://picsum.photos/400/480?random=6"
+              :textoBotao="carousel[5].textoBotao"
+              :productImageSrc="carousel[5].productImageSrc"
+              :link="carousel[5].link"
             />
           </div>
         </div>
         <div class="carousel-item">
           <div class="imagem">
             <CarouselProduto
-              textoBotao="Sofás"
-              productImageSrc="https://picsum.photos/400/480?random=7"
+              :textoBotao="carousel[6].textoBotao"
+              :productImageSrc="carousel[6].productImageSrc"
+              :link="carousel[6].link"
             />
           </div>
         </div>
         <div class="carousel-item">
           <div class="imagem">
             <CarouselProduto
-              textoBotao="Cozinhas e eletrodomésticos"
-              productImageSrc="https://picsum.photos/400/480?random=8"
+              :textoBotao="carousel[7].textoBotao"
+              :productImageSrc="carousel[7].productImageSrc"
+              :link="carousel[7].link"
             />
           </div>
         </div>
@@ -88,7 +96,16 @@ import CarouselProduto from "./CarouselProduto.vue";
 export default {
   name: "MyComponent",
   components: { VueSlickCarousel, CarouselProduto },
-  props: { tituloTopCarousel: String },
+  props: {
+    titulo: {
+      type: String,
+      required: true,
+    },
+    carousel: {
+      type: Array,
+      required: true,
+    },
+  },
   data: function() {
     return {
       settings: {

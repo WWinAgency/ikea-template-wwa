@@ -3,46 +3,54 @@
     <div class="product-grid-row-1">
       <div class="product-grid-col-1">
         <Product
-          :name="produto1.nome"
-          :type="produto1.tipo"
-          :imageSrc="produto1.imagem"
-          :normalPrice="produto1.precoNormal"
-          :currentPrice="produto1.precoAtual"
-          :rating="produto1.rating"
-          :avaliacoes="produto1.avaliacoes"
+          :name="showcase[0].nome"
+          :type="showcase[0].tipo"
+          :utility="showcase[0].utilidade"
+          :imageSrc="showcase[0].imagem"
+          :normalPrice="showcase[0].precoNormal"
+          :currentPrice="showcase[0].precoAtual"
+          :rating="showcase[0].rating"
+          :avaliacoes="showcase[0].avaliacoes"
+          :link="showcase[0].link"
         />
       </div>
       <div class="product-grid-col-2">
         <Product
-          :name="produto2.nome"
-          :type="produto2.tipo"
-          :imageSrc="produto2.imagem"
-          :normalPrice="produto2.precoNormal"
-          :currentPrice="produto2.precoAtual"
-          :rating="produto2.rating"
-          :avaliacoes="produto2.avaliacoes"
+          :name="showcase[1].nome"
+          :type="showcase[1].tipo"
+          :utility="showcase[1].utilidade"
+          :imageSrc="showcase[1].imagem"
+          :normalPrice="showcase[1].precoNormal"
+          :currentPrice="showcase[1].precoAtual"
+          :rating="showcase[1].rating"
+          :avaliacoes="showcase[1].avaliacoes"
+          :link="showcase[1].link"
         />
       </div>
       <div class="product-grid-col-3">
         <Product
-          :name="produto3.nome"
-          :type="produto3.tipo"
-          :imageSrc="produto3.imagem"
-          :normalPrice="produto3.precoNormal"
-          :currentPrice="produto3.precoAtual"
-          :rating="produto3.rating"
-          :avaliacoes="produto3.avaliacoes"
+          :name="showcase[2].nome"
+          :type="showcase[2].tipo"
+          :utility="showcase[2].utilidade"
+          :imageSrc="showcase[2].imagem"
+          :normalPrice="showcase[2].precoNormal"
+          :currentPrice="showcase[2].precoAtual"
+          :rating="showcase[2].rating"
+          :avaliacoes="showcase[2].avaliacoes"
+          :link="showcase[2].link"
         />
       </div>
       <div class="product-grid-col-4">
         <Product
-          :name="produto4.nome"
-          :type="produto4.tipo"
-          :imageSrc="produto4.imagem"
-          :normalPrice="produto4.precoNormal"
-          :currentPrice="produto4.precoAtual"
-          :rating="produto4.rating"
-          :avaliacoes="produto4.avaliacoes"
+          :name="showcase[3].nome"
+          :type="showcase[3].tipo"
+          :utility="showcase[3].utilidade"
+          :imageSrc="showcase[3].imagem"
+          :normalPrice="showcase[3].precoNormal"
+          :currentPrice="showcase[3].precoAtual"
+          :rating="showcase[3].rating"
+          :avaliacoes="showcase[3].avaliacoes"
+          :link="showcase[3].link"
         />
       </div>
     </div>
@@ -54,46 +62,7 @@ import Product from "./Product.vue";
 
 export default {
   components: { Product },
-  data() {
-    return {
-      produto1: {
-        nome: "FEJKA",
-        tipo: "Planta Artificial em vaso, 9cm",
-        imagem: "https://picsum.photos/300?random=1",
-        precoNormal: "4,50",
-        precoAtual: "4",
-        rating: "4.5",
-        avaliacoes: "8",
-      },
-      produto2: {
-        nome: "SKOGSKLÖVER",
-        tipo: "Estore de correr 120x195 cm",
-        imagem: "https://picsum.photos/300?random=2",
-        precoNormal: "35",
-        precoAtual: "29",
-        rating: "4",
-        avaliacoes: "148",
-      },
-      produto3: {
-        nome: "HUSARÖ",
-        tipo: "Poltrona, exterior",
-        imagem: "https://picsum.photos/300?random=3",
-        precoNormal: "149",
-        precoAtual: "119",
-        rating: "4.5",
-        avaliacoes: "10",
-      },
-      produto4: {
-        nome: "HAUGA",
-        tipo: "Roupeiro aberto c/3 gavetas 70 x 199 cm",
-        imagem: "https://picsum.photos/300?random=4",
-        precoNormal: "135",
-        precoAtual: "112",
-        rating: "3",
-        avaliacoes: "24",
-      },
-    };
-  },
+  props: ["showcase"],
 };
 </script>
 
