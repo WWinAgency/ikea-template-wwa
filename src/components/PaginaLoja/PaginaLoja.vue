@@ -18,7 +18,12 @@
         />
       </div>
       <div class="inner-row-3">
-        <GridProdutosGrande />
+        <GridProdutosGrande
+          :showcase1="showcase1"
+          :showcase2="showcase2"
+          :showcase3="showcase3"
+          :filterButtons="filterButtons"
+        />
       </div>
       <div class="inner-row-4">
         <CarouselDeProdutos
@@ -57,60 +62,263 @@ export default {
       carousel1: [
         {
           name: "FEJKA",
-          type: "Planta Artificial em vaso, 9cm",
+          type: "Planta Artificial em vaso,",
+          utility: "9cm",
           imageSrc: "https://picsum.photos/300?random=1",
           normalPrice: 4.5,
           currentPrice: 4,
+          rating: 4.5,
+          avaliacoes: 8,
+          link: "fejka",
         },
         {
           name: "SKOGSKLÖVER",
-          type: "Estore de correr 120x195 cm",
+          type: "Estore de correr,",
+          utility: "120x195 cm",
           imageSrc: "https://picsum.photos/300?random=2",
           normalPrice: 35,
           currentPrice: 29,
+          rating: 4,
+          avaliacoes: 148,
+          link: "skogsklover",
         },
         {
           name: "HUSARÖ",
-          type: "Poltrona, exterior",
+          type: "Poltrona,",
+          utility: "exterior",
           imageSrc: "https://picsum.photos/300?random=3",
           normalPrice: 99,
           currentPrice: 85,
+          rating: 4.5,
+          avaliacoes: 10,
+          link: "husaro",
         },
         {
           name: "HAUGA",
-          type: "Roupeiro aberto c/3 gavetas 70x199 cm",
+          type: "Roupeiro aberto",
+          utility: "c/3 gavetas, 70x199 cm",
           imageSrc: "https://picsum.photos/300?random=4",
           normalPrice: 149,
           currentPrice: 119,
+          rating: 3,
+          avaliacoes: 24,
+          link: "hauga",
         },
         {
           name: "BODARP",
-          type: "Porta, verde acinzentado 60x80 cm",
+          type: "Porta,",
+          utility: "verde acinzentado, 60x80 cm",
           imageSrc: "https://picsum.photos/300?random=5",
           normalPrice: 50,
           currentPrice: 30,
+          rating: 5,
+          avaliacoes: 7,
+          link: "bodarp",
         },
         {
           name: "SKYMNINGEN",
-          type: "Candeeiro suspenso, branco",
+          type: "Candeeiro suspenso,",
+          utility: "branco",
           imageSrc: "https://picsum.photos/300?random=6",
           normalPrice: 79,
           currentPrice: 59,
+          rating: 5,
+          avaliacoes: 3,
+          link: "smymningen",
         },
         {
           name: "TRANGET",
-          type:
-            "Tapete, tecelagem plana, feito à mão várias tonalidades azul 170x240 cm",
+          type: "Tapete, tecelagem plana,",
+          utility: "feito à mão várias tonalidades azul 170x240 cm",
           imageSrc: "https://picsum.photos/300?random=7",
           normalPrice: 249,
           currentPrice: 199,
+          rating: 4,
+          avaliacoes: 10,
+          link: "tangret",
         },
         {
           name: "PELARBOJ",
-          type: "Candeeiro LED de mesa, multicor",
+          type: "Candeeiro LED de mesa,",
+          utility: "multicor",
           imageSrc: "https://picsum.photos/300?random=8",
           normalPrice: 20,
           currentPrice: 15,
+          rating: 4.5,
+          avaliacoes: 18,
+          link: "pelarboj",
+        },
+      ],
+
+      showcase1: [
+        {
+          nome: "FEJKA",
+          tipo: "Planta Artificial em vaso,",
+          utilidade: "9cm",
+          imagem: "https://picsum.photos/300?random=1",
+          precoNormal: 4.5,
+          precoAtual: 4,
+          rating: 4.5,
+          avaliacoes: 8,
+          link: "fejka",
+        },
+        {
+          nome: "SKOGSKLÖVER",
+          tipo: "Estore de correr,",
+          utilidade: "120x195 cm",
+          imagem: "https://picsum.photos/300?random=2",
+          precoNormal: 35,
+          precoAtual: 29,
+          rating: 4,
+          avaliacoes: 148,
+          link: "skogsklover",
+        },
+        {
+          nome: "HUSARÖ",
+          tipo: "Poltrona,",
+          utilidade: "exterior",
+          imagem: "https://picsum.photos/300?random=3",
+          precoNormal: 99,
+          precoAtual: 85,
+          rating: 4.5,
+          avaliacoes: 10,
+          link: "husaro",
+        },
+        {
+          nome: "HAUGA",
+          tipo: "Roupeiro aberto",
+          utilidade: "c/3 gavetas, 70x199 cm",
+          imagem: "https://picsum.photos/300?random=4",
+          precoNormal: 149,
+          precoAtual: 119,
+          rating: 3,
+          avaliacoes: 24,
+          link: "hauga",
+        },
+      ],
+      showcase2: [
+        {
+          nome: "BODARP",
+          tipo: "Porta,",
+          utilidade: "verde acinzentado, 60x80 cm",
+          imagem: "https://picsum.photos/300?random=5",
+          precoNormal: 50,
+          precoAtual: 30,
+          rating: 5,
+          avaliacoes: 7,
+          link: "bodarp",
+        },
+        {
+          nome: "SKYMNINGEN",
+          tipo: "Candeeiro suspenso,",
+          utilidade: "branco",
+          imagem: "https://picsum.photos/300?random=6",
+          precoNormal: 79,
+          precoAtual: 59,
+          rating: 5,
+          avaliacoes: 3,
+          link: "smymningen",
+        },
+        {
+          nome: "TRANGET",
+          tipo: "Tapete, tecelagem plana,",
+          utilidade: "feito à mão várias tonalidades azul 170x240 cm",
+          imagem: "https://picsum.photos/300?random=7",
+          precoNormal: 249,
+          precoAtual: 199,
+          rating: 4,
+          avaliacoes: 10,
+          link: "tangret",
+        },
+        {
+          nome: "PELARBOJ",
+          tipo: "Candeeiro LED de mesa,",
+          utilidade: "multicor",
+          imagem: "https://picsum.photos/300?random=8",
+          precoNormal: 20,
+          precoAtual: 15,
+          rating: 4.5,
+          avaliacoes: 18,
+          link: "pelarboj",
+        },
+      ],
+      showcase3: [
+        {
+          nome: "BJÖRKÅSEN",
+          tipo: "Suporte p/portátil,",
+          utilidade: "bege",
+          imagem: "https://picsum.photos/300?random=9",
+          precoNormal: 25,
+          precoAtual: 19.99,
+          rating: 4.5,
+          avaliacoes: 3,
+          link: "bjorkasen",
+        },
+        {
+          nome: "ÄNGSLILJA",
+          tipo: "Capa de edredão + fronha,",
+          utilidade: "cinz, 150x200/50x60 cm",
+          imagem: "https://picsum.photos/300?random=10",
+          precoNormal: 19,
+          precoAtual: 15,
+          rating: 4,
+          avaliacoes: 31,
+          link: "angslilja",
+        },
+        {
+          nome: "LISABO",
+          tipo: "Mesa, chapa de freixo,",
+          utilidade: "140x78 cm",
+          imagem: "https://picsum.photos/300?random=11",
+          precoNormal: 129,
+          precoAtual: 99,
+          rating: 4.5,
+          avaliacoes: 27,
+          link: "lisabo",
+        },
+        {
+          nome: "SLATORP",
+          tipo: "Roupeiro aberto,",
+          utilidade: "c/3 gavetas, 70x199 cm",
+          imagem: "https://picsum.photos/300?random=12",
+          precoNormal: 799,
+          precoAtual: 699,
+          rating: 5,
+          avaliacoes: 8,
+          link: "slatorp",
+        },
+      ],
+
+      filterButtons: [
+        {
+          label: "Quarto",
+        },
+        {
+          label: "Sala",
+        },
+        {
+          label: "Cozinha",
+        },
+        {
+          label: "Escritório",
+        },
+        {
+          label: "Exterior",
+        },
+        {
+          label: "Quarto de criança e bebé",
+        },
+        {
+          label: "Espaço de refeição",
+        },
+        {
+          label: "Entrada",
+        },
+        {
+          label: "Acessórios",
+        },
+        {
+          label: "Acessórios",
         },
       ],
     };
@@ -123,6 +331,9 @@ export default {
   & .outter-col {
     & .inner-row-1 {
       margin-bottom: 4rem;
+    }
+    & .inner-row-3 {
+      margin-top: 1rem;
     }
   }
 }

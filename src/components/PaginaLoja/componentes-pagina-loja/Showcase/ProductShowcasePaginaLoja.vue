@@ -29,11 +29,13 @@
             <Product
               :name="showcase[0].nome"
               :type="showcase[0].tipo"
+              :utility="showcase[0].utilidade"
               :imageSrc="showcase[0].imagem"
               :normalPrice="showcase[0].precoNormal"
               :currentPrice="showcase[0].precoAtual"
               :rating="showcase[0].rating"
               :avaliacoes="showcase[0].avaliacoes"
+              :link="showcase[0].link"
             />
           </div>
           <!-- PRODUCT ROW -->
@@ -67,11 +69,13 @@
             <Product
               :name="showcase[1].nome"
               :type="showcase[1].tipo"
+              :utility="showcase[1].utilidade"
               :imageSrc="showcase[1].imagem"
               :normalPrice="showcase[1].precoNormal"
               :currentPrice="showcase[1].precoAtual"
               :rating="showcase[1].rating"
               :avaliacoes="showcase[1].avaliacoes"
+              :link="showcase[1].link"
             />
           </div>
           <!-- PRODUCT ROW -->
@@ -105,11 +109,13 @@
             <Product
               :name="showcase[2].nome"
               :type="showcase[2].tipo"
+              :utility="showcase[2].utilidade"
               :imageSrc="showcase[2].imagem"
               :normalPrice="showcase[2].precoNormal"
               :currentPrice="showcase[2].precoAtual"
               :rating="showcase[2].rating"
               :avaliacoes="showcase[2].avaliacoes"
+              :link="showcase[2].link"
             />
           </div>
           <!-- PRODUCT ROW -->
@@ -143,11 +149,13 @@
             <Product
               :name="showcase[3].nome"
               :type="showcase[3].tipo"
+              :utility="showcase[3].utilidade"
               :imageSrc="showcase[3].imagem"
               :normalPrice="showcase[3].precoNormal"
               :currentPrice="showcase[3].precoAtual"
               :rating="showcase[3].rating"
               :avaliacoes="showcase[3].avaliacoes"
+              :link="showcase[3].link"
             />
           </div>
           <!-- PRODUCT ROW -->
@@ -163,22 +171,6 @@ import Product from "../../../ComponentesGlobais/Showcases/Product.vue";
 export default {
   components: { Product },
   props: {
-    produto1Selected: {
-      type: Boolean,
-      required: true,
-    },
-    produto2Selected: {
-      type: Boolean,
-      required: true,
-    },
-    produto3Selected: {
-      type: Boolean,
-      required: true,
-    },
-    produto4Selected: {
-      type: Boolean,
-      required: true,
-    },
     showcase: {
       type: Array,
       required: true,
@@ -204,6 +196,7 @@ export default {
         precoAtual: "29",
         rating: "4",
         avaliacoes: "148",
+        produto2Selected: false,
       },
       produto3: {
         nome: "HUSARÖ",
@@ -213,6 +206,7 @@ export default {
         precoAtual: "119",
         rating: "4.5",
         avaliacoes: "10",
+        produto3Selected: false,
       },
       produto4: {
         nome: "HAUGA",
@@ -222,6 +216,7 @@ export default {
         precoAtual: "112",
         rating: "3",
         avaliacoes: "24",
+        produto4Selected: false,
       },
     };
   },

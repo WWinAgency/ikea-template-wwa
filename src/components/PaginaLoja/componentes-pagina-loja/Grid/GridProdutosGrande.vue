@@ -3,11 +3,9 @@
     <div class="grid-produtos-col">
       <div class="grid-produtos-row-1">
         <div class="seccao-dinamica">
-          <!-- CAROUSEL DE BOTOES -->
-          <div class="carousel-de-botoes">
-            <ButtonCarouselPaginaLoja />
-          </div>
-          <!-- CAROUSEL DE BOTOES -->
+          <!-- BUTTON CAROUSEL -->
+          <ButtonCarousel :buttons="filterButtons" />
+          <!-- BUTTON CAROUSEL -->
           <!-- LISTA COMPARATIVA -->
           <div class="lista-comparativa">
             Lista Comparativa
@@ -36,142 +34,31 @@
 </template>
 
 <script>
-import ButtonCarouselPaginaLoja from "../Carousel/ButtonCarouselPaginaLoja.vue";
 import ProductShowcasePaginaLoja from "../Showcase/ProductShowcasePaginaLoja.vue";
+import ButtonCarousel from "../../../MainPage/components-main-page/Carousel/ButtonCarousel.vue";
 export default {
   components: {
     ProductShowcasePaginaLoja,
-    ButtonCarouselPaginaLoja,
+    ButtonCarousel,
   },
-  data() {
-    return {
-      showcase1: [
-        {
-          nome: "FEJKA",
-          tipo: "Planta Artificial em vaso",
-          utilidade: "9cm",
-          imagem: "https://picsum.photos/300?random=1",
-          precoNormal: 4.5,
-          precoAtual: 4,
-          rating: 4.5,
-          avaliacoes: 8,
-        },
-        {
-          nome: "SKOGSKLÖVER",
-          tipo: "Estore de correr",
-          utilidade: "120x195 cm",
-          imagem: "https://picsum.photos/300?random=2",
-          precoNormal: 35,
-          precoAtual: 29,
-          rating: 4,
-          avaliacoes: 148,
-        },
-        {
-          nome: "HUSARÖ",
-          tipo: "Poltrona",
-          utilidade: "exterior",
-          imagem: "https://picsum.photos/300?random=3",
-          precoNormal: 149,
-          precoAtual: 119,
-          rating: 4.5,
-          avaliacoes: 10,
-        },
-        {
-          nome: "HAUGA",
-          tipo: "Roupeiro aberto",
-          utilidade: "c/3 gavetas 70 x 199 cm",
-          imagem: "https://picsum.photos/300?random=4",
-          precoNormal: 135,
-          precoAtual: 112,
-          rating: 3,
-          avaliacoes: 24,
-        },
-      ],
-      showcase2: [
-        {
-          nome: "FEJKA",
-          tipo: "Planta Artificial em vaso",
-          utilidade: "9cm",
-          imagem: "https://picsum.photos/300?random=5",
-          precoNormal: 4.5,
-          precoAtual: 4,
-          rating: 4.5,
-          avaliacoes: 8,
-        },
-        {
-          nome: "SKOGSKLÖVER",
-          tipo: "Estore de correr",
-          utilidade: "120x195 cm",
-          imagem: "https://picsum.photos/300?random=6",
-          precoNormal: 35,
-          precoAtual: 29,
-          rating: 4,
-          avaliacoes: 148,
-        },
-        {
-          nome: "HUSARÖ",
-          tipo: "Poltrona",
-          utilidade: "exterior",
-          imagem: "https://picsum.photos/300?random=7",
-          precoNormal: 149,
-          precoAtual: 119,
-          rating: 4.5,
-          avaliacoes: 10,
-        },
-        {
-          nome: "HAUGA",
-          tipo: "Roupeiro aberto",
-          utilidade: "c/3 gavetas 70 x 199 cm",
-          imagem: "https://picsum.photos/300?random=8",
-          precoNormal: 135,
-          precoAtual: 112,
-          rating: 3,
-          avaliacoes: 24,
-        },
-      ],
-      showcase3: [
-        {
-          nome: "FEJKA",
-          tipo: "Planta Artificial em vaso",
-          utilidade: "9cm",
-          imagem: "https://picsum.photos/300?random=9",
-          precoNormal: 4.5,
-          precoAtual: 4,
-          rating: 4.5,
-          avaliacoes: 8,
-        },
-        {
-          nome: "SKOGSKLÖVER",
-          tipo: "Estore de correr",
-          utilidade: "120x195 cm",
-          imagem: "https://picsum.photos/300?random=10",
-          precoNormal: 35,
-          precoAtual: 29,
-          rating: 4,
-          avaliacoes: 148,
-        },
-        {
-          nome: "HUSARÖ",
-          tipo: "Poltrona",
-          utilidade: "exterior",
-          imagem: "https://picsum.photos/300?random=11",
-          precoNormal: 149,
-          precoAtual: 119,
-          rating: 4.5,
-          avaliacoes: 10,
-        },
-        {
-          nome: "HAUGA",
-          tipo: "Roupeiro aberto",
-          utilidade: "c/3 gavetas 70 x 199 cm",
-          imagem: "https://picsum.photos/300?random=12",
-          precoNormal: 135,
-          precoAtual: 112,
-          rating: 3,
-          avaliacoes: 24,
-        },
-      ],
-    };
+
+  props: {
+    showcase1: {
+      type: Array,
+      required: true,
+    },
+    showcase2: {
+      type: Array,
+      required: true,
+    },
+    showcase3: {
+      type: Array,
+      required: true,
+    },
+    filterButtons: {
+      type: Array,
+      required: true,
+    },
   },
 };
 </script>

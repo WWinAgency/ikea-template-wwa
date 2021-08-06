@@ -7,7 +7,7 @@
         </h1>
       </div>
       <div class="text-row-2">
-        <BottomGridButtonCarousel :buttons="buttonsGrid" />
+        <ButtonCarousel :buttons="buttonsGrid" />
       </div>
     </div>
     <div class="row-2">
@@ -79,7 +79,7 @@
 
 <script>
 import Produto from "./Produto.vue";
-import BottomGridButtonCarousel from "../Carousel/BottomGridButtonCarousel.vue";
+import ButtonCarousel from "../Carousel/ButtonCarousel.vue";
 
 export default {
   props: {
@@ -97,7 +97,7 @@ export default {
     },
   },
 
-  components: { Produto, BottomGridButtonCarousel },
+  components: { Produto, ButtonCarousel },
 };
 </script>
 

@@ -1,5 +1,5 @@
 <template>
-  <div class="bottomGridButtonCarousel">
+  <div class="buttonCarousel">
     <VueSlickCarousel
       class="bottom-grid-carousel-component"
       v-bind="settings"
@@ -48,9 +48,9 @@ import "vue-slick-carousel/dist/vue-slick-carousel.css";
 import "vue-slick-carousel/dist/vue-slick-carousel-theme.css";
 
 export default {
-  name: "MyComponent",
-  props: ["buttons"],
+  name: "ButtonCarousel",
   components: { VueSlickCarousel },
+  props: ["buttons"],
   data: function() {
     return {
       settings: {
@@ -89,7 +89,7 @@ export default {
 </script>
 
 <style lang="scss">
-.bottomGridButtonCarousel {
+.buttonCarousel {
   margin: 0 !important;
   padding: 0 !important;
   & .bottom-grid-carousel-component {

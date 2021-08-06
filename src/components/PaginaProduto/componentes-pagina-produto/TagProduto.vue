@@ -71,7 +71,15 @@
           <b-icon icon="truck" scale="1.5" variant="dark"></b-icon>
         </div>
         <div class="inner-col-6">
-          Confirme a disponibilidade e as opções de entrega do checkout
+          <div class="disponivel-stock">
+            Confirme a disponibilidade e as opções de entrega do checkout
+            <b-icon
+              class="disponivel-icon"
+              icon="check-circle-fill"
+              scale="1"
+              :variant="variantStock"
+            ></b-icon>
+          </div>
         </div>
       </div>
 
@@ -81,7 +89,15 @@
         <div class="inner-col-7">
           <b-icon icon="basket3" scale="1.5" variant="dark"></b-icon>
         </div>
-        <div class="inner-col-8">Verificar stock na loja</div>
+        <div class="inner-col-8">
+          Verificar stock na loja
+          <b-icon
+            class="disponivel-icon"
+            icon="check-circle-fill"
+            scale="1"
+            :variant="variantLoja"
+          ></b-icon>
+        </div>
       </div>
     </div>
   </div>
@@ -106,6 +122,8 @@ export default {
     promocaoInicioDia: Number,
     promocaoFimMes: String,
     promocaoFimDia: Number,
+    variantStock: String,
+    variantLoja: String,
   },
 };
 </script>
@@ -276,6 +294,11 @@ export default {
       & .inner-col-6 {
         float: right;
         width: 90%;
+        display: inline-flex;
+
+        & .disponivel-icon {
+          margin-left: 1rem;
+        }
       }
     }
     & .product-row-10 {
@@ -294,6 +317,10 @@ export default {
       & .inner-col-8 {
         float: right;
         width: 90%;
+
+        & .disponivel-icon {
+          margin-left: 1rem;
+        }
       }
     }
   }

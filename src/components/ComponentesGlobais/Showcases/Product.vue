@@ -12,7 +12,8 @@
             ><strong>{{ name }}</strong></a
           >
 
-          <div class="product-type">{{ type }}, {{ utility }}</div>
+          <div class="product-type">{{ type }}</div>
+          <div class="product-utility">{{ utility }}</div>
           <div class="product-preco-habitual">
             Preço habitual {{ normalPrice }} € /ud
           </div>
@@ -36,7 +37,7 @@
                   v-bind:star-size="15"
                   :rating="rating"
                   :show-rating="false"
-                  read-only="true"
+                  :read-only="true"
                 >
                 </star-rating>
               </div>
@@ -63,12 +64,10 @@ export default {
   name: "Product",
   components: { StarRating },
   props: {
-    productImage: String,
-    discount: Number,
-    imageSrc: String,
     name: String,
     type: String,
     utility: String,
+    imageSrc: String,
     normalPrice: Number,
     currentPrice: Number,
     rating: Number,
@@ -137,6 +136,12 @@ export default {
         }
 
         & .product-type {
+          font-size: 1rem;
+          line-height: 1.42857;
+          margin-bottom: 0.1rem;
+        }
+
+        & .product-utility {
           font-size: 1rem;
           line-height: 1.42857;
           margin-bottom: 0.5rem;

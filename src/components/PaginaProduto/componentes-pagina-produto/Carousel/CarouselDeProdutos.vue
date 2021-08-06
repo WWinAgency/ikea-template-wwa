@@ -15,9 +15,13 @@
             <Product
               :name="carousel[0].name"
               :type="carousel[0].type"
+              :utility="carousel[0].utility"
               :imageSrc="carousel[0].imageSrc"
               :normalPrice="carousel[0].normalPrice"
               :currentPrice="carousel[0].currentPrice"
+              :rating="carousel[0].rating"
+              :avaliacoes="carousel[0].avaliacoes"
+              :link="carousel[0].link"
             />
           </div>
         </div>
@@ -26,9 +30,13 @@
             <Product
               :name="carousel[1].name"
               :type="carousel[1].type"
+              :utility="carousel[1].utility"
               :imageSrc="carousel[1].imageSrc"
               :normalPrice="carousel[1].normalPrice"
               :currentPrice="carousel[1].currentPrice"
+              :rating="carousel[1].rating"
+              :avaliacoes="carousel[1].avaliacoes"
+              :link="carousel[1].link"
             />
           </div>
         </div>
@@ -37,9 +45,13 @@
             <Product
               :name="carousel[2].name"
               :type="carousel[2].type"
+              :utility="carousel[2].utility"
               :imageSrc="carousel[2].imageSrc"
               :normalPrice="carousel[2].normalPrice"
               :currentPrice="carousel[2].currentPrice"
+              :rating="carousel[2].rating"
+              :avaliacoes="carousel[2].avaliacoes"
+              :link="carousel[2].link"
             />
           </div>
         </div>
@@ -48,9 +60,13 @@
             <Product
               :name="carousel[3].name"
               :type="carousel[3].type"
+              :utility="carousel[3].utility"
               :imageSrc="carousel[3].imageSrc"
               :normalPrice="carousel[3].normalPrice"
               :currentPrice="carousel[3].currentPrice"
+              :rating="carousel[3].rating"
+              :avaliacoes="carousel[3].avaliacoes"
+              :link="carousel[3].link"
             />
           </div>
         </div>
@@ -59,9 +75,13 @@
             <Product
               :name="carousel[4].name"
               :type="carousel[4].type"
+              :utility="carousel[4].utility"
               :imageSrc="carousel[4].imageSrc"
               :normalPrice="carousel[4].normalPrice"
               :currentPrice="carousel[4].currentPrice"
+              :rating="carousel[4].rating"
+              :avaliacoes="carousel[4].avaliacoes"
+              :link="carousel[4].link"
             />
           </div>
         </div>
@@ -70,9 +90,13 @@
             <Product
               :name="carousel[5].name"
               :type="carousel[5].type"
+              :utility="carousel[5].utility"
               :imageSrc="carousel[5].imageSrc"
               :normalPrice="carousel[5].normalPrice"
               :currentPrice="carousel[5].currentPrice"
+              :rating="carousel[5].rating"
+              :avaliacoes="carousel[5].avaliacoes"
+              :link="carousel[5].link"
             />
           </div>
         </div>
@@ -81,9 +105,13 @@
             <Product
               :name="carousel[6].name"
               :type="carousel[6].type"
+              :utility="carousel[6].utility"
               :imageSrc="carousel[6].imageSrc"
               :normalPrice="carousel[6].normalPrice"
               :currentPrice="carousel[6].currentPrice"
+              :rating="carousel[6].rating"
+              :avaliacoes="carousel[6].avaliacoes"
+              :link="carousel[6].link"
             />
           </div>
         </div>
@@ -92,9 +120,13 @@
             <Product
               :name="carousel[7].name"
               :type="carousel[7].type"
+              :utility="carousel[7].utility"
               :imageSrc="carousel[7].imageSrc"
               :normalPrice="carousel[7].normalPrice"
               :currentPrice="carousel[7].currentPrice"
+              :rating="carousel[7].rating"
+              :avaliacoes="carousel[7].avaliacoes"
+              :link="carousel[7].link"
             />
           </div>
         </div>
@@ -227,7 +259,7 @@ export default {
     & .carousel-component {
       & .carousel-item {
         width: 350px;
-        height: 550px;
+        height: 600px;
 
         & .imagem {
           width: 350px;
