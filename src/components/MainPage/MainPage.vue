@@ -1,22 +1,26 @@
 <template>
   <div class="mainPage">
     <div class="mainPage-col">
-      <div class="mainPage-row"><Advert /></div>
+      <div class="mainPage-row"><Advert :advert="advert" /></div>
       <div class="mainPage-row">
         <div class="product-showcase-col">
-          <div class="product-showcase-row-1"><ProductShowcase /></div>
+          <div class="product-showcase-row-1">
+            <ProductShowcase :showcase="showcase" />
+          </div>
           <div class="product-showcase-row-2">
             <div class="product-grid-row-2">
               <div class="promocoes-ikea-family">
-                <b-button class="ikea-family-btn" variant="dark"
-                  >Ver promoções IKEA Family</b-button
+                <a href="/ikea-family" class="ikea-family-btn" variant="dark"
+                  >Ver promoções IKEA Family</a
                 >
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="mainPage-row"><MidAdvert /></div>
+      <div class="mainPage-row">
+        <MidAdvert :advert="produtoMidAdvert" />
+      </div>
       <div class="mainPage-row">
         <TopCarousel :carousel="topCarousel" titulo="Os mais vistos" />
       </div>
@@ -90,9 +94,83 @@ export default {
   },
   data() {
     return {
-      advert: [],
-      showcase: [],
-      midAdvert: [],
+      advert: [
+        {
+          titulo: "Quem é da casa merece um desconto",
+          body:
+            "É por isso que todos os meses há descontos para os membros IKEA Family. Descubra artigos a preços ainda mais acessiveis para toda a casa, só de",
+          imagem: "https://picsum.photos/1600/960?random=1",
+          link: "pagina-de-produto",
+          nome: "BONDHOLMEN",
+          tipo: "Mesa de centro, exterior",
+          precoAtual: "69",
+          precoNormal: "80",
+          diaInicioPromocao: "1",
+          mesIncioPromocao: "",
+          diaFimPromocao: "31",
+          mesFimPromocao: "Julho",
+        },
+      ],
+      showcase: [
+        {
+          nome: "FEJKA",
+          tipo: "Planta Artificial em vaso",
+          utilidade: "9cm",
+          imagem: "https://picsum.photos/300?random=1",
+          precoNormal: 4.5,
+          precoAtual: 4,
+          rating: 4.5,
+          avaliacoes: 8,
+          link: "fejka",
+        },
+        {
+          nome: "SKOGSKLÖVER",
+          tipo: "Estore de correr",
+          utilidade: "120x195 cm",
+          imagem: "https://picsum.photos/300?random=2",
+          precoNormal: 35,
+          precoAtual: 29,
+          rating: 4,
+          avaliacoes: 148,
+          link: "skogsklover",
+        },
+        {
+          nome: "HUSARÖ",
+          tipo: "Poltrona",
+          utilidade: "exterior",
+          imagem: "https://picsum.photos/300?random=3",
+          precoNormal: 149,
+          precoAtual: 119,
+          rating: 4.5,
+          avaliacoes: 10,
+          link: "husaro",
+        },
+        {
+          nome: "HAUGA",
+          tipo: "Roupeiro aberto",
+          utilidade: "c/3 gavetas 70 x 199 cm",
+          imagem: "https://picsum.photos/300?random=4",
+          precoNormal: 135,
+          precoAtual: 112,
+          rating: 3,
+          avaliacoes: 24,
+          link: "hauga",
+        },
+      ],
+      produtoMidAdvert: [
+        {
+          nome: "LINNEBÄCK",
+          tipo: "Poltrona",
+          preco: 39,
+          link: "pagina-de-produto",
+          tituloLink: "Ver homemade Jingle by Noiserv",
+          titulo: "O Design é para ser tocado",
+          imagem: "https://picsum.photos/1600/960?random=6",
+          body:
+            "Para a IKEA, o design vai muito além da estética. Vai onde a nossa imaginação quiser. Para o provarmos, desafiámos o Noiserv, um dos músicos portugueses mais inventivos e versáteis, a compor um tema usando apenas os móevis e acessórios IKEA. Assim surge o Homemade Jingle, uma melodia original e divertida que nos evoca os sons da vida em casa",
+          bodyStrong: "Porque o design é para ser vivido",
+        },
+      ],
       topCarousel: [
         {
           textoBotao: "Móveis",
@@ -141,30 +219,40 @@ export default {
           nome: "KRUX",
           tipo: "Candeeiro LED de secretária",
           preco: "35",
+          left: 20,
+          top: 50,
         },
         {
           gridImageSrc: "https://picsum.photos/1500/960?random=1",
           nome: "MÅLA",
           tipo: "Conj. modelo cidade cartão",
           preco: "4",
+          left: 20,
+          top: 40,
         },
         {
           gridImageSrc: "https://picsum.photos/1100/1100?random=2",
           nome: "FLISAT",
           tipo: "Banco p/criança",
           preco: "15",
+          left: 20,
+          top: 50,
         },
         {
           gridImageSrc: "https://picsum.photos/1100/960?random=3",
           nome: "MOSSLANDA",
           tipo: "Prateleira p/molduras",
           preco: "9.99",
+          left: 20,
+          top: 50,
         },
         {
           gridImageSrc: "https://picsum.photos/1100/960?random=4",
           nome: "BAGGEBO",
           tipo: "Armário c/portas em vidro",
           preco: "35",
+          left: 2,
+          top: 40,
         },
       ],
       infoEntregas: [
@@ -268,74 +356,68 @@ export default {
           nome: "KRUX",
           tipo: "Candeeiro LED de secretária",
           preco: "35",
+          left: 20,
+          top: 50,
         },
         {
           gridImageSrc: "https://picsum.photos/1000/900?random=1",
           nome: "MÅLA",
           tipo: "Conj. modelo cidade cartão",
           preco: "4",
+          left: 30,
+          top: 50,
         },
         {
           gridImageSrc: "https://picsum.photos/1000/1000?random=1",
           nome: "FLISAT",
           tipo: "Banco p/criança",
           preco: "15",
+          left: 20,
+          top: 50,
         },
         {
           gridImageSrc: "https://picsum.photos/1000/1000?random=2",
           nome: "MOSSLANDA",
           tipo: "Prateleira p/molduras",
           preco: "9.99",
+          left: 20,
+          top: 50,
         },
         {
           gridImageSrc: "https://picsum.photos/1000/800?random=1",
           nome: "BAGGEBO",
           tipo: "Armário c/portas em vidro",
           preco: "35",
+          left: 50,
+          top: 50,
         },
       ],
-      bottomGrid: [
-        {
-          imagem: "https://picsum.photos/1000/1200?random=8",
-        },
-        {
-          imagem: "https://picsum.photos/1000/900?random=1",
-        },
-        {
-          imagem: "https://picsum.photos/1000/1000?random=1",
-        },
-        {
-          imagem: "https://picsum.photos/1000/1000?random=2",
-        },
-        {
-          imagem: "https://picsum.photos/1000/800?random=1",
-        },
-      ],
+
       infoImpCarousel: [
         {
           title: "Medidas de segurança",
           body:
             "Saiba mais sobre as nossas precauções e como pode fazer a sua parte",
-          infoUrl: "/medidas-de-segurança",
+          infoUrl: "medidas-de-segurança",
           imgCarouselImpSrc: "https://picsum.photos/960/960?random=1",
         },
         {
           title: "Comprou algum prato, taça ou caneca HEROISK ou TALKIRA?",
           body:
             "A IKEA pede a todos os clientes que tenham comprado pratos, taças ou canecas HEROISK e/ou TALKIRA para pararem de os utilizar e os devolveverem numa loja IKEA, onde serão reembolsados na totalidade",
-          infoUrl: "/heroisk-talkira-devolucao",
+          infoUrl: "heroisk-talkira-devolucao",
           imgCarouselImpSrc: "https://picsum.photos/960/960?random=2",
         },
         {
           title: "Bem seguro! Juntos, criamos casas mais seguras",
           body: "",
-          infoUrl: "/casas-mais-seguras",
+          infoUrl: "casas-mais-seguras",
           imgCarouselImpSrc: "https://picsum.photos/960/960?random=3",
         },
         {
-          title: "Bem seguro! Juntos, criamos casas mais seguras",
-          body: "",
-          infoUrl: "/casas-mais-seguras",
+          title: "Modulo Teste",
+          body: "Este modulo serve apenas para teste",
+          infoUrl: "casas-mais-seguras",
           imgCarouselImpSrc: "https://picsum.photos/960/960?random=4",
         },
       ],
@@ -369,10 +451,16 @@ export default {
               font-size: 0.75rem !important;
               font-weight: 700 !important;
               height: 2.5rem;
+              padding: 1rem 1.5rem;
               width: 13rem;
+              background-color: #f5f5f5;
+              border: 1px solid #f5f5f5;
+              text-decoration: none;
+              color: black;
 
               &:hover {
-                background-color: #303030;
+                background-color: #e0e0e0;
+                border: 1px solid #e0e0e0;
               }
             }
           }

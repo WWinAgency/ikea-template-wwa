@@ -11,82 +11,82 @@
         :dots="false"
       >
         <div class="carousel-item">
-          <a href="/pagina-de-produto" class="imagem">
+          <a :href="'/pagina-de-produto/' + link" class="imagem">
             <img :src="carousel[0].imagem" />
           </a>
         </div>
         <div class="carousel-item">
-          <a href="/pagina-de-produto" class="imagem">
+          <a :href="'/pagina-de-produto/' + link" class="imagem">
             <img :src="carousel[1].imagem" />
           </a>
         </div>
         <div class="carousel-item">
-          <a href="/pagina-de-produto" class="imagem">
+          <a :href="'/pagina-de-produto/' + link" class="imagem">
             <img :src="carousel[2].imagem" />
           </a>
         </div>
         <div class="carousel-item">
-          <a href="/pagina-de-produto" class="imagem">
+          <a :href="'/pagina-de-produto/' + link" class="imagem">
             <img :src="carousel[3].imagem" />
           </a>
         </div>
         <div class="carousel-item">
-          <a href="/pagina-de-produto" class="imagem">
+          <a :href="'/pagina-de-produto/' + link" class="imagem">
             <img :src="carousel[4].imagem" />
           </a>
         </div>
         <div class="carousel-item">
-          <a href="/pagina-de-produto" class="imagem">
+          <a :href="'/pagina-de-produto/' + link" class="imagem">
             <img :src="carousel[5].imagem" />
           </a>
         </div>
         <div class="carousel-item">
-          <a href="/pagina-de-produto" class="imagem">
+          <a :href="'/pagina-de-produto/' + link" class="imagem">
             <img :src="carousel[6].imagem" />
           </a>
         </div>
         <div class="carousel-item">
-          <a href="/pagina-de-produto" class="imagem">
+          <a :href="'/pagina-de-produto/' + link" class="imagem">
             <img :src="carousel[7].imagem" />
           </a>
         </div>
         <div class="carousel-item">
-          <a href="/pagina-de-produto" class="imagem">
+          <a :href="'/pagina-de-produto/' + link" class="imagem">
             <img :src="carousel[8].imagem" />
           </a>
         </div>
         <div class="carousel-item">
-          <a href="/pagina-de-produto" class="imagem">
+          <a :href="'/pagina-de-produto/' + link" class="imagem">
             <img :src="carousel[9].imagem" />
           </a>
         </div>
         <div class="carousel-item">
-          <a href="/pagina-de-produto" class="imagem">
+          <a :href="'/pagina-de-produto/' + link" class="imagem">
             <img :src="carousel[10].imagem" />
           </a>
         </div>
         <div class="carousel-item">
-          <a href="/pagina-de-produto" class="imagem">
+          <a :href="'/pagina-de-produto/' + link" class="imagem">
             <img :src="carousel[11].imagem" />
           </a>
         </div>
         <div class="carousel-item">
-          <a href="/pagina-de-produto" class="imagem">
+          <a :href="'/pagina-de-produto/' + link" class="imagem">
             <img :src="carousel[12].imagem" />
           </a>
         </div>
         <div class="carousel-item">
-          <a href="/pagina-de-produto" class="imagem">
+          <a :href="'/pagina-de-produto/' + link" class="imagem">
             <img :src="carousel[13].imagem" />
           </a>
         </div>
         <div class="carousel-item">
-          <a href="/pagina-de-produto" class="imagem">
+          <a :href="'/pagina-de-produto/' + link" class="imagem">
             <img :src="carousel[14].imagem" />
           </a>
         </div>
         <div class="carousel-item">
-          <a href="/pagina-de-produto" class="imagem">
+          <a :href="'/pagina-de-produto/' + link" class="imagem">
             <img :src="carousel[15].imagem" />
           </a>
         </div>

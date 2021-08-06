@@ -1,6 +1,6 @@
 <template>
   <div class="product">
-    <div class="product-col">
+    <a :href="'/pagina-de-produto/' + link" class="product-col">
       <div class="product-image-row">
         <img :src="imageSrc" class="product-image" />
       </div>
@@ -44,10 +44,15 @@
                 <h4>( {{ avaliacoes }} )</h4>
               </div>
             </div>
+            <div class="basket-col">
+              <b-button class="button-basket" variant="primary"
+                ><b-icon icon="bag-plus" scale="1.5" variant="white"></b-icon
+              ></b-button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </a>
   </div>
 </template>
 
@@ -75,11 +80,16 @@ export default {
 
 <style lang="scss">
 .product {
+  text-decoration: none;
+  color: black;
+
   & .product-col {
     display: flex;
     flex-direction: column;
     width: 100%;
     height: 40rem !important;
+    text-decoration: none;
+    color: black;
 
     & .product-image-row {
       display: flex;
@@ -96,15 +106,22 @@ export default {
       flex-direction: row;
       height: 40%;
       margin-top: 1rem;
+      text-decoration: none;
+      color: black;
+
       & .text-col {
+        width: 100%;
         display: flex;
         flex-direction: column;
+        text-decoration: none;
+        color: black;
 
         & .ikea-family {
           font-size: 1rem;
           line-height: 1.42857;
           color: #0077c1;
           margin-bottom: 0.25rem;
+          text-decoration: none;
         }
 
         & .product-name {
@@ -151,14 +168,38 @@ export default {
 
         & .rating-stars {
           margin-bottom: 0.5rem;
+          display: inline-flex;
+          width: 100% !important;
+
           & .rating-col {
             display: ruby;
             list-style: none;
             padding-left: 0;
+            width: 50%;
             & .rating-row {
               & h4 {
                 font-size: 0.8rem !important;
               }
+            }
+          }
+
+          & .basket-col {
+            height: 70%;
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            float: right;
+
+            & .button-basket {
+              height: 3rem;
+              width: 3rem;
+              font-size: 0.8rem;
+              position: absolute;
+              bottom: 0;
+              right: 0;
+              margin-bottom: 0;
+              border-radius: 64px;
             }
           }
         }

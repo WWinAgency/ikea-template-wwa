@@ -1,5 +1,5 @@
 <template>
-  <div class="infoImpComponent">
+  <a :href="'/' + infoUrl" class="infoImpComponent">
     <div class="infoImpComponent-col">
       <div class="image-row"><img :src="imgCarouselImpSrc" /></div>
       <div class="body-row">
@@ -26,7 +26,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </a>
 </template>
 
 <script>
@@ -43,11 +43,15 @@ export default {
 <style lang="scss">
 .infoImpComponent {
   width: 100%;
+  text-decoration: none;
+  color: black;
 
   & .infoImpComponent-col {
     display: flex;
     flex-direction: column;
     height: 50rem;
+    text-decoration: none;
+    color: black;
 
     @media (max-width: 1500px) {
       height: 50rem;
@@ -79,6 +83,8 @@ export default {
       background-color: #f5f5f5;
       padding: 2rem;
       padding-bottom: 4rem;
+      text-decoration: none;
+      color: black;
 
       @media (max-width: 1500px) {
         height: 30rem !important;
@@ -92,10 +98,14 @@ export default {
           font-weight: bold;
           line-height: 1.36rem;
           font-size: 1.125rem;
+          text-decoration: none;
+          color: black;
         }
         & h2 {
           font-size: 0.85rem;
           line-height: 1.36rem;
+          text-decoration: none;
+          color: black;
         }
       }
 

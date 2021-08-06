@@ -2,26 +2,30 @@
   <div class="advert">
     <div class="advert-column">
       <div class="advert-row">
-        <h1>Quem é da casa merece um desconto</h1>
+        <h1>{{ advert[0].titulo }}</h1>
         <h2>
-          É por isso que todos os meses há descontos para os membros IKEA
-          Family. Descubra artigos a preços ainda mais acessíveis para toda a
-          casa, só de 1 a 31 de julho
+          {{ advert[0].body }} {{ advert[0].diaInicioPromocao }}
+          {{ advert[0].mesInicioPromocao }} a {{ advert[0].diaFimPromocao }} de
+          {{ advert[0].mesFimPromocao }}
         </h2>
       </div>
 
       <div class="advert-row">
-        <img src="https://picsum.photos/1600/960?random=1" />
+        <img :src="advert[0].imagem" />
       </div>
       <div class="advert-row">
         <h3>
           <a href="/ikea-family">Promoção IKEA Family</a>
           <strong
-            ><a class="product" href="/product-advert"> BONDHOLMEN </a></strong
+            ><a class="product" href="/product-advert">
+              {{ advert[0].nome }}
+            </a></strong
           >
-          Mesa de centro, exterior <strong>69€ /ud</strong> Preço válido até
-          Julho 31 Preço Habitual
-          <strong>80€ /ud</strong>
+          {{ advert[0].tipo }}
+          <strong>{{ advert[0].precoAtual }}€ /ud</strong> Preço válido até
+          {{ advert[0].mesFimPromocao }} {{ advert[0].diaFimPromocao }} Preço
+          Habitual
+          <strong>{{ advert[0].precoNormal }}€ /ud</strong>
         </h3>
       </div>
     </div>
@@ -30,8 +34,11 @@
 
 <script>
 export default {
-  data: function() {
-    return {};
+  props: {
+    advert: {
+      type: Array,
+      required: true,
+    },
   },
 };
 </script>

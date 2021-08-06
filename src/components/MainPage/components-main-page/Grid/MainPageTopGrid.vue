@@ -27,6 +27,8 @@
                 :gridImageSrc="produtos[0].gridImageSrc"
                 :tipo="produtos[0].tipo"
                 :preco="produtos[0].preco"
+                :leftPercentage="produtos[0].left"
+                :topPercentage="produtos[0].top"
               />
             </div>
           </div>
@@ -39,6 +41,8 @@
                 :gridImageSrc="produtos[1].gridImageSrc"
                 :tipo="produtos[1].tipo"
                 :preco="produtos[1].preco"
+                :leftPercentage="produtos[1].left"
+                :topPercentage="produtos[1].top"
               />
             </div>
             <div class="grid-row-3">
@@ -47,6 +51,8 @@
                 :gridImageSrc="produtos[2].gridImageSrc"
                 :tipo="produtos[2].tipo"
                 :preco="produtos[2].preco"
+                :leftPercentage="produtos[2].left"
+                :topPercentage="produtos[2].top"
               />
             </div>
           </div>
@@ -57,6 +63,8 @@
                 :gridImageSrc="produtos[3].gridImageSrc"
                 :tipo="produtos[3].tipo"
                 :preco="produtos[3].preco"
+                :leftPercentage="produtos[3].left"
+                :topPercentage="produtos[3].top"
               />
             </div>
             <div class="grid-row-5">
@@ -65,6 +73,8 @@
                 :gridImageSrc="produtos[4].gridImageSrc"
                 :tipo="produtos[4].tipo"
                 :preco="produtos[4].preco"
+                :leftPercentage="produtos[4].left"
+                :topPercentage="produtos[4].top"
               />
             </div>
           </div>

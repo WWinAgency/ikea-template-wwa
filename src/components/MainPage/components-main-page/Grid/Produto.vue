@@ -1,6 +1,9 @@
 <template>
   <div class="produto">
-    <div class="tag-container">
+    <div
+      class="tag-container"
+      :style="[{ top: topPercentage + '%' }, { left: leftPercentage + '%' }]"
+    >
       <a class="show-button" href="/pagina-produto">
         <div class="inner-button"></div>
       </a>
@@ -41,6 +44,8 @@ export default {
     tipo: String,
     preco: Number,
     gridImageSrc: String,
+    leftPercentage: Number,
+    topPercentage: Number,
   },
 };
 </script>
@@ -54,8 +59,6 @@ export default {
 
   & .tag-container {
     position: absolute;
-    top: 60%;
-    left: 30%;
     display: flex;
     flex-direction: column;
     justify-content: center;

@@ -1,7 +1,7 @@
 <template>
   <div class="midAdvert">
     <b-card
-      img-src="https://picsum.photos/1600/960?random=6"
+      :img-src="advert[0].imagem"
       img-alt="Card image"
       img-left
       class="image-card"
@@ -9,29 +9,27 @@
       <b-card-text class="text-card d-flex">
         <div class="text-col">
           <div class="text-row">
-            <h1><strong>O Design é para ser tocado</strong></h1>
+            <h1>
+              <strong>{{ advert[0].titulo }}</strong>
+            </h1>
           </div>
           <div class="text-row">
             <h2>
-              Para a IKEA, o design vai muito além da estética. Vai até onde a
-              nossa imaginação quiser. Para o provarmos, desafiámos o Noiserv,
-              um dos músicos portugueses mais inventivos e versáteis, a compor
-              um tema usando apenas móveis e acessórios IKEA. Assim surge o
-              Homemade Jingle, uma melodia original e divertida que nos evoca os
-              sons da vida em casa.
-              <strong>Porque o design é para ser vivido.</strong>
+              {{ body }}
+              <strong>{{ advert[0].bodyStrong }}</strong>
             </h2>
           </div>
           <li class="text-bottom">
             <h3>
-              LINNEBÄCK
+              {{ advert[0].nome }}
             </h3>
-            <h3>
-              Poltrona 39€/ud
-            </h3>
+            <h3>{{ advert[0].tipo }}a {{ advert[0].preco }}€/ud</h3>
           </li>
-          <b-button class="button-midAdvert" variant="light"
-            >Ver homemade Jingle by Noiserv</b-button
+          <a
+            :href="'/' + advert[0].link"
+            class="button-midAdvert"
+            variant="light"
+            ><h4>{{ advert[0].tituloLink }}</h4></a
           >
         </div>
       </b-card-text>
@@ -41,8 +39,11 @@
 
 <script>
 export default {
-  data: function() {
-    return {};
+  props: {
+    advert: {
+      type: Array,
+      required: true,
+    },
   },
 };
 </script>
@@ -126,8 +127,22 @@ export default {
             border: 1px solid #f5f5f5;
             border-radius: 64px;
             border: none;
-            font-size: 0.7rem;
-            font-weight: bold;
+            text-align: center;
+            justify-content: center;
+            display: flex;
+            text-decoration: none;
+            align-items: center;
+
+            & h4 {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              font-size: 0.7rem;
+              font-weight: bold;
+              text-align: center;
+              color: black;
+              margin-bottom: 0;
+            }
 
             &:hover {
               background-color: #e0e0e0;
