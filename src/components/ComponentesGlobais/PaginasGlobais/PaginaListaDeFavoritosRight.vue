@@ -1,9 +1,9 @@
 <template>
-  <div class="paginaDeProduto">
+  <div class="paginaDeProdutoRight">
     <div class="content">
-      <div class="header"><Header /></div>
+      <div class="header"><HeaderRight /></div>
       <div class="mainPage">
-        <PaginaProduto />
+        <ListaDeFavoritos />
       </div>
     </div>
     <div class="footer"><Footer /></div>
@@ -11,17 +11,17 @@
 </template>
 
 <script>
-import Header from "../../Header/Header.vue";
+import HeaderRight from "../../Header/HeaderRight.vue";
 import Footer from "../../Footer/Footer.vue";
-import PaginaProduto from "../../PaginaProduto/PaginaProduto.vue";
+import ListaDeFavoritos from "../../Favoritos/ListaDeFavoritos.vue";
 
 export default {
-  components: { Header, Footer, PaginaProduto },
+  components: { HeaderRight, Footer, ListaDeFavoritos },
 };
 </script>
 
 <style lang="scss">
-.paginaDeProduto {
+.paginaDeProdutoRight {
   & .content {
     width: 80%;
     margin: 1rem auto;

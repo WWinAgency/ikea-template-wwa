@@ -1,9 +1,9 @@
 <template>
-  <div class="sidebarRight">
-    <button class="sidebar-button" v-b-toggle.sidebar-1-right>
+  <div class="sidebar">
+    <button class="sidebar-button" v-b-toggle.sidebar-1>
       <b-icon icon="list" scale="1.6" variant="dark"></b-icon>
     </button>
-    <b-sidebar right id="sidebar-1-right">
+    <b-sidebar right id="sidebar-1">
       <div class="px-3 py-2">
         <ul class="menu-logo">
           <li>
@@ -20,12 +20,12 @@
             <a class="item" href="/right"><strong> HomePage Right</strong></a>
           </li>
           <li class="menu-item">
-            <a class="item" href="/pagina-de-produto"
+            <a class="item" href="/pagina-produto"
               ><strong> Página de Produto </strong></a
             >
           </li>
           <li class="menu-item">
-            <a class="item" href="/pagina-de-produto-right"
+            <a class="item" href="/pagina-produto-right"
               ><strong> Página de Produto Right </strong></a
             >
           </li>
@@ -47,6 +47,24 @@
           <li class="menu-item">
             <a class="item" href="/pagina-politica-privacidade-right">
               <strong> Política de Privacidade Right </strong></a
+            >
+          </li>
+          <li class="menu-item">
+            <a class="item" href="/favoritos"> <strong> Favoritos </strong></a>
+          </li>
+          <li class="menu-item">
+            <a class="item" href="/favoritos-right">
+              <strong> Favoritos Right </strong></a
+            >
+          </li>
+          <li class="menu-item">
+            <a class="item" href="/lista-de-favoritos">
+              <strong> Lista De Favoritos </strong></a
+            >
+          </li>
+          <li class="menu-item">
+            <a class="item" href="/lista-de-favoritos-right">
+              <strong> Lista De Favoritos Right </strong></a
             >
           </li>
         </ul>
@@ -171,7 +189,7 @@ export default {};
   }
 }
 
-.sidebarRight {
+.sidebar {
   & .sidebar-button {
     border: none;
     margin-right: 1.5rem;

@@ -9,6 +9,8 @@
         v-bind="settings"
         :arrows="true"
         :dots="false"
+        v-for="(product, index) in products"
+        :key="index"
       >
         <div class="carousel-item">
           <div class="imagem">

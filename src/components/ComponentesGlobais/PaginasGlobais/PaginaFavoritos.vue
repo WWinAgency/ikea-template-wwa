@@ -1,9 +1,9 @@
 <template>
-  <div class="paginaDeProduto">
+  <div class="paginaDeLoja">
     <div class="content">
       <div class="header"><Header /></div>
       <div class="mainPage">
-        <PaginaProduto />
+        <Favoritos />
       </div>
     </div>
     <div class="footer"><Footer /></div>
@@ -13,15 +13,15 @@
 <script>
 import Header from "../../Header/Header.vue";
 import Footer from "../../Footer/Footer.vue";
-import PaginaProduto from "../../PaginaProduto/PaginaProduto.vue";
+import Favoritos from "../../Favoritos/Favoritos.vue";
 
 export default {
-  components: { Header, Footer, PaginaProduto },
+  components: { Header, Footer, Favoritos },
 };
 </script>
 
 <style lang="scss">
-.paginaDeProduto {
+.paginaDeLoja {
   & .content {
     width: 80%;
     margin: 1rem auto;

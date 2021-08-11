@@ -55,15 +55,12 @@
               >
                 <div class="card-header-inner-row">
                   <div class="card-header-inner-col-1">
-                    <a class="card-name" block variant="info"
-                      >Materiais e cuidados</a
-                    >
+                    <a class="card-name" variant="info">Materiais e cuidados</a>
                   </div>
                   <div class="card-header-inner-col-2">
                     <button
                       class="card-arrow"
-                      @click="rotatedArrow1 = !rotatedArrow1"
-                      block
+                      @click="!rotatedArrow1"
                       variant="info"
                     >
                       <b-icon
@@ -177,15 +174,14 @@
               >
                 <div class="card-header-inner-row">
                   <div class="card-header-inner-col-1">
-                    <a class="card-name" block variant="info"
+                    <a class="card-name" variant="info"
                       >Sustentabilidade e ambiente</a
                     >
                   </div>
                   <div class="card-header-inner-col-2">
                     <button
                       class="card-arrow"
-                      @click="rotatedArrow2 = !rotatedArrow2"
-                      block
+                      @click="!rotatedArrow2"
                       variant="info"
                     >
                       <b-icon
@@ -236,15 +232,14 @@
               >
                 <div class="card-header-inner-row">
                   <div class="card-header-inner-col-1">
-                    <a class="card-name" block variant="info"
+                    <a class="card-name" variant="info"
                       >Peso e medidas da embalagem</a
                     >
                   </div>
                   <div class="card-header-inner-col-2">
                     <button
                       class="card-arrow"
-                      @click="rotatedArrow3 = !rotatedArrow3"
-                      block
+                      @click="!rotatedArrow3"
                       variant="info"
                     >
                       <b-icon
@@ -334,15 +329,14 @@
               >
                 <div class="card-header-inner-row">
                   <div class="card-header-inner-col-1">
-                    <a class="card-name" block variant="info"
+                    <a class="card-name" variant="info"
                       >Instruções de montagem e outros documentos</a
                     >
                   </div>
                   <div class="card-header-inner-col-2">
                     <button
                       class="card-arrow"
-                      @click="rotatedArrow4 = !rotatedArrow4"
-                      block
+                      @click="!rotatedArrow4"
                       variant="info"
                     >
                       <b-icon
@@ -465,6 +459,7 @@ export default {
 <style lang="scss">
 .descriptionSidebarDetalhes {
   position: relative;
+
   & .b-sidebar {
     width: 500px !important;
 
@@ -511,6 +506,7 @@ export default {
 
   & .b-sidebar-body {
     scrollbar-width: none;
+    background-color: #f5f5f5;
   }
 
   & .detalhes-produto-outter-col {
@@ -624,14 +620,14 @@ export default {
 
                 & .card-arrow {
                   border: none;
-                  background-color: white;
+                  background-color: #f5f5f5;
                 }
               }
             }
           }
 
           & .card-body {
-            background-color: #f8f9fa;
+            background-color: #f5f5f5;
             padding-left: 0;
             padding-top: 0;
             & .card-text {
@@ -737,7 +733,7 @@ export default {
                     }
                     & .row-2-inner-row-2 {
                       background-color: black;
-                      color: white;
+                      color: #f5f5f5;
                       width: auto;
                       font-weight: 700;
                       font-size: 0.75rem;
@@ -766,7 +762,7 @@ export default {
                 & .montagem-text-row-1 {
                   display: flex;
                   flex-direction: row;
-                  margin: 1rem 0 1rem 0;
+                  padding: 1rem 0 1rem 0;
                   align-items: center;
 
                   & .row-1-inner-col-1 {
@@ -781,7 +777,7 @@ export default {
                 }
                 & .montagem-text-row-2 {
                   display: inline-block;
-                  margin: 1rem 0 1rem 0;
+                  padding: 1rem 0 1rem 0;
                   position: relative;
                   width: 100%;
                   align-items: center;
@@ -797,7 +793,7 @@ export default {
                       font-size: 0.875rem;
                       line-height: 1.57;
                       background-color: black;
-                      color: white;
+                      color: #f5f5f5;
                       font-weight: 700;
                       padding: 0.25rem 0.5rem 0.25rem 0.5rem;
                       width: 7rem;

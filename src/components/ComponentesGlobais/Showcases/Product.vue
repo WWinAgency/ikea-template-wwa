@@ -42,7 +42,7 @@
                 </star-rating>
               </div>
               <div class="rating-row">
-                <h4>( {{ avaliacoes }} )</h4>
+                <h4>( {{ ratingCount }} )</h4>
               </div>
             </div>
             <div class="basket-col">
@@ -64,6 +64,7 @@ export default {
   name: "Product",
   components: { StarRating },
   props: {
+    id: Number,
     name: String,
     type: String,
     utility: String,
@@ -71,7 +72,7 @@ export default {
     normalPrice: Number,
     currentPrice: Number,
     rating: Number,
-    avaliacoes: Number,
+    ratingCount: Number,
     link: String,
   },
 };

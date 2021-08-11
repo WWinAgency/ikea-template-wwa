@@ -61,7 +61,7 @@
           <b-button class="product-button">Adicionar ao cesto</b-button>
         </div>
         <div class="inner-col-4">
-          <b-button class="favorite-button"
+          <b-button @click="handleAddToWishList" class="favorite-button"
             ><b-icon icon="heart" scale="0.9" variant="dark"></b-icon
           ></b-button>
         </div>
@@ -109,6 +109,7 @@ export default {
   name: "TagProduto",
   components: { StarRating },
   props: {
+    idProduto: String,
     nomeProduto: String,
     precoProduto: Number,
     moedaProduto: String,
@@ -124,6 +125,23 @@ export default {
     promocaoFimDia: Number,
     variantStock: String,
     variantLoja: String,
+  },
+  methods: {
+    async handleAddToWishlist() {
+      await this.$store.dispatch(
+        "WishlistModule/addWishlistItem",
+        this.idProduto
+      );
+    },
+  },
+  computed: {
+    wishlistExists() {
+      return (
+        this.$store.state.WishlistModule.wishlist.find(
+          (i) => i === this.idProduto
+        ) != null
+      );
+    },
   },
 };
 </script>
