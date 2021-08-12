@@ -21,9 +21,9 @@ const actions = {
     let products = state.wishlist.products ?? [];
 
     /*const index = products.findIndex(function(_product) {
-      if (product.variant_id === null) return product.id === _product.id;
-      return product.variant_id === _product.variant_id;
-    });*/
+        if (product.variant_id === null) return product.id === _product.id;
+        return product.variant_id === _product.variant_id;
+      });*/
     products.push(product);
 
     commit("updateWishlist", { products: products });

@@ -13,7 +13,7 @@
             variant="primary"
             type="button"
             class="addButton"
-            @click="addItem(produto)"
+            @favourited="addItem(produto)"
           >
             <b-icon
               icon="plus-circle-fill"
@@ -117,7 +117,7 @@ export default {
   name: "ListaDeFavoritos",
   components: { StarRating },
   props: {
-    products: {
+    productId: {
       type: Array,
       required: true,
     },
@@ -145,14 +145,6 @@ export default {
         link: "hauga",
       },
     };
-  },
-  methods: {
-    removeItem: function(index) {
-      this.products.splice(index, 1);
-    },
-    addItem: function(produto) {
-      this.products.push(produto);
-    },
   },
 };
 </script>
@@ -261,6 +253,7 @@ export default {
     }
 
     .product {
+      width: auto;
       & .product-body {
         width: 100%;
         & .product-image {

@@ -5,20 +5,20 @@ import { BCarousel } from "bootstrap-vue";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-vue/dist/bootstrap-vue.css";
 import Vuex from "vuex";
+// import store from "@/modules/store";
 import Raters from "vue-star-rating";
 import router from "./router";
-import vueSmoothScroll from "vue2-smooth-scroll";
 
 Vue.use(Vuex);
 Vue.use(BootstrapVue);
 Vue.use(IconsPlugin);
 Vue.component("star-rating", Raters.StarRating);
 Vue.component("b-carousel", BCarousel);
-Vue.use(vueSmoothScroll);
 
 Vue.config.productionTip = false;
 
 new Vue({
   router,
+  // store,
   render: (h) => h(App),
 }).$mount("#app");
