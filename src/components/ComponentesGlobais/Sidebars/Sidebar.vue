@@ -25,18 +25,8 @@
             >
           </li>
           <li class="menu-item">
-            <a class="item" href="/pagina-produto-right"
-              ><strong> Página de Produto Right </strong></a
-            >
-          </li>
-          <li class="menu-item">
             <a class="item" href="/pagina-de-loja">
               <strong> Página de Loja </strong></a
-            >
-          </li>
-          <li class="menu-item">
-            <a class="item" href="/pagina-de-loja-right">
-              <strong> Página de Loja Right </strong></a
             >
           </li>
           <li class="menu-item">
@@ -45,17 +35,7 @@
             >
           </li>
           <li class="menu-item">
-            <a class="item" href="/pagina-politica-privacidade-right">
-              <strong> Política de Privacidade Right </strong></a
-            >
-          </li>
-          <li class="menu-item">
             <a class="item" href="/favoritos"> <strong> Favoritos </strong></a>
-          </li>
-          <li class="menu-item">
-            <a class="item" href="/favoritos-right">
-              <strong> Favoritos Right </strong></a
-            >
           </li>
           <li class="menu-item">
             <a class="item" href="/lista-de-favoritos">
@@ -63,8 +43,8 @@
             >
           </li>
           <li class="menu-item">
-            <a class="item" href="/lista-de-favoritos-right">
-              <strong> Lista De Favoritos Right </strong></a
+            <a class="item" href="/comparacao-favoritos">
+              <strong> Comparação Favoritos </strong></a
             >
           </li>
         </ul>

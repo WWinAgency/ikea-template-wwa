@@ -33,7 +33,9 @@
                   </div>
                 </div>
                 <div class="col-4">
-                  <button class="comparar-produtos">Comparar Produtos</button>
+                  <a href="/comparacao-favoritos" class="comparar-produtos"
+                    >Comparar Produtos</a
+                  >
                 </div>
               </div>
             </div>
@@ -53,14 +55,14 @@
             >
               <div class="produto">
                 <div class="comparisonSelection">
-                  <div class="col">
+                  <div class="col-1">
                     <input
                       type="checkbox"
                       :value="product"
                       v-model="comparison"
                     />
                   </div>
-                  <div class="col">Comparar</div>
+                  <div class="col-2">Comparar</div>
                 </div>
                 <div class="product-body">
                   <div class="product-image">
@@ -394,6 +396,7 @@ export default {
                 height: 4rem;
                 display: flex;
                 align-items: center;
+                width: 20%;
 
                 & .close-btn {
                   border: none;
@@ -427,7 +430,7 @@ export default {
                   border-radius: 64px;
                   height: 2.5rem;
                   padding: 0 1.5rem;
-                  background-color: #dfdfdf;
+                  background-color: white;
                   border: 1px solid #dfdfdf;
                   display: flex;
                   align-items: center;
@@ -435,6 +438,12 @@ export default {
                   font-size: 0.75rem;
                   line-height: 1.33333;
                   font-weight: 700;
+                  color: black;
+                  text-decoration: none;
+
+                  &:hover {
+                    border: 1px solid darkgrey;
+                  }
                 }
               }
             }
@@ -451,6 +460,24 @@ export default {
           display: flex;
           width: 40%;
           margin-bottom: 0.5rem;
+          align-items: center;
+
+          & .col-1 {
+            & input[type="checkbox"] {
+              width: 20px;
+              height: 20px;
+            }
+          }
+          & .col-2 {
+            height: 20px;
+            display: flex;
+            align-items: center;
+            margin-left: 1rem;
+            margin-bottom: 0.3rem;
+            font-size: 0.875rem;
+            color: #484848;
+            line-height: 1.57;
+          }
         }
         & .product-body {
           width: 100%;
