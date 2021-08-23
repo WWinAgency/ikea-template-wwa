@@ -92,6 +92,7 @@ export default {
 .buttonCarousel {
   margin: 0 !important;
   padding: 0 !important;
+  width: 100%;
   & .bottom-grid-carousel-component {
     & .btn {
       border-radius: 64px;

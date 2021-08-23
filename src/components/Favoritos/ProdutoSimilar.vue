@@ -1,5 +1,5 @@
 <template>
-  <div class="produto">
+  <div class="produtoSimilar">
     <div class="product-body">
       <div class="product-image">
         <img :src="imageSrc" />
@@ -12,28 +12,38 @@
           <h1>{{ currentPrice }}</h1>
           <h2>€ /ud</h2>
         </div>
-        <div class="adicionar-ao-cesto">
-          <button class="add-basket">Adicionar ao cesto</button>
+        <div class="rating-stars">
+          <div class="rating-row">
+            <div class="rating-col-1">
+              <star-rating
+                v-bind:increment="0.5"
+                v-bind:max-rating="5"
+                inactive-color="white"
+                active-color="black"
+                v-bind:star-size="15"
+                :rating="rating"
+                :show-rating="false"
+                read-only="true"
+              >
+              </star-rating>
+            </div>
+            <div class="rating-col-2">
+              <h4>( {{ ratingCount }} )</h4>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-    <hr class="costum-hr" />
-    <div class="ver-imagens">
-      <div class="col-1"><a href="">Veja todas as imagens</a></div>
-      <div class="col-2">
-        <b-icon
-          class="arrow-right"
-          icon="arrow-right"
-          scale="1.5"
-          variant="dark"
-        ></b-icon>
+        <div class="adicionar-comparacao">
+          <button class="addComparison">Add to comparison</button>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import StarRating from "vue-star-rating";
 export default {
+  components: { StarRating },
   props: {
     imageSrc: String,
     link: String,
@@ -41,12 +51,14 @@ export default {
     type: String,
     utility: String,
     currentPrice: Number,
+    rating: Number,
+    ratingCount: Number,
   },
 };
 </script>
 
 <style lang="scss">
-.produto {
+.produtoSimilar {
   height: auto;
   width: 100%;
 
@@ -59,11 +71,41 @@ export default {
       float: left;
       padding-left: 0;
       width: auto;
+      & .remove-button {
+        background-color: white;
+        border: none;
+        padding: 0 0.5rem;
+        height: 2rem;
+        width: 2rem;
+        border-radius: 64px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &:hover {
+          background-color: #e8e8e8;
+        }
+      }
     }
     & .col-2 {
       float: right;
       padding-right: 0;
       width: auto;
+      & .favourite-button {
+        background-color: white;
+        border: none;
+
+        &:hover {
+        }
+
+        & .heart {
+          color: #989898 !important;
+
+          &:hover {
+            color: black !important;
+          }
+        }
+      }
     }
   }
 
@@ -120,20 +162,36 @@ export default {
         }
       }
 
-      & .adicionar-ao-cesto {
-        & .add-basket {
+      & .rating-stars {
+        & .rating-row {
+          display: ruby;
+          list-style: none;
+          padding-left: 0;
+          & .rating-col-1 {
+            margin-right: 1rem;
+          }
+          & .rating-col-2 {
+            & h4 {
+              font-size: 0.875rem;
+            }
+          }
+        }
+      }
+
+      & .adicionar-comparacao {
+        margin-top: 2rem;
+        & .addComparison {
           width: 100%;
-          background-color: #0058a3;
-          border: 1px solid #0058a3;
+          background-color: black;
           color: white;
+          font-size: 0.875rem;
+          line-height: 1.42857;
           font-weight: 700;
-          height: 2.5rem;
-          padding: 0 1.5rem;
           border-radius: 64px;
-          font-size: 1rem;
-          line-height: 1.33333;
           text-align: center;
-          text-transform: none;
+          height: 3.5rem;
+          padding: 0 2rem;
+          border: 1px solid black;
         }
       }
     }

@@ -2,11 +2,7 @@
   <div class="produto">
     <div class="product-tag">
       <div class="tag-container">
-        <div
-          @mouseover="showTags()"
-          @mouseout="hideTags()"
-          class="positioning-container"
-        >
+        <div class="positioning-container">
           <div
             v-show="tagsVisible"
             v-for="(product, index) in products"
@@ -17,12 +13,7 @@
               { left: product.leftPercentage + '%' },
             ]"
           >
-            <a
-              @mouseover="showCard(product)"
-              @mouseout="hideCard(product)"
-              id="button"
-              class="show-button"
-            >
+            <a @click="showCard(product)" id="button" class="show-button">
               <div class="inner-button"></div>
             </a>
             <a :id="product.id" href="/pagina-produto" class="tag">
@@ -66,30 +57,21 @@
 export default {
   data() {
     return {
-      tagsVisible: false,
+      tagsVisible: true,
       cardVisible: false,
       winWidth: window.innerWidth,
     };
   },
   methods: {
-    showTags() {
-      console.log("in-tag");
-      this.tagsVisible = true;
-    },
-    hideTags() {
-      console.log("out-tag");
-      this.tagsVisible = false;
-    },
-
     showCard(product) {
       console.log("in-card");
+      this.cardVisible = !this.cardVisible;
       var cardName = product.id;
-      document.getElementById(cardName).style.opacity = "1";
-    },
-    hideCard(product) {
-      console.log("out-card");
-      var cardName = product.id;
-      document.getElementById(cardName).style.opacity = "0";
+      if (this.cardVisible == true) {
+        document.getElementById(cardName).style.opacity = "1";
+      } else {
+        document.getElementById(cardName).style.opacity = "0";
+      }
     },
   },
   props: {

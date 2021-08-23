@@ -3,7 +3,7 @@
     <div class="content">
       <div class="header"><Header /></div>
       <div class="mainPage">
-        <ListaFavoritos />
+        Lista De Favoritos
       </div>
     </div>
     <div class="footer"><Footer /></div>
@@ -13,10 +13,9 @@
 <script>
 import Header from "../../Header/Header.vue";
 import Footer from "../../Footer/Footer.vue";
-import ListaFavoritos from "../../Favoritos/ListaFavoritos.vue";
 
 export default {
-  components: { Header, Footer, ListaFavoritos },
+  components: { Header, Footer },
 };
 </script>
 

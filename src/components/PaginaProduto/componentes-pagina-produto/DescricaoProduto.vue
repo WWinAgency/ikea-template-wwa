@@ -66,16 +66,8 @@
         <div class="inner-col">
           <div class="inner-row-1">
             <SidebarDescriptionAvaliacoesProduto
-              :produto="{
-                rating: 4,
-                avaliacoes: 25,
-                valueAssembly: 4,
-                valuePrice: 3,
-                valueQuality: 5,
-                valueLooks: 4,
-                valueExpectations: 4,
-                tituloSidebar: 'Avaliações',
-              }"
+              :evaluations="evaluations"
+              :productCode="id"
             />
           </div>
           <div class="inner-row-2">

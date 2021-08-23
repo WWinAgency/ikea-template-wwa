@@ -1,62 +1,5 @@
 <template>
   <div class="comparacaoFavoritos">
-    <div class="row-1">
-      <div class="col">
-        <div class="row"><h1>Comparação Favoritos</h1></div>
-        <div class="row">
-          <h2>A comparar 3 produtos</h2>
-        </div>
-      </div>
-    </div>
-    <div class="row-2">
-      <div class="button-col">
-        <div class="button-row">
-          <div class="button-col-1">
-            <a href="/pagina-de-loja" class="editar-selecao">
-              <div class="row">
-                <div class="col-1">
-                  <b-icon
-                    class="arrow-left"
-                    icon="arrow-left"
-                    scale="1.5"
-                    variant="dark"
-                  ></b-icon>
-                </div>
-                <div class="col-2">
-                  Editar Seleção
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="button-col-2">
-            <button class="mostrar-diferencas">
-              Mostrar apenas diferenças
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="content-col">
-        <div class="content-row">
-          <div class="button-col-1">
-            3 Produtos
-          </div>
-          <div class="button-col-2">
-            <div class="row">
-              <div class="col-1">
-                <button class="produto" @click="toggleStateProduto">
-                  Produto
-                </button>
-              </div>
-              <div class="col-2">
-                <button class="conteudo" @click="toggleStateConteudo">
-                  Contéudo
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
     <div class="row-3">
       <ProdutoComparativo :products="products" />
     </div>
@@ -76,74 +19,236 @@ export default {
       products: [
         {
           id: 1,
+          productId: "fejka",
           name: "FEJKA",
           type: "Planta Artificial em vaso",
-          code: "104.678.04",
+          code: "403.495.31",
           utility: "9cm",
           imageSrc: "https://picsum.photos/360?random=1",
-          normalPrice: 4.5,
-          currentPrice: 4,
-          rating: 4.5,
-          ratingCount: 8,
+          normalPrice: "",
+          currentPrice: 5,
+          rating: 4.6,
+          ratingCount: 4,
+          valueAssembly: 4.8,
+          valuePrice: 3.9,
+          valueQuality: 4.4,
+          valueLooks: 4.6,
+          valueExpectations: 4.6,
+          packageLength: 70,
+          packageWeight: 0.35,
+          packageHeight: "",
+          packageWidth: "",
+          packageQnt: 1,
           link: "fejka",
           variantStock: "success",
-          accordionOpen: false,
+          productShowingText:
+            "Folhas artificiais com aspeto real que permanecem bonitas e com bom aspeto ano após ano.",
+          productHiddenText:
+            "Próprio para uso interior e exterior. Ideal se não puder ter uma planta viva mas quiser desfrutar da beleza da natureza.",
+          showcaseRatingName: "Ana",
+          showcaseRatingDay: "17",
+          showcaseRatingMonth: "5",
+          showcaseRatingYear: "2021",
+          showcaseRatingComment:
+            "Gosto! e para o efeito que queria ficou muito bem",
+          showcaseRatingRating: 4,
           medidas: [
             {
               tituloMedida: "Altura",
-              dimensao: 170,
+              dimensao: "-",
             },
             {
               tituloMedida: "Diâmetro do vaso",
-              dimensao: 23,
+              dimensao: 9,
             },
             {
               tituloMedida: "Altura da planta",
-              dimensao: "-",
+              dimensao: "70",
             },
             {
               tituloMedida: "Quantidade por embalagem",
               dimensao: "-",
+            },
+          ],
+          evaluations: [
+            {
+              rating: 5,
+              clientName: "Ana",
+              day: 17,
+              month: 5,
+              year: 2021,
+              generalEvaluation: "Gosto! e para o efeito",
+              specificEvaluation:
+                "Gosto! e para o efeito que queria ficou muito bem",
+              valueAssembly: 5,
+              valuePrice: 5,
+              valueQuality: 5,
+              valueLooks: 5,
+              valueExpectations: 5,
+            },
+            {
+              rating: 5,
+              clientName: "Katherine",
+              day: 25,
+              month: 10,
+              year: 2020,
+              generalEvaluation: "Ótimo",
+              specificEvaluation: "Ótimo",
+              valueAssembly: 5,
+              valuePrice: 5,
+              valueQuality: 5,
+              valueLooks: 5,
+              valueExpectations: 5,
+            },
+            {
+              rating: 5,
+              clientName: "Ana Silva",
+              day: 26,
+              month: 8,
+              year: 2020,
+              generalEvaluation: "Parece natural",
+              specificEvaluation: "Até parece uma flor de tão bonita que é",
+              valueAssembly: 4,
+              valuePrice: 4,
+              valueQuality: 5,
+              valueLooks: 5,
+              valueExpectations: 4,
+            },
+            {
+              rating: 5,
+              clientName: "Eleite96",
+              day: 9,
+              month: 6,
+              year: 2020,
+              generalEvaluation: "Em perfeitas condições",
+              specificEvaluation:
+                "Fiz compra online e todos os artigos vieram conforme medidas e aspecto.",
+              valueAssembly: 5,
+              valuePrice: 5,
+              valueQuality: 5,
+              valueLooks: 5,
+              valueExpectations: 5,
             },
           ],
           favSelected: false,
         },
         {
           id: 2,
+          productId: "skogsklover",
           name: "SKOGSKLÖVER",
           type: "Estore de correr",
-          code: "104.678.04",
+          code: "403.144.66",
           utility: "120x195 cm",
           imageSrc: "https://picsum.photos/360?random=2",
-          normalPrice: 35,
-          currentPrice: 29,
-          rating: 4,
+          normalPrice: "",
+          currentPrice: 35,
+          rating: 4.2,
           ratingCount: 148,
+          valueAssembly: 4.4,
+          valuePrice: 4.1,
+          valueQuality: 4.1,
+          valueLooks: 4.1,
+          valueExpectations: 4.3,
+          packageLength: 132,
+          packageWeight: 1.49,
+          packageHeight: 6,
+          packageWidth: 7,
+          packageQnt: 1,
           link: "skogsklover",
           variantStock: "danger",
-          accordionOpen: false,
+          productShowingText:
+            "Os estores reduzem o nível de luz geral e dão privacidade ao impedir que as pessoas no exterior vejam diretamente o interior da divisão.",
+          productHiddenText:
+            "O estore não tem cordões para maior segurança das crianças. Pode ser montado no interior e no exterior das estruturas da janela ou no teto.",
+          showcaseRatingName: "Maria S",
+          showcaseRatingDay: "21",
+          showcaseRatingMonth: "5",
+          showcaseRatingYear: "2021",
+          showcaseRatingComment: "Correspondeu às minhas expectativas",
+          showcaseRatingRating: 5,
           medidas: [
             {
-              tituloMedida: "Altura",
-              dimensao: 170,
+              tituloMedida: "Comprimento",
+              dimensao: 195,
             },
             {
-              tituloMedida: "Diâmetro do vaso",
-              dimensao: 23,
+              tituloMedida: "Superfície",
+              dimensao: 23.4,
             },
             {
-              tituloMedida: "Altura da planta",
-              dimensao: "-",
+              tituloMedida: "Largura do rolo",
+              dimensao: "123.4",
             },
             {
-              tituloMedida: "Quantidade por embalagem",
-              dimensao: "-",
+              tituloMedida: "Largura do tecido",
+              dimensao: "120",
+            },
+          ],
+          evaluations: [
+            {
+              rating: 5,
+              clientName: "Maria S",
+              day: 21,
+              month: 5,
+              year: 2021,
+              generalEvaluation: "Correspondeu às minhas expectativas",
+              specificEvaluation: "Correspondeu às minhas expectativas",
+              valueAssembly: 4,
+              valuePrice: 5,
+              valueQuality: 4,
+              valueLooks: 4,
+              valueExpectations: 4,
+            },
+            {
+              rating: 5,
+              clientName: "Jose",
+              day: 1,
+              month: 5,
+              year: 2021,
+              generalEvaluation: "Boa",
+              specificEvaluation: "Boa",
+              valueAssembly: 5,
+              valuePrice: 5,
+              valueQuality: 5,
+              valueLooks: 5,
+              valueExpectations: 5,
+            },
+            {
+              rating: 5,
+              clientName: "Ana",
+              day: 30,
+              month: 4,
+              year: 2021,
+              generalEvaluation: "Muito bom",
+              specificEvaluation:
+                "Artigo melhor do que pensava, deixa passar a luz solar tornando o ambiente da divisão agradável. Semi transparente consegue ver se de dentro para fora mas ao contrário não.",
+              valueAssembly: 5,
+              valuePrice: 5,
+              valueQuality: 5,
+              valueLooks: 5,
+              valueExpectations: 5,
+            },
+            {
+              rating: 5,
+              clientName: "Ana",
+              day: 28,
+              month: 4,
+              year: 2021,
+              generalEvaluation: "Gosto",
+              specificEvaluation:
+                "Moro num R/C e é importante ter luz e privacidade. Consigo com este produto ter isso tudo, uma vez que não é opaco, mas da rua ninguém vê o interior o que era uma preocupação.",
+              valueAssembly: 5,
+              valuePrice: 5,
+              valueQuality: 5,
+              valueLooks: 5,
+              valueExpectations: 5,
             },
           ],
           favSelected: false,
         },
         {
           id: 3,
+          productId: "husaro",
           name: "HUSARÖ",
           type: "Poltrona",
           code: "104.678.04",
@@ -153,9 +258,26 @@ export default {
           currentPrice: 119,
           rating: 4.5,
           ratingCount: 10,
+          valueAssembly: 4,
+          valuePrice: 3,
+          valueQuality: 5,
+          valueLooks: 4,
+          valueExpectations: 4,
+          packageLength: 170,
+          packageWeight: 4.57,
+          packageQnt: 1,
           link: "husaro",
           variantStock: "success",
-          accordionOpen: false,
+          productShowingText:
+            "Os estores reduzem o nível de luz geral e dão privacidade ao impedir que as pessoas no exterior vejam diretamente o interior da divisão.",
+          productHiddenText:
+            "O estore não tem cordões para maior segurança das crianças. Pode ser montado no interior e no exterior das estruturas da janela ou no teto.",
+          showcaseRatingName: "Maria S",
+          showcaseRatingDay: "21",
+          showcaseRatingMonth: "5",
+          showcaseRatingYear: "2021",
+          showcaseRatingComment: "Correspondeu às minhas expectativas",
+          showcaseRatingRating: 5,
           medidas: [
             {
               tituloMedida: "Altura",
@@ -174,10 +296,55 @@ export default {
               dimensao: "-",
             },
           ],
+          evaluations: [
+            {
+              rating: 4,
+              clientName: "Maria",
+              day: 2,
+              month: 3,
+              year: 2021,
+              generalEvaluation: "Vaso Bonito",
+              specificEvaluation: "Muito bom para por em salas ou entradas",
+              valueAssembly: 5,
+              valuePrice: 4,
+              valueQuality: 5,
+              valueLooks: 5,
+              valueExpectations: 4,
+            },
+            {
+              rating: 2,
+              clientName: "Idete",
+              day: 26,
+              month: 12,
+              year: 2020,
+              generalEvaluation: "Vaso feio",
+              specificEvaluation: "Muito feio e dificil de montar",
+              valueAssembly: 1,
+              valuePrice: 2,
+              valueQuality: 4,
+              valueLooks: 1,
+              valueExpectations: 1,
+            },
+            {
+              rating: 3,
+              clientName: "João",
+              day: 20,
+              month: 6,
+              year: 2021,
+              generalEvaluation: "Vaso decente",
+              specificEvaluation: "Dificil de montar mas com aspeto bom",
+              valueAssembly: 2,
+              valuePrice: 4,
+              valueQuality: 5,
+              valueLooks: 5,
+              valueExpectations: 3,
+            },
+          ],
           favSelected: false,
         },
         {
           id: 4,
+          productId: "hauga",
           name: "HAUGA",
           type: "Roupeiro aberto",
           code: "104.678.04",
@@ -187,9 +354,26 @@ export default {
           currentPrice: 112,
           rating: 3,
           ratingCount: 24,
+          valueAssembly: 4,
+          valuePrice: 3,
+          valueQuality: 5,
+          valueLooks: 4,
+          valueExpectations: 4,
+          packageLength: 170,
+          packageWeight: 4.57,
+          packageQnt: 1,
           link: "hauga",
           variantStock: "danger",
-          accordionOpen: false,
+          productShowingText:
+            "Os estores reduzem o nível de luz geral e dão privacidade ao impedir que as pessoas no exterior vejam diretamente o interior da divisão.",
+          productHiddenText:
+            "O estore não tem cordões para maior segurança das crianças. Pode ser montado no interior e no exterior das estruturas da janela ou no teto.",
+          showcaseRatingName: "Maria S",
+          showcaseRatingDay: "21",
+          showcaseRatingMonth: "5",
+          showcaseRatingYear: "2021",
+          showcaseRatingComment: "Correspondeu às minhas expectativas",
+          showcaseRatingRating: 5,
           medidas: [
             {
               tituloMedida: "Altura",
@@ -206,6 +390,530 @@ export default {
             {
               tituloMedida: "Quantidade por embalagem",
               dimensao: "-",
+            },
+          ],
+          evaluations: [
+            {
+              rating: 4,
+              clientName: "Maria",
+              day: 2,
+              month: 3,
+              year: 2021,
+              generalEvaluation: "Vaso Bonito",
+              specificEvaluation: "Muito bom para por em salas ou entradas",
+              valueAssembly: 5,
+              valuePrice: 4,
+              valueQuality: 5,
+              valueLooks: 5,
+              valueExpectations: 4,
+            },
+            {
+              rating: 2,
+              clientName: "Idete",
+              day: 26,
+              month: 12,
+              year: 2020,
+              generalEvaluation: "Vaso feio",
+              specificEvaluation: "Muito feio e dificil de montar",
+              valueAssembly: 1,
+              valuePrice: 2,
+              valueQuality: 4,
+              valueLooks: 1,
+              valueExpectations: 1,
+            },
+            {
+              rating: 3,
+              clientName: "João",
+              day: 20,
+              month: 6,
+              year: 2021,
+              generalEvaluation: "Vaso decente",
+              specificEvaluation: "Dificil de montar mas com aspeto bom",
+              valueAssembly: 2,
+              valuePrice: 4,
+              valueQuality: 5,
+              valueLooks: 5,
+              valueExpectations: 3,
+            },
+          ],
+          favSelected: false,
+        },
+        {
+          id: 5,
+          productId: "bodarp",
+          name: "BODARP",
+          type: "Porta,",
+          code: "104.678.04",
+          utility: "verde acinzentado, 60x80 cm",
+          imageSrc: "https://picsum.photos/300?random=5",
+          normalPrice: 50,
+          currentPrice: 30,
+          rating: 5,
+          ratingCount: 7,
+          valueAssembly: 4,
+          valuePrice: 3,
+          valueQuality: 5,
+          valueLooks: 4,
+          valueExpectations: 4,
+          packageLength: 170,
+          packageWeight: 4.57,
+          packageQnt: 1,
+          link: "bodarp",
+          variantStock: "success",
+          productShowingText:
+            "Os estores reduzem o nível de luz geral e dão privacidade ao impedir que as pessoas no exterior vejam diretamente o interior da divisão.",
+          productHiddenText:
+            "O estore não tem cordões para maior segurança das crianças. Pode ser montado no interior e no exterior das estruturas da janela ou no teto.",
+          showcaseRatingName: "Maria S",
+          showcaseRatingDay: "21",
+          showcaseRatingMonth: "5",
+          showcaseRatingYear: "2021",
+          showcaseRatingComment: "Correspondeu às minhas expectativas",
+          showcaseRatingRating: 5,
+          medidas: [
+            {
+              tituloMedida: "Altura",
+              dimensao: 170,
+            },
+            {
+              tituloMedida: "Diâmetro do vaso",
+              dimensao: 23,
+            },
+            {
+              tituloMedida: "Altura da planta",
+              dimensao: "-",
+            },
+            {
+              tituloMedida: "Quantidade por embalagem",
+              dimensao: "-",
+            },
+          ],
+          evaluations: [
+            {
+              rating: 4,
+              clientName: "Maria",
+              day: 2,
+              month: 3,
+              year: 2021,
+              generalEvaluation: "Vaso Bonito",
+              specificEvaluation: "Muito bom para por em salas ou entradas",
+              valueAssembly: 5,
+              valuePrice: 4,
+              valueQuality: 5,
+              valueLooks: 5,
+              valueExpectations: 4,
+            },
+            {
+              rating: 2,
+              clientName: "Idete",
+              day: 26,
+              month: 12,
+              year: 2020,
+              generalEvaluation: "Vaso feio",
+              specificEvaluation: "Muito feio e dificil de montar",
+              valueAssembly: 1,
+              valuePrice: 2,
+              valueQuality: 4,
+              valueLooks: 1,
+              valueExpectations: 1,
+            },
+            {
+              rating: 3,
+              clientName: "João",
+              day: 20,
+              month: 6,
+              year: 2021,
+              generalEvaluation: "Vaso decente",
+              specificEvaluation: "Dificil de montar mas com aspeto bom",
+              valueAssembly: 2,
+              valuePrice: 4,
+              valueQuality: 5,
+              valueLooks: 5,
+              valueExpectations: 3,
+            },
+          ],
+          favSelected: false,
+        },
+        {
+          id: 6,
+          productId: "bodarp",
+          name: "SKYMNINGEN",
+          type: "Candeeiro suspenso,",
+          code: "104.678.04",
+          utility: "branco",
+          imageSrc: "https://picsum.photos/300?random=6",
+          normalPrice: 79,
+          currentPrice: 59,
+          rating: 5,
+          ratingCount: 3,
+          valueAssembly: 4,
+          valuePrice: 3,
+          valueQuality: 5,
+          valueLooks: 4,
+          valueExpectations: 4,
+          packageLength: 170,
+          packageWeight: 4.57,
+          packageQnt: 1,
+          link: "bodarp",
+          variantStock: "success",
+          productShowingText:
+            "Os estores reduzem o nível de luz geral e dão privacidade ao impedir que as pessoas no exterior vejam diretamente o interior da divisão.",
+          productHiddenText:
+            "O estore não tem cordões para maior segurança das crianças. Pode ser montado no interior e no exterior das estruturas da janela ou no teto.",
+          showcaseRatingName: "Maria S",
+          showcaseRatingDay: "21",
+          showcaseRatingMonth: "5",
+          showcaseRatingYear: "2021",
+          showcaseRatingComment: "Correspondeu às minhas expectativas",
+          showcaseRatingRating: 5,
+          medidas: [
+            {
+              tituloMedida: "Altura",
+              dimensao: 170,
+            },
+            {
+              tituloMedida: "Diâmetro do vaso",
+              dimensao: 23,
+            },
+            {
+              tituloMedida: "Altura da planta",
+              dimensao: "-",
+            },
+            {
+              tituloMedida: "Quantidade por embalagem",
+              dimensao: "-",
+            },
+          ],
+          evaluations: [
+            {
+              rating: 4,
+              clientName: "Maria",
+              day: 2,
+              month: 3,
+              year: 2021,
+              generalEvaluation: "Vaso Bonito",
+              specificEvaluation: "Muito bom para por em salas ou entradas",
+              valueAssembly: 5,
+              valuePrice: 4,
+              valueQuality: 5,
+              valueLooks: 5,
+              valueExpectations: 4,
+            },
+            {
+              rating: 2,
+              clientName: "Idete",
+              day: 26,
+              month: 12,
+              year: 2020,
+              generalEvaluation: "Vaso feio",
+              specificEvaluation: "Muito feio e dificil de montar",
+              valueAssembly: 1,
+              valuePrice: 2,
+              valueQuality: 4,
+              valueLooks: 1,
+              valueExpectations: 1,
+            },
+            {
+              rating: 3,
+              clientName: "João",
+              day: 20,
+              month: 6,
+              year: 2021,
+              generalEvaluation: "Vaso decente",
+              specificEvaluation: "Dificil de montar mas com aspeto bom",
+              valueAssembly: 2,
+              valuePrice: 4,
+              valueQuality: 5,
+              valueLooks: 5,
+              valueExpectations: 3,
+            },
+          ],
+          favSelected: false,
+        },
+        {
+          id: 7,
+          productId: "tangret",
+          name: "TRANGET",
+          type: "Tapete, tecelagem plana,",
+          code: "104.678.04",
+          utility: "feito à mão 170x240 cm",
+          imageSrc: "https://picsum.photos/300?random=7",
+          normalPrice: 249,
+          currentPrice: 199,
+          rating: 4,
+          ratingCount: 10,
+          valueAssembly: 4,
+          valuePrice: 3,
+          valueQuality: 5,
+          valueLooks: 4,
+          valueExpectations: 4,
+          packageLength: 170,
+          packageWeight: 4.57,
+          packageQnt: 1,
+          link: "tangret",
+          variantStock: "success",
+          productShowingText:
+            "Os estores reduzem o nível de luz geral e dão privacidade ao impedir que as pessoas no exterior vejam diretamente o interior da divisão.",
+          productHiddenText:
+            "O estore não tem cordões para maior segurança das crianças. Pode ser montado no interior e no exterior das estruturas da janela ou no teto.",
+          showcaseRatingName: "Maria S",
+          showcaseRatingDay: "21",
+          showcaseRatingMonth: "5",
+          showcaseRatingYear: "2021",
+          showcaseRatingComment: "Correspondeu às minhas expectativas",
+          showcaseRatingRating: 5,
+          medidas: [
+            {
+              tituloMedida: "Altura",
+              dimensao: 170,
+            },
+            {
+              tituloMedida: "Diâmetro do vaso",
+              dimensao: 23,
+            },
+            {
+              tituloMedida: "Altura da planta",
+              dimensao: "-",
+            },
+            {
+              tituloMedida: "Quantidade por embalagem",
+              dimensao: "-",
+            },
+          ],
+          evaluations: [
+            {
+              rating: 4,
+              clientName: "Maria",
+              day: 2,
+              month: 3,
+              year: 2021,
+              generalEvaluation: "Vaso Bonito",
+              specificEvaluation: "Muito bom para por em salas ou entradas",
+              valueAssembly: 5,
+              valuePrice: 4,
+              valueQuality: 5,
+              valueLooks: 5,
+              valueExpectations: 4,
+            },
+            {
+              rating: 2,
+              clientName: "Idete",
+              day: 26,
+              month: 12,
+              year: 2020,
+              generalEvaluation: "Vaso feio",
+              specificEvaluation: "Muito feio e dificil de montar",
+              valueAssembly: 1,
+              valuePrice: 2,
+              valueQuality: 4,
+              valueLooks: 1,
+              valueExpectations: 1,
+            },
+            {
+              rating: 3,
+              clientName: "João",
+              day: 20,
+              month: 6,
+              year: 2021,
+              generalEvaluation: "Vaso decente",
+              specificEvaluation: "Dificil de montar mas com aspeto bom",
+              valueAssembly: 2,
+              valuePrice: 4,
+              valueQuality: 5,
+              valueLooks: 5,
+              valueExpectations: 3,
+            },
+          ],
+          favSelected: false,
+        },
+        {
+          id: 8,
+          productId: "pelarboj",
+          name: "PELARBOJ",
+          type: "Candeeiro LED de mesa,",
+          code: "104.678.04",
+          utility: "multicor",
+          imageSrc: "https://picsum.photos/300?random=8",
+          normalPrice: 20,
+          currentPrice: 15,
+          rating: 4.5,
+          ratingCount: 18,
+          valueAssembly: 4,
+          valuePrice: 3,
+          valueQuality: 5,
+          valueLooks: 4,
+          valueExpectations: 4,
+          packageLength: 170,
+          packageWeight: 4.57,
+          packageQnt: 1,
+          link: "pelarboj",
+          variantStock: "success",
+          productShowingText:
+            "Os estores reduzem o nível de luz geral e dão privacidade ao impedir que as pessoas no exterior vejam diretamente o interior da divisão.",
+          productHiddenText:
+            "O estore não tem cordões para maior segurança das crianças. Pode ser montado no interior e no exterior das estruturas da janela ou no teto.",
+          showcaseRatingName: "Maria S",
+          showcaseRatingDay: "21",
+          showcaseRatingMonth: "5",
+          showcaseRatingYear: "2021",
+          showcaseRatingComment: "Correspondeu às minhas expectativas",
+          showcaseRatingRating: 5,
+          medidas: [
+            {
+              tituloMedida: "Altura",
+              dimensao: 170,
+            },
+            {
+              tituloMedida: "Diâmetro do vaso",
+              dimensao: 23,
+            },
+            {
+              tituloMedida: "Altura da planta",
+              dimensao: "-",
+            },
+            {
+              tituloMedida: "Quantidade por embalagem",
+              dimensao: "-",
+            },
+          ],
+          evaluations: [
+            {
+              rating: 4,
+              clientName: "Maria",
+              day: 2,
+              month: 3,
+              year: 2021,
+              generalEvaluation: "Vaso Bonito",
+              specificEvaluation: "Muito bom para por em salas ou entradas",
+              valueAssembly: 5,
+              valuePrice: 4,
+              valueQuality: 5,
+              valueLooks: 5,
+              valueExpectations: 4,
+            },
+            {
+              rating: 2,
+              clientName: "Idete",
+              day: 26,
+              month: 12,
+              year: 2020,
+              generalEvaluation: "Vaso feio",
+              specificEvaluation: "Muito feio e dificil de montar",
+              valueAssembly: 1,
+              valuePrice: 2,
+              valueQuality: 4,
+              valueLooks: 1,
+              valueExpectations: 1,
+            },
+            {
+              rating: 3,
+              clientName: "João",
+              day: 20,
+              month: 6,
+              year: 2021,
+              generalEvaluation: "Vaso decente",
+              specificEvaluation: "Dificil de montar mas com aspeto bom",
+              valueAssembly: 2,
+              valuePrice: 4,
+              valueQuality: 5,
+              valueLooks: 5,
+              valueExpectations: 3,
+            },
+          ],
+          favSelected: false,
+        },
+        {
+          id: 9,
+          productId: "bjorkasen",
+          name: "BJÖRKÅSEN",
+          type: "Suporte p/portátil,",
+          code: "204.764.74",
+          utility: "bege",
+          imageSrc: "https://picsum.photos/300?random=9",
+          normalPrice: 19,
+          currentPrice: 15,
+          rating: 4.7,
+          ratingCount: 3,
+          valueAssembly: 4,
+          valuePrice: 3,
+          valueQuality: 5,
+          valueLooks: 4,
+          valueExpectations: 4,
+          packageLength: 170,
+          packageWeight: 4.57,
+          packageQnt: 1,
+          link: "bjorkasen",
+          variantStock: "success",
+          productShowingText:
+            "Os estores reduzem o nível de luz geral e dão privacidade ao impedir que as pessoas no exterior vejam diretamente o interior da divisão.",
+          productHiddenText:
+            "O estore não tem cordões para maior segurança das crianças. Pode ser montado no interior e no exterior das estruturas da janela ou no teto.",
+          showcaseRatingName: "Manuel",
+          showcaseRatingDay: "3",
+          showcaseRatingMonth: "6",
+          showcaseRatingYear: "2021",
+          showcaseRatingComment: "Muito bom",
+          showcaseRatingRating: 4.7,
+          medidas: [
+            {
+              tituloMedida: "Largura",
+              dimensao: 46,
+            },
+            {
+              tituloMedida: "Altura",
+              dimensao: 65,
+            },
+            {
+              tituloMedida: "Peso máximo",
+              dimensao: 12,
+            },
+            {
+              tituloMedida: "Altura Mínima",
+              dimensao: 70,
+            },
+          ],
+          evaluations: [
+            {
+              rating: 4,
+              clientName: "Maria",
+              day: 2,
+              month: 3,
+              year: 2021,
+              generalEvaluation: "Vaso Bonito",
+              specificEvaluation: "Muito bom para por em salas ou entradas",
+              valueAssembly: 5,
+              valuePrice: 4,
+              valueQuality: 5,
+              valueLooks: 5,
+              valueExpectations: 4,
+            },
+            {
+              rating: 2,
+              clientName: "Idete",
+              day: 26,
+              month: 12,
+              year: 2020,
+              generalEvaluation: "Vaso feio",
+              specificEvaluation: "Muito feio e dificil de montar",
+              valueAssembly: 1,
+              valuePrice: 2,
+              valueQuality: 4,
+              valueLooks: 1,
+              valueExpectations: 1,
+            },
+            {
+              rating: 3,
+              clientName: "João",
+              day: 20,
+              month: 6,
+              year: 2021,
+              generalEvaluation: "Vaso decente",
+              specificEvaluation: "Dificil de montar mas com aspeto bom",
+              valueAssembly: 2,
+              valuePrice: 4,
+              valueQuality: 5,
+              valueLooks: 5,
+              valueExpectations: 3,
             },
           ],
           favSelected: false,
@@ -252,181 +960,6 @@ export default {
     }
   }
   & .row-2 {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
-
-    @media (max-width: 1000px) {
-      flex-direction: column;
-    }
-
-    & .button-col {
-      @media (max-width: 1000px) {
-        width: 100%;
-      }
-      & .button-row {
-        display: flex;
-
-        & .button-col-1 {
-          width: auto;
-          margin-right: 1rem;
-
-          & .editar-selecao {
-            margin: 0.5rem 0.625rem 0 0;
-            width: auto;
-            display: flex;
-            justify-content: space-between !important;
-            align-items: center;
-            padding: 0 1.5rem;
-            height: 2.5rem;
-            border-radius: 64px;
-            border: 1px solid #f5f5f5;
-            background-color: #f5f5f5;
-            text-decoration: none;
-
-            &:hover {
-              background-color: #c8c8c8;
-              border: 1px solid #c8c8c8;
-            }
-
-            & .row {
-              width: auto;
-              display: flex;
-              align-items: center;
-              & .col-1 {
-                width: auto;
-                margin: auto;
-              }
-              & .col-2 {
-                display: flex;
-                width: auto;
-                font-size: 0.75rem;
-                line-height: 1.33333;
-                text-align: center;
-                font-weight: 700;
-                color: black;
-              }
-            }
-          }
-        }
-        & .button-col-2 {
-          width: auto;
-          & .mostrar-diferencas {
-            margin: 0.5rem 0 0 0;
-            width: auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0 1.5rem;
-            height: 2.5rem;
-            border-radius: 64px;
-            border: 1px solid #f5f5f5;
-            background-color: #f5f5f5;
-            font-size: 0.75rem;
-            line-height: 1.33333;
-            font-weight: 700;
-            color: black;
-
-            &:hover {
-              background-color: #c8c8c8;
-              border: 1px solid #c8c8c8;
-            }
-          }
-        }
-      }
-    }
-    & .content-col {
-      display: inline-flex;
-      width: 30%;
-      align-items: center;
-      position: relative;
-
-      @media (max-width: 1000px) {
-        width: 100%;
-        margin-top: 2rem;
-      }
-      & .content-row {
-        display: flex;
-        width: auto;
-        position: absolute;
-        right: 0;
-
-        @media (max-width: 1000px) {
-          width: 100%;
-          position: relative;
-        }
-
-        & .button-col-1 {
-          display: flex;
-          justify-content: center;
-          width: auto;
-
-          font-size: 0.75rem;
-
-          @media (max-width: 900px) {
-            float: left;
-            width: 20%;
-          }
-        }
-        & .button-col-2 {
-          display: flex;
-          width: auto;
-          margin-left: 1rem;
-          align-items: center;
-
-          @media (max-width: 1000px) {
-            position: absolute;
-            right: 0;
-          }
-
-          & .row {
-            padding: 0;
-            margin: 0;
-            align-items: center;
-            @media (max-width: 900px) {
-              display: flex;
-              justify-content: flex-end;
-              margin: auto;
-            }
-            & .col-1 {
-              width: auto;
-              display: flex;
-              justify-content: center;
-              @media (max-width: 900px) {
-                float: left;
-              }
-              @media (max-width: 600px) {
-                margin-right: 1rem;
-              }
-
-              & .produto {
-                background-color: white;
-                border: none;
-                font-size: 0.75rem;
-                font-weight: 700;
-              }
-            }
-            & .col-2 {
-              width: auto;
-              display: flex;
-              justify-content: center;
-              padding-right: 0;
-              @media (max-width: 900px) {
-                float: left;
-              }
-
-              & .conteudo {
-                background-color: white;
-                border: none;
-                font-size: 0.75rem;
-                font-weight: 700;
-              }
-            }
-          }
-        }
-      }
-    }
   }
 }
 </style>

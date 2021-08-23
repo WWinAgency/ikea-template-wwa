@@ -2,30 +2,28 @@
   <div class="advert">
     <div class="advert-column">
       <div class="advert-row">
-        <h1>{{ advert[0].titulo }}</h1>
+        <h1>{{ title }}</h1>
         <h2>
-          {{ advert[0].body }} {{ advert[0].diaInicioPromocao }}
-          {{ advert[0].mesInicioPromocao }} a {{ advert[0].diaFimPromocao }} de
-          {{ advert[0].mesFimPromocao }}
+          {{ body }} {{ beginDay }} {{ beginMonth }} a {{ endDay }} de
+          {{ endMonth }}
         </h2>
       </div>
 
       <div class="advert-row">
-        <img :src="advert[0].imagem" />
+        <img :src="imageSrc" />
       </div>
       <div class="advert-row">
         <h3>
           <a href="/ikea-family">Promoção IKEA Family</a>
           <strong
-            ><a class="product" href="/product-advert">
-              {{ advert[0].nome }}
+            ><a class="product" :href="'/pagina-produto/' + link">
+              {{ name }}
             </a></strong
           >
-          {{ advert[0].tipo }}
-          <strong>{{ advert[0].precoAtual }}€ /ud</strong> Preço válido até
-          {{ advert[0].mesFimPromocao }} {{ advert[0].diaFimPromocao }} Preço
-          Habitual
-          <strong>{{ advert[0].precoNormal }}€ /ud</strong>
+          {{ type }}
+          <strong>{{ currentPrice }}€ /ud</strong> Preço válido até
+          {{ endMonth }} {{ endDay }} Preço Habitual
+          <strong>{{ normalPrice }}€ /ud</strong>
         </h3>
       </div>
     </div>
@@ -35,10 +33,16 @@
 <script>
 export default {
   props: {
-    advert: {
-      type: Array,
-      required: true,
-    },
+    title: String,
+    body: String,
+    currentPrice: Number,
+    normalPrice: String,
+    imageSrc: String,
+    beginDay: Number,
+    beginMonth: Number,
+    endDay: Number,
+    endMonth: Number,
+    link: String,
   },
 };
 </script>

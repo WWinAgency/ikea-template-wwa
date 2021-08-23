@@ -117,6 +117,10 @@ export default {
   name: "ListaDeFavoritos",
   components: { StarRating },
   props: {
+    products: {
+      type: Array,
+      required: true,
+    },
     productId: {
       type: Array,
       required: true,

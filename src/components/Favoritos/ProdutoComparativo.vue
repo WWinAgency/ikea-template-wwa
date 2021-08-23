@@ -2,213 +2,137 @@ d<template>
   <div class="produtoComparativo">
     <div class="col">
       <div class="row">
+        <div class="col-comparacao">
+          <div class="row-comparacao-1"><h1>Comparação Favoritos</h1></div>
+          <div class="row-comparacao-2">
+            <h2>A comparar {{ produtos.length }} produtos</h2>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="row-buttons">
+          <div class="button-col">
+            <div class="button-row">
+              <div class="button-col-1">
+                <a href="/pagina-de-loja" class="editar-selecao">
+                  <div class="row">
+                    <div class="col-1">
+                      <b-icon
+                        class="arrow-left"
+                        icon="arrow-left"
+                        scale="1.5"
+                        variant="dark"
+                      ></b-icon>
+                    </div>
+                    <div class="col-2">
+                      Editar Seleção
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="button-col-2">
+                <button class="mostrar-diferencas">
+                  Mostrar apenas diferenças
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="content-col">
+            <div class="content-row">
+              <div class="button-col-1">{{ produtos.length }} Produtos</div>
+              <div class="button-col-2">
+                <div class="row">
+                  <div class="col-1">
+                    <button class="produto">
+                      Produto
+                    </button>
+                  </div>
+                  <div class="col-2">
+                    <button class="conteudo">
+                      Contéudo
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
         <div
-          v-for="(product, index) in products"
+          v-for="(product, index) in produtos"
           :key="index"
-          class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12  mb-5"
+          class="lista col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12  mb-5"
         >
-          <Produto
-            :imageSrc="product.imageSrc"
-            :link="product.link"
+          <div class="buttons-row">
+            <div class="col-1">
+              <button @click="removeComparison(index)" class="remove-button">
+                <b-icon
+                  class="remove"
+                  icon="x"
+                  scale="2"
+                  variant="dark"
+                ></b-icon>
+              </button>
+            </div>
+            <div class="col-2">
+              <button @click="checkFavourite(product)" class="favourite-button">
+                <b-icon
+                  v-if="product.favSelected == false"
+                  class="heart"
+                  icon="heart"
+                  scale="1.3"
+                  variant="dark"
+                ></b-icon>
+                <b-icon
+                  v-else
+                  class="heart-fill"
+                  icon="heart-fill"
+                  scale="1.3"
+                  variant="dark"
+                ></b-icon>
+              </button>
+            </div>
+          </div>
+
+          <ProdutoListaComparativa
+            :id="product.id"
             :name="product.name"
             :type="product.type"
             :utility="product.utility"
+            :code="product.code"
+            :imageSrc="product.imageSrc"
+            :link="product.link"
+            :rating="product.rating"
+            :ratingCount="product.ratingCount"
+            :valueAssembly="product.valueAssembly"
+            :valuePrice="product.valuePrice"
+            :valueQuality="product.valueQuality"
+            :valueLooks="product.valueLooks"
+            :valueExpectations="product.valueExpectations"
             :currentPrice="product.currentPrice"
             :variantStock="product.variantStock"
             :medidas="product.medidas"
+            :evaluations="product.evaluations"
+            :comprimento="product.packageLength"
+            :altura="product.packageHeight"
+            :largura="product.packageWidth"
+            :peso="product.packageWeight"
+            :qntEmbalagens="product.packageQnt"
+            :productHiddenText="product.productHiddenText"
+            :productShowingText="product.productShowingText"
+            :showcaseRatingName="product.showcaseRatingName"
+            :showcaseRatingDay="product.showcaseRatingDay"
+            :showcaseRatingMonth="product.showcaseRatingMonth"
+            :showcaseRatingYear="product.showcaseRatingYear"
+            :showcaseRatingComment="product.showcaseRatingComment"
+            :showcaseRatingRating="product.showcaseRatingRating"
           />
-
-          <hr class="costum-hr" />
-          <div class="collapsable-text">
-            <div class="accordion" role="tablist">
-              <b-card no-body class="mb-1">
-                <b-card-header
-                  header-tag="header"
-                  class="header-text"
-                  role="tab"
-                >
-                  <b-card-text
-                    >Esta planta artificial conserva o seu aspeto real ano após
-                    ano.</b-card-text
-                  >
-                </b-card-header>
-                <b-collapse
-                  id="accordion-1"
-                  accordion="my-accordion"
-                  role="tabpanel"
-                >
-                  <b-card-body>
-                    <b-card-text
-                      >Ideal se não puder ter uma planta viva mas quiser
-                      desfrutar da beleza da natureza.</b-card-text
-                    >
-                  </b-card-body>
-                </b-collapse>
-                <b-button
-                  @click="accordionOpen = !accordionOpen"
-                  class="ler-mais"
-                  block
-                  v-b-toggle.accordion-1
-                  variant="info"
-                >
-                  <div>
-                    <div v-if="accordionOpen == false">Ler mais</div>
-                    <div v-else>Ler menos</div>
-                  </div>
-                </b-button>
-              </b-card>
-            </div>
-          </div>
-          <div class="disponibilidade-entrega">
-            <div class="row-1">
-              <h2>Disponível para entrega</h2>
-            </div>
-            <hr class="costum-hr" />
-            <div class="row-2">
-              <div class="col-1">
-                <b-icon
-                  class="disponivel-icon"
-                  icon="check-circle-fill"
-                  scale="1"
-                  :variant="product.variantStock"
-                ></b-icon>
-              </div>
-              <div class="col-2">
-                <h3>Disponível</h3>
-              </div>
-            </div>
-          </div>
-          <div class="medidas">
-            <div class="medidas-header">
-              Medidas
-            </div>
-            <hr class="costum-hr" />
-            <div
-              class="medidas-body"
-              v-for="(medida, index) in product.medidas"
-              :key="index"
-            >
-              <div class="row">
-                <div class="inner-col">
-                  <div class="inner-row-1">{{ medida.tituloMedida }}</div>
-                  <div class="inner-row-2">{{ medida.dimensao }} cm</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="detalhes-embalagem">
-            <div class="header">
-              Detalhes da embalagem
-            </div>
-            <hr class="costum-hr" />
-            <div class="body">
-              <div class="row-1">
-                Este produto é composto por
-                {{ product.qntEmbalagens }} embalagens
-              </div>
-              <div class="row-2">
-                <div class="inner-col">
-                  <div class="inner-row-1">{{ product.name }}</div>
-                  <div class="inner-row-2">{{ product.type }}</div>
-                </div>
-              </div>
-              <div class="row-3">
-                <div class="inner-col">
-                  <div class="inner-row-1">Número do artigo</div>
-                  <div class="inner-row-2">{{ product.code }}</div>
-                </div>
-              </div>
-              <div class="row-4">
-                <a class="open-sidebar" href=""
-                  ><div class="inner-row">
-                    <div class="inner-col-1">Ler Mais</div>
-                    <div class="inner-col-2">
-                      <b-icon
-                        class="arrow-right"
-                        icon="arrow-right"
-                        scale="1.5"
-                        variant="dark"
-                      ></b-icon>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="rating-and-reviews">
-            <div class="header">Ratings and Reviews</div>
-            <hr class="costum-hr" />
-            <div class="body">
-              <div class="row-1">Pontuação média</div>
-              <div class="row-2">{{ product.rating }}</div>
-              <div class="row-3">
-                <div class="rating-stars">
-                  <div class="rating-row">
-                    <div class="rating-col-1">
-                      <star-rating
-                        v-bind:increment="0.5"
-                        v-bind:max-rating="5"
-                        inactive-color="white"
-                        active-color="black"
-                        v-bind:star-size="15"
-                        :rating="product.rating"
-                        :show-rating="false"
-                        read-only="true"
-                      >
-                      </star-rating>
-                    </div>
-                    <div class="rating-col-2">
-                      <h4>( {{ product.ratingCount }} )</h4>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row-4">
-                <div class="inner-col">
-                  <div class="inner-row-1">
-                    <div class="rating-stars">
-                      <div class="rating-row">
-                        <div class="rating-col-1">
-                          <star-rating
-                            v-bind:increment="0.5"
-                            v-bind:max-rating="5"
-                            inactive-color="white"
-                            active-color="black"
-                            v-bind:star-size="15"
-                            :rating="product.rating"
-                            :show-rating="false"
-                            read-only="true"
-                          >
-                          </star-rating>
-                        </div>
-                        <div class="rating-col-2">
-                          <div class="comentario">
-                            <h4>CESAR - 18/05/2021</h4>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="inner-row-2">Bom Produto</div>
-                </div>
-              </div>
-              <div class="row-5">
-                <a class="open-sidebar" href=""
-                  ><div class="inner-row">
-                    <div class="inner-col-1">Ler Mais</div>
-                    <div class="inner-col-2">
-                      <b-icon
-                        class="arrow-right"
-                        icon="arrow-right"
-                        scale="1.5"
-                        variant="dark"
-                      ></b-icon>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="similar-products">
+          <CarouselSimilarProducts :products="products" />
         </div>
       </div>
     </div>
@@ -216,23 +140,298 @@ d<template>
 </template>
 
 <script>
-import Produto from "./Produto.vue";
-import StarRating from "vue-star-rating";
+import CarouselSimilarProducts from "./CarouselSimiliarProducts.vue";
+import ProdutoListaComparativa from "./ProdutoListaComparativa.vue";
+
 export default {
-  components: { Produto, StarRating },
+  components: {
+    CarouselSimilarProducts,
+    ProdutoListaComparativa,
+  },
   props: ["products"],
   data() {
     return {
       accordionOpen: false,
+      produtos: [...this.products],
+      clicked: false,
     };
+  },
+  methods: {
+    removeComparison(index) {
+      this.produtos.splice(index, 1);
+    },
+    checkFavourite(product) {
+      product.favSelected = !product.favSelected;
+    },
   },
 };
 </script>
 
 <style lang="scss">
 .produtoComparativo {
+  width: 100%;
   & .col {
+    width: 100%;
     & .row {
+      width: 100%;
+      margin-left: 0;
+
+      & .row-buttons {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        margin-bottom: 1rem;
+
+        @media (max-width: 1000px) {
+          flex-direction: column;
+        }
+
+        & .button-col {
+          @media (max-width: 1000px) {
+            width: 100%;
+          }
+          & .button-row {
+            display: flex;
+
+            & .button-col-1 {
+              width: auto;
+              margin-right: 1rem;
+
+              & .editar-selecao {
+                margin: 0.5rem 0.625rem 0 0;
+                width: auto;
+                display: flex;
+                justify-content: space-between !important;
+                align-items: center;
+                padding: 0 1.5rem;
+                height: 2.5rem;
+                border-radius: 64px;
+                border: 1px solid #f5f5f5;
+                background-color: #f5f5f5;
+                text-decoration: none;
+
+                &:hover {
+                  background-color: #c8c8c8;
+                  border: 1px solid #c8c8c8;
+                }
+
+                & .row {
+                  width: auto;
+                  display: flex;
+                  align-items: center;
+                  & .col-1 {
+                    width: auto;
+                    margin: auto;
+                    padding-left: 0;
+                  }
+                  & .col-2 {
+                    display: flex;
+                    width: auto;
+                    font-size: 0.75rem;
+                    line-height: 1.33333;
+                    text-align: center;
+                    font-weight: 700;
+                    color: black;
+                  }
+                }
+              }
+            }
+            & .button-col-2 {
+              width: auto;
+              & .mostrar-diferencas {
+                margin: 0.5rem 0 0 0;
+                width: auto;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 0 1.5rem;
+                height: 2.5rem;
+                border-radius: 64px;
+                border: 1px solid #f5f5f5;
+                background-color: #f5f5f5;
+                font-size: 0.75rem;
+                line-height: 1.33333;
+                font-weight: 700;
+                color: black;
+
+                &:hover {
+                  background-color: #c8c8c8;
+                  border: 1px solid #c8c8c8;
+                }
+              }
+            }
+          }
+        }
+        & .content-col {
+          display: inline-flex;
+          width: 30%;
+          align-items: center;
+          position: relative;
+
+          @media (max-width: 1000px) {
+            width: 100%;
+            margin-top: 2rem;
+          }
+          & .content-row {
+            display: flex;
+            width: auto;
+            position: absolute;
+            right: 0;
+
+            @media (max-width: 1000px) {
+              width: 100%;
+              position: relative;
+            }
+
+            & .button-col-1 {
+              display: flex;
+              justify-content: center;
+              width: auto;
+
+              font-size: 0.75rem;
+
+              @media (max-width: 900px) {
+                float: left;
+                width: 20%;
+              }
+            }
+            & .button-col-2 {
+              display: flex;
+              width: auto;
+              margin-left: 1rem;
+              align-items: center;
+
+              @media (max-width: 1000px) {
+                position: absolute;
+                right: 0;
+              }
+
+              & .row {
+                padding: 0;
+                margin: 0;
+                align-items: center;
+                @media (max-width: 900px) {
+                  display: flex;
+                  justify-content: flex-end;
+                  margin: auto;
+                }
+                & .col-1 {
+                  width: auto;
+                  display: flex;
+                  justify-content: center;
+                  @media (max-width: 900px) {
+                    float: left;
+                  }
+                  @media (max-width: 600px) {
+                    margin-right: 1rem;
+                  }
+
+                  & .produto {
+                    background-color: white;
+                    border: none;
+                    font-size: 0.75rem;
+                    font-weight: 700;
+                  }
+                }
+                & .col-2 {
+                  width: auto;
+                  display: flex;
+                  justify-content: center;
+                  padding-right: 0;
+                  @media (max-width: 900px) {
+                    float: left;
+                  }
+
+                  & .conteudo {
+                    background-color: white;
+                    border: none;
+                    font-size: 0.75rem;
+                    font-weight: 700;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      & .col-comparacao {
+        & .row-comparacao-1 {
+          & h1 {
+            margin: 3.75rem 0 0.8rem 0;
+            font-size: 1.875rem;
+            line-height: 1.3334;
+            letter-spacing: -0.53px;
+            font-weight: 700;
+            color: black;
+          }
+        }
+        & .row-comparacao-2 {
+          & h2 {
+            margin-bottom: 2.5rem;
+            color: #484848;
+            font-size: 0.875rem;
+            line-height: 1.57;
+          }
+        }
+      }
+
+      & .lista {
+        & .buttons-row {
+          display: flex;
+          width: 100%;
+          margin-bottom: 0.5rem;
+          & .col-1 {
+            width: 50%;
+
+            & .remove-button {
+              background-color: white;
+              border: none;
+              padding: 0 0.5rem 0 0;
+              height: 2rem;
+              width: 2rem;
+              border-radius: 64px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+
+              &:hover {
+                background-color: #e8e8e8;
+              }
+            }
+          }
+          & .col-2 {
+            text-align: right;
+            width: 50%;
+
+            & .favourite-button {
+              background-color: white;
+              border: none;
+
+              &:hover {
+              }
+
+              & .heart {
+                color: #989898 !important;
+
+                &:hover {
+                  color: black !important;
+                }
+              }
+
+              & .heart-fill {
+                color: black;
+              }
+            }
+          }
+        }
+      }
+      & .similar-products {
+        padding: 10rem 0 0 0;
+        width: 100%;
+        display: flex;
+      }
       & .rating-and-reviews {
         padding: 4rem 0 0 0;
         & .header {

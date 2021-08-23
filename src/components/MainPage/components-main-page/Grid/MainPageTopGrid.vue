@@ -22,60 +22,25 @@
         <div class="grid-container-left">
           <div class="grid-col-1">
             <div class="grid-row-1">
-              <Produto
-                :nome="produtos[0].nome"
-                :gridImageSrc="produtos[0].gridImageSrc"
-                :tipo="produtos[0].tipo"
-                :preco="produtos[0].preco"
-                :leftPercentage="produtos[0].left"
-                :topPercentage="produtos[0].top"
-              />
+              <Produto :products="col1Products" :imageSrc="imageSrc1" />
             </div>
           </div>
         </div>
         <div class="grid-container-right">
           <div class="grid-col-2">
             <div class="grid-row-2">
-              <Produto
-                :nome="produtos[1].nome"
-                :gridImageSrc="produtos[1].gridImageSrc"
-                :tipo="produtos[1].tipo"
-                :preco="produtos[1].preco"
-                :leftPercentage="produtos[1].left"
-                :topPercentage="produtos[1].top"
-              />
+              <Produto :products="col2Products" :imageSrc="imageSrc2" />
             </div>
             <div class="grid-row-3">
-              <Produto
-                :nome="produtos[2].nome"
-                :gridImageSrc="produtos[2].gridImageSrc"
-                :tipo="produtos[2].tipo"
-                :preco="produtos[2].preco"
-                :leftPercentage="produtos[2].left"
-                :topPercentage="produtos[2].top"
-              />
+              <Produto :products="col3Products" :imageSrc="imageSrc3" />
             </div>
           </div>
           <div class="grid-col-3">
             <div class="grid-row-4">
-              <Produto
-                :nome="produtos[3].nome"
-                :gridImageSrc="produtos[3].gridImageSrc"
-                :tipo="produtos[3].tipo"
-                :preco="produtos[3].preco"
-                :leftPercentage="produtos[3].left"
-                :topPercentage="produtos[3].top"
-              />
+              <Produto :products="col4Products" :imageSrc="imageSrc4" />
             </div>
             <div class="grid-row-5">
-              <Produto
-                :nome="produtos[4].nome"
-                :gridImageSrc="produtos[4].gridImageSrc"
-                :tipo="produtos[4].tipo"
-                :preco="produtos[4].preco"
-                :leftPercentage="produtos[4].left"
-                :topPercentage="produtos[4].top"
-              />
+              <Produto :products="col5Products" :imageSrc="imageSrc5" />
             </div>
           </div>
         </div>
@@ -88,11 +53,123 @@
 import Produto from "./Produto.vue";
 
 export default {
+  data() {
+    return {
+      imageSrc1: "https://picsum.photos/1000/960?random=1",
+      imageSrc2: "https://picsum.photos/1000/960?random=2",
+      imageSrc3: "https://picsum.photos/1000/960?random=3",
+      imageSrc4: "https://picsum.photos/1000/960?random=4",
+      imageSrc5: "https://picsum.photos/1000/960?random=5",
+
+      col1Products: [
+        {
+          name: "KRUX",
+          id: "krux",
+          type: "Candeeiro LED de secretária",
+          currentPrice: 35,
+          leftPercentage: 10,
+          topPercentage: 10,
+        },
+        {
+          name: "MÅLA",
+          id: "mala",
+          type: "Conj. modelo cidade cartão",
+          currentPrice: 4,
+          leftPercentage: 60,
+          topPercentage: 40,
+        },
+        {
+          name: "FLISAT",
+          id: "flisat",
+          type: "Banco p/criança",
+          currentPrice: 15,
+          leftPercentage: 30,
+          topPercentage: 70,
+        },
+      ],
+      col2Products: [
+        {
+          name: "HAUGA",
+          type: "Roupeiro aberto",
+          id: "hauga",
+          currentPrice: 112,
+          leftPercentage: 10,
+          topPercentage: 10,
+        },
+        {
+          name: "HUSARÖ",
+          id: "husaro",
+          type: "Poltrona",
+          currentPrice: 119,
+          leftPercentage: 60,
+          topPercentage: 40,
+        },
+      ],
+      col3Products: [
+        {
+          name: "LINNEBÄCK",
+          id: "linneback",
+          type: "Poltrona",
+          currentPrice: 39,
+          leftPercentage: 60,
+          topPercentage: 10,
+        },
+        {
+          name: "SKOGSKLÖVER",
+          id: "skogsklover",
+          type: "Estore de correr",
+          currentPrice: 4,
+          leftPercentage: 5,
+          topPercentage: 60,
+        },
+      ],
+      col4Products: [
+        {
+          name: "FEJKA",
+          id: "fejka",
+          type: "Planta Artificial em vaso",
+          currentPrice: 4,
+          leftPercentage: 10,
+          topPercentage: 10,
+        },
+        {
+          name: "BODARP",
+          id: "bodarp",
+          type: "Porta",
+          currentPrice: 30,
+          leftPercentage: 60,
+          topPercentage: 40,
+        },
+        {
+          name: "TRANGET",
+          id: "tranget",
+          type: "Tapete, tecelagem plana",
+          currentPrice: 199,
+          leftPercentage: 30,
+          topPercentage: 70,
+        },
+      ],
+      col5Products: [
+        {
+          name: "PELARBOJ",
+          id: "pelarjob",
+          type: "Candeeiro LED de mesa",
+          currentPrice: 15,
+          leftPercentage: 60,
+          topPercentage: 10,
+        },
+        {
+          name: "BJÖRKÅSEN",
+          id: "bjorkasen",
+          type: "Suporte p/portátil",
+          currentPrice: 19.99,
+          leftPercentage: 5,
+          topPercentage: 60,
+        },
+      ],
+    };
+  },
   props: {
-    produtos: {
-      type: Array,
-      required: true,
-    },
     titulo: {
       type: String,
       required: true,
@@ -112,10 +189,13 @@ export default {
 
 <style lang="scss">
 .mainPageTopGrid {
+  display: flex;
   flex-direction: column;
   width: 100%;
+  height: 100% !important;
   margin: 0 !important;
   & .row-1 {
+    height: 100%;
     margin-bottom: 2rem !important;
     @media (max-with: 400px) {
       margin-left: 1rem !important;
@@ -193,39 +273,49 @@ export default {
   }
 
   & .row-2 {
+    height: 100%;
     width: 100% !important;
     margin: 0 !important;
 
     & .grid-container {
       display: flex;
       flex-direction: row;
+      height: 70rem;
 
       @media (max-width: 1050px) {
         flex-direction: column;
+        width: 100%;
+        height: 90rem;
       }
 
       & .grid-container-left {
+        height: 100%;
+
+        @media (max-width: 1050px) {
+          height: 40%;
+          width: 100%;
+        }
         & .grid-col-1 {
           display: flex;
           flex-direction: column;
+          height: 100%;
 
           @media (max-width: 1050px) {
             flex-direction: row;
+            width: 100%;
           }
           & .grid-row-1 {
-            height: 60rem;
+            height: 100%;
             padding: 0 0.5rem 0 0;
 
             @media (max-width: 1500px) {
-              height: 40rem;
               padding: 0 0.5rem 0 0;
             }
             @media (max-width: 1050px) {
-              height: 50rem;
               padding: 0;
+              width: 100%;
             }
             @media (max-width: 400px) {
-              height: 30rem;
             }
           }
         }
@@ -238,6 +328,8 @@ export default {
 
         @media (max-width: 1050px) {
           flex-direction: row;
+          height: 60%;
+          width: 100%;
         }
         & .grid-col-2 {
           display: flex;
@@ -250,34 +342,28 @@ export default {
 
           & .grid-row-2 {
             padding: 0 0.5rem 0.5rem 0.5rem;
-            height: 24rem;
+            height: 40%;
 
             @media (max-width: 1500px) {
-              height: 12rem;
               padding: 0 0.5rem 0.5rem 0.5rem;
             }
             @media (max-width: 1050px) {
-              height: 20rem;
               padding: 1rem 0.5rem 0 0;
             }
             @media (max-width: 400px) {
-              height: 12rem;
             }
           }
           & .grid-row-3 {
             padding: 0.5rem 0.5rem 0 0.5rem;
-            height: 36rem;
+            height: 60%;
 
             @media (max-width: 1500px) {
-              height: 28rem;
               padding: 0.5 0.5rem 0 0.5rem;
             }
             @media (max-width: 1050px) {
-              height: 30rem;
               padding: 1rem 0.5rem 0 0;
             }
             @media (max-width: 400px) {
-              height: 18rem;
             }
           }
         }
@@ -291,36 +377,30 @@ export default {
           }
 
           & .grid-row-4 {
-            height: 36rem;
             padding: 0 0 0.5rem 0.5rem;
+            height: 60%;
 
             @media (max-width: 1500px) {
-              height: 19rem;
               padding: 0 0 0.5rem 0.5rem;
             }
             @media (max-width: 1050px) {
-              height: 30rem;
               padding: 1rem 0 0 0.5rem;
             }
             @media (max-width: 400px) {
-              height: 18rem;
             }
           }
           & .grid-row-5 {
-            height: 24rem;
+            height: 40%;
             padding: 0.5rem 0 0 0.5rem;
 
             @media (max-width: 1500px) {
-              height: 21rem;
               padding: 0.5rem 0 0 0.5rem;
             }
 
             @media (max-width: 1050px) {
-              height: 20rem;
               padding: 1rem 0 0 0.5rem;
             }
             @media (max-width: 400px) {
-              height: 12rem;
             }
           }
         }

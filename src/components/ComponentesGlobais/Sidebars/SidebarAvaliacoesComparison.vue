@@ -1,11 +1,11 @@
 <template>
-  <div class="descriptionSidebarAvaliacoes">
+  <div class="sidebarAvaliacoesComparison">
     <div class="sidebar-text-row">
       <div class="sidebar-text-col-1">
         <a
           class="tituloSidebar"
           v-b-toggle="'sidebar-avaliacoes-' + productCode"
-          >Avaliações</a
+          >Ler mais</a
         >
       </div>
       <div class="sidebar-text-col-2">
@@ -13,7 +13,7 @@
           class="sidebar-button"
           v-b-toggle="'sidebar-avaliacoes-' + productCode"
         >
-          <b-icon icon="arrow-right" scale="1.6" variant="dark"></b-icon>
+          <b-icon icon="arrow-right" scale="1.3" variant="dark"></b-icon>
         </button>
       </div>
     </div>
@@ -28,11 +28,11 @@
           <Avaliacoes
             :rating="rating"
             :ratingCount="ratingCount"
-            :valueAssembly="valueAssembly"
-            :valuePrice="valuePrice"
-            :valueQuality="valueQuality"
-            :valueLooks="valueLooks"
-            :valueExpectations="valueExpectations"
+            :valueAssembly="Math.round(valueAssembly)"
+            :valuePrice="Math.round(valuePrice)"
+            :valueQuality="Math.round(valueQuality)"
+            :valueLooks="Math.round(valueLooks)"
+            :valueExpectations="Math.round(valueExpectations)"
           />
         </div>
         <hr class="costum-hr" />
@@ -50,11 +50,11 @@
             :year="evaluation.year"
             :generalEvaluation="evaluation.generalEvaluation"
             :specificEvaluation="evaluation.specificEvaluation"
-            :valueAssembly="evaluation.valueAssembly"
-            :valuePrice="evaluation.valuePrice"
-            :valueQuality="evaluation.valueQuality"
-            :valueLooks="evaluation.dvalueLooksay"
-            :valueExpectations="evaluation.valueExpectations"
+            :valueAssembly="Math.round(evaluation.valueAssembly)"
+            :valuePrice="Math.round(evaluation.valuePrice)"
+            :valueQuality="Math.round(evaluation.valueQuality)"
+            :valueLooks="Math.round(evaluation.valueLooks)"
+            :valueExpectations="Math.round(evaluation.valueExpectations)"
           />
         </div>
         <hr class="costum-hr" />
@@ -83,7 +83,7 @@ export default {
 </script>
 
 <style lang="scss">
-.descriptionSidebarAvaliacoes {
+.sidebarAvaliacoesComparison {
   position: relative;
   & .b-sidebar {
     width: 500px !important;
@@ -97,29 +97,30 @@ export default {
     }
   }
   & .sidebar-text-row {
-    display: inline-block;
+    display: flex;
+    height: 100%;
+    align-items: center;
     & .sidebar-text-col-1 {
+      height: 100%;
+      width: 50%;
       & .tituloSidebar {
-        font-size: 1.5625rem !important;
-        line-height: 1.36 !important;
-        letter-spacing: -0.02625rem !important;
-        color: black !important;
-        font-weight: 700 !important;
-        float: left !important;
-        text-decoration: none !important;
+        font-size: 0.875rem;
+        line-height: 1.36;
+        letter-spacing: -0.02625rem;
+        color: black;
+        font-weight: 700;
+        float: left;
+        text-decoration: none;
 
         &:hover {
           text-decoration: underline;
         }
-
-        @media (max-width: 900px) {
-          font-size: 1.2rem;
-        }
       }
     }
     & .sidebar-text-col-2 {
-      position: absolute;
-      right: 0;
+      width: 50%;
+      height: auto;
+      text-align: right;
       float: right;
       & .sidebar-button {
         border: none;

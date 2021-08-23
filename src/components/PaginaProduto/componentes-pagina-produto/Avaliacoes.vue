@@ -21,7 +21,7 @@
                   </star-rating>
                 </div>
                 <div class="rating-row-2">
-                  <h4>({{ avaliacoes }})</h4>
+                  <h4>({{ ratingCount }})</h4>
                 </div>
               </div>
             </div>
@@ -52,7 +52,7 @@
                     </star-rating>
                   </div>
                   <div class="rating-row-2">
-                    <h4>{{ avaliacoes }}</h4>
+                    <h4>{{ ratingCount }}</h4>
                   </div>
                 </div>
               </div>
@@ -160,7 +160,7 @@ export default {
   components: { StarRating },
   props: {
     rating: Number,
-    avaliacoes: Number,
+    ratingCount: Number,
     valueAssembly: Number,
     valuePrice: Number,
     valueQuality: Number,

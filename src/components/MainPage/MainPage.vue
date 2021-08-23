@@ -1,7 +1,20 @@
 <template>
   <div class="mainPage">
     <div class="mainPage-col">
-      <div class="mainPage-row"><Advert :advert="advert" /></div>
+      <div class="mainPage-row">
+        <Advert
+          :title="advert.title"
+          :body="advert.body"
+          :currentPrice="advert.currentPrice"
+          :normalPrice="advert.normalPrice"
+          :imageSrc="advert.imageSrc"
+          :beginDay="advert.beginDay"
+          :beginMonth="advert.beginMonth"
+          :endDay="advert.endDay"
+          :endMonth="advert.endMonth"
+          :link="advert.link"
+        />
+      </div>
       <div class="mainPage-row">
         <div class="product-showcase-col">
           <div class="product-showcase-row-1">
@@ -94,23 +107,21 @@ export default {
   },
   data() {
     return {
-      advert: [
-        {
-          titulo: "Quem é da casa merece um desconto",
-          body:
-            "É por isso que todos os meses há descontos para os membros IKEA Family. Descubra artigos a preços ainda mais acessiveis para toda a casa, só de",
-          imagem: "https://picsum.photos/1600/960?random=1",
-          link: "pagina-de-produto",
-          nome: "BONDHOLMEN",
-          tipo: "Mesa de centro, exterior",
-          precoAtual: "69",
-          precoNormal: "80",
-          diaInicioPromocao: "1",
-          mesIncioPromocao: "",
-          diaFimPromocao: "31",
-          mesFimPromocao: "Julho",
-        },
-      ],
+      advert: {
+        title: "Quem é da casa merece um desconto",
+        name: "BONDHOLMEN",
+        type: "Mesa de centro, exterior",
+        body:
+          "É por isso que todos os meses há descontos para os membros IKEA Family. Descubra artigos a preços ainda mais acessiveis para toda a casa, só de",
+        imageSrc: "https://picsum.photos/1600/960?random=1",
+        link: "pagina-de-produto",
+        currentPrice: "69",
+        normalPrice: "80",
+        beginDay: "1",
+        beginMonth: "",
+        endDay: "31",
+        endMonth: "Julho",
+      },
       products: [
         {
           id: 1,

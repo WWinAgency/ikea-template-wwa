@@ -1,5 +1,5 @@
 <template>
-  <div class="paginaPoliticaDePrivacidade">
+  <div class="paginaComparacaoFavoritos">
     <div class="content">
       <div class="header"><Header /></div>
       <div class="mainPage">
@@ -21,7 +21,7 @@ export default {
 </script>
 
 <style lang="scss">
-.paginaPoliticaDePrivacidade {
+.paginaComparacaoFavoritos {
   & .content {
     width: 80%;
     margin: 1rem auto;
