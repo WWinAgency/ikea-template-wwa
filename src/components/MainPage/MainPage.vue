@@ -124,7 +124,7 @@ export default {
       },
       products: [
         {
-          id: 1,
+          id: "fejka",
           name: "FEJKA",
           type: "Planta Artificial em vaso",
           utility: "9cm",
@@ -137,7 +137,7 @@ export default {
           favSelected: false,
         },
         {
-          id: 2,
+          id: "skogsklover",
           name: "SKOGSKLÖVER",
           type: "Estore de correr",
           utility: "120x195 cm",
@@ -150,7 +150,7 @@ export default {
           favSelected: false,
         },
         {
-          id: 3,
+          id: "husaro",
           name: "HUSARÖ",
           type: "Poltrona",
           utility: "exterior",
@@ -163,7 +163,7 @@ export default {
           favSelected: false,
         },
         {
-          id: 4,
+          id: "hauga",
           name: "HAUGA",
           type: "Roupeiro aberto",
           utility: "c/3 gavetas 70 x 199 cm",

@@ -1,39 +1,36 @@
 import Vue from "vue";
 import Router from "vue-router";
-import HomePage from "./components/ComponentesGlobais/PaginasGlobais/HomePage";
-import HomePageRight from "./components/ComponentesGlobais/PaginasGlobais/HomePageRight";
-import PaginaDeProduto from "./components/ComponentesGlobais/PaginasGlobais/PaginaDeProduto";
-import PaginaDeLoja from "./components/ComponentesGlobais/PaginasGlobais/PaginaDeLoja";
-import PaginaPoliticaDePrivacidade from "./components/ComponentesGlobais/PaginasGlobais/PaginaPoliticaDePrivacidade";
-import PaginaFavoritos from "./components/ComponentesGlobais/PaginasGlobais/PaginaFavoritos";
-import PaginaListaDeFavoritos from "./components/ComponentesGlobais/PaginasGlobais/PaginaListaDeFavoritos";
-import PaginaComparacaoFavoritos from "./components/ComponentesGlobais/PaginasGlobais/PaginaComparacaoFavoritos";
-// import Wishlist from "./components/Wishlist/Wishlist";
+import MainPage from "./components/MainPage/MainPage";
+import PaginaProduto from "./components/PaginaProduto/PaginaProduto";
+import PaginaLoja from "./components/PaginaLoja/PaginaLoja";
+import PoliticaPrivacidade from "./components/PoliticaDePrivacidade/PoliticaPrivacidade";
+import Favoritos from "./components/Favoritos/Favoritos";
+import ComparacaoProdutos from "./components/Favoritos/ComparacaoProdutos";
+import ShoppingCartPage from "./components/ShoppingCart/ShoppingCartPage";
 
 Vue.use(Router);
 
 export default new Router({
   mode: "history",
   routes: [
-    { path: "/", component: HomePage },
-    { path: "/right", component: HomePageRight },
-    { path: "/pagina-produto", component: PaginaDeProduto },
-    { path: "/pagina-de-loja", component: PaginaDeLoja },
+    { path: "/", component: MainPage },
+    { path: "/pagina-produto", component: PaginaProduto },
+    { path: "/pagina-de-loja", component: PaginaLoja },
     {
       path: "/pagina-politica-privacidade",
-      component: PaginaPoliticaDePrivacidade,
+      component: PoliticaPrivacidade,
     },
     {
-      path: "/favoritos",
-      component: PaginaFavoritos,
+      path: "/favourites",
+      component: Favoritos,
     },
     {
-      path: "/lista-de-favoritos",
-      component: PaginaListaDeFavoritos,
+      path: "/comparacao-produtos",
+      component: ComparacaoProdutos,
     },
     {
-      path: "/comparacao-favoritos",
-      component: PaginaComparacaoFavoritos,
+      path: "/basket",
+      component: ShoppingCartPage,
     },
   ],
 });

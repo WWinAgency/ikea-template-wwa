@@ -1,6 +1,6 @@
 <template>
   <div class="favoritos">
-    <template v-if="products.length > 0">
+    <template v-if="this.$store.state.WishlistModule.wishlist.length > 0">
       <div class="row">
         <div class="col-sm-12">
           <h1>Lista de Favoritos</h1>
@@ -25,14 +25,15 @@
         <div class="col-sm-12 pt-3 pb-5 my-4">
           <div class="row">
             <div
-              v-for="(product, index) in products"
+              v-for="(product, index) in this.$store.state.WishlistModule
+                .wishlist"
               :key="index"
               class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12  mb-5"
             >
               <button
                 type="button"
                 class="btn-remove mb-2"
-                @click="removeWishlistItem(index)"
+                @click="handleRemoveToWishlist(product)"
               >
                 <b-icon
                   class="remove-icon"
@@ -52,6 +53,7 @@
                       :href="'pagina-de-produto/' + product.link"
                       >{{ product.name }}</a
                     >
+
                     <p class="tipo">{{ product.type }}</p>
                     <p class="utilidade">{{ product.utility }}</p>
                     <div class="precoAtual">
@@ -132,62 +134,7 @@ export default {
     StarRating,
   },
   data() {
-    return {
-      products: [
-        {
-          id: 1,
-          name: "FEJKA",
-          type: "Planta Artificial em vaso",
-          utility: "9cm",
-          imageSrc: "https://picsum.photos/360?random=1",
-          normalPrice: 4.5,
-          currentPrice: 4,
-          rating: 4.5,
-          ratingCount: 8,
-          link: "fejka",
-          favSelected: false,
-        },
-        {
-          id: 2,
-          name: "SKOGSKLÖVER",
-          type: "Estore de correr",
-          utility: "120x195 cm",
-          imageSrc: "https://picsum.photos/360?random=2",
-          normalPrice: 35,
-          currentPrice: 29,
-          rating: 4,
-          ratingCount: 148,
-          link: "skogsklover",
-          favSelected: false,
-        },
-        {
-          id: 3,
-          name: "HUSARÖ",
-          type: "Poltrona",
-          utility: "exterior",
-          imageSrc: "https://picsum.photos/360?random=3",
-          normalPrice: 149,
-          currentPrice: 119,
-          rating: 4.5,
-          ratingCount: 10,
-          link: "husaro",
-          favSelected: false,
-        },
-        {
-          id: 4,
-          name: "HAUGA",
-          type: "Roupeiro aberto",
-          utility: "c/3 gavetas 70 x 199 cm",
-          imageSrc: "https://picsum.photos/360?random=4",
-          normalPrice: 135,
-          currentPrice: 112,
-          rating: 3,
-          ratingCount: 24,
-          link: "hauga",
-          favSelected: false,
-        },
-      ],
-    };
+    return {};
   },
   mounted() {
     const productIds = this.$store.state.WishlistModule.wishlist;
@@ -203,10 +150,16 @@ export default {
       this.products = {};
       this.$store.dispatch("WishlistModule/clearWishlist");
     },
-    removeWishlistItem(index) {
-      alert("teste");
-      this.$store.dispatch("WishlistModule/removeWishlistItem", index);
-      this.products = this.$store.state.WishlistModule.wishlist.products;
+    async handleAddToWishlist(id) {
+      await this.$store.dispatch("WishlistModule/addWishlistItem", id);
+    },
+    handleRemoveToWishlist(id) {
+      this.$store.dispatch("WishlistModule/removeWishlistItem", id);
+    },
+    wishlistExists(id) {
+      return (
+        this.$store.state.WishlistModule.wishlist.find((i) => i === id) != null
+      );
     },
   },
 };

@@ -1,19 +1,16 @@
 <template>
   <div>
-    <div v-if="wishlistExists === false">
-      <a
-        class="icon float-right m-0 cursor-pointer"
-        @click="handleAddToWishlist"
-        ><b-icon-heart></b-icon-heart
-      ></a>
-    </div>
-    <div v-else>
-      <a
-        class="icon heart float-right m-0 cursor-pointer"
-        @click="handleRemoveToWishlist"
-        ><b-icon-heart-fill></b-icon-heart-fill
-      ></a>
-    </div>
+    <a
+      class="icon float-right m-0 cursor-pointer"
+      @click="handleAddToWishlist(produto)"
+      v-if="wishlistExists(produto.id) === false"
+      ><b-icon-heart></b-icon-heart
+    ></a>
+    <a
+      class="icon heart float-right m-0 cursor-pointer"
+      @click="handleRemoveToWishlist"
+      ><b-icon-heart-fill></b-icon-heart-fill
+    ></a>
   </div>
 </template>
 
@@ -23,24 +20,20 @@ import { BIconHeartFill } from "bootstrap-vue";
 export default {
   name: "AddWishlist",
   components: { BIconHeart, BIconHeartFill },
-  props: ["productId"],
+  props: ["produto"],
   methods: {
     async handleAddToWishlist() {
       await this.$store.dispatch(
         "WishlistModule/addWishlistItem",
-        this.productId
+        this.produto
       );
     },
     handleRemoveToWishlist() {
-      this.$store.dispatch("WishlistModule/removeWishlistItem", this.productId);
+      this.$store.dispatch("WishlistModule/removeWishlistItem", this.produto);
     },
-  },
-  computed: {
-    wishlistExists() {
+    wishlistExists(id) {
       return (
-        this.$store.state.WishlistModule.wishlist.find(
-          (i) => i === this.productId
-        ) != null
+        this.$store.state.WishlistModule.wishlist.find((i) => i === id) != null
       );
     },
   },

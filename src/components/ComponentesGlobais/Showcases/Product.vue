@@ -6,7 +6,9 @@
       </div>
       <div class="text-row">
         <div class="text-col">
-          <div class="ikea-family"><strong>Promoção IKEA Family</strong></div>
+          <div v-if="promocao == true" class="ikea-family">
+            <strong>Promoção IKEA Family</strong>
+          </div>
 
           <a class="product-name" href=""
             ><strong>{{ name }}</strong></a
@@ -14,7 +16,7 @@
 
           <div class="product-type">{{ type }}</div>
           <div class="product-utility">{{ utility }}</div>
-          <div class="product-preco-habitual">
+          <div v-if="promocao == true" class="product-preco-habitual">
             Preço habitual {{ normalPrice }} € /ud
           </div>
           <div class="product-price">
@@ -74,6 +76,7 @@ export default {
     rating: Number,
     ratingCount: Number,
     link: String,
+    promocao: Boolean,
   },
 };
 </script>
@@ -82,6 +85,8 @@ export default {
 .product {
   text-decoration: none;
   color: black;
+  width: 100% !important;
+  height: 100% !important;
 
   & .product-col {
     display: flex;
@@ -94,7 +99,7 @@ export default {
     & .product-image-row {
       display: flex;
       flex-direction: row;
-      height: 60%;
+      height: 50%;
       & img {
         width: 100%;
         height: 100%;
@@ -104,7 +109,7 @@ export default {
     & .text-row {
       display: flex;
       flex-direction: row;
-      height: 40%;
+      height: 50%;
       margin-top: 1rem;
       text-decoration: none;
       color: black;

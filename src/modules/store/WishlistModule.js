@@ -5,7 +5,8 @@ const state = () => ({
 const mutations = {
   initialiseStore(state) {
     if (localStorage.getItem("wishlist")) {
-      state.wishlist = JSON.parse(localStorage.getItem("wishlist"));
+      const _wishlist = JSON.parse(localStorage.getItem("wishlist"));
+      state.wishlist = Array.isArray(_wishlist) ? _wishlist : [];
     }
   },
   updateWishlist(state, wishlist) {
@@ -14,29 +15,22 @@ const mutations = {
   },
 };
 const actions = {
-  setWishlistItems({ commit }, products) {
-    commit("updateWishlist", { products: products });
-  },
-  addWishlistItem({ commit, state }, product) {
-    let products = state.wishlist.products ?? [];
+  addWishlistItem({ commit, state }, id) {
+    let products = state.wishlist ?? [];
 
-    /*const index = products.findIndex(function(_product) {
-        if (product.variant_id === null) return product.id === _product.id;
-        return product.variant_id === _product.variant_id;
-      });*/
-    products.push(product);
+    if (!products.find((i) => i == id)) products.push(id);
 
-    commit("updateWishlist", { products: products });
+    commit("updateWishlist", products);
   },
-  removeWishlistItem({ commit, state }, index) {
-    const products = state.wishlist.products ?? [];
-    const wishlist = {
-      products: products.filter((_product, _index) => _index !== index),
-    };
-    commit("updateWishlist", wishlist);
+  removeWishlistItem({ commit, state }, id) {
+    let products = state.wishlist ?? [];
+
+    products = products.filter((i) => i !== id);
+
+    commit("updateWishlist", products);
   },
   clearWishlist({ commit }) {
-    commit("updateWishlist", { products: [] });
+    commit("updateWishlist", []);
   },
 };
 export default {

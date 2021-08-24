@@ -5,7 +5,7 @@ import { BCarousel } from "bootstrap-vue";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-vue/dist/bootstrap-vue.css";
 import Vuex from "vuex";
-// import store from "@/modules/store";
+import store from "../src/modules/index";
 import Raters from "vue-star-rating";
 import router from "./router";
 
@@ -19,6 +19,10 @@ Vue.config.productionTip = false;
 
 new Vue({
   router,
-  // store,
+  store,
   render: (h) => h(App),
+  beforeMount() {
+    this.$store.commit("WishlistModule/initialiseStore");
+    this.$store.commit("Comparison/initialiseStore");
+  },
 }).$mount("#app");

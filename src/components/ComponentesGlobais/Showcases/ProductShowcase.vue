@@ -2,9 +2,20 @@
   <div class="row">
     <div class="col-sm-12 pt-3 pb-5">
       <div class="row">
-        <div v-for="product in products" :key="product.name" class="product">
+        <div v-for="product in products" :key="product.id" class="productItem">
           <div class="favorite-button">
-            <AddFavoritos />
+            <a
+              class="icon float-right m-0 cursor-pointer"
+              @click="handleAddToWishlist(product)"
+              v-if="wishlistExists(product) === false"
+              ><b-icon-heart></b-icon-heart
+            ></a>
+            <a
+              class="icon heart float-right m-0 cursor-pointer"
+              v-else
+              @click="handleRemoveToWishlist(product)"
+              ><b-icon-heart-fill></b-icon-heart-fill
+            ></a>
           </div>
           <div class="product-item">
             <div class="product-body">
@@ -55,28 +66,49 @@
 
 <script>
 import StarRating from "vue-star-rating";
-import AddFavoritos from "@/components/Favoritos/AddFavoritos.vue";
+import axios from "axios";
 export default {
-  components: { StarRating, AddFavoritos },
+  components: { StarRating },
   props: ["products"],
   data() {
     return {};
   },
-  methods: {},
+  mounted() {
+    const productIds = this.$store.state.WishlistModule.wishlist;
+    const productIdsString = productIds.join();
+    axios
+      .get("/api/products", { params: { id: productIdsString } })
+      .then(({ data }) => {
+        this.products = data.data;
+      });
+  },
+  methods: {
+    async handleAddToWishlist(id) {
+      await this.$store.dispatch("WishlistModule/addWishlistItem", id);
+    },
+    handleRemoveToWishlist(id) {
+      this.$store.dispatch("WishlistModule/removeWishlistItem", id);
+    },
+    wishlistExists(id) {
+      return (
+        this.$store.state.WishlistModule.wishlist.find((i) => i === id) != null
+      );
+    },
+  },
 };
 </script>
 
 <style lang="scss">
-.product {
-  width: 25%;
+.productItem {
+  width: 25% !important;
   @media (max-width: 1600px) {
-    width: 33%;
+    width: 33% !important;
   }
   @media (max-width: 1100px) {
-    width: 50%;
+    width: 50% !important;
   }
   @media (max-width: 700px) {
-    width: 100%;
+    width: 100% !important;
   }
   & .removeButton {
     background-color: white;
@@ -94,7 +126,11 @@ export default {
   .favorite-button {
     display: inline-block;
     width: 100%;
+    margin-bottom: 0.5rem;
 
+    & a.icon {
+      font-size: 20px !important;
+    }
     & .button {
       float: right;
       margin-right: 0.5rem;

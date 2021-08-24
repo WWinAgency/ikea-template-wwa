@@ -31,9 +31,24 @@
           <b-nav-item class="icon-1" href="/profile"
             ><b-icon icon="person" scale="1.2" variant="dark"></b-icon
           ></b-nav-item>
-          <b-nav-item class="icon-2" href="/favorites"
-            ><b-icon icon="heart" scale="0.9" variant="dark"></b-icon
-          ></b-nav-item>
+          <b-nav-item class="icon-2" href="/favourites">
+            <div class="outter-heart">
+              <div class="heart-icon">
+                <b-icon
+                  icon="heart"
+                  class="heart"
+                  scale="0.9"
+                  variant="dark"
+                ></b-icon>
+              </div>
+              <div
+                v-if="this.$store.state.WishlistModule.wishlist.length > 0"
+                class="wishlist-counter"
+              >
+                {{ this.$store.state.WishlistModule.wishlist.length }}
+              </div>
+            </div>
+          </b-nav-item>
           <b-nav-item class="icon-3" href="/basket"
             ><b-icon icon="basket3" scale="0.9" variant="dark"></b-icon
           ></b-nav-item>
@@ -173,7 +188,7 @@ export default {
     & .col-4 {
       display: flex;
       height: 40px;
-      width: 5%;
+      width: 8%;
       float: right;
 
       position: relative;
@@ -186,6 +201,33 @@ export default {
         right: 0;
         align-items: center;
         padding: 0;
+
+        & .nav-item {
+          & .nav-link {
+            padding: 0;
+            & .outter-heart {
+              display: flex;
+              position: relative;
+              width: 1.5rem;
+
+              & .wishlist-counter {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                background-color: blue;
+                width: 1rem;
+                height: 1rem;
+                font-size: 0.7rem;
+                color: white;
+                border-radius: 64px;
+                font-weight: 700;
+              }
+            }
+          }
+        }
 
         & .icon-1 {
           margin-right: 0.5rem;

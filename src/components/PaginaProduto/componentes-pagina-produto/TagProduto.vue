@@ -104,6 +104,7 @@
 </template>
 
 <script>
+import axios from "axios";
 import StarRating from "vue-star-rating";
 export default {
   name: "TagProduto",
@@ -126,20 +127,29 @@ export default {
     variantStock: String,
     variantLoja: String,
   },
-  methods: {
-    async handleAddToWishlist() {
-      await this.$store.dispatch(
-        "WishlistModule/addWishlistItem",
-        this.idProduto
-      );
-    },
+  mounted() {
+    const productIds = this.$store.state.WishlistModule.wishlist;
+    const productIdsString = productIds.join();
+    axios
+      .get("/api/products", { params: { id: productIdsString } })
+      .then(({ data }) => {
+        this.products = data.data;
+      });
   },
-  computed: {
-    wishlistExists() {
+  methods: {
+    clearWishlist() {
+      this.products = {};
+      this.$store.dispatch("WishlistModule/clearWishlist");
+    },
+    async handleAddToWishlist(id) {
+      await this.$store.dispatch("WishlistModule/addWishlistItem", id);
+    },
+    handleRemoveToWishlist(id) {
+      this.$store.dispatch("WishlistModule/removeWishlistItem", id);
+    },
+    wishlistExists(id) {
       return (
-        this.$store.state.WishlistModule.wishlist.find(
-          (i) => i === this.idProduto
-        ) != null
+        this.$store.state.WishlistModule.wishlist.find((i) => i === id) != null
       );
     },
   },
