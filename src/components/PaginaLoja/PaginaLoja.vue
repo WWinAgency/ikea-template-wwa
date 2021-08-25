@@ -44,6 +44,7 @@ export default {
     GridProdutosGrande,
     CarouselDeProdutos,
   },
+
   data() {
     return {
       categoriaProduto: {

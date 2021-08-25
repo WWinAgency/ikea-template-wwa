@@ -8,10 +8,7 @@
           <!-- BUTTON CAROUSEL -->
           <!-- LISTA COMPARATIVA -->
           <div class="lista-comparativa">
-            <div
-              class="container-lista"
-              v-if="this.$store.state.ComparisonModule.comparison.length > 0"
-            >
+            <div class="container-lista" v-if="this.comparisonList.length > 0">
               <hr class="costum-hr" />
               <div class="row">
                 <div class="col-1">
@@ -20,13 +17,12 @@
                   </button>
                 </div>
                 <div class="col-2">
-                  {{ this.$store.state.ComparisonModule.comparison.length }}
+                  {{ comparisonList.length }}
                   Selecionado
                 </div>
                 <div class="col-3">
                   <div
-                    v-for="(items, index) in this.$store.state.ComparisonModule
-                      .comparison"
+                    v-for="(items, index) in this.comparisonList"
                     :key="index"
                     class="lista"
                   >
@@ -53,7 +49,10 @@
         </div>
       </div>
       <div class="row">
-        <ListaProdutos :produtos="products"></ListaProdutos>
+        <ListaProdutos
+          :comparisonList="comparisonList"
+          :produtos="products"
+        ></ListaProdutos>
       </div>
     </div>
   </div>
@@ -68,11 +67,12 @@ export default {
     ButtonCarousel,
     ListaProdutos,
   },
+  beforeDestroy() {
+    this.comparisonList = [];
+  },
   data() {
     return {
-      check: false,
-      arrayOfArrays: [],
-      comparison: [],
+      comparisonList: [],
       products: [
         {
           id: 1,

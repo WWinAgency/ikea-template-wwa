@@ -1,5 +1,5 @@
 <template>
-  <div class="mainPageTopGrid">
+  <div class="mainPageTopGridSmallMobile">
     <div class="row-1">
       <div class="text-row-1">
         <h1>
@@ -22,25 +22,41 @@
         <div class="grid-container-left">
           <div class="grid-col-1">
             <div class="grid-row-1">
-              <Produto :products="col1Products" :imageSrc="imageSrc1" />
+              <ProdutoMobile :products="col1Products" :imageSrc="imageSrc1" />
             </div>
           </div>
         </div>
         <div class="grid-container-right">
           <div class="grid-col-2">
             <div class="grid-row-2">
-              <Produto :products="col2Products" :imageSrc="imageSrc2" />
+              <ProdutoSmallMobile
+                :link="col2Products[0]"
+                :imageSrc="imageSrc2"
+                :id="col2Products[0].id"
+              />
             </div>
             <div class="grid-row-3">
-              <Produto :products="col3Products" :imageSrc="imageSrc3" />
+              <ProdutoSmallMobile
+                :link="col3Products[0]"
+                :imageSrc="imageSrc3"
+                :id="col3Products[0].id"
+              />
             </div>
           </div>
           <div class="grid-col-3">
             <div class="grid-row-4">
-              <Produto :products="col4Products" :imageSrc="imageSrc4" />
+              <ProdutoSmallMobile
+                :link="col4Products[0]"
+                :imageSrc="imageSrc4"
+                :id="col4Products[0].id"
+              />
             </div>
             <div class="grid-row-5">
-              <Produto :products="col5Products" :imageSrc="imageSrc5" />
+              <ProdutoSmallMobile
+                :link="col5Products[0]"
+                :imageSrc="imageSrc5"
+                :id="col5Products[0].id"
+              />
             </div>
           </div>
         </div>
@@ -50,10 +66,11 @@
 </template>
 
 <script>
-import Produto from "./Produto.vue";
+import ProdutoMobile from "./ProdutoMobile.vue";
+import ProdutoSmallMobile from "./ProdutoSmallMobile.vue";
 
 export default {
-  components: { Produto },
+  components: { ProdutoMobile, ProdutoSmallMobile },
   props: {
     titulo: {
       type: String,
@@ -85,25 +102,6 @@ export default {
           currentPrice: 35,
           leftPercentage: 10,
           topPercentage: 10,
-          visibleCard: false,
-        },
-        {
-          name: "MÅLA",
-          id: "mala2",
-          type: "Conj. modelo cidade cartão",
-          currentPrice: 4,
-          leftPercentage: 60,
-          topPercentage: 40,
-          visibleCard: false,
-        },
-        {
-          name: "FLISAT",
-          id: "flisat2",
-          type: "Banco p/criança",
-          currentPrice: 15,
-          leftPercentage: 30,
-          topPercentage: 70,
-          visibleCard: false,
         },
       ],
       col2Products: [
@@ -114,7 +112,6 @@ export default {
           currentPrice: 112,
           leftPercentage: 10,
           topPercentage: 10,
-          visibleCard: false,
         },
         {
           name: "HUSARÖ",
@@ -123,7 +120,6 @@ export default {
           currentPrice: 119,
           leftPercentage: 60,
           topPercentage: 40,
-          visibleCard: false,
         },
       ],
       col3Products: [
@@ -134,7 +130,6 @@ export default {
           currentPrice: 39,
           leftPercentage: 60,
           topPercentage: 10,
-          visibleCard: false,
         },
         {
           name: "SKOGSKLÖVER",
@@ -143,7 +138,6 @@ export default {
           currentPrice: 4,
           leftPercentage: 5,
           topPercentage: 60,
-          visibleCard: false,
         },
       ],
       col4Products: [
@@ -154,7 +148,6 @@ export default {
           currentPrice: 4,
           leftPercentage: 10,
           topPercentage: 10,
-          visibleCard: false,
         },
         {
           name: "BODARP",
@@ -163,7 +156,6 @@ export default {
           currentPrice: 30,
           leftPercentage: 60,
           topPercentage: 40,
-          visibleCard: false,
         },
         {
           name: "TRANGET",
@@ -172,7 +164,6 @@ export default {
           currentPrice: 199,
           leftPercentage: 30,
           topPercentage: 70,
-          visibleCard: false,
         },
       ],
       col5Products: [
@@ -183,7 +174,6 @@ export default {
           currentPrice: 15,
           leftPercentage: 60,
           topPercentage: 10,
-          visibleCard: false,
         },
         {
           name: "BJÖRKÅSEN",
@@ -192,7 +182,6 @@ export default {
           currentPrice: 19.99,
           leftPercentage: 5,
           topPercentage: 60,
-          visibleCard: false,
         },
       ],
     };
@@ -201,7 +190,7 @@ export default {
 </script>
 
 <style lang="scss">
-.mainPageTopGrid {
+.mainPageTopGridSmallMobile {
   display: flex;
   flex-direction: column;
   width: 100%;

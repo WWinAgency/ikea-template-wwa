@@ -111,7 +111,7 @@ export default {
       settings: {
         infinite: true,
         centerMode: true,
-        centerPadding: 5,
+        centerPadding: "5",
         slidesToShow: 6,
         slidesToScroll: 9,
         speed: 500,
@@ -124,7 +124,7 @@ export default {
             settings: {
               infinite: true,
               centerMode: true,
-              centerPadding: 5,
+              centerPadding: "5",
               slidesToShow: 5,
               slidesToScroll: 2,
               initialSlide: 1,
@@ -137,7 +137,7 @@ export default {
             settings: {
               infinite: true,
               centerMode: true,
-              centerPadding: 5,
+              centerPadding: "5",
               slidesToShow: 4,
               slidesToScroll: 2,
               initialSlide: 1,
@@ -150,7 +150,7 @@ export default {
             settings: {
               infinite: true,
               centerMode: true,
-              centerPadding: 5,
+              centerPadding: "5",
               slidesToShow: 4,
               slidesToScroll: 2,
               initialSlide: 1,
@@ -163,7 +163,7 @@ export default {
             settings: {
               infinite: true,
               centerMode: true,
-              centerPadding: 5,
+              centerPadding: "5",
               slidesToShow: 3,
               slidesToScroll: 2,
               initialSlide: 1,
@@ -176,7 +176,7 @@ export default {
             settings: {
               infinite: true,
               centerMode: true,
-              centerPadding: 5,
+              centerPadding: "5",
               slidesToShow: 2,
               slidesToScroll: 2,
               initialSlide: 1,
@@ -190,7 +190,7 @@ export default {
             settings: {
               infinite: true,
               centerMode: true,
-              centerPadding: 5,
+              centerPadding: "5",
               slidesToShow: 1,
               slidesToScroll: 1,
               initialSlide: 0,

@@ -23,6 +23,6 @@ new Vue({
   render: (h) => h(App),
   beforeMount() {
     this.$store.commit("WishlistModule/initialiseStore");
-    this.$store.commit("Comparison/initialiseStore");
+    this.$store.commit("ComparisonListModule/initialiseStore");
   },
 }).$mount("#app");

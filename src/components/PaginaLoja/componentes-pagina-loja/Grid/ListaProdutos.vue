@@ -12,14 +12,20 @@
               <div class="col-1">
                 <a
                   class="icon float-right m-0 cursor-pointer"
-                  @click="handleAddToComparisonList(product)"
                   v-if="comparisonListExists(product) === false"
+                  @click="
+                    handleAddToComparisonList(product);
+                    pushComparisonList(product);
+                  "
                   ><b-icon-square></b-icon-square
                 ></a>
                 <a
                   class="icon heart float-right m-0 cursor-pointer"
                   v-else
-                  @click="handleRemoveFromComparisonList(product)"
+                  @click="
+                    handleRemoveFromComparisonList(product);
+                    removeComparisonList(product);
+                  "
                   ><b-icon-x-square></b-icon-x-square
                 ></a>
               </div>
@@ -92,7 +98,7 @@
 import StarRating from "vue-star-rating";
 import axios from "axios";
 export default {
-  props: ["produtos"],
+  props: ["produtos", "comparisonList"],
   components: { StarRating },
   mounted() {
     const productIds = this.$store.state.ComparisonListModule.comparison;
@@ -119,6 +125,12 @@ export default {
           (i) => i === id
         ) != null
       );
+    },
+    pushComparisonList(product) {
+      this.comparisonList.push(product);
+    },
+    removeComparisonList(product) {
+      this.comparisonList.pop(product);
     },
   },
 };

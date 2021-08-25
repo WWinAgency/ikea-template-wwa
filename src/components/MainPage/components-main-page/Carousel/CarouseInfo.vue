@@ -24,7 +24,11 @@
 </template>
 
 <script>
-export default {};
+export default {
+  props: {
+    infoUrl: String,
+  },
+};
 </script>
 
 <style lang="scss">

@@ -1,5 +1,5 @@
 <template>
-  <div class="mainPageTopGrid">
+  <div class="mainPageBottomGridSmallMobile">
     <div class="row-1">
       <div class="text-row-1">
         <h1>
@@ -7,14 +7,7 @@
         </h1>
       </div>
       <div class="text-row-2">
-        <div class="col-1">
-          <h2>
-            {{ body }}
-          </h2>
-        </div>
-        <div class="col-2">
-          <b-button class="btn" variant="light">{{ gridButton }}</b-button>
-        </div>
+        <ButtonCarousel :buttons="buttonsGrid" />
       </div>
     </div>
     <div class="row-2">
@@ -22,25 +15,41 @@
         <div class="grid-container-left">
           <div class="grid-col-1">
             <div class="grid-row-1">
-              <Produto :products="col1Products" :imageSrc="imageSrc1" />
+              <ProdutoMobile :products="col1Products" :imageSrc="imageSrc1" />
             </div>
           </div>
         </div>
         <div class="grid-container-right">
           <div class="grid-col-2">
             <div class="grid-row-2">
-              <Produto :products="col2Products" :imageSrc="imageSrc2" />
+              <ProdutoSmallMobile
+                :link="col2Products[0]"
+                :imageSrc="imageSrc2"
+                :id="col2Products[0].id"
+              />
             </div>
             <div class="grid-row-3">
-              <Produto :products="col3Products" :imageSrc="imageSrc3" />
+              <ProdutoSmallMobile
+                :link="col3Products[0]"
+                :imageSrc="imageSrc3"
+                :id="col3Products[0].id"
+              />
             </div>
           </div>
           <div class="grid-col-3">
             <div class="grid-row-4">
-              <Produto :products="col4Products" :imageSrc="imageSrc4" />
+              <ProdutoSmallMobile
+                :link="col4Products[0]"
+                :imageSrc="imageSrc4"
+                :id="col4Products[0].id"
+              />
             </div>
             <div class="grid-row-5">
-              <Produto :products="col5Products" :imageSrc="imageSrc5" />
+              <ProdutoSmallMobile
+                :link="col5Products[0]"
+                :imageSrc="imageSrc5"
+                :id="col5Products[0].id"
+              />
             </div>
           </div>
         </div>
@@ -50,21 +59,19 @@
 </template>
 
 <script>
-import Produto from "./Produto.vue";
+import ProdutoMobile from "./ProdutoMobile.vue";
+import ProdutoSmallMobile from "./ProdutoSmallMobile.vue";
+import ButtonCarousel from "../Carousel/ButtonCarousel.vue";
 
 export default {
-  components: { Produto },
+  components: { ProdutoMobile, ProdutoSmallMobile, ButtonCarousel },
   props: {
     titulo: {
       type: String,
       required: true,
     },
-    body: {
-      type: String,
-      required: true,
-    },
-    gridButton: {
-      type: String,
+    buttonsGrid: {
+      type: Array,
       required: true,
     },
   },
@@ -85,24 +92,6 @@ export default {
           currentPrice: 35,
           leftPercentage: 10,
           topPercentage: 10,
-          visibleCard: false,
-        },
-        {
-          name: "MÅLA",
-          id: "mala2",
-          type: "Conj. modelo cidade cartão",
-          currentPrice: 4,
-          leftPercentage: 60,
-          topPercentage: 40,
-          visibleCard: false,
-        },
-        {
-          name: "FLISAT",
-          id: "flisat2",
-          type: "Banco p/criança",
-          currentPrice: 15,
-          leftPercentage: 30,
-          topPercentage: 70,
           visibleCard: false,
         },
       ],
@@ -201,14 +190,11 @@ export default {
 </script>
 
 <style lang="scss">
-.mainPageTopGrid {
-  display: flex;
+.mainPageBottomGridSmallMobile {
   flex-direction: column;
   width: 100%;
-  height: 100% !important;
   margin: 0 !important;
   & .row-1 {
-    height: 100%;
     margin-bottom: 2rem !important;
     @media (max-with: 400px) {
       margin-left: 1rem !important;
@@ -303,6 +289,7 @@ export default {
 
       & .grid-container-left {
         height: 100%;
+        width: 33%;
 
         @media (max-width: 1050px) {
           height: 40%;
@@ -319,16 +306,20 @@ export default {
           }
           & .grid-row-1 {
             height: 100%;
+            width: 100%;
+            overflow: hidden;
             padding: 0 0.5rem 0 0;
 
             @media (max-width: 1500px) {
               padding: 0 0.5rem 0 0;
+              width: 100%;
             }
             @media (max-width: 1050px) {
               padding: 0;
               width: 100%;
             }
             @media (max-width: 400px) {
+              width: 100%;
             }
           }
         }
@@ -337,7 +328,7 @@ export default {
       & .grid-container-right {
         display: flex;
         flex-direction: row;
-        width: 100%;
+        width: 66%;
 
         @media (max-width: 1050px) {
           flex-direction: row;
@@ -347,6 +338,7 @@ export default {
         & .grid-col-2 {
           display: flex;
           flex-direction: column;
+          width: 50%;
 
           @media (max-width: 1050px) {
             flex-direction: column;
@@ -383,6 +375,7 @@ export default {
         & .grid-col-3 {
           display: flex;
           flex-direction: column;
+          width: 50%;
 
           @media (max-width: 1050px) {
             flex-direction: column;

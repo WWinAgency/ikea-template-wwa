@@ -2,16 +2,13 @@
   <div class="carousel-produto">
     <b-carousel
       id="carousel-1"
-      v-model="slide"
       :interval="0"
-      controls="false"
-      indicators="false"
+      controls: false
+      indicators: true
       background="#ababab"
       img-width="480px"
       img-height="480px"
       style="text-shadow: 1px 1px 2px #333;"
-      @sliding-start="onSlideStart"
-      @sliding-end="onSlideEnd"
     >
       <b-carousel-slide :img-src="image1" />
       <b-carousel-slide :img-src="image2" />

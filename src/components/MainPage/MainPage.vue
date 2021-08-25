@@ -32,7 +32,17 @@
         </div>
       </div>
       <div class="mainPage-row">
-        <MidAdvert :advert="produtoMidAdvert" />
+        <MidAdvert
+          :title="midAdvert.title"
+          :imageSrc="midAdvert.imageSrc"
+          :body="midAdvert.body"
+          :bodyStrong="midAdvert.bodyStrong"
+          :name="midAdvert.name"
+          :type="midAdvert.type"
+          :currentPrice="midAdvert.currentPrice"
+          :link="midAdvert.link"
+          :linkTitle="midAdvert.linkTitle"
+        />
       </div>
       <div class="mainPage-row">
         <TopCarousel :carousel="topCarousel" titulo="Os mais vistos" />
@@ -49,7 +59,23 @@
       </div>
       <div class="mainPage-row">
         <MainPageTopGrid
-          :produtos="topGrid"
+          v-if="this.isMobile == false && this.isSmallMobile == false"
+          titulo="As novidades esperam por si"
+          body="Depois dos piqueniques no jardim, dos passeios na natureza e dos
+            mergulhos na praia, é tempo de voltar a casa e descobrir a nova
+            coleção de outono da IKEA."
+          gridButton="Ver artigos de verão"
+        />
+        <MainPageTopGridMobile
+          v-else-if="this.isMobile == true && this.isSmallMobile == false"
+          titulo="As novidades esperam por si"
+          body="Depois dos piqueniques no jardim, dos passeios na natureza e dos
+            mergulhos na praia, é tempo de voltar a casa e descobrir a nova
+            coleção de outono da IKEA."
+          gridButton="Ver artigos de verão"
+        />
+        <MainPageTopGridSmallMobile
+          v-else-if="this.isMobile == true && this.isSmallMobile == true"
           titulo="As novidades esperam por si"
           body="Depois dos piqueniques no jardim, dos passeios na natureza e dos
             mergulhos na praia, é tempo de voltar a casa e descobrir a nova
@@ -68,7 +94,17 @@
       </div>
       <div class="mainPage-row">
         <MainPageBottomGrid
-          :produtos="produtosBottomGrid"
+          v-if="this.isMobile == false && this.isSmallMobile == false"
+          :buttonsGrid="buttonsBottomGrid"
+          titulo="Mais ideias e inspiração"
+        />
+        <MainPageBottomGridMobile
+          v-else-if="this.isMobile == true && this.isSmallMobile == false"
+          :buttonsGrid="buttonsBottomGrid"
+          titulo="Mais ideias e inspiração"
+        />
+        <MainPageBottomGridSmallMobile
+          v-else-if="this.isMobile == true && this.isSmallMobile == true"
           :buttonsGrid="buttonsBottomGrid"
           titulo="Mais ideias e inspiração"
         />
@@ -90,7 +126,11 @@ import Info from "./components-main-page/Info/Info.vue";
 import InfoEntregas from "./components-main-page/Info/InfoEntregas.vue";
 import InfoImportanteCarousel from "./components-main-page/Carousel/InfoImportanteCarousel.vue";
 import MainPageTopGrid from "./components-main-page/Grid/MainPageTopGrid.vue";
+import MainPageTopGridMobile from "./components-main-page/Grid/MainPageTopGridMobile.vue";
+import MainPageTopGridSmallMobile from "./components-main-page/Grid/MainPageTopGridSmallMobile.vue";
 import MainPageBottomGrid from "./components-main-page/Grid/MainPageBottomGrid.vue";
+import MainPageBottomGridMobile from "./components-main-page/Grid/MainPageBottomGridMobile.vue";
+import MainPageBottomGridSmallMobile from "./components-main-page/Grid/MainPageBottomGridSmallMobile.vue";
 
 export default {
   components: {
@@ -102,11 +142,33 @@ export default {
     Info,
     InfoEntregas,
     MainPageTopGrid,
+    MainPageTopGridMobile,
+    MainPageTopGridSmallMobile,
     MainPageBottomGrid,
+    MainPageBottomGridMobile,
+    MainPageBottomGridSmallMobile,
     InfoImportanteCarousel,
   },
+  beforeMount() {
+    console.log(this.isMobile);
+    if (window.innerWidth <= 800) {
+      this.isMobile = true;
+      console.log(this.isMobile);
+    } else {
+      this.isMobile = false;
+    }
+    if (window.innerWidth <= 400) {
+      this.isSmallMobile = true;
+      console.log(this.isSmallMobile);
+    } else {
+      this.isSmallMobile = false;
+    }
+  },
+
   data() {
     return {
+      isMobile: false,
+      isSmallMobile: false,
       advert: {
         title: "Quem é da casa merece um desconto",
         name: "BONDHOLMEN",
@@ -115,13 +177,26 @@ export default {
           "É por isso que todos os meses há descontos para os membros IKEA Family. Descubra artigos a preços ainda mais acessiveis para toda a casa, só de",
         imageSrc: "https://picsum.photos/1600/960?random=1",
         link: "pagina-de-produto",
-        currentPrice: "69",
-        normalPrice: "80",
-        beginDay: "1",
-        beginMonth: "",
-        endDay: "31",
+        currentPrice: 69,
+        normalPrice: 80,
+        beginDay: 1,
+        beginMonth: "Julho",
+        endDay: 31,
         endMonth: "Julho",
       },
+      midAdvert: {
+        name: "LINNEBÄCK",
+        type: "Poltrona",
+        currentPrice: 39,
+        link: "linneback",
+        linkTitle: "Ver homemade Jingle by Noiserv",
+        title: "O Design é para ser tocado",
+        imageSrc: "https://picsum.photos/1600/960?random=6",
+        body:
+          "Para a IKEA, o design vai muito além da estética. Vai onde a nossa imaginação quiser. Para o provarmos, desafiámos o Noiserv, um dos músicos portugueses mais inventivos e versáteis, a compor um tema usando apenas os móevis e acessórios IKEA. Assim surge o Homemade Jingle, uma melodia original e divertida que nos evoca os sons da vida em casa",
+        bodyStrong: "Porque o design é para ser vivido",
+      },
+
       products: [
         {
           id: "fejka",
@@ -176,20 +251,7 @@ export default {
           favSelected: false,
         },
       ],
-      produtoMidAdvert: [
-        {
-          nome: "LINNEBÄCK",
-          tipo: "Poltrona",
-          preco: 39,
-          link: "pagina-de-produto",
-          tituloLink: "Ver homemade Jingle by Noiserv",
-          titulo: "O Design é para ser tocado",
-          imagem: "https://picsum.photos/1600/960?random=6",
-          body:
-            "Para a IKEA, o design vai muito além da estética. Vai onde a nossa imaginação quiser. Para o provarmos, desafiámos o Noiserv, um dos músicos portugueses mais inventivos e versáteis, a compor um tema usando apenas os móevis e acessórios IKEA. Assim surge o Homemade Jingle, uma melodia original e divertida que nos evoca os sons da vida em casa",
-          bodyStrong: "Porque o design é para ser vivido",
-        },
-      ],
+
       topCarousel: [
         {
           textoBotao: "Móveis",
@@ -232,48 +294,7 @@ export default {
           link: "cozinhas-e-eletrodomesticos",
         },
       ],
-      topGrid: [
-        {
-          gridImageSrc: "https://picsum.photos/1000/960?random=1",
-          nome: "KRUX",
-          tipo: "Candeeiro LED de secretária",
-          preco: "35",
-          left: 20,
-          top: 50,
-        },
-        {
-          gridImageSrc: "https://picsum.photos/1500/960?random=1",
-          nome: "MÅLA",
-          tipo: "Conj. modelo cidade cartão",
-          preco: "4",
-          left: 20,
-          top: 40,
-        },
-        {
-          gridImageSrc: "https://picsum.photos/1100/1100?random=2",
-          nome: "FLISAT",
-          tipo: "Banco p/criança",
-          preco: "15",
-          left: 20,
-          top: 50,
-        },
-        {
-          gridImageSrc: "https://picsum.photos/1100/960?random=3",
-          nome: "MOSSLANDA",
-          tipo: "Prateleira p/molduras",
-          preco: "9.99",
-          left: 20,
-          top: 50,
-        },
-        {
-          gridImageSrc: "https://picsum.photos/1100/960?random=4",
-          nome: "BAGGEBO",
-          tipo: "Armário c/portas em vidro",
-          preco: "35",
-          left: 2,
-          top: 40,
-        },
-      ],
+
       infoEntregas: [
         {
           titulo: "Click and collect",
@@ -367,48 +388,6 @@ export default {
         },
         {
           label: "Acessórios",
-        },
-      ],
-      produtosBottomGrid: [
-        {
-          gridImageSrc: "https://picsum.photos/1000/1200?random=8",
-          nome: "KRUX",
-          tipo: "Candeeiro LED de secretária",
-          preco: "35",
-          left: 20,
-          top: 50,
-        },
-        {
-          gridImageSrc: "https://picsum.photos/1000/900?random=1",
-          nome: "MÅLA",
-          tipo: "Conj. modelo cidade cartão",
-          preco: "4",
-          left: 30,
-          top: 50,
-        },
-        {
-          gridImageSrc: "https://picsum.photos/1000/1000?random=1",
-          nome: "FLISAT",
-          tipo: "Banco p/criança",
-          preco: "15",
-          left: 20,
-          top: 50,
-        },
-        {
-          gridImageSrc: "https://picsum.photos/1000/1000?random=2",
-          nome: "MOSSLANDA",
-          tipo: "Prateleira p/molduras",
-          preco: "9.99",
-          left: 20,
-          top: 50,
-        },
-        {
-          gridImageSrc: "https://picsum.photos/1000/800?random=1",
-          nome: "BAGGEBO",
-          tipo: "Armário c/portas em vidro",
-          preco: "35",
-          left: 50,
-          top: 50,
         },
       ],
 

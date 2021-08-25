@@ -152,6 +152,9 @@ import axios from "axios";
 
 export default {
   components: { CarouselSimilarProducts, ProdutoListaComparativa },
+  beforeUpdate() {
+    this.$store.dispatch("ComparisonListModule/clearComparisonList");
+  },
   mounted() {
     const productIds = this.$store.state.WishlistModule.wishlist;
     const productIds2 = this.$store.state.ComparisonListModule.comparison;

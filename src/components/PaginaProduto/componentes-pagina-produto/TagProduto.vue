@@ -46,7 +46,7 @@
                 v-bind:star-size="15"
                 :rating="ratingProduto"
                 :show-rating="false"
-                read-only="true"
+                read-only:true
               >
               </star-rating>
             </div>
@@ -61,9 +61,19 @@
           <b-button class="product-button">Adicionar ao cesto</b-button>
         </div>
         <div class="inner-col-4">
-          <b-button @click="handleAddToWishList" class="favorite-button"
-            ><b-icon icon="heart" scale="0.9" variant="dark"></b-icon
-          ></b-button>
+          <a
+            class="icon float-right m-0 cursor-pointer"
+            @click="handleAddToWishlist(produto[0])"
+            v-if="wishlistExists(produto[0]) === false"
+            ><b-icon-heart></b-icon-heart
+          ></a>
+          <a
+            class="icon check float-right m-0 cursor-pointer"
+            v-else
+            @click="handleRemoveToWishlist(produto[0])"
+          >
+            <b-icon icon="check" scale="1.6" variant="dark"></b-icon
+          ></a>
         </div>
       </div>
       <div class="product-row-9">
@@ -126,6 +136,7 @@ export default {
     promocaoFimDia: Number,
     variantStock: String,
     variantLoja: String,
+    produto: Array,
   },
   mounted() {
     const productIds = this.$store.state.WishlistModule.wishlist;
@@ -137,10 +148,6 @@ export default {
       });
   },
   methods: {
-    clearWishlist() {
-      this.products = {};
-      this.$store.dispatch("WishlistModule/clearWishlist");
-    },
     async handleAddToWishlist(id) {
       await this.$store.dispatch("WishlistModule/addWishlistItem", id);
     },
@@ -283,7 +290,12 @@ export default {
         width: 10%;
         float: right;
 
-        & .favorite-button {
+        & a.icon {
+          & .check {
+            font-size: 20px;
+          }
+          font-size: 20px;
+          color: black;
           width: 3.5rem;
           height: 3.5rem;
           border-radius: 64px;

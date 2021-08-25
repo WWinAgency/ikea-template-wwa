@@ -11,7 +11,7 @@
         :dots="false"
       >
         <div class="carousel-item">
-          <div class="carousel-info"><CarouselInfo /></div>
+          <div class="carousel-info"><CarouselInfo infoUrl="/info" /></div>
         </div>
         <div class="carousel-item">
           <div class="imagem">
@@ -107,7 +107,7 @@ export default {
       settings: {
         infinite: true,
         centerMode: true,
-        centerPadding: 5,
+        centerPadding: "5",
         slidesToShow: 6,
         slidesToScroll: 9,
         speed: 500,
@@ -120,7 +120,7 @@ export default {
             settings: {
               infinite: true,
               centerMode: true,
-              centerPadding: 5,
+              centerPadding: "5",
               slidesToShow: 5,
               slidesToScroll: 2,
               initialSlide: 2,
@@ -133,7 +133,7 @@ export default {
             settings: {
               infinite: true,
               centerMode: true,
-              centerPadding: 5,
+              centerPadding: "5",
               slidesToShow: 4,
               slidesToScroll: 2,
               initialSlide: 2,
@@ -146,7 +146,7 @@ export default {
             settings: {
               infinite: true,
               centerMode: true,
-              centerPadding: 5,
+              centerPadding: "5",
               slidesToShow: 4,
               slidesToScroll: 2,
               initialSlide: 2,
@@ -159,7 +159,7 @@ export default {
             settings: {
               infinite: true,
               centerMode: true,
-              centerPadding: 5,
+              centerPadding: "5",
               slidesToShow: 3,
               slidesToScroll: 2,
               initialSlide: 1,
@@ -172,7 +172,7 @@ export default {
             settings: {
               infinite: true,
               centerMode: true,
-              centerPadding: 5,
+              centerPadding: "5",
               slidesToShow: 2,
               slidesToScroll: 2,
               initialSlide: 1,
@@ -186,7 +186,7 @@ export default {
             settings: {
               infinite: true,
               centerMode: true,
-              centerPadding: 5,
+              centerPadding: "5",
               slidesToShow: 1,
               slidesToScroll: 1,
               initialSlide: 0,

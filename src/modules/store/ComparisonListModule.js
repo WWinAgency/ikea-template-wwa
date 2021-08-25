@@ -6,7 +6,7 @@ const mutations = {
   initialiseStore(state) {
     if (localStorage.getItem("comparison")) {
       const _comparison = JSON.parse(localStorage.getItem("comparison"));
-      state.wishlist = Array.isArray(_comparison) ? _comparison : [];
+      state.comparison = Array.isArray(_comparison) ? _comparison : [];
     }
   },
   updateComparisonList(state, comparison) {

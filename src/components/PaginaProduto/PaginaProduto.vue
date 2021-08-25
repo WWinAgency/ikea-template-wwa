@@ -64,15 +64,22 @@
           </div>
           <!-- Descrição Informativa do Produto -->
           <div class="product-inner-row">
-            <DescricaoProduto
-              :nomeProduto="produto.nome"
-              :tipoProduto="produto.tipo"
-              :utilidadeProduto="produto.utilidade"
-              :textoDescritivo="produto.textoDescritivo"
-              :codigoProduto="produto.codigoProduto"
-              :rating="produto.rating"
-              :avaliacoes="produto.avaliacoes"
-            />
+            <div v-for="(product, index) in products.slice(0, 1)" :key="index">
+              <DescricaoProduto
+                :nomeProduto="product.name"
+                :tipoProduto="product.type"
+                :utilidadeProduto="product.utility"
+                :textoDescritivo="product.productShowingText"
+                :codigoProduto="product.code"
+                :rating="product.rating"
+                :evaluations="product.evalutations"
+                :valueAssembly="product.valueAssembly"
+                :valuePrice="product.valuePrice"
+                :valueQuality="product.valueQuality"
+                :valueLooks="product.valueLooks"
+                :valueExpectations="product.valueExpectations"
+              />
+            </div>
           </div>
           <!-- Descrição Informativa do Produto -->
 
@@ -129,6 +136,7 @@ import PathProduto from "./componentes-pagina-produto/PathProduto.vue";
 import TagProduto from "./componentes-pagina-produto/TagProduto.vue";
 import ProductShowcase from "../ComponentesGlobais/Showcases/ProductShowcase.vue";
 import CarouselDeProdutos from "./componentes-pagina-produto/Carousel/CarouselDeProdutos.vue";
+import CarouselProduto from "./componentes-pagina-produto/Carousel/CarouselProduto.vue";
 import FuncaoEDesign from "./componentes-pagina-produto/FuncaoEDesign.vue";
 import DescricaoProduto from "./componentes-pagina-produto/DescricaoProduto.vue";
 import GridImagensProduto from "./componentes-pagina-produto/Grid/GridImagensProduto.vue";
@@ -143,6 +151,7 @@ export default {
     FuncaoEDesign,
     GridImagensProduto,
     MiniCarousel,
+    CarouselProduto,
   },
   data() {
     return {
@@ -150,20 +159,20 @@ export default {
         nome: "MJÖLKKLOCKA",
         tipo: "Almofada ergonómica",
         utilidade: "costas/lado",
-        precoAtivo: "25",
-        precoHabitual: "29",
+        precoAtivo: 25,
+        precoHabitual: 29,
         moeda: "€",
-        rating: "4.5",
+        rating: 4.5,
         image1: "https://picsum.photos/960/960?random=5",
         image2: "https://picsum.photos/960/960?random=6",
         image3: "https://picsum.photos/960/960?random=7",
         image4: "https://picsum.photos/960/960?random=8",
-        avaliacoes: "10",
+        avaliacoes: 10,
         dimensoes: "41 x 71",
         mesInicioPromocao: "Julho",
-        diaInicioPromocao: "01",
+        diaInicioPromocao: 1,
         mesFimPromocao: "Julho",
-        diaFimPromocao: "31",
+        diaFimPromocao: 31,
         codigoProduto: "304.509.54",
         disponibilidadeStock: "success",
         disponibilidadeLoja: "danger",

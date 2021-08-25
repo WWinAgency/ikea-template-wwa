@@ -1,56 +1,7 @@
 <template>
-  <div class="produtoMobile">
-    <div class="product-tag">
-      <div class="tag-container">
-        <div class="positioning-container">
-          <div
-            v-show="tagsVisible"
-            v-for="product in products"
-            :key="product.id"
-            class="tag-position"
-            :style="[
-              { top: product.topPercentage + '%' },
-              { left: product.leftPercentage + '%' },
-            ]"
-          >
-            <a @click="showCard(product)" id="button" class="show-button">
-              <div class="inner-button"></div>
-            </a>
-            <a :id="product.id" href="/pagina-produto" class="tag">
-              <div class="tag-inner-container">
-                <div class="tag-outter-col">
-                  <div class="tag-row-1">
-                    <div class="tag-inner-col-1">Novidade</div>
-                    <div class="tag-inner-col-2">
-                      <b-icon
-                        class="icon"
-                        icon="caret-right"
-                        scale="1.3"
-                        variant="dark"
-                      ></b-icon>
-                    </div>
-                  </div>
-                  <div class="tag-row-2">
-                    <a class="tag-product-link" href="/pagina-produto">{{
-                      product.name
-                    }}</a>
-                  </div>
-                  <div class="tag-row-3">{{ product.type }}</div>
-                  <div class="tag-row-4">
-                    <div class="tag-inner-col-3">
-                      {{ product.currentPrice }}
-                    </div>
-                    <div class="tag-inner-col-4">€/ud</div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
+  <a :href="'/pagina-produto/' + id" class="produtoSmallMobile">
     <img :src="imageSrc" />
-  </div>
+  </a>
 </template>
 
 <script>
@@ -75,8 +26,8 @@ export default {
     },
   },
   props: {
-    products: {
-      type: Array,
+    id: {
+      type: String,
       required: true,
     },
     imageSrc: {
@@ -88,7 +39,7 @@ export default {
 </script>
 
 <style lang="scss">
-.produtoMobile {
+.produtoSmallMobile {
   width: 100%;
   height: 100% !important;
   position: relative;

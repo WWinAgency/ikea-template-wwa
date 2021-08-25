@@ -50,18 +50,10 @@
               >
             </li>
             <li class="menu-item">
-              <a class="item" href="/comparacao-favoritos">
-                <strong> -------------------------------- </strong></a
-              >
+              <strong> -------------------------------- </strong>
             </li>
           </ul>
           <ul class="row-1">
-            <li class="menu-item">
-              <a class="item" href="/"><strong> HomePage</strong></a>
-            </li>
-            <li class="menu-item">
-              <a class="item" href="/right"><strong> HomePage Right</strong></a>
-            </li>
             <li class="menu-item">
               <a class="item" href="/pagina-produto"
                 ><strong> Página de Produto </strong></a
@@ -88,8 +80,8 @@
               >
             </li>
             <li class="menu-item">
-              <a class="item" href="/comparacao-favoritos">
-                <strong> Comparação Favoritos </strong></a
+              <a class="item" href="/comparacao-produtos">
+                <strong> Comparação Produtos </strong></a
               >
             </li>
           </ul>

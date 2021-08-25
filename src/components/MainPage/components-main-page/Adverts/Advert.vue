@@ -34,14 +34,16 @@
 export default {
   props: {
     title: String,
+    name: String,
+    type: String,
     body: String,
     currentPrice: Number,
-    normalPrice: String,
+    normalPrice: Number,
     imageSrc: String,
     beginDay: Number,
-    beginMonth: Number,
+    beginMonth: String,
     endDay: Number,
-    endMonth: Number,
+    endMonth: String,
     link: String,
   },
 };

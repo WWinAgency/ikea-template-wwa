@@ -67,7 +67,14 @@
           <div class="inner-row-1">
             <SidebarDescriptionAvaliacoesProduto
               :evaluations="evaluations"
-              :productCode="id"
+              :productCode="codigoProduto"
+              :rating="rating"
+              :ratingCount="ratingCount"
+              :valueAssembly="valueAssembly"
+              :valuePrice="valuePrice"
+              :valueQuality="valueQuality"
+              :valueLooks="valueLooks"
+              :valueExpectations="valueExpectations"
             />
           </div>
           <div class="inner-row-2">
@@ -87,7 +94,7 @@
                   </star-rating>
                 </div>
                 <div class="rating-row">
-                  <h4>( {{ avaliacoes }} )</h4>
+                  <h4>( {{ ratingCount }} )</h4>
                 </div>
               </div>
             </div>
@@ -110,14 +117,21 @@ export default {
     SidebarDescriptionAvaliacoesProduto,
     StarRating,
   },
+
   props: {
     nomeProduto: String,
     tipoProduto: String,
     utilidadeProduto: String,
     textoDescritivo: String,
     codigoProduto: String,
-    avaliacoes: Number,
     rating: Number,
+    ratingCount: Number,
+    evaluations: Array,
+    valueAssembly: Number,
+    valuePrice: Number,
+    valueQuality: Number,
+    valueLooks: Number,
+    valueExpectations: Number,
   },
 };
 </script>

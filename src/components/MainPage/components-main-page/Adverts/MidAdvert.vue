@@ -1,7 +1,7 @@
 <template>
   <div class="midAdvert">
     <b-card
-      :img-src="advert[0].imagem"
+      :img-src="imageSrc"
       img-alt="Card image"
       img-left
       class="image-card"
@@ -10,26 +10,26 @@
         <div class="text-col">
           <div class="text-row">
             <h1>
-              <strong>{{ advert[0].titulo }}</strong>
+              <strong>{{ title }}</strong>
             </h1>
           </div>
           <div class="text-row">
             <h2>
               {{ body }}
-              <strong>{{ advert[0].bodyStrong }}</strong>
+              <strong>{{ bodyStrong }}</strong>
             </h2>
           </div>
           <li class="text-bottom">
             <h3>
-              {{ advert[0].nome }}
+              {{ name }}
             </h3>
-            <h3>{{ advert[0].tipo }}a {{ advert[0].preco }}€/ud</h3>
+            <h3>{{ type }}a {{ currentPrice }}€/ud</h3>
           </li>
           <a
-            :href="'/' + advert[0].link"
+            :href="'/pagina-produto/' + link"
             class="button-midAdvert"
             variant="light"
-            ><h4>{{ advert[0].tituloLink }}</h4></a
+            ><h4>{{ linkTitle }}</h4></a
           >
         </div>
       </b-card-text>
@@ -40,10 +40,15 @@
 <script>
 export default {
   props: {
-    advert: {
-      type: Array,
-      required: true,
-    },
+    title: String,
+    imageSrc: String,
+    body: String,
+    bodyStrong: String,
+    name: String,
+    type: String,
+    currentPrice: Number,
+    link: String,
+    linkTitle: String,
   },
 };
 </script>

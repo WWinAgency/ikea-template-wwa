@@ -30,10 +30,10 @@
           </div>
           <div class="grid-col-3">
             <div class="grid-row-4">
-              <ProdutoMobile :products="col4Products" :imageSrc="imageSrc4" />
+              <Produto :products="col4Products" :imageSrc="imageSrc4" />
             </div>
             <div class="grid-row-5">
-              <ProdutoMobile :products="col5Products" :imageSrc="imageSrc5" />
+              <Produto :products="col5Products" :imageSrc="imageSrc5" />
             </div>
           </div>
         </div>
@@ -44,10 +44,21 @@
 
 <script>
 import Produto from "./Produto.vue";
-import ProdutoMobile from "./ProdutoMobile.vue";
 import ButtonCarousel from "../Carousel/ButtonCarousel.vue";
 
 export default {
+  components: { Produto, ButtonCarousel },
+  props: {
+    titulo: {
+      type: String,
+      required: true,
+    },
+    buttonsGrid: {
+      type: Array,
+      required: true,
+    },
+  },
+
   data() {
     return {
       imageSrc1: "https://picsum.photos/1000/960?random=1",
@@ -64,6 +75,7 @@ export default {
           currentPrice: 35,
           leftPercentage: 10,
           topPercentage: 10,
+          visibleCard: false,
         },
         {
           name: "MÅLA",
@@ -72,6 +84,7 @@ export default {
           currentPrice: 4,
           leftPercentage: 60,
           topPercentage: 40,
+          visibleCard: false,
         },
         {
           name: "FLISAT",
@@ -80,6 +93,7 @@ export default {
           currentPrice: 15,
           leftPercentage: 30,
           topPercentage: 70,
+          visibleCard: false,
         },
       ],
       col2Products: [
@@ -90,6 +104,7 @@ export default {
           currentPrice: 112,
           leftPercentage: 10,
           topPercentage: 10,
+          visibleCard: false,
         },
         {
           name: "HUSARÖ",
@@ -98,6 +113,7 @@ export default {
           currentPrice: 119,
           leftPercentage: 60,
           topPercentage: 40,
+          visibleCard: false,
         },
       ],
       col3Products: [
@@ -108,6 +124,7 @@ export default {
           currentPrice: 39,
           leftPercentage: 60,
           topPercentage: 10,
+          visibleCard: false,
         },
         {
           name: "SKOGSKLÖVER",
@@ -116,6 +133,7 @@ export default {
           currentPrice: 4,
           leftPercentage: 5,
           topPercentage: 60,
+          visibleCard: false,
         },
       ],
       col4Products: [
@@ -126,6 +144,7 @@ export default {
           currentPrice: 4,
           leftPercentage: 10,
           topPercentage: 10,
+          visibleCard: false,
         },
         {
           name: "BODARP",
@@ -134,6 +153,7 @@ export default {
           currentPrice: 30,
           leftPercentage: 60,
           topPercentage: 40,
+          visibleCard: false,
         },
         {
           name: "TRANGET",
@@ -142,6 +162,7 @@ export default {
           currentPrice: 199,
           leftPercentage: 30,
           topPercentage: 70,
+          visibleCard: false,
         },
       ],
       col5Products: [
@@ -152,6 +173,7 @@ export default {
           currentPrice: 15,
           leftPercentage: 60,
           topPercentage: 10,
+          visibleCard: false,
         },
         {
           name: "BJÖRKÅSEN",
@@ -160,22 +182,11 @@ export default {
           currentPrice: 19.99,
           leftPercentage: 5,
           topPercentage: 60,
+          visibleCard: false,
         },
       ],
     };
   },
-  props: {
-    titulo: {
-      type: String,
-      required: true,
-    },
-    buttonsGrid: {
-      type: Array,
-      required: true,
-    },
-  },
-
-  components: { Produto, ProdutoMobile, ButtonCarousel },
 };
 </script>
 
@@ -296,16 +307,20 @@ export default {
           }
           & .grid-row-1 {
             height: 100%;
+            width: 100%;
+            overflow: hidden;
             padding: 0 0.5rem 0 0;
 
             @media (max-width: 1500px) {
               padding: 0 0.5rem 0 0;
+              width: 100%;
             }
             @media (max-width: 1050px) {
               padding: 0;
               width: 100%;
             }
             @media (max-width: 400px) {
+              width: 100%;
             }
           }
         }

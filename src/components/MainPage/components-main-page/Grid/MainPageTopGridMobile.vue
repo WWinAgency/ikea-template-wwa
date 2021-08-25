@@ -1,5 +1,5 @@
 <template>
-  <div class="mainPageTopGrid">
+  <div class="mainPageTopGridMobile">
     <div class="row-1">
       <div class="text-row-1">
         <h1>
@@ -22,25 +22,25 @@
         <div class="grid-container-left">
           <div class="grid-col-1">
             <div class="grid-row-1">
-              <Produto :products="col1Products" :imageSrc="imageSrc1" />
+              <ProdutoMobile :products="col1Products" :imageSrc="imageSrc1" />
             </div>
           </div>
         </div>
         <div class="grid-container-right">
           <div class="grid-col-2">
             <div class="grid-row-2">
-              <Produto :products="col2Products" :imageSrc="imageSrc2" />
+              <ProdutoMobile :products="col2Products" :imageSrc="imageSrc2" />
             </div>
             <div class="grid-row-3">
-              <Produto :products="col3Products" :imageSrc="imageSrc3" />
+              <ProdutoMobile :products="col3Products" :imageSrc="imageSrc3" />
             </div>
           </div>
           <div class="grid-col-3">
             <div class="grid-row-4">
-              <Produto :products="col4Products" :imageSrc="imageSrc4" />
+              <ProdutoMobile :products="col4Products" :imageSrc="imageSrc4" />
             </div>
             <div class="grid-row-5">
-              <Produto :products="col5Products" :imageSrc="imageSrc5" />
+              <ProdutoMobile :products="col5Products" :imageSrc="imageSrc5" />
             </div>
           </div>
         </div>
@@ -50,10 +50,10 @@
 </template>
 
 <script>
-import Produto from "./Produto.vue";
+import ProdutoMobile from "./ProdutoMobile.vue";
 
 export default {
-  components: { Produto },
+  components: { ProdutoMobile },
   props: {
     titulo: {
       type: String,
@@ -201,7 +201,7 @@ export default {
 </script>
 
 <style lang="scss">
-.mainPageTopGrid {
+.mainPageTopGridMobile {
   display: flex;
   flex-direction: column;
   width: 100%;
