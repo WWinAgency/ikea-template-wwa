@@ -90,8 +90,18 @@
               >
             </li>
             <li class="menu-item">
-              <a class="item" href="/login-form-page">
+              <a class="item" href="/register-form-page">
                 <strong> Formulário Login </strong></a
+              >
+            </li>
+            <li class="menu-item">
+              <a class="item" href="/register-confirm">
+                <strong> Confirmação Registo </strong></a
+              >
+            </li>
+            <li class="menu-item">
+              <a class="item" href="/client-page">
+                <strong> Página de Cliente </strong></a
               >
             </li>
           </ul>

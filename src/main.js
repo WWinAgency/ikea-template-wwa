@@ -8,12 +8,14 @@ import Vuex from "vuex";
 import store from "../src/modules/index";
 import Raters from "vue-star-rating";
 import router from "./router";
+import VueQRCodeComponent from "vue-qrcode-component";
 
 Vue.use(Vuex);
 Vue.use(BootstrapVue);
 Vue.use(IconsPlugin);
 Vue.component("star-rating", Raters.StarRating);
 Vue.component("b-carousel", BCarousel);
+Vue.component("qr-code", VueQRCodeComponent);
 
 Vue.config.productionTip = false;
 
