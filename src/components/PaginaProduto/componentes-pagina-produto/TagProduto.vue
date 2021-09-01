@@ -1,7 +1,7 @@
 <template>
   <div class="tagProduto">
     <div class="product-col">
-      <div class="product-row-1">
+      <div v-if="sale == true" class="product-row-1">
         <h3><strong>Promoção IKEA Family</strong></h3>
       </div>
       <div class="product-row-2">
@@ -23,12 +23,12 @@
         {{ tipoProduto }}, {{ utilidadeProduto }}, {{ dimensoesProdutoCm }} cm
       </div>
       <div class="product-row-4">IVA incluído no preço</div>
-      <div class="product-row-5">
+      <div v-if="sale == true" class="product-row-5">
         Preço Habitual {{ precoHabitual }}{{ moedaProduto }}/ ud
       </div>
       <div class="product-row-6">
         <div class="col-row-6"></div>
-        <div class="row-col-6">
+        <div v-if="sale == true" class="row-col-6">
           Promoção válida de {{ promocaoInicioMes }} {{ promocaoInicioDia }} até
           {{ promocaoFimMes }} {{ promocaoFimDia }}.
         </div>
@@ -46,7 +46,7 @@
                 v-bind:star-size="15"
                 :rating="ratingProduto"
                 :show-rating="false"
-                read-only:true
+                :read-only="true"
               >
               </star-rating>
             </div>
@@ -58,19 +58,24 @@
       </div>
       <div class="product-row-8">
         <div class="inner-col-3">
-          <b-button class="product-button">Adicionar ao cesto</b-button>
+          <b-button
+            @click="handleAddToCart(product)"
+            v-if="cartExists(product) === false"
+            class="product-button"
+            >Adicionar ao cesto</b-button
+          >
         </div>
         <div class="inner-col-4">
           <a
             class="icon float-right m-0 cursor-pointer"
-            @click="handleAddToWishlist(produto[0])"
-            v-if="wishlistExists(produto[0]) === false"
+            @click="handleAddToWishlist()"
+            v-if="wishlistExists() === false"
             ><b-icon-heart></b-icon-heart
           ></a>
           <a
             class="icon check float-right m-0 cursor-pointer"
             v-else
-            @click="handleRemoveToWishlist(produto[0])"
+            @click="handleRemoveToWishlist()"
           >
             <b-icon icon="check" scale="1.6" variant="dark"></b-icon
           ></a>
@@ -130,13 +135,13 @@ export default {
     utilidadeProduto: String,
     dimensoesProdutoCm: String,
     precoHabitual: Number,
+    sale: Boolean,
     promocaoInicioMes: String,
     promocaoInicioDia: Number,
     promocaoFimMes: String,
     promocaoFimDia: Number,
     variantStock: String,
     variantLoja: String,
-    produto: Array,
   },
   mounted() {
     const productIds = this.$store.state.WishlistModule.wishlist;

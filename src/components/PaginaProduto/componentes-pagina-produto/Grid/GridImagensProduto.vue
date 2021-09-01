@@ -34,16 +34,18 @@ export default {
 
 <style lang="scss">
 .gridImagensProduto {
+  width: 100%;
   & .grid {
     display: flex;
     flex-direction: row;
-    width: 100%;
+    width: auto;
     height: 100%;
 
     @media (max-width: 800px) {
       display: none;
     }
     & .product-grid-col-1 {
+      width: 50%;
       height: 50%;
 
       & .product-grid-row-1 {
@@ -52,9 +54,9 @@ export default {
           height: 100%;
         }
         & img {
-          width: 520px;
-          height: 520px;
-          margin: 0 0.5rem 0.5rem 0;
+          width: 100%;
+          height: 100%;
+          padding: 0 0.5rem 0.5rem 0;
 
           @media (max-width: 1750px) {
             width: 100%;
@@ -70,9 +72,9 @@ export default {
           height: 100% !important;
         }
         & img {
-          width: 520px;
-          height: 520px;
-          margin: 0.5rem 0.5rem 0.5rem 0;
+          width: 100%;
+          height: 100%;
+          padding: 0.5rem 0.5rem 0 0;
 
           @media (max-width: 1750px) {
             width: 100%;
@@ -85,6 +87,7 @@ export default {
     }
 
     & .product-grid-col-2 {
+      width: 50%;
       height: 50%;
       & .product-grid-row-3 {
         @media (max-width: 1750px) {
@@ -92,9 +95,9 @@ export default {
           height: 100%;
         }
         & img {
-          width: 520px;
-          height: 520px;
-          margin: 0 0 0.5rem 0.5rem;
+          width: 100%;
+          height: 100%;
+          padding: 0 0 0.5rem 0.5rem;
 
           @media (max-width: 1750px) {
             width: 100%;
@@ -110,9 +113,9 @@ export default {
           height: 100%;
         }
         & img {
-          width: 520px;
-          height: 520px;
-          margin: 0.5rem 0 0 0.5rem;
+          width: 100%;
+          height: 100%;
+          padding: 0.5rem 0 0 0.5rem;
 
           @media (max-width: 1750px) {
             width: 100%;

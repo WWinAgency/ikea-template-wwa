@@ -1,9 +1,9 @@
 <template>
   <div class="carouselProduto">
     <div class="container-produto">
-      <img :src="productImageSrc" />
+      <img :src="imageSrc" />
       <div class="botao-produto">
-        <a class="button-produto" :href="'/' + { link }">{{ textoBotao }}</a>
+        <a class="button-produto" :href="'/' + { link }">{{ text }}</a>
       </div>
     </div>
   </div>
@@ -12,8 +12,8 @@
 <script>
 export default {
   props: {
-    textoBotao: String,
-    productImageSrc: String,
+    text: String,
+    imageSrc: String,
     link: String,
   },
 };

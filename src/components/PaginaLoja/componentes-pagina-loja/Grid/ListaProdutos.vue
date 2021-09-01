@@ -3,8 +3,8 @@
     <div class="col-sm-12 pt-3 pb-5 my-4">
       <div class="row">
         <div
-          v-for="product in produtos"
-          :key="product.id"
+          v-for="(product, index) in produtos"
+          :key="index"
           class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12  mb-5"
         >
           <div class="produto">
@@ -73,14 +73,30 @@
                   </div>
                   <div class="col-2">
                     <div class="basket-button">
-                      <button class="btn-basket">
+                      <a
+                        @click="handleAddToCart(product)"
+                        v-if="cartExists(product) === false"
+                        class="btn-basket"
+                      >
                         <b-icon
                           class="basket-icon"
                           icon="bag-plus-fill"
                           scale="1.5"
                           variant="primary"
                         ></b-icon>
-                      </button>
+                      </a>
+                      <a
+                        @click="handleRemoveFromCart(product)"
+                        v-else
+                        class="btn-basket"
+                      >
+                        <b-icon
+                          class="basket-icon"
+                          icon="bag-check-fill"
+                          scale="1.5"
+                          variant="danger"
+                        ></b-icon>
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -96,36 +112,19 @@
 
 <script>
 import StarRating from "vue-star-rating";
-import axios from "axios";
+import shoppingCartMixin from "../../../../mixins/shoppingCartMixin";
+import comparisonListMixin from "../../../../mixins/comparisonListMixin";
+import produtos from "../../../../assets/data/mainPage/products";
+
 export default {
-  props: ["produtos", "comparisonList"],
+  mixins: [shoppingCartMixin, comparisonListMixin, produtos],
+  props: ["comparisonList"],
   components: { StarRating },
-  mounted() {
-    const productIds = this.$store.state.ComparisonListModule.comparison;
-    const productIdsString = productIds.join();
-    axios
-      .get("/api/products", { params: { id: productIdsString } })
-      .then(({ data }) => {
-        this.products = data.data;
-      });
+  data() {
+    return {};
   },
+
   methods: {
-    async handleAddToComparisonList(id) {
-      await this.$store.dispatch(
-        "ComparisonListModule/addComparisonListItem",
-        id
-      );
-    },
-    handleRemoveFromComparisonList(id) {
-      this.$store.dispatch("ComparisonListModule/removeComparisonListItem", id);
-    },
-    comparisonListExists(id) {
-      return (
-        this.$store.state.ComparisonListModule.comparison.find(
-          (i) => i === id
-        ) != null
-      );
-    },
     pushComparisonList(product) {
       this.comparisonList.push(product);
     },
@@ -136,4 +135,9 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="scss">
+.basket-col {
+  text-align: right;
+  margin-right: 0.5rem;
+}
+</style>

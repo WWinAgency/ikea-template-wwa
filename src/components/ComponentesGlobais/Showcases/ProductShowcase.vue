@@ -66,34 +66,14 @@
 
 <script>
 import StarRating from "vue-star-rating";
-import axios from "axios";
+import wishlitMixin from "../../../mixins/wishlistMixin";
+
 export default {
   components: { StarRating },
+  mixins: [wishlitMixin],
   props: ["products"],
   data() {
     return {};
-  },
-  mounted() {
-    const productIds = this.$store.state.WishlistModule.wishlist;
-    const productIdsString = productIds.join();
-    axios
-      .get("/api/products", { params: { id: productIdsString } })
-      .then(({ data }) => {
-        this.products = data.data;
-      });
-  },
-  methods: {
-    async handleAddToWishlist(id) {
-      await this.$store.dispatch("WishlistModule/addWishlistItem", id);
-    },
-    handleRemoveToWishlist(id) {
-      this.$store.dispatch("WishlistModule/removeWishlistItem", id);
-    },
-    wishlistExists(id) {
-      return (
-        this.$store.state.WishlistModule.wishlist.find((i) => i === id) != null
-      );
-    },
   },
 };
 </script>
@@ -110,19 +90,7 @@ export default {
   @media (max-width: 700px) {
     width: 100% !important;
   }
-  & .removeButton {
-    background-color: white;
-    width: 2rem;
-    height: 2rem;
-    border-radius: 64px;
-    text-align: center;
-    font-weight: 700;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: none;
-    margin-bottom: 1rem;
-  }
+
   .favorite-button {
     display: inline-block;
     width: 100%;
@@ -130,6 +98,7 @@ export default {
 
     & a.icon {
       font-size: 20px !important;
+      color: black;
     }
     & .button {
       float: right;

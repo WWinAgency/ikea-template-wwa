@@ -3,22 +3,22 @@
     <div class="mainPage-col">
       <div class="mainPage-row">
         <Advert
-          :title="advert.title"
-          :body="advert.body"
-          :currentPrice="advert.currentPrice"
-          :normalPrice="advert.normalPrice"
-          :imageSrc="advert.imageSrc"
-          :beginDay="advert.beginDay"
-          :beginMonth="advert.beginMonth"
-          :endDay="advert.endDay"
-          :endMonth="advert.endMonth"
-          :link="advert.link"
+          :title="ad.title"
+          :body="ad.body"
+          :currentPrice="ad.currentPrice"
+          :normalPrice="ad.normalPrice"
+          :imageSrc="ad.imageSrc"
+          :beginDay="ad.beginDay"
+          :beginMonth="ad.beginMonth"
+          :endDay="ad.endDay"
+          :endMonth="ad.endMonth"
+          :link="ad.link"
         />
       </div>
       <div class="mainPage-row">
         <div class="product-showcase-col">
           <div class="product-showcase-row-1">
-            <ProductShowcase :products="products" />
+            <ProductShowcase :products="showC" />
           </div>
           <div class="product-showcase-row-2">
             <div class="product-grid-row-2">
@@ -33,19 +33,19 @@
       </div>
       <div class="mainPage-row">
         <MidAdvert
-          :title="midAdvert.title"
-          :imageSrc="midAdvert.imageSrc"
-          :body="midAdvert.body"
-          :bodyStrong="midAdvert.bodyStrong"
-          :name="midAdvert.name"
-          :type="midAdvert.type"
-          :currentPrice="midAdvert.currentPrice"
-          :link="midAdvert.link"
-          :linkTitle="midAdvert.linkTitle"
+          :title="midAd.title"
+          :imageSrc="midAd.imageSrc"
+          :body="midAd.body"
+          :bodyStrong="midAd.bodyStrong"
+          :name="midAd.name"
+          :type="midAd.type"
+          :currentPrice="midAd.currentPrice"
+          :link="midAd.link"
+          :linkTitle="midAd.linkTitle"
         />
       </div>
       <div class="mainPage-row">
-        <TopCarousel :carousel="topCarousel" titulo="Os mais vistos" />
+        <TopCarousel :carousel="topC" carouselTitle="Os mais vistos" />
       </div>
       <div class="mainPage-row">
         <Info
@@ -84,39 +84,37 @@
         />
       </div>
       <div class="mainPage-row">
-        <InfoEntregas :infoEntregas="infoEntregas" />
+        <InfoEntregas :infoEntregas="info" />
       </div>
       <div class="mainPage-row">
-        <BottomCarousel
-          :carousel="bottomCarousel"
-          titulo="Um Mundo melho começa em casa"
-        />
+        <BottomCarousel :carousel="bottomC" carouselTitle="Os mais vistos" />
       </div>
       <div class="mainPage-row">
         <MainPageBottomGrid
           v-if="this.isMobile == false && this.isSmallMobile == false"
-          :buttonsGrid="buttonsBottomGrid"
+          :buttonsGrid="buttons"
           titulo="Mais ideias e inspiração"
         />
         <MainPageBottomGridMobile
           v-else-if="this.isMobile == true && this.isSmallMobile == false"
-          :buttonsGrid="buttonsBottomGrid"
+          :buttonsGrid="buttons"
           titulo="Mais ideias e inspiração"
         />
         <MainPageBottomGridSmallMobile
           v-else-if="this.isMobile == true && this.isSmallMobile == true"
-          :buttonsGrid="buttonsBottomGrid"
+          :buttonsGrid="buttons"
           titulo="Mais ideias e inspiração"
         />
       </div>
       <div class="mainPage-row">
-        <InfoImportanteCarousel :carousel="infoImpCarousel" />
+        <InfoImportanteCarousel :carousel="infoImp" />
       </div>
     </div>
   </div>
 </template>
 
 <script>
+// COMPONENTS
 import Advert from "./components-main-page/Adverts/Advert.vue";
 import MidAdvert from "./components-main-page/Adverts/MidAdvert.vue";
 import ProductShowcase from "../ComponentesGlobais/Showcases/ProductShowcase.vue";
@@ -132,7 +130,19 @@ import MainPageBottomGrid from "./components-main-page/Grid/MainPageBottomGrid.v
 import MainPageBottomGridMobile from "./components-main-page/Grid/MainPageBottomGridMobile.vue";
 import MainPageBottomGridSmallMobile from "./components-main-page/Grid/MainPageBottomGridSmallMobile.vue";
 
+// MIXINS
+import produtos from "../../assets/data/mainPage/products";
+import bottomC from "../../assets/data/mainPage/bottomCarousel";
+import topC from "../../assets/data/mainPage/topCarousel";
+import ad from "../../assets/data/mainPage/advert";
+import midAd from "../../assets/data/mainPage/midAdvert";
+import showC from "../../assets/data/mainPage/showcase";
+import info from "../../assets/data/mainPage/infoEntregas";
+import buttons from "../../assets/data/mainPage/buttonsBottomGrid";
+import infoImp from "../../assets/data/mainPage/infoImpCarousel";
+
 export default {
+  mixins: [produtos, bottomC, topC, ad, midAd, showC, info, buttons, infoImp],
   components: {
     Advert,
     MidAdvert,
@@ -169,256 +179,6 @@ export default {
     return {
       isMobile: false,
       isSmallMobile: false,
-      advert: {
-        title: "Quem é da casa merece um desconto",
-        name: "BONDHOLMEN",
-        type: "Mesa de centro, exterior",
-        body:
-          "É por isso que todos os meses há descontos para os membros IKEA Family. Descubra artigos a preços ainda mais acessiveis para toda a casa, só de",
-        imageSrc: "https://picsum.photos/1600/960?random=1",
-        link: "pagina-de-produto",
-        currentPrice: 69,
-        normalPrice: 80,
-        beginDay: 1,
-        beginMonth: "Julho",
-        endDay: 31,
-        endMonth: "Julho",
-      },
-      midAdvert: {
-        name: "LINNEBÄCK",
-        type: "Poltrona",
-        currentPrice: 39,
-        link: "linneback",
-        linkTitle: "Ver homemade Jingle by Noiserv",
-        title: "O Design é para ser tocado",
-        imageSrc: "https://picsum.photos/1600/960?random=6",
-        body:
-          "Para a IKEA, o design vai muito além da estética. Vai onde a nossa imaginação quiser. Para o provarmos, desafiámos o Noiserv, um dos músicos portugueses mais inventivos e versáteis, a compor um tema usando apenas os móevis e acessórios IKEA. Assim surge o Homemade Jingle, uma melodia original e divertida que nos evoca os sons da vida em casa",
-        bodyStrong: "Porque o design é para ser vivido",
-      },
-
-      products: [
-        {
-          id: "fejka",
-          name: "FEJKA",
-          type: "Planta Artificial em vaso",
-          utility: "9cm",
-          imageSrc: "https://picsum.photos/360?random=1",
-          normalPrice: 4.5,
-          currentPrice: 4,
-          rating: 4.5,
-          ratingCount: 8,
-          link: "fejka",
-          favSelected: false,
-        },
-        {
-          id: "skogsklover",
-          name: "SKOGSKLÖVER",
-          type: "Estore de correr",
-          utility: "120x195 cm",
-          imageSrc: "https://picsum.photos/360?random=2",
-          normalPrice: 35,
-          currentPrice: 29,
-          rating: 4,
-          ratingCount: 148,
-          link: "skogsklover",
-          favSelected: false,
-        },
-        {
-          id: "husaro",
-          name: "HUSARÖ",
-          type: "Poltrona",
-          utility: "exterior",
-          imageSrc: "https://picsum.photos/360?random=3",
-          normalPrice: 149,
-          currentPrice: 119,
-          rating: 4.5,
-          ratingCount: 10,
-          link: "husaro",
-          favSelected: false,
-        },
-        {
-          id: "hauga",
-          name: "HAUGA",
-          type: "Roupeiro aberto",
-          utility: "c/3 gavetas 70 x 199 cm",
-          imageSrc: "https://picsum.photos/360?random=4",
-          normalPrice: 135,
-          currentPrice: 112,
-          rating: 3,
-          ratingCount: 24,
-          link: "hauga",
-          favSelected: false,
-        },
-      ],
-
-      topCarousel: [
-        {
-          textoBotao: "Móveis",
-          productImageSrc: "https://picsum.photos/400/480?random=1",
-          link: "moveis",
-        },
-        {
-          textoBotao: "Arrumação e organização",
-          productImageSrc: "https://picsum.photos/400/480?random=2",
-          link: "arrumacao-e-organizacao",
-        },
-        {
-          textoBotao: "Exterior",
-          productImageSrc: "https://picsum.photos/400/480?random=3",
-          link: "exterior",
-        },
-        {
-          textoBotao: "Verão",
-          productImageSrc: "https://picsum.photos/400/480?random=4",
-          link: "verao",
-        },
-        {
-          textoBotao: "Colchões",
-          productImageSrc: "https://picsum.photos/400/480?random=5",
-          link: "colchoes",
-        },
-        {
-          textoBotao: "Camas",
-          productImageSrc: "https://picsum.photos/400/480?random=6",
-          link: "camas",
-        },
-        {
-          textoBotao: "Sofás",
-          productImageSrc: "https://picsum.photos/400/480?random=7",
-          link: "sofas",
-        },
-        {
-          textoBotao: "Cozinhas e eletrodomésticos",
-          productImageSrc: "https://picsum.photos/400/480?random=8",
-          link: "cozinhas-e-eletrodomesticos",
-        },
-      ],
-
-      infoEntregas: [
-        {
-          titulo: "Click and collect",
-          texto: "Numa loja IKEA, ponto de recolha ou ponto CTT",
-          tituloLink: "Saiba mais",
-          link: "click-and-collect",
-        },
-        {
-          titulo: "Entregas",
-          texto: "Compre online e receba em casa a partir de 7€",
-          tituloLink: "Saiba mais",
-          link: "delivery",
-        },
-        {
-          titulo: "Siga a sua encomenda",
-          texto: "Está a pergunta-se onde estará a sua encomenda?",
-          tituloLink: "Acompanhe o estado",
-          link: "track-my-package",
-        },
-        {
-          titulo: "Tem dúvidas?",
-          texto: "Encontre aqui respostas às suas perguntas mais frequentes",
-          tituloLink: "Saiba mais",
-          link: "faq",
-        },
-      ],
-      bottomCarousel: [
-        {
-          textoBotao: "Escola da casa",
-          productImageSrc: "https://picsum.photos/400/480?random=9",
-          link: "escola-da-casa",
-        },
-        {
-          textoBotao: "Painéis Solares SOLTRALE",
-          productImageSrc: "https://picsum.photos/400/480?random=10",
-          link: "paineis-solares",
-        },
-        {
-          textoBotao: "Ver casas sustentáveis",
-          productImageSrc: "https://picsum.photos/400/480?random=11",
-          link: "casas-sustentaveis",
-        },
-        {
-          textoBotao: "Ver alimentos sustentáveis",
-          productImageSrc: "https://picsum.photos/400/480?random=12",
-          link: "alimmentos-sustentaveis",
-        },
-        {
-          textoBotao: "Ver materiais sustentáveis",
-          productImageSrc: "https://picsum.photos/400/480?random=13",
-          link: "materiais-sustentaveis",
-        },
-        {
-          textoBotao: "Ver como poupar água e energia",
-          productImageSrc: "https://picsum.photos/400/480?random=14",
-          link: "como-poupar-agua-e-energia",
-        },
-        {
-          textoBotao: "A nossa casa sustentável",
-          productImageSrc: "https://picsum.photos/400/480?random=15",
-          link: "casa-sustentavel",
-        },
-      ],
-      buttonsBottomGrid: [
-        {
-          label: "Quarto",
-        },
-        {
-          label: "Sala",
-        },
-        {
-          label: "Cozinha",
-        },
-        {
-          label: "Escritório",
-        },
-        {
-          label: "Exterior",
-        },
-        {
-          label: "Casa de banho",
-        },
-        {
-          label: "Quarto de Criança e Bebé",
-        },
-        {
-          label: "Espaço de refeição",
-        },
-        {
-          label: "Entrada",
-        },
-        {
-          label: "Acessórios",
-        },
-      ],
-
-      infoImpCarousel: [
-        {
-          title: "Medidas de segurança",
-          body:
-            "Saiba mais sobre as nossas precauções e como pode fazer a sua parte",
-          infoUrl: "medidas-de-segurança",
-          imgCarouselImpSrc: "https://picsum.photos/960/960?random=1",
-        },
-        {
-          title: "Comprou algum prato, taça ou caneca HEROISK ou TALKIRA?",
-          body:
-            "A IKEA pede a todos os clientes que tenham comprado pratos, taças ou canecas HEROISK e/ou TALKIRA para pararem de os utilizar e os devolveverem numa loja IKEA, onde serão reembolsados na totalidade",
-          infoUrl: "heroisk-talkira-devolucao",
-          imgCarouselImpSrc: "https://picsum.photos/960/960?random=2",
-        },
-        {
-          title: "Bem seguro! Juntos, criamos casas mais seguras",
-          body: "",
-          infoUrl: "casas-mais-seguras",
-          imgCarouselImpSrc: "https://picsum.photos/960/960?random=3",
-        },
-        {
-          title: "Modulo Teste",
-          body: "Este modulo serve apenas para teste",
-          infoUrl: "casas-mais-seguras",
-          imgCarouselImpSrc: "https://picsum.photos/960/960?random=4",
-        },
-      ],
     };
   },
 };

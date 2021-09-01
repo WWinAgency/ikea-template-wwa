@@ -69,7 +69,7 @@ import AvaliacoesPessoal from "../../PaginaProduto/componentes-pagina-produto/Av
 export default {
   props: {
     evaluations: Array,
-    productCode: Number,
+    productCode: String,
     rating: Number,
     ratingCount: Number,
     valueAssembly: Number,

@@ -3,11 +3,11 @@
     <b-carousel
       id="carousel-1"
       :interval="0"
-      controls: false
-      indicators: true
+      :controls="true"
+      :indicators="true"
       background="#ababab"
-      img-width="480px"
-      img-height="480px"
+      img-width="auto"
+      img-height="auto"
       style="text-shadow: 1px 1px 2px #333;"
     >
       <b-carousel-slide :img-src="image1" />
@@ -31,11 +31,7 @@ export default {
 
 <style lang="scss">
 .carousel-produto {
-  display: none;
-
-  @media (max-width: 800px) {
-    display: flex;
-  }
+  width: 100%;
 
   & .carousel-control-prev {
     & .sr-only {

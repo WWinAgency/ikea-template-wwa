@@ -1,7 +1,7 @@
 <template>
   <div class="topCarousel">
     <div class="titulo">
-      <h1>{{ titulo }}</h1>
+      <h1>{{ carouselTitle }}</h1>
     </div>
     <div class="carousel-container">
       <VueSlickCarousel
@@ -10,75 +10,16 @@
         :arrows="true"
         :dots="false"
       >
-        <div class="carousel-item">
+        <div
+          class="carousel-item"
+          v-for="(product, index) in carousel"
+          :key="index"
+        >
           <div class="imagem">
             <CarouselProduto
-              :textoBotao="carousel[0].textoBotao"
-              :productImageSrc="carousel[0].productImageSrc"
-              :link="carousel[0].link"
-            />
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="imagem">
-            <CarouselProduto
-              :textoBotao="carousel[1].textoBotao"
-              :productImageSrc="carousel[1].productImageSrc"
-              :link="carousel[1].link"
-            />
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="imagem">
-            <CarouselProduto
-              :textoBotao="carousel[2].textoBotao"
-              :productImageSrc="carousel[2].productImageSrc"
-              :link="carousel[2].link"
-            />
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="imagem">
-            <CarouselProduto
-              :textoBotao="carousel[3].textoBotao"
-              :productImageSrc="carousel[3].productImageSrc"
-              :link="carousel[3].link"
-            />
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="imagem">
-            <CarouselProduto
-              :textoBotao="carousel[4].textoBotao"
-              :productImageSrc="carousel[4].productImageSrc"
-              :link="carousel[4].link"
-            />
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="imagem">
-            <CarouselProduto
-              :textoBotao="carousel[5].textoBotao"
-              :productImageSrc="carousel[5].productImageSrc"
-              :link="carousel[5].link"
-            />
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="imagem">
-            <CarouselProduto
-              :textoBotao="carousel[6].textoBotao"
-              :productImageSrc="carousel[6].productImageSrc"
-              :link="carousel[6].link"
-            />
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="imagem">
-            <CarouselProduto
-              :textoBotao="carousel[7].textoBotao"
-              :productImageSrc="carousel[7].productImageSrc"
-              :link="carousel[7].link"
+              :text="product.title"
+              :imageSrc="product.imageSrc"
+              :link="product.link"
             />
           </div>
         </div>
@@ -97,7 +38,7 @@ export default {
   name: "MyComponent",
   components: { VueSlickCarousel, CarouselProduto },
   props: {
-    titulo: {
+    carouselTitle: {
       type: String,
       required: true,
     },

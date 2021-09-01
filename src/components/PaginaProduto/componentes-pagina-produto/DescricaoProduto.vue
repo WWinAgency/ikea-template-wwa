@@ -89,7 +89,7 @@
                     v-bind:star-size="15"
                     :rating="rating"
                     :show-rating="false"
-                    read-only="true"
+                    :read-only="true"
                   >
                   </star-rating>
                 </div>

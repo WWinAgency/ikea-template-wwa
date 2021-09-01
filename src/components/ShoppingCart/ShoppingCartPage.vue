@@ -65,15 +65,21 @@
               >{{ tituloAccordion }}</a
             >
           </div>
+          <div class="row-3">
+            <ListaCarrinho />
+          </div>
         </div>
-        <div class="outter-col-2">Fatura Carrinho</div>
+        <div class="outter-col-2"><TotalCarrinho /></div>
       </div>
     </template>
   </div>
 </template>
 
 <script>
+import TotalCarrinho from "./TotalCarrinho.vue";
+import ListaCarrinho from "./ListaCarrinho.vue";
 export default {
+  components: { TotalCarrinho, ListaCarrinho },
   data() {
     return {
       accordionOpen: false,
@@ -209,7 +215,7 @@ export default {
                     align-items: center;
                     padding: 0 2rem;
                     width: auto;
-                    border: 1px solid #f5f5f5;
+                    border: 1px solid #dfdfdf;
                     background-color: #f5f5f5;
                     font-weight: 700;
                     font-size: 0.875rem;
@@ -227,11 +233,14 @@ export default {
           }
         }
       }
+
+      & .row-3 {
+        height: auto;
+      }
     }
 
     & .outter-col-2 {
       width: 40%;
-      text-align: center;
     }
   }
 }

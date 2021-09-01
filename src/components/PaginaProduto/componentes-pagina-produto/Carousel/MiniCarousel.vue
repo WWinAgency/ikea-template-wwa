@@ -10,84 +10,13 @@
         :arrows="true"
         :dots="false"
       >
-        <div class="carousel-item">
-          <a :href="'/pagina-de-produto/' + link" class="imagem">
-            <img :src="carousel[0].imagem" />
-          </a>
-        </div>
-        <div class="carousel-item">
-          <a :href="'/pagina-de-produto/' + link" class="imagem">
-            <img :src="carousel[1].imagem" />
-          </a>
-        </div>
-        <div class="carousel-item">
-          <a :href="'/pagina-de-produto/' + link" class="imagem">
-            <img :src="carousel[2].imagem" />
-          </a>
-        </div>
-        <div class="carousel-item">
-          <a :href="'/pagina-de-produto/' + link" class="imagem">
-            <img :src="carousel[3].imagem" />
-          </a>
-        </div>
-        <div class="carousel-item">
-          <a :href="'/pagina-de-produto/' + link" class="imagem">
-            <img :src="carousel[4].imagem" />
-          </a>
-        </div>
-        <div class="carousel-item">
-          <a :href="'/pagina-de-produto/' + link" class="imagem">
-            <img :src="carousel[5].imagem" />
-          </a>
-        </div>
-        <div class="carousel-item">
-          <a :href="'/pagina-de-produto/' + link" class="imagem">
-            <img :src="carousel[6].imagem" />
-          </a>
-        </div>
-        <div class="carousel-item">
-          <a :href="'/pagina-de-produto/' + link" class="imagem">
-            <img :src="carousel[7].imagem" />
-          </a>
-        </div>
-        <div class="carousel-item">
-          <a :href="'/pagina-de-produto/' + link" class="imagem">
-            <img :src="carousel[8].imagem" />
-          </a>
-        </div>
-        <div class="carousel-item">
-          <a :href="'/pagina-de-produto/' + link" class="imagem">
-            <img :src="carousel[9].imagem" />
-          </a>
-        </div>
-        <div class="carousel-item">
-          <a :href="'/pagina-de-produto/' + link" class="imagem">
-            <img :src="carousel[10].imagem" />
-          </a>
-        </div>
-        <div class="carousel-item">
-          <a :href="'/pagina-de-produto/' + link" class="imagem">
-            <img :src="carousel[11].imagem" />
-          </a>
-        </div>
-        <div class="carousel-item">
-          <a :href="'/pagina-de-produto/' + link" class="imagem">
-            <img :src="carousel[12].imagem" />
-          </a>
-        </div>
-        <div class="carousel-item">
-          <a :href="'/pagina-de-produto/' + link" class="imagem">
-            <img :src="carousel[13].imagem" />
-          </a>
-        </div>
-        <div class="carousel-item">
-          <a :href="'/pagina-de-produto/' + link" class="imagem">
-            <img :src="carousel[14].imagem" />
-          </a>
-        </div>
-        <div class="carousel-item">
-          <a :href="'/pagina-de-produto/' + link" class="imagem">
-            <img :src="carousel[15].imagem" />
+        <div
+          class="carousel-item"
+          v-for="(product, index) in carousel"
+          :key="index"
+        >
+          <a :href="'/pagina-de-produto/' + product.link" class="imagem">
+            <img :src="product.imagem" />
           </a>
         </div>
       </VueSlickCarousel>
@@ -112,13 +41,14 @@ export default {
       type: String,
       required: true,
     },
+    link: {},
   },
   data: function() {
     return {
       settings: {
         infinite: true,
         centerMode: true,
-        centerPadding: 5,
+        centerPadding: "5",
         slidesToShow: 11,
         slidesToScroll: 5,
         speed: 500,
@@ -131,7 +61,7 @@ export default {
             settings: {
               infinite: true,
               centerMode: true,
-              centerPadding: 5,
+              centerPadding: "5",
               slidesToShow: 10,
               slidesToScroll: 6,
               initialSlide: 1,
@@ -144,7 +74,7 @@ export default {
             settings: {
               infinite: true,
               centerMode: true,
-              centerPadding: 5,
+              centerPadding: "5",
               slidesToShow: 9,
               slidesToScroll: 7,
               initialSlide: 1,
@@ -157,7 +87,7 @@ export default {
             settings: {
               infinite: true,
               centerMode: true,
-              centerPadding: 5,
+              centerPadding: "5",
               slidesToShow: 8,
               slidesToScroll: 8,
               initialSlide: 1,
@@ -170,7 +100,7 @@ export default {
             settings: {
               infinite: true,
               centerMode: true,
-              centerPadding: 5,
+              centerPadding: "5",
               slidesToShow: 7,
               slidesToScroll: 9,
               initialSlide: 1,
@@ -183,7 +113,7 @@ export default {
             settings: {
               infinite: true,
               centerMode: true,
-              centerPadding: 5,
+              centerPadding: "5",
               slidesToShow: 6,
               slidesToScroll: 10,
               initialSlide: 1,
@@ -196,7 +126,7 @@ export default {
             settings: {
               infinite: true,
               centerMode: true,
-              centerPadding: 5,
+              centerPadding: "5",
               slidesToShow: 5,
               slidesToScroll: 11,
               initialSlide: 1,
@@ -209,7 +139,7 @@ export default {
             settings: {
               infinite: true,
               centerMode: true,
-              centerPadding: 5,
+              centerPadding: "5",
               slidesToShow: 4,
               slidesToScroll: 12,
               initialSlide: 1,
@@ -222,7 +152,7 @@ export default {
             settings: {
               infinite: true,
               centerMode: true,
-              centerPadding: 5,
+              centerPadding: "5",
               slidesToShow: 3,
               slidesToScroll: 13,
               initialSlide: 1,
@@ -236,7 +166,7 @@ export default {
             settings: {
               infinite: true,
               centerMode: true,
-              centerPadding: 5,
+              centerPadding: "5",
               slidesToShow: 2,
               slidesToScroll: 14,
               initialSlide: 0,
@@ -249,7 +179,7 @@ export default {
             settings: {
               infinite: true,
               centerMode: true,
-              centerPadding: 5,
+              centerPadding: "5",
               slidesToShow: 1,
               slidesToScroll: 15,
               initialSlide: 0,

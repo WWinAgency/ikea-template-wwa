@@ -77,7 +77,7 @@
         </div>
       </div>
       <div class="path-col">
-        {{ nomeProdutoPath }} {{ tipoProdutoPath }}
+        {{ nomeProdutoPath }}, {{ tipoProdutoPath }},
         {{ utilidadeProdutoPath }}
       </div>
     </div>

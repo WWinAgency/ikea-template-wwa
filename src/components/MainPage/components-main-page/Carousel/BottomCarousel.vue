@@ -1,7 +1,7 @@
 <template>
   <div class="bottomCarousel">
     <div class="titulo">
-      <h1>{{ titulo }}</h1>
+      <h1>{{ carouselTitle }}</h1>
     </div>
     <div class="carousel-container">
       <VueSlickCarousel
@@ -13,66 +13,16 @@
         <div class="carousel-item">
           <div class="carousel-info"><CarouselInfo infoUrl="/info" /></div>
         </div>
-        <div class="carousel-item">
+        <div
+          class="carousel-item"
+          v-for="(product, index) in carousel"
+          :key="index"
+        >
           <div class="imagem">
             <CarouselProduto
-              textoBotao="Escola da casa"
-              productImageSrc="https://picsum.photos/400/480?random=9"
-              link=""
-            />
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="imagem">
-            <CarouselProduto
-              textoBotao="Painéis Solares SOLTRALE"
-              productImageSrc="https://picsum.photos/400/480?random=10"
-              link=""
-            />
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="imagem">
-            <CarouselProduto
-              textoBotao="Ver casas sustentáveis"
-              productImageSrc="https://picsum.photos/400/480?random=11"
-              link=""
-            />
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="imagem">
-            <CarouselProduto
-              textoBotao="Ver alimentos sustentáveis"
-              productImageSrc="https://picsum.photos/400/480?random=12"
-              link=""
-            />
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="imagem">
-            <CarouselProduto
-              textoBotao="Ver materiais sustentáveis"
-              productImageSrc="https://picsum.photos/400/480?random=13"
-              link=""
-            />
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="imagem">
-            <CarouselProduto
-              textoBotao="Ver como poupar água e energia"
-              productImageSrc="https://picsum.photos/400/480?random=14"
-              link=""
-            />
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="imagem">
-            <CarouselProduto
-              textoBotao="A nossa casa sustentável"
-              productImageSrc="https://picsum.photos/400/480?random=15"
-              link=""
+              :text="product.title"
+              :imageSrc="product.imageSrc"
+              :link="product.link"
             />
           </div>
         </div>
@@ -89,19 +39,19 @@ import CarouselInfo from "./CarouseInfo.vue";
 import CarouselProduto from "./CarouselProduto.vue";
 
 export default {
-  name: "MyComponent",
-
-  components: { VueSlickCarousel, CarouselInfo, CarouselProduto },
+  name: "bottomCarousel",
   props: {
-    titulo: {
-      type: String,
-      required: true,
-    },
     carousel: {
       type: Array,
       required: true,
     },
+    carouselTitle: {
+      type: String,
+      required: true,
+    },
   },
+  components: { VueSlickCarousel, CarouselInfo, CarouselProduto },
+
   data: function() {
     return {
       settings: {

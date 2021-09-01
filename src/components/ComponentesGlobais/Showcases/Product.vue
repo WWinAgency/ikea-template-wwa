@@ -47,11 +47,6 @@
                 <h4>( {{ ratingCount }} )</h4>
               </div>
             </div>
-            <div class="basket-col">
-              <b-button class="button-basket" variant="primary"
-                ><b-icon icon="bag-plus" scale="1.5" variant="white"></b-icon
-              ></b-button>
-            </div>
           </div>
         </div>
       </div>
@@ -203,14 +198,16 @@ export default {
             float: right;
 
             & .button-basket {
-              height: 3rem;
-              width: 3rem;
+              width: 2rem;
+              height: 2rem;
               font-size: 0.8rem;
               position: absolute;
               bottom: 0;
               right: 0;
               margin-bottom: 0;
               border-radius: 64px;
+              display: flex;
+              justify-content: center;
             }
           }
         }

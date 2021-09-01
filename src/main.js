@@ -24,5 +24,6 @@ new Vue({
   beforeMount() {
     this.$store.commit("WishlistModule/initialiseStore");
     this.$store.commit("ComparisonListModule/initialiseStore");
+    this.$store.commit("ShopcartModule/initialiseStore");
   },
 }).$mount("#app");

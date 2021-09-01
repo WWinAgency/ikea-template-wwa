@@ -6,14 +6,14 @@
           <b-icon icon="shop" scale="0.9" variant="dark"></b-icon>
         </div>
         <div class="inner-row">
-          <h1>{{ infoEntregas[0].titulo }}</h1>
+          <h1>{{ infoEntregas[0].title }}</h1>
         </div>
         <div class="inner-row">
-          <h2>{{ infoEntregas[0].texto }}</h2>
+          <h2>{{ infoEntregas[0].text }}</h2>
         </div>
         <div class="inner-row">
           <a :href="'/' + infoEntregas[0].link">{{
-            infoEntregas[0].tituloLink
+            infoEntregas[0].linkTitle
           }}</a>
         </div>
       </div>
@@ -23,14 +23,14 @@
           <b-icon icon="truck" scale="0.9" variant="dark"></b-icon>
         </div>
         <div class="inner-row">
-          <h1>{{ infoEntregas[1].titulo }}</h1>
+          <h1>{{ infoEntregas[1].title }}</h1>
         </div>
         <div class="inner-row">
-          <h2>{{ infoEntregas[1].texto }}</h2>
+          <h2>{{ infoEntregas[1].text }}</h2>
         </div>
         <div class="inner-row">
           <a :href="'/' + infoEntregas[1].link">{{
-            infoEntregas[1].tituloLink
+            infoEntregas[1].linkTitle
           }}</a>
         </div>
       </div>
@@ -40,14 +40,14 @@
           <b-icon icon="truck" scale="0.9" variant="dark"></b-icon>
         </div>
         <div class="inner-row">
-          <h1>{{ infoEntregas[2].titulo }}</h1>
+          <h1>{{ infoEntregas[2].title }}</h1>
         </div>
         <div class="inner-row">
-          <h2>{{ infoEntregas[2].texto }}</h2>
+          <h2>{{ infoEntregas[2].text }}</h2>
         </div>
         <div class="inner-row">
           <a :href="'/' + infoEntregas[2].link">{{
-            infoEntregas[2].tituloLink
+            infoEntregas[2].linkTitle
           }}</a>
         </div>
       </div>
@@ -57,14 +57,14 @@
           <b-icon icon="chat-left-text" scale="0.9" variant="dark"></b-icon>
         </div>
         <div class="inner-row">
-          <h1>{{ infoEntregas[3].titulo }}</h1>
+          <h1>{{ infoEntregas[3].title }}</h1>
         </div>
         <div class="inner-row">
-          <h2>{{ infoEntregas[3].texto }}</h2>
+          <h2>{{ infoEntregas[3].text }}</h2>
         </div>
         <div class="inner-row">
           <a :href="'/' + infoEntregas[3].link">{{
-            infoEntregas[3].tituloLink
+            infoEntregas[3].linkTitle
           }}</a>
         </div>
       </div>

@@ -28,9 +28,10 @@
       </div>
       <div class="col-4">
         <div class="header-icons d-flex list-inline">
-          <b-nav-item class="icon-1" href="/profile"
+          <b-nav-item v-if="login == true" class="icon-1" href="/profile"
             ><b-icon icon="person" scale="1.2" variant="dark"></b-icon
           ></b-nav-item>
+          <b-nav-item v-else class="icon-1"><SidebarLogin /></b-nav-item>
           <b-nav-item class="icon-2" href="/favourites">
             <div class="outter-heart">
               <div class="heart-icon">
@@ -60,8 +61,14 @@
 
 <script>
 import Sidebar from "../ComponentesGlobais/Sidebars/Sidebar.vue";
+import SidebarLogin from "../Login/SidebarLogin.vue";
 export default {
-  components: { Sidebar },
+  components: { Sidebar, SidebarLogin },
+  data() {
+    return {
+      login: false,
+    };
+  },
 };
 </script>
 
@@ -87,6 +94,7 @@ export default {
       height: 40px;
       width: 5%;
       float: left;
+      display: flex;
       align-items: center;
 
       @media (max-width: 950px) {
@@ -100,6 +108,7 @@ export default {
 
       & .sidebar {
         display: flex;
+        margin-bottom: 0.2rem;
         height: 40px;
         @media (max-width: 950px) {
           position: absolute;
@@ -187,6 +196,7 @@ export default {
     }
     & .col-4 {
       display: flex;
+      align-items: center;
       height: 40px;
       width: 8%;
       float: right;
@@ -231,15 +241,17 @@ export default {
 
         & .icon-1 {
           margin-right: 0.5rem;
-          margin-bottom: 0.1rem !important;
+
+          width: 40px;
+          height: 40px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
         }
         & .icon-2 {
           margin-right: 0.5rem;
-          margin-bottom: 0.1rem !important;
         }
         & .icon-3 {
-          margin-bottom: 0.3rem !important;
-
           @media (max-width: 950px) {
             margin-right: 2rem;
           }

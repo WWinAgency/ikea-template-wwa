@@ -43,11 +43,7 @@
         <!-- ACCORDION -->
         <div class="detalhes-produto-row-4">
           <div class="accordion-detalhes" role="tablist">
-            <b-card
-              @click="rotatedArrow1 = !rotatedArrow1"
-              v-b-toggle.accordion-1
-              no-body
-            >
+            <b-card @click="rotateArrow1()" v-b-toggle.accordion-1 no-body>
               <b-card-header
                 header-tag="header"
                 class="card-materiais-header"
@@ -60,20 +56,13 @@
                   <div class="card-header-inner-col-2">
                     <button
                       class="card-arrow"
-                      @click="!rotatedArrow1"
+                      @click="rotateArrow1()"
                       variant="info"
                     >
                       <b-icon
-                        v-if="rotatedArrow1"
-                        class="icon"
+                        id="arrow-1"
+                        class="arrow-1"
                         icon="caret-down"
-                        scale="1.2"
-                        variant="dark"
-                      ></b-icon>
-                      <b-icon
-                        v-else
-                        class="icon"
-                        icon="caret-up"
                         scale="1.2"
                         variant="dark"
                       ></b-icon>
@@ -162,11 +151,7 @@
               <hr class="costum-hr" />
             </b-card>
 
-            <b-card
-              @click="rotatedArrow2 = !rotatedArrow2"
-              v-b-toggle.accordion-2
-              no-body
-            >
+            <b-card @click="rotateArrow2()" v-b-toggle.accordion-2 no-body>
               <b-card-header
                 header-tag="header"
                 class="card-sust-header"
@@ -181,20 +166,13 @@
                   <div class="card-header-inner-col-2">
                     <button
                       class="card-arrow"
-                      @click="!rotatedArrow2"
+                      @click="rotateArrow2()"
                       variant="info"
                     >
                       <b-icon
-                        v-if="rotatedArrow2"
+                        id="arrow-2"
                         class="icon"
                         icon="caret-down"
-                        scale="1.2"
-                        variant="dark"
-                      ></b-icon>
-                      <b-icon
-                        v-else
-                        class="icon"
-                        icon="caret-up"
                         scale="1.2"
                         variant="dark"
                       ></b-icon>
@@ -220,11 +198,7 @@
               <hr class="costum-hr" />
             </b-card>
 
-            <b-card
-              @click="rotatedArrow3 = !rotatedArrow3"
-              v-b-toggle.accordion-3
-              no-body
-            >
+            <b-card @click="rotateArrow3()" v-b-toggle.accordion-3 no-body>
               <b-card-header
                 header-tag="header"
                 class="card-peso-header"
@@ -239,20 +213,13 @@
                   <div class="card-header-inner-col-2">
                     <button
                       class="card-arrow"
-                      @click="!rotatedArrow3"
+                      @click="rotateArrow3()"
                       variant="info"
                     >
                       <b-icon
-                        v-if="rotatedArrow3"
+                        id="arrow-3"
                         class="icon"
                         icon="caret-down"
-                        scale="1.2"
-                        variant="dark"
-                      ></b-icon>
-                      <b-icon
-                        v-else
-                        class="icon"
-                        icon="caret-up"
                         scale="1.2"
                         variant="dark"
                       ></b-icon>
@@ -317,11 +284,7 @@
               <hr class="costum-hr" />
             </b-card>
 
-            <b-card
-              v-b-toggle.accordion-4
-              @click="rotatedArrow4 = !rotatedArrow4"
-              no-body
-            >
+            <b-card v-b-toggle.accordion-4 @click="rotateArrow4()" no-body>
               <b-card-header
                 header-tag="header"
                 class="card-montagem-header"
@@ -336,20 +299,13 @@
                   <div class="card-header-inner-col-2">
                     <button
                       class="card-arrow"
-                      @click="!rotatedArrow4"
+                      @click="rotateArrow4()"
                       variant="info"
                     >
                       <b-icon
-                        v-if="rotatedArrow4"
+                        id="arrow-4"
                         class="icon"
                         icon="caret-down"
-                        scale="1.2"
-                        variant="dark"
-                      ></b-icon>
-                      <b-icon
-                        v-else
-                        class="icon"
-                        icon="caret-up"
                         scale="1.2"
                         variant="dark"
                       ></b-icon>
@@ -414,11 +370,45 @@
 export default {
   data() {
     return {
-      rotatedArrow1: true,
-      rotatedArrow2: true,
-      rotatedArrow3: true,
-      rotatedArrow4: true,
+      rotatedArrow1: false,
+      rotatedArrow2: false,
+      rotatedArrow3: false,
+      rotatedArrow4: false,
     };
+  },
+  methods: {
+    rotateArrow1() {
+      this.rotatedArrow1 = !this.rotatedArrow1;
+      if (this.rotatedArrow1 == true) {
+        document.getElementById("arrow-1").style.transform = "rotate(180deg)";
+      } else {
+        document.getElementById("arrow-1").style.transform = "rotate(0)";
+      }
+    },
+    rotateArrow2() {
+      this.rotatedArrow2 = !this.rotatedArrow2;
+      if (this.rotatedArrow2 == true) {
+        document.getElementById("arrow-2").style.transform = "rotate(180deg)";
+      } else {
+        document.getElementById("arrow-2").style.transform = "rotate(0)";
+      }
+    },
+    rotateArrow3() {
+      this.rotatedArrow3 = !this.rotatedArrow3;
+      if (this.rotatedArrow3 == true) {
+        document.getElementById("arrow-3").style.transform = "rotate(180deg)";
+      } else {
+        document.getElementById("arrow-3").style.transform = "rotate(0)";
+      }
+    },
+    rotateArrow4() {
+      this.rotatedArrow4 = !this.rotatedArrow4;
+      if (this.rotatedArrow4 == true) {
+        document.getElementById("arrow-4").style.transform = "rotate(180deg)";
+      } else {
+        document.getElementById("arrow-4").style.transform = "rotate(0)";
+      }
+    },
   },
   props: {
     tituloSidebar: String,

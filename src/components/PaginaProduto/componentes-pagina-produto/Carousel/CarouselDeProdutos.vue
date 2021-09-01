@@ -28,6 +28,28 @@
               :link="product.link"
             />
           </div>
+          <div>
+            <a
+              @click="handleAddToCart(product)"
+              v-if="cartExists(product) === false"
+              class="btn-basket"
+            >
+              <b-icon
+                class="basket-icon"
+                icon="bag-plus-fill"
+                scale="1.5"
+                variant="primary"
+              ></b-icon>
+            </a>
+            <a @click="handleRemoveFromCart(index)" v-else class="btn-basket">
+              <b-icon
+                class="basket-icon"
+                icon="bag-plus-fill"
+                scale="1.5"
+                variant="danger"
+              ></b-icon>
+            </a>
+          </div>
         </div>
       </VueSlickCarousel>
     </div>
@@ -39,9 +61,11 @@ import VueSlickCarousel from "vue-slick-carousel";
 import "vue-slick-carousel/dist/vue-slick-carousel.css";
 import "vue-slick-carousel/dist/vue-slick-carousel-theme.css";
 import Product from "../../../ComponentesGlobais/Showcases/Product.vue";
+import shoppingCartMixin from "../../../../mixins/shoppingCartMixin";
 
 export default {
   name: "MyComponent",
+  mixins: [shoppingCartMixin],
   components: { VueSlickCarousel, Product },
   props: {
     titulo: {
@@ -58,8 +82,8 @@ export default {
       settings: {
         infinite: true,
         centerMode: true,
-        centerPadding: 5,
-        slidesToShow: 5,
+        centerPadding: "5",
+        slidesToShow: 4,
         slidesToScroll: 9,
         speed: 500,
         initialSlide: 3,
@@ -71,7 +95,7 @@ export default {
             settings: {
               infinite: true,
               centerMode: true,
-              centerPadding: 5,
+              centerPadding: "5",
               slidesToShow: 5,
               slidesToScroll: 2,
               initialSlide: 1,
@@ -84,7 +108,7 @@ export default {
             settings: {
               infinite: true,
               centerMode: true,
-              centerPadding: 5,
+              centerPadding: "5",
               slidesToShow: 4,
               slidesToScroll: 2,
               initialSlide: 1,
@@ -97,7 +121,7 @@ export default {
             settings: {
               infinite: true,
               centerMode: true,
-              centerPadding: 5,
+              centerPadding: "5",
               slidesToShow: 5,
               slidesToScroll: 2,
               initialSlide: 1,
@@ -110,7 +134,7 @@ export default {
             settings: {
               infinite: true,
               centerMode: true,
-              centerPadding: 5,
+              centerPadding: "5",
               slidesToShow: 3,
               slidesToScroll: 2,
               initialSlide: 1,
@@ -123,7 +147,7 @@ export default {
             settings: {
               infinite: true,
               centerMode: true,
-              centerPadding: 5,
+              centerPadding: "5",
               slidesToShow: 2,
               slidesToScroll: 2,
               initialSlide: 1,
@@ -137,7 +161,7 @@ export default {
             settings: {
               infinite: true,
               centerMode: true,
-              centerPadding: 5,
+              centerPadding: "5",
               slidesToShow: 1,
               slidesToScroll: 1,
               initialSlide: 0,
@@ -182,7 +206,7 @@ export default {
     & .carousel-component {
       & .carousel-item {
         width: 290px !important;
-        height: 540px !important;
+        height: 800px !important;
 
         @media (max-width: 550px) {
           width: 400px !important;
