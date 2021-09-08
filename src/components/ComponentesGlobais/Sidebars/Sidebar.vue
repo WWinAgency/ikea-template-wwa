@@ -104,6 +104,9 @@
                 <strong> Página de Cliente </strong></a
               >
             </li>
+            <li class="menu-item">
+              <a class="item" href="/checkout"> <strong> Checkout </strong></a>
+            </li>
           </ul>
           <ul class="row-2">
             <li class="menu-item">

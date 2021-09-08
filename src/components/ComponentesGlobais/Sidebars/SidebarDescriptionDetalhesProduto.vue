@@ -24,11 +24,10 @@
         <div class="detalhes-produto-row-2">
           <div class="row-2-inner-col">
             <div class="row-2-inner-row-1">
-              {{ generalDescription }}
+              {{ produtos[0].generalDescription }}
+              {{ produtos[0].specificDescription }}
             </div>
-            <div class="row-2-inner-row-2">
-              {{ specificDescription }}
-            </div>
+
             <div class="row-2-inner-row-3">
               <a href="#">Saiba mais</a>
             </div>
@@ -37,7 +36,7 @@
         <div class="detalhes-produto-row-3">
           <div class="row-3-inner-col">
             <div class="row-3-inner-row-1">Número do artigo</div>
-            <div class="row-3-inner-row-2">{{ codigoProduto }}</div>
+            <div class="row-3-inner-row-2">{{ produtos[0].code }}</div>
           </div>
         </div>
         <!-- ACCORDION -->
@@ -238,10 +237,10 @@
                       <div class="peso-text-row-1">
                         <div class="row-1-inner-col">
                           <div class="row-1-inner-row-1">
-                            <strong>{{ nomeProduto }}</strong>
+                            <strong>{{ produtos[0].name }}</strong>
                           </div>
                           <div class="row-1-inner-row-2">
-                            {{ tipoProduto }}, {{ utilidadeProduto }}
+                            {{ produtos[0].type }}, {{ produtos[0].utility }}
                           </div>
                         </div>
                       </div>
@@ -251,7 +250,7 @@
                             Artigo número
                           </div>
                           <div class="row-2-inner-row-2">
-                            {{ codigoProduto }}
+                            {{ produtos[0].code }}
                           </div>
                         </div>
                       </div>
@@ -337,11 +336,11 @@
                       <div class="montagem-text-row-2">
                         <div class="row-2-inner-col-1">
                           <div class="row-2-inner-row-1">
-                            {{ nomeProduto }} {{ tipoProduto }},
-                            {{ utilidadeProduto }}
+                            {{ produtos[0].name }} {{ produtos[0].type }},
+                            {{ produtos[0].utility }}
                           </div>
                           <div class="row-2-inner-row-2">
-                            {{ codigoProduto }}
+                            {{ produtos[0].code }}
                           </div>
                         </div>
                         <div class="row-2-inner-col-2">
@@ -367,7 +366,9 @@
 </template>
 
 <script>
+import produtos from "../../../assets/data/mainPage/products";
 export default {
+  mixins: [produtos],
   data() {
     return {
       rotatedArrow1: false,

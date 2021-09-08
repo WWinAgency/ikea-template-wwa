@@ -2,23 +2,21 @@
   <div class="descriptionSidebarAvaliacoes">
     <div class="sidebar-text-row">
       <div class="sidebar-text-col-1">
-        <a
-          class="tituloSidebar"
-          v-b-toggle="'sidebar-avaliacoes-' + productCode"
+        <a class="tituloSidebar" v-b-toggle="'sidebar-avaliacoes-' + productId"
           >Avaliações</a
         >
       </div>
       <div class="sidebar-text-col-2">
         <button
           class="sidebar-button"
-          v-b-toggle="'sidebar-avaliacoes-' + productCode"
+          v-b-toggle="'sidebar-avaliacoes-' + productId"
         >
           <b-icon icon="arrow-right" scale="1.6" variant="dark"></b-icon>
         </button>
       </div>
     </div>
 
-    <b-sidebar :id="'sidebar-avaliacoes-' + productCode" right shadow>
+    <b-sidebar :id="'sidebar-avaliacoes-' + productId" right shadow>
       <div class="detalhes-produto-outter-col">
         <div class="detalhes-produto-row-1">
           <strong>Avaliações</strong>
@@ -53,7 +51,7 @@
             :valueAssembly="evaluation.valueAssembly"
             :valuePrice="evaluation.valuePrice"
             :valueQuality="evaluation.valueQuality"
-            :valueLooks="evaluation.dvalueLooksay"
+            :valueLooks="evaluation.valueLooks"
             :valueExpectations="evaluation.valueExpectations"
           />
         </div>

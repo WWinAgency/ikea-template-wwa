@@ -64,22 +64,7 @@
           </div>
           <!-- Descrição Informativa do Produto -->
           <div class="product-inner-row">
-            <div v-for="(product, index) in produtos.slice(0, 1)" :key="index">
-              <DescricaoProduto
-                :nomeProduto="product.name"
-                :tipoProduto="product.type"
-                :utilidadeProduto="product.utility"
-                :textoDescritivo="product.productShowingText"
-                :codigoProduto="product.code"
-                :rating="product.rating"
-                :evaluations="product.evalutations"
-                :valueAssembly="product.valueAssembly"
-                :valuePrice="product.valuePrice"
-                :valueQuality="product.valueQuality"
-                :valueLooks="product.valueLooks"
-                :valueExpectations="product.valueExpectations"
-              />
-            </div>
+            <DescricaoProduto />
           </div>
           <!-- Descrição Informativa do Produto -->
 
@@ -96,10 +81,10 @@
           <!-- Funcao e Design do Produto -->
           <div class="product-inner-row">
             <FuncaoEDesign
-              :solucaoFuncaoTitle="produtos[0].solucaoFuncaoTitle"
-              :solucaoFuncaoText="produtos[0].solucaoFuncaoText"
-              :processoDesignTitle="produtos[0].processoDesignTitle"
-              :processoDesignText="produtos[0].processoDesignText"
+              :solucaoFuncaoTitle="produtos[0].functionSolutionTitle"
+              :solucaoFuncaoText="produtos[0].functionSolutionText"
+              :processoDesignTitle="produtos[0].designProcessTitle"
+              :processoDesignText="produtos[0].designProcessText"
             />
           </div>
           <!-- Funcao e Design do Produto -->
@@ -155,9 +140,6 @@ export default {
     GridImagensProduto,
     MiniCarousel,
     CarouselProduto,
-  },
-  data() {
-    return {};
   },
 };
 </script>

@@ -1,6 +1,6 @@
 <template>
   <div class="row">
-    <div class="col-sm-12 pt-3 pb-5">
+    <div class="showcase col-sm-12 pt-3 pb-5">
       <div class="row">
         <div v-for="product in products" :key="product.id" class="productItem">
           <div class="favorite-button">
@@ -79,6 +79,11 @@ export default {
 </script>
 
 <style lang="scss">
+.row {
+  & .showcase {
+    padding: 0;
+  }
+}
 .productItem {
   width: 25% !important;
   @media (max-width: 1600px) {

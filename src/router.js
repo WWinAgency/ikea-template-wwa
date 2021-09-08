@@ -13,6 +13,7 @@ import LoginPage from "./components/Login/LoginPage";
 import LoginFormPage from "./components/Login/LoginFormPage";
 import ConfirmacaoRegisto from "./components/Login/ConfirmacaoRegisto";
 import PaginaCliente from "./components/PaginaCliente/PaginaCliente";
+import CheckoutPage from "./components/Checkout/CheckoutPage";
 
 Vue.use(Router);
 
@@ -92,6 +93,12 @@ export default new Router({
       component: ConfirmacaoRegisto,
       name: "register-confirm",
       meta: { title: "Página de Confirmação de Registo" },
+    },
+    {
+      path: "/checkout",
+      component: CheckoutPage,
+      name: "checkout",
+      meta: { title: "Checkout" },
     },
   ],
 });

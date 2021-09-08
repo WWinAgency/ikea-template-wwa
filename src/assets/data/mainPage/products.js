@@ -84,6 +84,10 @@ export default {
           link: "fejka",
           variantStock: "success",
           variantStore: "danger",
+          generalDescription:
+            "Se dormir de lado, coloque o lado maior virado para cima. O espaço proporcionado pela clivagem proporciona um bom apoio à cabeça e ao pescoço e reduz a tensão nos ombros. ",
+          specificDescription:
+            "A inclinação proporciona apoio ao pescoço e aos músculos do pescoço, para que possa descontrair. ",
           productShowingText:
             "Folhas artificiais com aspeto real que permanecem bonitas e com bom aspeto ano após ano.",
           productHiddenText:

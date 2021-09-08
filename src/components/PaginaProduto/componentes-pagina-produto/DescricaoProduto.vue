@@ -2,9 +2,6 @@
   <div class="descricao-produto">
     <div class="product-inner-col">
       <div class="product-description-row-1">
-        <div class="product-description-col-1">
-          {{ textoDescritivo }}
-        </div>
         <div class="product-description-col-2">
           <div class="numero-artigo">Número de artigo</div>
           <div class="codigo-artigo">{{ codigoProduto }}</div>
@@ -66,15 +63,15 @@
         <div class="inner-col">
           <div class="inner-row-1">
             <SidebarDescriptionAvaliacoesProduto
-              :evaluations="evaluations"
-              :productCode="codigoProduto"
-              :rating="rating"
-              :ratingCount="ratingCount"
-              :valueAssembly="valueAssembly"
-              :valuePrice="valuePrice"
-              :valueQuality="valueQuality"
-              :valueLooks="valueLooks"
-              :valueExpectations="valueExpectations"
+              :evaluations="produtos[0].evaluations"
+              :productId="produtos[0].productId"
+              :rating="produtos[0].rating"
+              :ratingCount="produtos[0].ratingCount"
+              :valueAssembly="produtos[0].valueAssembly"
+              :valuePrice="produtos[0].valuePrice"
+              :valueQuality="produtos[0].valueQuality"
+              :valueLooks="produtos[0].valueLooks"
+              :valueExpectations="produtos[0].valueExpectations"
             />
           </div>
           <div class="inner-row-2">
@@ -87,14 +84,14 @@
                     inactive-color="white"
                     active-color="black"
                     v-bind:star-size="15"
-                    :rating="rating"
+                    :rating="produtos[0].rating"
                     :show-rating="false"
                     :read-only="true"
                   >
                   </star-rating>
                 </div>
                 <div class="rating-row">
-                  <h4>( {{ ratingCount }} )</h4>
+                  <h4>( {{ produtos[0].ratingCount }} )</h4>
                 </div>
               </div>
             </div>
@@ -110,28 +107,14 @@ import StarRating from "vue-star-rating";
 import SidebarDescriptionDetalhesProduto from "../../ComponentesGlobais/Sidebars/SidebarDescriptionDetalhesProduto.vue";
 import SidebarDescriptionDimensoesProduto from "../../ComponentesGlobais/Sidebars/SidebarDescriptionDimensoesProduto.vue";
 import SidebarDescriptionAvaliacoesProduto from "../../ComponentesGlobais/Sidebars/SidebarDescriptionAvaliacoesProduto.vue";
+import produtos from "../../../assets/data/mainPage/products";
 export default {
+  mixins: [produtos],
   components: {
     SidebarDescriptionDetalhesProduto,
     SidebarDescriptionDimensoesProduto,
     SidebarDescriptionAvaliacoesProduto,
     StarRating,
-  },
-
-  props: {
-    nomeProduto: String,
-    tipoProduto: String,
-    utilidadeProduto: String,
-    textoDescritivo: String,
-    codigoProduto: String,
-    rating: Number,
-    ratingCount: Number,
-    evaluations: Array,
-    valueAssembly: Number,
-    valuePrice: Number,
-    valueQuality: Number,
-    valueLooks: Number,
-    valueExpectations: Number,
   },
 };
 </script>

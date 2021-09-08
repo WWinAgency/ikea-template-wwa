@@ -57,13 +57,10 @@
         </div>
       </div>
       <div class="product-row-8">
+        <!-- @click="handleAddToCart(product)"
+            v-if="cartExists(product) === false" -->
         <div class="inner-col-3">
-          <b-button
-            @click="handleAddToCart(product)"
-            v-if="cartExists(product) === false"
-            class="product-button"
-            >Adicionar ao cesto</b-button
-          >
+          <b-button class="product-button">Adicionar ao cesto</b-button>
         </div>
         <div class="inner-col-4">
           <a
@@ -121,9 +118,12 @@
 <script>
 import axios from "axios";
 import StarRating from "vue-star-rating";
+import shoppingCartMixin from "../../../mixins/shoppingCartMixin";
+
 export default {
   name: "TagProduto",
   components: { StarRating },
+  mixins: [shoppingCartMixin],
   props: {
     idProduto: String,
     nomeProduto: String,

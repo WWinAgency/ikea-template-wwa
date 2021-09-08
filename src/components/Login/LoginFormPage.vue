@@ -511,7 +511,7 @@ export default {
       & .row-2 {
         & .inner-col {
           & .row {
-            margin-bottom: 2.5rem;
+            margin-bottom: 2.5rem !important;
             & .input {
               font-size: 15px;
               border: none;

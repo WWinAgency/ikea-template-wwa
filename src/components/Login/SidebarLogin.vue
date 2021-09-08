@@ -1,11 +1,11 @@
 <template>
   <div class="sidebarLogin">
-    <button class="sidebar-button" v-b-toggle.sidebar-share>
+    <button class="sidebar-button" v-b-toggle.sidebar-login>
       <span class="button-icon">
         <b-icon icon="person" scale="1.2" variant="dark"></b-icon
       ></span>
     </button>
-    <b-sidebar right id="sidebar-share">
+    <b-sidebar right id="sidebar-login">
       <div class="sidebar-col-1">
         <div class="row-1">
           <div class="row-1-col-1">Hej!</div>

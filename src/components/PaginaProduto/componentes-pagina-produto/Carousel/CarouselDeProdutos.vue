@@ -29,11 +29,9 @@
             />
           </div>
           <div>
-            <a
-              @click="handleAddToCart(product)"
-              v-if="cartExists(product) === false"
-              class="btn-basket"
-            >
+            <!-- @click="handleAddToCart(product)" v-if="cartExists(product) ===
+            false" -->
+            <a class="btn-basket">
               <b-icon
                 class="basket-icon"
                 icon="bag-plus-fill"
@@ -41,7 +39,9 @@
                 variant="primary"
               ></b-icon>
             </a>
-            <a @click="handleRemoveFromCart(index)" v-else class="btn-basket">
+            <!-- v-else -->
+            <!-- @click="handleRemoveFromCart(index)" -->
+            <a class="btn-basket">
               <b-icon
                 class="basket-icon"
                 icon="bag-plus-fill"
@@ -178,7 +178,7 @@ export default {
 <style lang="scss">
 .carouselProdutos {
   width: 100% !important;
-  margin: 0 !important;
+  margin: 2rem 0 0 0 !important;
   padding: 0 !important;
   display: flex;
   flex-direction: column;
@@ -206,7 +206,7 @@ export default {
     & .carousel-component {
       & .carousel-item {
         width: 290px !important;
-        height: 800px !important;
+        height: 500px !important;
 
         @media (max-width: 550px) {
           width: 400px !important;

@@ -3,7 +3,7 @@
     <div class="avaliacoesProduto-outter-col">
       <div class="avaliacoesProduto-row-1">
         <div class="row-1-inner-col">
-          <div class="row-1-inner-row-1">{{ rating }}</div>
+          <div class="row-1-inner-row-1">{{ produtos[0].rating }}</div>
           <div class="row-1-inner-row-2">
             <div class="rating-stars">
               <div class="rating-col">
@@ -14,14 +14,14 @@
                     inactive-color="white"
                     active-color="black"
                     v-bind:star-size="15"
-                    :rating="rating"
+                    :rating="produtos[0].rating"
                     :show-rating="false"
                     :read-only="true"
                   >
                   </star-rating>
                 </div>
                 <div class="rating-row-2">
-                  <h4>({{ ratingCount }})</h4>
+                  <h4>({{ produtos[0].ratingCount }})</h4>
                 </div>
               </div>
             </div>
@@ -45,14 +45,14 @@
                       inactive-color="white"
                       active-color="black"
                       v-bind:star-size="15"
-                      :rating="rating"
+                      :rating="produtos[0].rating"
                       :show-rating="false"
                       :read-only="true"
                     >
                     </star-rating>
                   </div>
                   <div class="rating-row-2">
-                    <h4>{{ ratingCount }}</h4>
+                    <h4>{{ produtos[0].ratingCount }}</h4>
                   </div>
                 </div>
               </div>
@@ -66,13 +66,13 @@
               <div class="col-2-inner-col-1">
                 <b-progress
                   height="1rem"
-                  :value="values[valueAssembly]"
+                  :value="values[Math.round(produtos[0].valueAssembly)]"
                   variant="dark"
                   class="w-100 "
                 ></b-progress>
               </div>
               <div class="col-2-inner-col-2">
-                <div class="valor">{{ values[valueAssembly] }}</div>
+                <div class="valor">{{ produtos[0].valueAssembly }}</div>
               </div>
             </div>
           </div>
@@ -84,13 +84,13 @@
               <div class="col-2-inner-col-1">
                 <b-progress
                   height="1rem"
-                  :value="values[valuePrice]"
+                  :value="values[Math.round(produtos[0].valuePrice)]"
                   variant="dark"
                   class="w-100 "
                 ></b-progress>
               </div>
               <div class="col-2-inner-col-2">
-                <div class="valor">{{ values[valuePrice] }}</div>
+                <div class="valor">{{ produtos[0].valuePrice }}</div>
               </div>
             </div>
           </div>
@@ -102,13 +102,13 @@
               <div class="col-2-inner-col-1">
                 <b-progress
                   height="1rem"
-                  :value="values[valueQuality]"
+                  :value="values[Math.round(produtos[0].valueQuality)]"
                   variant="dark"
                   class="w-100 "
                 ></b-progress>
               </div>
               <div class="col-2-inner-col-2">
-                <div class="valor">{{ values[valueQuality] }}</div>
+                <div class="valor">{{ produtos[0].valueQuality }}</div>
               </div>
             </div>
           </div>
@@ -120,13 +120,13 @@
               <div class="col-2-inner-col-1">
                 <b-progress
                   height="1rem"
-                  :value="values[valueLooks]"
+                  :value="values[Math.round(produtos[0].valueLooks)]"
                   variant="dark"
                   class="w-100 "
                 ></b-progress>
               </div>
               <div class="col-2-inner-col-2">
-                <div class="valor">{{ values[valueLooks] }}</div>
+                <div class="valor">{{ produtos[0].valueLooks }}</div>
               </div>
             </div>
           </div>
@@ -138,13 +138,15 @@
               <div class="col-2-inner-col-1">
                 <b-progress
                   height="1rem"
-                  :value="values[valueExpectations]"
+                  :value="values[Math.round(produtos[0].valueExpectations)]"
                   variant="dark"
                   class="w-100 "
                 ></b-progress>
               </div>
               <div class="col-2-inner-col-2">
-                <div class="valor">{{ values[valueExpectations] }}</div>
+                <div class="valor">
+                  {{ produtos[0].valueExpectations }}
+                </div>
               </div>
             </div>
           </div>
@@ -156,17 +158,12 @@
 
 <script>
 import StarRating from "vue-star-rating";
+import produtos from "../../../assets/data/mainPage/products";
+
 export default {
+  mixins: [produtos],
   components: { StarRating },
-  props: {
-    rating: Number,
-    ratingCount: Number,
-    valueAssembly: Number,
-    valuePrice: Number,
-    valueQuality: Number,
-    valueLooks: Number,
-    valueExpectations: Number,
-  },
+
   data() {
     return {
       values: [0, 20, 40, 60, 80, 100],

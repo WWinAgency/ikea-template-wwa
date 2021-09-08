@@ -1,6 +1,6 @@
 <template>
   <div class="row">
-    <div class="col-sm-12 pt-3 pb-5">
+    <div class="personal-projetct col-sm-12 pt-3 pb-5 px-0">
       <div class="row">
         <div
           v-for="projeto in projetosPessoais"
@@ -18,18 +18,20 @@
                     variant="dark"
                   ></b-icon>
                 </div>
-                <a class="title" :href="'pagina-de-produto/' + projeto.link">{{
+                <a class="title" :href="'/' + projeto.link">{{
                   projeto.title
                 }}</a>
                 <p class="text">{{ projeto.text }}</p>
               </div>
               <div class="icon-arrow">
-                <b-icon
-                  class="arrow-right"
-                  icon="arrow-right-circle-fill"
-                  scale="3"
-                  variant="dark"
-                ></b-icon>
+                <a :href="'/' + projeto.link">
+                  <b-icon
+                    class="arrow-right"
+                    icon="arrow-right-circle-fill"
+                    scale="3"
+                    variant="dark"
+                  ></b-icon>
+                </a>
               </div>
             </div>
           </div>
@@ -53,7 +55,7 @@ export default {
         },
         {
           icon: "heart",
-          link: "",
+          link: "favourites",
           title: "Criar listas de favoritos",
           text:
             "Planeie a sua compra e crie listas para que não se esqueça de nada",
@@ -72,6 +74,18 @@ export default {
 </script>
 
 <style lang="scss">
+.row {
+  padding-left: 0;
+  padding-right: 0;
+  margin: 0 !important;
+  & .personal-projects {
+    margin: 0 !important;
+
+    & .row {
+      margin: 0 !important;
+    }
+  }
+}
 .projetoItem {
   width: 33% !important;
 

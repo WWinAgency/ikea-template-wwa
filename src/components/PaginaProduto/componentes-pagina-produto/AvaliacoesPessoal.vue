@@ -65,7 +65,7 @@
                 ></b-progress>
               </div>
               <div class="col-2-inner-col-2">
-                <div class="valor">{{ values[valueAssembly] }}</div>
+                <div class="valor">{{ valueAssembly }}</div>
               </div>
             </div>
           </div>
@@ -83,7 +83,7 @@
                 ></b-progress>
               </div>
               <div class="col-2-inner-col-2">
-                <div class="valor">{{ values[valuePrice] }}</div>
+                <div class="valor">{{ valuePrice }}</div>
               </div>
             </div>
           </div>
@@ -101,7 +101,7 @@
                 ></b-progress>
               </div>
               <div class="col-2-inner-col-2">
-                <div class="valor">{{ values[valueQuality] }}</div>
+                <div class="valor">{{ valueQuality }}</div>
               </div>
             </div>
           </div>
@@ -119,7 +119,7 @@
                 ></b-progress>
               </div>
               <div class="col-2-inner-col-2">
-                <div class="valor">{{ values[valueLooks] }}</div>
+                <div class="valor">{{ valueLooks }}</div>
               </div>
             </div>
           </div>
@@ -137,7 +137,7 @@
                 ></b-progress>
               </div>
               <div class="col-2-inner-col-2">
-                <div class="valor">{{ values[valueExpectations] }}</div>
+                <div class="valor">{{ valueExpectations }}</div>
               </div>
             </div>
           </div>

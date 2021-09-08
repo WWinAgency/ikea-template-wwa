@@ -11,12 +11,7 @@
     <b-sidebar right id="sidebar-share-right">
       <div class="sidebar-col">
         <div class="sidebar-share-row-1">
-          <div class="row-1-inner-col">
-            <div class="row-1-inner-row-1">
-              <strong>Política de Privacidade</strong>
-            </div>
-            <div class="row-1-inner-row-1">Política de Privacidade</div>
-          </div>
+          <div class="row-1-inner-col"></div>
         </div>
         <div class="sidebar-share-row-2">
           <div class="inner-col-1">

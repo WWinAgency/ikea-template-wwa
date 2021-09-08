@@ -62,6 +62,9 @@ export default {
   @media (max-width: 900px) {
     flex-direction: column;
   }
+  @media (max-width: 500px) {
+    padding: 0;
+  }
   & .col-1 {
     display: flex;
     flex-direction: column;
@@ -113,20 +116,27 @@ export default {
       width: 100%;
       justify-content: flex-start;
     }
+    @media (max-width: 900px) {
+      width: 100%;
+      justify-content: center;
+    }
 
     & .card-container {
       display: flex;
       justify-content: flex-end;
+
       @media (max-width: 500px) {
-        justify-content: center;
+        margin: auto;
+        width: 100%;
       }
+
       & .profile-card {
         border-radius: 0.625rem;
         min-width: 400px;
         box-shadow: 0 0.3125rem 1.25rem rgba(0, 0, 0, 0.15);
 
         @media (max-width: 500px) {
-          width: 100%;
+          min-width: 100%;
         }
 
         & .row-1 {
@@ -139,16 +149,22 @@ export default {
           padding: 1rem 1.5625rem;
           color: white;
           font-weight: 700;
+          word-wrap: break-word;
+
           & .inner-row-1 {
-            width: 100%;
+            width: auto;
+            height: 100%;
             font-size: 1rem;
+            word-wrap: break-word;
           }
           & .inner-row-2 {
             width: 100%;
+            height: 100%;
             font-size: 1.375rem;
           }
         }
         & .row-2 {
+          width: auto;
           background-color: #ffdb00;
           padding: 0.3rem 1.5625rem;
           margin: 0;
@@ -156,15 +172,21 @@ export default {
         & .row-3 {
           margin: 0;
           padding: 1rem;
-          width: 100%;
+          width: auto;
           display: flex;
-          align-items: baseline;
+          align-items: flex-end;
+          justify-content: space-between;
+
+          @media (max-width: 500px) {
+            display: flex;
+            justify-content: space-around;
+          }
 
           & .row-3-col-1 {
-            width: 70%;
+            word-wrap: break-word;
+            width: auto;
           }
           & .row-3-col-2 {
-            width: 30%;
           }
         }
       }
